@@ -240,6 +240,10 @@
 					<table border=1 class="customerBoard">
 						<input type="hidden" >
 						<tr>
+							<th>호텔선택</th>
+							<td>${vo.hotelname }</td>
+						</tr>
+						<tr>
 							<th>문의유형</th>
 							<td>${ vo.category }</td>
 							<th>등록일자</th>
