@@ -9,6 +9,8 @@ public class BoardDAO extends DBConn {
 	// 찾기로 아래 키워드로 채널 검색
 	// 1.board-list 2.board-content 3.board-delete 4.board-write 5.board-update
 	
+	// 업데이트 확인용
+	
 	
 	//------------------------------------------------------------------------
 	//							1.board-list								 -
