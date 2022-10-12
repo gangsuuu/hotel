@@ -214,7 +214,8 @@
 					<table id="listtable" border=1px solid>
 						<tr>
 							<th>No.</th>
-							<th>분류</th>
+							<th>구분</th>
+							<th>문의</th>
 							<th id="tabletitle">제목</th>
 							<th>작성자</th>							
 							<th>등록일자</th>							
@@ -222,6 +223,7 @@
 						<c:forEach var="vo" items="${list}">
 						<tr>
 							<td>${ vo.rno }</td>
+							<td>${ vo.hotelname }</td>
 							<td>${ vo.category }</td>
 							<td>
 							
@@ -259,7 +261,7 @@
 						</tr>
 						</c:forEach>
 						<tr>
-							<td colspan="5"><div id="ampaginationsm"></div></td>
+							<td colspan="6"><div id="ampaginationsm"></div></td>
 						</tr>
 					</table>
 								<!-- div를 forEach안에 두면 계속 생겨서 오류걸림, 밖으로 빼기 -->
@@ -276,7 +278,8 @@
 						<select class="search_list" name="searchlist" id="searchlist">
 							<option value="default">선택</option>
 							<option value="title">제목</option>
-							<option value="writer">작성자</option>
+							<option value="hotel">호텔선택</option>
+							<option value="inquiry">문의선택</option>
 						</select>
 						<input type="text" name="keyword" id="searchName">
 						<button type="button" id="btnSearch">찾기</button>
