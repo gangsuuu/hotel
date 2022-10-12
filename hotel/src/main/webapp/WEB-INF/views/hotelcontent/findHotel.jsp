@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<link rel="stylesheet" href="http://localhost:9000/index/resources/css/index.css">
-<link rel="stylesheet" href="http://localhost:9000/index/resources/css/aboutShillaStay.css">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/aboutShillaStay.css">
 <script>
 	var hotelname = "stayhub";
 </script>
@@ -91,7 +91,7 @@ window.initMap = function () {
 </script>
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC29mL81BkLdwdYndft57DGBaTMFi8y14o&callback=initMap"></script>
 <body>
-    <script type="text/javascript"  src="http://localhost:9000/index/resources/js/header.js"></script>
+    <script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
     <div class="content">
     		<div class="loacation">
    			<span>위치찾기</span>
@@ -100,20 +100,20 @@ window.initMap = function () {
                 <div class=map_hotellist>
                     <ul>
                         <li>
-                        	<img src="http://localhost:9000/index/resources/images/findHotel/hotelList_tit01.gif">
+                        	<img src="http://localhost:9000/hotel/resources/img/findHotel/hotelList_tit01.gif">
 	                        <a href="#">신라스테이 광화문</a>
 	                        <a href="#">신라스테이 마포</a>
 	                        <a href="#">신라스테이 서대문</a>
                         </li>
                         <li>
-                        <img src="http://localhost:9000/index/resources/images/findHotel/hotelList_tit02.gif">
+                        <img src="http://localhost:9000/hotelresources/img/findHotel/hotelList_tit02.gif">
 	                        <a href="#">신라스테이 역삼</a>
 	                        <a href="#">신라스테이 서초</a>
 	                        <a href="#">신라스테이 구로</a>
 	                        <a href="#">신라스테이 삼성</a>
 	                   </li>                        
                         <li>
-                        <img src="http://localhost:9000/index/resources/images/findHotel/hotelList_tit03.gif">
+                        <img src="http://localhost:9000/hotel/resources/img/findHotel/hotelList_tit03.gif">
                         <a href="#">신라스테이 동탄</a>
                         <a href="#">신라스테이 천안</a>
                         <a href="#">신라스테이 울산</a>

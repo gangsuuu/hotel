@@ -7,9 +7,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<link rel="stylesheet" href="http://localhost:9000/index/resources/css/index.css">
-<link rel="stylesheet" href="http://localhost:9000/index/resources/css/admin.css">
-<link rel="stylesheet" href="http://localhost:9000/index/resources/css/public.css">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/admin.css">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/public.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script>
@@ -162,7 +162,7 @@
 				for(logo of files.file){
 					if(logo.position == "logo"){
 						let src = logo.bsfilename;
-						$(".index_edit_header_logo").css({'background':"url(http://localhost:9000/index/resources/upload/"+src+")", 'background-repeat' : 'no-repeat', 'background-size':'100% 100%'});
+						$(".index_edit_header_logo").css({'background':"url(http://localhost:9000/hotel/resources/upload/"+src+")", 'background-repeat' : 'no-repeat', 'background-size':'100% 100%'});
 						$("#edit_logo_bsfile").val(src);
 					}
 				}
@@ -177,18 +177,18 @@
 </script>
 </head>
 <body>
-	<script type="text/javascript"  src="http://localhost:9000/index/resources/js/header.js"></script>
-	<script type="text/javascript"  src="http://localhost:9000/index/resources/js/header_find_hotel.js"></script>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
 	<div class="content">
         <div class="content_lists">
             <div class="content_inmenu">   
                 <h2 class="suject">소개</h2>
                 <ul>
-                   <li><a href="http://localhost:9000/index/hotelOverView.do" class="content_list">신라스테이 소개</a></li>
-                   <li class=" content_selected"><a href="http://localhost:9000/index/brandStory.do" class="content_list content_selected">브랜드 스토리</a></li>
+                   <li><a href="http://localhost:9000/hotel/hotelOverView.do" class="content_list">신라스테이 소개</a></li>
+                   <li class=" content_selected"><a href="http://localhost:9000/hotel/brandStory.do" class="content_list content_selected">브랜드 스토리</a></li>
                    <li><a href="" class="content_list">호텔 소식</a></li>
                    <li><a href="" class="content_list">IR 자료실</a></li>
-                   <li><a href="http://localhost:9000/index/careers.do" class="content_list">채용</a></li>
+                   <li><a href="http://localhost:9000/hotel/careers.do" class="content_list">채용</a></li>
                 </ul>
             </div>
        	</div>
@@ -239,6 +239,6 @@
     		<input class="index_edit_header_logo_input" id="hotel_edit_hotelname" name="hotelname" type="hidden">
     	</form>
 	</div>
-	<script type="text/javascript"  src="http://localhost:9000/index/resources/js/footer.js"></script>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
 </body>
 </html>
