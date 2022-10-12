@@ -253,7 +253,6 @@
 									</c:choose>
 								<%-- </c:forEach> --%> 
 							
-								
 														
 							</td>
 							<td>writer</td>
