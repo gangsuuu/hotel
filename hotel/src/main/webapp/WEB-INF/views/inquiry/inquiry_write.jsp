@@ -159,9 +159,9 @@
 									</th>
 									<td colspan="3">
 										<div class="selector">
-											<input type="radio" name="hotelname" value='hotel'><span>신라호텔</span>
-											<input type="radio" name="hotelname" value='stay'><span>신라스테이</span>
-											<input type="radio" name="hotelname" value='development'><span>호텔개발</span>
+											<input type="radio" name="hotelname" value='신라호텔'><span>신라호텔</span>
+											<input type="radio" name="hotelname" value='신라스테이'><span>신라스테이</span>
+											<input type="radio" name="hotelname" value='호텔개발'><span>호텔개발</span>
 										</div>
 									</td>
 								</tr>

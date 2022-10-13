@@ -15,8 +15,13 @@
 				<when test="searchlist == 'title'">
 					where title like '%'||#{keyword}||'%'
 				</when>
+
+				<when test="searchlist == 'hotel'">
+					where hotelname like '%'||#{keyword}||'%'
+				</when>
+
 				<otherwise>
-					where iid like '%'||#{keyword}||'%'
+					where category like '%'||#{keyword}||'%' 
 				</otherwise>
 			</choose>
 		
@@ -25,17 +30,20 @@
 	<!-- inquiry search -->
 	<select id="search" parameterType="com.hotel.vo.HotelSearchVO" resultType="com.hotel.vo.HotelInquiryVO">
 		
-		select rno, iid, category, title, content, secret, secretnum, ifile, isfile, idate 
-		from (select rownum rno, iid, category, title, content, secret, secretnum, ifile, isfile, idate 
-				from (select iid, category, title, content, secret, secretnum, ifile, isfile, idate 
+		select rno, iid, hotelname, category, title, content, secret, secretnum, ifile, isfile, idate 
+		from (select rownum rno, iid, hotelname, category, title, content, secret, secretnum, ifile, isfile, idate 
+				from (select iid, hotelname, category, title, content, secret, secretnum, ifile, isfile, idate 
 						from hotel_inquiry 
 						
 						  <choose>
 						    <when test="searchlist == 'title'">
 									where title like '%'||#{keyword}||'%' order by idate desc)
 						    </when>
+						    <when test="searchlist == 'hotel'">
+									where hotelname like '%'||#{keyword}||'%' order by idate desc)
+						    </when>
 						    <otherwise>
-						      		where iid like '%'||#{keyword}||'%' order by idate desc)
+						      		where category like '%'||#{keyword}||'%' order by idate desc)
 						    </otherwise>
 						  </choose>
  				) 
@@ -75,14 +83,14 @@
 	<!-- inquiry list -->
 	<select id="list" parameterType="map" resultType="com.hotel.vo.HotelInquiryVO">
 	
-		SELECT RNO, IID, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, RCOUNT FROM
-			(SELECT ROWNUM RNO, IID, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, rcount FROM
-				(SELECT IID, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, count(rcount) rcount FROM
-					(SELECT hi.IID, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, ri.iid rcount
+		SELECT RNO, IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, RCOUNT FROM
+			(SELECT ROWNUM RNO, IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, rcount FROM
+				(SELECT IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, count(rcount) rcount FROM
+					(SELECT hi.IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, ri.iid rcount
 					FROM hotel_inquiry hi, reply_inquiry ri 
 					where hi.iid = ri.iid(+)
 					)
-					GROUP BY IID, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE
+					GROUP BY IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE
 					order by idate desc
 				)      
 			) 
@@ -93,7 +101,7 @@
 	<!-- inquiry content -->
 	<select id="content" parameterType="java.lang.String" resultType="com.hotel.vo.HotelInquiryVO">
 	
-		select iid, category, idate, title, content, secret, secretnum, ifile, isfile from hotel_inquiry
+		select iid, hotelname, category, idate, title, content, secret, secretnum, ifile, isfile from hotel_inquiry
 			where iid = #{iid}
 	
 	</select>
@@ -102,7 +110,7 @@
 	<insert id="insert" parameterType="com.hotel.vo.HotelInquiryVO">
 		
 		insert into hotel_inquiry values('i_'||sequ_hotel_inquiry.nextval,
-		#{category}, #{title}, #{content}, #{secret}, #{secretnum}, #{ifile}, #{isfile}, sysdate)
+			#{category}, #{title}, #{content}, #{secret}, #{secretnum}, #{ifile}, #{isfile}, sysdate, #{hotelname})
 	
 	</insert>
 
