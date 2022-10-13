@@ -12,7 +12,7 @@ public class IndexController {
 	 *	shillastayindex.do
 	 *	shillastay 타입의 페이지 
 	 */
-	@RequestMapping(value="/shillastayindex.do",method=RequestMethod.GET)
+	@RequestMapping(value="shillastayindex.do",method=RequestMethod.GET)
 	public ModelAndView shillastayindex(String hotelname) {
 		ModelAndView mv = new ModelAndView();
 		

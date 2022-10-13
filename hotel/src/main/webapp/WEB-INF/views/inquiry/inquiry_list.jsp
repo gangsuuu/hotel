@@ -214,7 +214,8 @@
 					<table id="listtable" border=1px solid>
 						<tr>
 							<th>No.</th>
-							<th>분류</th>
+							<th>구분</th>
+							<th>문의</th>
 							<th id="tabletitle">제목</th>
 							<th>작성자</th>							
 							<th>등록일자</th>							
@@ -222,9 +223,9 @@
 						<c:forEach var="vo" items="${list}">
 						<tr>
 							<td>${ vo.rno }</td>
+							<td>${ vo.hotelname }</td>
 							<td>${ vo.category }</td>
-							<td>
-							
+							<td>							
 							
 								<%-- <c:forEach var="re" items="${reply}"> --%>
 									<c:choose>
@@ -259,7 +260,7 @@
 						</tr>
 						</c:forEach>
 						<tr>
-							<td colspan="5"><div id="ampaginationsm"></div></td>
+							<td colspan="6"><div id="ampaginationsm"></div></td>
 						</tr>
 					</table>
 								<!-- div를 forEach안에 두면 계속 생겨서 오류걸림, 밖으로 빼기 -->

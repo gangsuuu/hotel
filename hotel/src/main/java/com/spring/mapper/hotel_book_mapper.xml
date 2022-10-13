@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.book">
+	
+	<!-- basket insert -->
+	<insert id="insert" parameterType="com.hotel.vo.BookVO">
+		insert into book (mid,bid,radatestart,radateend,price,booknum) values(#{mid},#{bid},#{radatestart},#{radateend},#{price},book_SEQ.nextval)
+	</insert>
+	
+	
+	
+</mapper>

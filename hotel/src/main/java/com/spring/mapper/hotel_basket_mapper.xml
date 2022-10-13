@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.basket">
+	
+	<!-- basket insert -->
+	<insert id="insert" parameterType="com.hotel.vo.BasketVO">
+		insert into basket values(#{bid},#{bprice},#{brname},#{bfile},#{bsfile})
+	</insert>
+	
+	<!-- basket selectAll -->
+	<select id="selectAll" resultType="com.hotel.vo.BasketVO">
+		select bid,bprice,brname,bfile,bsfile from basket
+	</select> 
+	
+	<!--  basket delete -->
+	<delete id="delete" parameterType="java.lang.String">
+		delete from basket where bid=#{bid}
+	</delete>
+	
+	<!-- basket select -->
+	<select id="select" resultType="com.hotel.vo.BasketVO" parameterType="java.lang.String">
+		select bid,bprice,brname,bfile,bsfile from basket where bid=#{bid}
+	</select>
+	
+	<!-- basket update -->
+	<update id="update" parameterType="com.hotel.vo.BasketVO">
+		update basket set bprice=#{bprice}, brname=#{brname}, bfile=#{bfile}, bsfile=#{bsfile} 
+		 where bid=#{bid}
+	</update>
+	
+</mapper>

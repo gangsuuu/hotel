@@ -24,7 +24,7 @@
 			 <!-- contents -->
 			<div class="contents">
 		<h1>공지사항-수정하기</h1>
-		<form name="boardUpdateForm" action="admin_event_update_check.do" method="post"
+		<form name="boardUpdateForm" action="admin_notice_update_check.do" method="post"
 		enctype ="multipart/form-data">
 			<input type="hidden" name="nid" value="${vo.nid }">
 			<input type="hidden" name="nfile" value="${vo.nfile }">
@@ -33,6 +33,13 @@
 				<li>
 					<label>제목</label>
 					<input type="text" name="ntitle" id="ntitle" value="${vo.ntitle }">
+				</li>
+				<li>
+					<label>태그</label>
+					<select name="ntag" id="ntag">
+						<option value="event">이벤트</option>
+						<option value="notice">공지</option>
+						</select>
 				</li>
 				<li>
 					<label>내용</label>

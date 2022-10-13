@@ -154,6 +154,8 @@
 /*******************/
 .customerBoard { border-collapse:collapse; text-align:center; width:869px; border-color:#cdcbbe; margin-left: 5px; }
 .customerBoard tr:first-child { background-color: #ebe7e3; height:38px; font-size:16px;}
+.customerBoard tr:first-child td, .customerBoard tr:nth-child(2) td { text-align:center;}
+.customerBoard tr:nth-child(2) { background-color: #ebe7e3; height:38px; font-size:16px;}
 .customerBoard tr { height:35px; font-size:14px; }
 .customerBoard a { color:black; text-decoration:none; }
 .customerBoard td { text-align: left; padding-left: 10px; }
@@ -240,8 +242,8 @@
 					<table border=1 class="customerBoard">
 						<input type="hidden" >
 						<tr>
-							<th>호텔선택</th>
-							<td>${vo.hotelname }</td>
+							<th colspan="2">호텔선택</th>
+							<td colspan="2">${vo.hotelname }</td>
 						</tr>
 						<tr>
 							<th>문의유형</th>

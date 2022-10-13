@@ -102,7 +102,7 @@
 					                <c:forEach var="vo"  items="${list}">
 								<tr>
 									<td>${vo.rno }</td>
-									<td><a href="admin_event_content.do?nid=${vo.nid }">${vo.ntitle }</a></td>
+									<td><a href="admin_notice_content.do?nid=${vo.nid }">${vo.ntitle }</a></td>
 									<td>${vo.nhits }</td>
 									<td>${vo.ndate }</td>
 								</tr>
