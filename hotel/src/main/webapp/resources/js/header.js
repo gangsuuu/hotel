@@ -1,6 +1,5 @@
-
 $.ajax({
-	url:"header_getCategori.do?hotelname="+hotelname,
+	url:"/hotel/header_getCategori.do?hotelname="+hotelname,
 	success:function(result){
 		let dataset = JSON.parse(result);
 		let type = dataset.style
@@ -18,7 +17,7 @@ $.ajax({
 			output += "</div>"
 			
 			output += "<div class='header_top_mid'>";
-			output += "<a href='http://localhost:9000/hotel/shillastayindex.do?hotelname="+hotelname+"' class='header_top_mid_logo logo_hub'></a>"
+			output += "<a href='http://localhost:9000/hotel/shillastayindex.do' class='header_top_mid_logo logo_hub'></a>"
 			output += "</div>"
 			
 			output += "<div class='header_top_right'>";
@@ -29,11 +28,11 @@ $.ajax({
 			
 			output += "<div class='header_top_list'>";
 			
-			for(list of dataset.categori){
-				if(list.categoridept == 1){
-				output += "<a href='#'>"+list.categoriname+"</a>"
-				}
-			}
+			
+			output += "<a href='http://localhost:9000/hotel/shillastayindex.do'>스페셜 오퍼</a>"
+			output += "<a href='http://localhost:9000/hotel/shillastayindex/aboutShillaStay.do'>호텔소개</a>"
+			output += "<a href='http://localhost:9000/hotel/shillastayindex/findHotel.do'>위치찾기</a>"
+				
 			output += "</div>";
 			
 			output += "</div>";
