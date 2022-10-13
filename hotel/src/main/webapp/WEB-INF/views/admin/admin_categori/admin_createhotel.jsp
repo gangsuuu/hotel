@@ -47,14 +47,12 @@
  	<div class="content">
         <div class="content_lists">
             <div class="content_inmenu">   
-                <h2 class="suject">소개</h2>
+                <h2 class="suject">Admin</h2>
                 <ul>
-                   <li><a href="http://localhost:9000/hotel/hotelOverView.do" class="content_list">신라스테이 소개</a></li>
-                   <li class=" content_selected"><a href="http://localhost:9000/hotel/brandStory.do" class="content_list content_selected">브랜드 스토리</a></li>
+                   <li><a href="http://localhost:9000/hotel/admin_hotel_categori.do" class="content_list">카데고리 수정</a></li>
+                   <li class=" content_selected"><a href="http://localhost:9000/hotel/createhotel.do" class="content_list content_selected">호테 생성</a></li>
                    <!-- 백그라운드 컬러,  after 보더 컬러-->
-                   <li><a href="" class="content_list">호텔 소식</a></li>
-                   <li><a href="" class="content_list">IR 자료실</a></li>
-                   <li><a href="http://localhost:9000/hotel/careers.do" class="content_list">채용</a></li>
+                   <li><a href="http://localhost:9000/hotel/edit_index.do" class="content_list">인덱스페이지</a></li>
                 </ul>
             </div>
        	</div>

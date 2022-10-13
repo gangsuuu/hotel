@@ -9,7 +9,8 @@ public class PageServiceImpl {
 
 	@Autowired
 	private InquiryServiceImpl inquiryService;
-	
+	@Autowired
+	private NoticeServiceImpl noticeService;
 
 	
 	/**
@@ -31,6 +32,10 @@ public class PageServiceImpl {
 			dbCount = inquiryService.getTotalCount();
 			//pageSize=10; 여기서 페이지 사이즈 조절도 가능하다.
 		
+		}else if(serviceName.equals("notice")) {
+			noticeService = (NoticeServiceImpl)service;
+			dbCount = noticeService.getTotalCount();
+			pageSize = 10;
 		}
 				
 		//총 페이지 수 계산

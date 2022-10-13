@@ -1,10 +1,10 @@
-package com.notice.service;
+package com.spring.service;
 
 import java.util.ArrayList;
 
 import org.springframework.stereotype.Service;
 
-import com.notice.vo.NoticeVO;
+import com.hotel.vo.NoticeVO;
 
 @Service
 public interface NoticeService {
@@ -14,6 +14,7 @@ public interface NoticeService {
 	ArrayList<NoticeVO> event_list_search(int startCount,int endCount,String search_option,String keyword);
 	//public int getDelete(String nid);
 	public int getUpdate(NoticeVO vo);
+	public int getDelete(NoticeVO vo);
 	public int getWriteResult(NoticeVO vo);
 	public NoticeVO getContent(String nid);
 	public int getTotalCount();

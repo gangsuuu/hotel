@@ -300,27 +300,24 @@ public class HotelListDAO extends DBConn {
 	/***********************************************
 			3.hotel_index_edit
 	***********************************************/
-	public int editHotelLogo(HotelListVO vo) {
+	public int editHotelLogo(HotelListVO vo,String type) {
 		int result = 0;
 		String sql = ""; 
-		if(vo.getHotelcontentbsfile() == "") {
+		if(type == "new") {
 			sql = "insert into categoricontent values(?,'','logo',?,?,0,'')";
 		}else {
 			sql = "update categoricontent set hotelcontentfile = ?, hotelcontentbsfile = ? where hotelfileposition = 'logo' and hotelname =?";
 		}
 		try {
 			getPreparedStatment(sql);
-			if(vo.getHotelcontentbsfile() == ""){
+			if(type == "new"){
 				pstmt.setString(1, vo.getHotelname());
 				pstmt.setString(2, vo.getHotelcontentfile());
 				pstmt.setString(3, vo.getHotelcontentbsfile());
-			}else if(vo.getHotelcontentbsfile() != "") {
+			}else{
 				pstmt.setString(1, vo.getHotelcontentfile());
 				pstmt.setString(2, vo.getHotelcontentbsfile());
 				pstmt.setString(3, vo.getHotelname());
-				System.out.println("업데이트 완료");
-			}else {
-				
 			}
 			
 			result = pstmt.executeUpdate();

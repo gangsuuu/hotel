@@ -1,4 +1,4 @@
-package com.notice.dao;
+package com.hotel.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.notice.vo.NoticeVO;
+import com.hotel.vo.NoticeVO;
 
 
 @Repository
@@ -33,6 +33,13 @@ public class NoticeDAO {
 	 */
 	public int update(NoticeVO vo) {
 		return sqlSession.update("mapper.notice.update", vo);
+	}
+	
+	/**
+	 * delete : 공지사항 업데이트 
+	 */
+	public int delete(NoticeVO vo) {
+		return sqlSession.delete("mapper.notice.delete", vo);
 	}	
 	
 	/**

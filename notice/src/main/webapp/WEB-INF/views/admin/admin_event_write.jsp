@@ -22,8 +22,8 @@
 			 <!-- 좌측 메뉴 end-->
 			 <!-- contents -->
 			<div class="contents" id="contents">
-			 <h1>공지사항-글쓰기</h1>
-		<form name="boardWriteForm" action="admin_event_write_check.do" 
+			 <h1>이벤트-글쓰기</h1>
+		<form name="boardWriteForm" action="admin_notice_write_check.do" 
 			method="post" enctype="multipart/form-data">
 			<ul>
 				<li>

@@ -35,6 +35,13 @@
 					<input type="text" name="ntitle" id="ntitle" value="${vo.ntitle }">
 				</li>
 				<li>
+					<label>태그</label>
+					<select name="ntag" id="ntag">
+						<option value="notice">공지</option>
+						<option value="event">이벤트</option>
+						</select>
+				</li>
+				<li>
 					<label>내용</label>
 					<textarea name="ncontent" rows="8" cols="60">${vo.ncontent }</textarea>
 				</li>
