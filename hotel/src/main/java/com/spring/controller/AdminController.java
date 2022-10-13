@@ -231,7 +231,7 @@ public class AdminController {
 	ArrayList<HotelListVO> list = dao.selecthotelist();
 	
 	mv.addObject("list",list);
-	mv.setViewName("admin/adming_categori/Categori");
+	mv.setViewName("admin/admin_categori/admin_edit_Categori");
 	return mv;
 	}
 	
@@ -400,7 +400,7 @@ public class AdminController {
 		ArrayList<HotelListVO> list = dao.selecthotelist();
 		
 		mv.addObject("list",list);
-		mv.setViewName("admin/admin_categori/createhotel");
+		mv.setViewName("admin/admin_categori/admin_createhotel");
 		return mv;
 	}
 	/**
@@ -424,13 +424,13 @@ public class AdminController {
 	*  edite_index.do
 	*  호텔 등록하기
 	*/
-	@RequestMapping(value="/edite_index.do",method=RequestMethod.GET)
+	@RequestMapping(value="/edit_index.do",method=RequestMethod.GET)
 	public ModelAndView edite_index() {
 		ModelAndView mv = new ModelAndView();		
 		HotelListDAO dao = new HotelListDAO();
 		ArrayList<HotelListVO> list = dao.selecthotelist();
 		mv.addObject("list",list);
-		mv.setViewName("admin/admin_categori/hoteledit");
+		mv.setViewName("admin/admin_categori/admin_hotel_indexedit");
 		return mv;
 	}
 	/**
@@ -466,6 +466,11 @@ public class AdminController {
 	public String hotelEditlogo(HotelListVO vo, HttpServletRequest request) throws Exception{
 		String result = "";
 		HotelListDAO dao = new HotelListDAO();
+		String type ="";
+		if(vo.getHotelcontentbsfile().equals("new")) {
+			type = "new";
+		}
+		
 			if(vo.getCategorifile1().getOriginalFilename().equals("")) {
 				result = "false";
 			}else {
@@ -473,11 +478,11 @@ public class AdminController {
 				UUID uuid = UUID.randomUUID();
 				vo.setHotelcontentfile(vo.getCategorifile1().getOriginalFilename());
 				vo.setHotelcontentbsfile(uuid+vo.getCategorifile1().getOriginalFilename());
-				int resultDao = dao.editHotelLogo(vo);
+				int resultDao = dao.editHotelLogo(vo,type);
 				if(resultDao == 1) {
 					if(!vo.getCategorifile1().getContentType().equals("")) {
 						String path = request.getSession().getServletContext().getRealPath("/");
-						path += "\\resources\\upload\\";
+						path += "\\resources\\upload\\hotelfile\\";
 						File file = new File(path+vo.getHotelcontentbsfile());
 						vo.getCategorifile1().transferTo(file);
 						

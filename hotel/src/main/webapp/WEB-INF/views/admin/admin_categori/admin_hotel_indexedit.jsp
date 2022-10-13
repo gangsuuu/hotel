@@ -163,7 +163,13 @@
 					if(logo.position == "logo"){
 						let src = logo.bsfilename;
 						$(".index_edit_header_logo").css({'background':"url(http://localhost:9000/hotel/resources/upload/"+src+")", 'background-repeat' : 'no-repeat', 'background-size':'100% 100%'});
-						$("#edit_logo_bsfile").val(src);
+						if(src == ""){
+							$("#edit_logo_bsfile").val("new");
+						}else{
+							$("#edit_logo_bsfile").val(src);
+						}
+						
+						
 					}
 				}
 			}
@@ -182,13 +188,12 @@
 	<div class="content">
         <div class="content_lists">
             <div class="content_inmenu">   
-                <h2 class="suject">소개</h2>
+                <h2 class="suject">Admin</h2>
                 <ul>
-                   <li><a href="http://localhost:9000/hotel/hotelOverView.do" class="content_list">신라스테이 소개</a></li>
-                   <li class=" content_selected"><a href="http://localhost:9000/hotel/brandStory.do" class="content_list content_selected">브랜드 스토리</a></li>
-                   <li><a href="" class="content_list">호텔 소식</a></li>
-                   <li><a href="" class="content_list">IR 자료실</a></li>
-                   <li><a href="http://localhost:9000/hotel/careers.do" class="content_list">채용</a></li>
+                   <li><a href="http://localhost:9000/hotel/admin_hotel_categori.do" class="content_list">카데고리 수정</a></li>
+                   <li class=" content_selected"><a href="http://localhost:9000/hotel/createhotel.do" class="content_list content_selected">호테 생성</a></li>
+                   <!-- 백그라운드 컬러,  after 보더 컬러-->
+                   <li><a href="http://localhost:9000/hotel/edit_index.do" class="content_list">인덱스페이지</a></li>
                 </ul>
             </div>
        	</div>
@@ -202,7 +207,6 @@
 				<div class='endedtitable index_edit_header'>
 					<div class='index_edit_header_logo' onclick="editLogo()">
 					</div>
-					
 				</div>	     	
 	     		<div class='endedtitable index_edit_add'>
 	     			<ul class="index_edit_add_list">
@@ -232,6 +236,10 @@
 		    <div class="">
 		        <button id='categori_edit_done'>수정완료</button>
 		    </div>
+    	</div>
+    	<div>
+    		<div>헤더 로고설정</div>
+    		<div></div>
     	</div>
     	<form  class="hotel_edit_input_logo" name="hotel_edit_input_logo" action="indexEdit_logo.do" method="post" enctype="multipart/form-data">
     		<input class="index_edit_header_logo_input" id="insert_logo" name="categorifile1" type="file">
