@@ -6,6 +6,24 @@
     
 <mapper namespace="mapper.inquiry">
 	
+	<!-- inquiry mylist -->
+	<select id="mylist" parameterType="map" resultType="com.hotel.vo.HotelInquiryVO">
+	
+		SELECT RNO, IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID, RCOUNT FROM
+			(SELECT ROWNUM RNO, IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID, rcount FROM
+				(SELECT IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID, count(rcount)  rcount FROM
+					(SELECT hi.IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID, ri.iid rcount
+					FROM hotel_inquiry hi, reply_inquiry ri 
+					where hi.iid = ri.iid(+)
+					)
+					GROUP BY IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID
+					order by idate desc
+				)      
+			) 
+		WHERE MID=#{MID}
+	
+	</select>
+	
 	
 	<!-- inquiry searchcount -->
 	<select id="searchcount" parameterType="com.hotel.vo.HotelSearchVO" resultType="com.hotel.vo.HotelInquiryVO">
@@ -83,14 +101,14 @@
 	<!-- inquiry list -->
 	<select id="list" parameterType="map" resultType="com.hotel.vo.HotelInquiryVO">
 	
-		SELECT RNO, IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, RCOUNT FROM
-			(SELECT ROWNUM RNO, IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, rcount FROM
-				(SELECT IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, count(rcount) rcount FROM
-					(SELECT hi.IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, ri.iid rcount
+		SELECT RNO, IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID, RCOUNT FROM
+			(SELECT ROWNUM RNO, IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID, rcount FROM
+				(SELECT IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID, count(rcount)  rcount FROM
+					(SELECT hi.IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID, ri.iid rcount
 					FROM hotel_inquiry hi, reply_inquiry ri 
 					where hi.iid = ri.iid(+)
 					)
-					GROUP BY IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE
+					GROUP BY IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID
 					order by idate desc
 				)      
 			) 
@@ -101,7 +119,7 @@
 	<!-- inquiry content -->
 	<select id="content" parameterType="java.lang.String" resultType="com.hotel.vo.HotelInquiryVO">
 	
-		select iid, hotelname, category, idate, title, content, secret, secretnum, ifile, isfile from hotel_inquiry
+		select iid, hotelname, category, idate, title, content, secret, secretnum, ifile, isfile, mid from hotel_inquiry
 			where iid = #{iid}
 	
 	</select>
@@ -110,7 +128,7 @@
 	<insert id="insert" parameterType="com.hotel.vo.HotelInquiryVO">
 		
 		insert into hotel_inquiry values('i_'||sequ_hotel_inquiry.nextval,
-			#{category}, #{title}, #{content}, #{secret}, #{secretnum}, #{ifile}, #{isfile}, sysdate, #{hotelname})
+			#{category}, #{title}, #{content}, #{secret}, #{secretnum}, #{ifile}, #{isfile}, sysdate, #{hotelname}, #{mid})
 	
 	</insert>
 
