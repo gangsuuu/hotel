@@ -18,7 +18,7 @@ $.ajax({
 			output += "</div>"
 			
 			output += "<div class='header_top_mid'>";
-			output += "<a href='http://localhost:9000/index/shillastayindex.do?hotelname="+hotelname+"' class='header_top_mid_logo logo_hub'></a>"
+			output += "<a href='http://localhost:9000/hotel/shillastayindex.do?hotelname="+hotelname+"' class='header_top_mid_logo logo_hub'></a>"
 			output += "</div>"
 			
 			output += "<div class='header_top_right'>";
@@ -54,7 +54,7 @@ $.ajax({
 			
 			output += "</div>";
 			output += "<div class='header_top_mid'>";
-			output += "<a href='http://localhost:9000/index/shillastayindex.do?hotelname="+hotelname+"' class='header_top_mid_logo logo_hub'></a>";
+			output += "<a href='http://localhost:9000/hotel/shillastayindex.do?hotelname="+hotelname+"' class='header_top_mid_logo logo_hub'></a>";
 			output += "</div>";
 			output += "<div class='header_top_right'>";
 			output += "<div class='header_top_guest theme1_guest'>";
@@ -105,7 +105,7 @@ $.ajax({
 			output += "<div><a href='javascript:findhotel()'>호텔찾기</a></div>";
 			output += "</div>";
 			output += "<div class='header_top_mid'>";
-			output += "<a href='http://localhost:9000/index/shillastayindex.do?hotelname="+hotelname+"' class='header_top_mid_logo logo_hub'></a>";
+			output += "<a href='http://localhost:9000/hotel/shillastayindex.do?hotelname="+hotelname+"' class='header_top_mid_logo logo_hub'></a>";
 			output += "</div>";
 			output += "<div class='header_top_right'>";
 			output += "<div class='header_top_guest theme2_guest'>";
@@ -148,7 +148,7 @@ $.ajax({
 			output += "</header>";
 		}
 			$('body').children().first().before(output);
-			$('.header_top_mid_logo').css({'background':"url(http://localhost:9000/index/resources/upload/"+logosrc+")", 'background-repeat' : 'no-repeat', 'background-size':'100% 100%'});
+			$('.header_top_mid_logo').css({'background':"url(http://localhost:9000/hotel/resources/upload/hotelfile/"+logosrc+")", 'background-repeat' : 'no-repeat', 'background-size':'100% 100%'});
 			
 	}
 })
