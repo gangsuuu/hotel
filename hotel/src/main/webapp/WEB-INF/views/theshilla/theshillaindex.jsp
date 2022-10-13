@@ -12,10 +12,9 @@
 <script>
 	var hotelname = "${hotelname}";
 	if(hotelname == ""){
-		hotelname = "stayhub";
+		hotelname = "theshilla";
 	}
 </script>
-
 </head>
 <body>
 	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>

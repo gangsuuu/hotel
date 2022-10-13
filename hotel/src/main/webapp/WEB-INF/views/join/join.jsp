@@ -8,7 +8,12 @@
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/myhotel_jquery.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 
+<script>
+	var hotelname = "theshilla";
+</script>
 <script>
 $(document).ready(function(){
 	
@@ -45,6 +50,9 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
+
 <div class="content">
    <h1>회원가입</h1>
    <form name="joinForm"  action="joinCheck.do"  method="post">
@@ -115,5 +123,6 @@ $(document).ready(function(){
    
    </form>
    </div>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
 </body>
 </html>

@@ -77,16 +77,16 @@ public class IndexController {
 	 *	thesholla.do
 	 *	shillastay 타입의 페이지 
 	 */
-	@RequestMapping(value="thesholla.do",method=RequestMethod.GET)
+	@RequestMapping(value="theshilla.do",method=RequestMethod.GET)
 	public ModelAndView theshollaindex(String hotelname) {
 		ModelAndView mv = new ModelAndView();
 		
 		if(hotelname == null) {
-			hotelname = "stayhub";
+			hotelname = "theshilla";
 		}
 		
 		mv.addObject("hotelname", hotelname);
-		mv.setViewName("thesholla/theshollaindex");
+		mv.setViewName("theshilla/theshillaindex");
 		return mv;
 	}
 }

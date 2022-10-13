@@ -5,7 +5,7 @@ $.ajax({
 		let type = dataset.style
 		let logosrc = dataset.logoSrc
 		let output = "";	
-		if(type == 'hub'){
+		if(type == 'shillastay'){
 		//hub페이지 출력
 			output += "<header class='hub'>";
 			output += "<div class='header'>";	
@@ -13,7 +13,7 @@ $.ajax({
 			
 			output += "<div class='header_top_left left_hub'>";
 			output += "<div><a href='javascript:findhotel()'>호텔찾기</a></div>";
-			output += "<div><span>예약</span></div>";  
+			output += "<div><a href='http://localhost:9000/hotel/list.do'>예약</a></div>";
 			output += "</div>"
 			
 			output += "<div class='header_top_mid'>";
@@ -22,7 +22,7 @@ $.ajax({
 			
 			output += "<div class='header_top_right'>";
 			output += "<div class='header_top_guest'>";			
-			output += "<a class='header_login' href='#'>로그인</a>";
+			output += "<a class='header_login' href='http://localhost:9000/hotel/login.do'>로그인</a>";
 			output += "<a href='#'>예약확인</a>";
 			output += "</div>";
 			
@@ -57,7 +57,7 @@ $.ajax({
 			output += "</div>";
 			output += "<div class='header_top_right'>";
 			output += "<div class='header_top_guest theme1_guest'>";
-			output += "<a class='header_login' href='#'>로그인</a>";
+			output += "<a class='header_login' href='http://localhost:9000/hotel/login.do'>로그인</a>";
 			output += "<a href='#'>예약확인</a>";
 			output += "</div>";
 			output += "</div>";
@@ -86,7 +86,7 @@ $.ajax({
 			
 			output += "<div>";	
 			output += "<li class='header_maincategori_res'>";
-			output += "<a class='theme1_main_res' href='#'>예약</a>";
+			output += "<div><a href='http://localhost:9000/hotel/list.do'>예약</a></div>";  
 			output += "<ul class='header_subcategori_list theme1_sub_res_container'>";
 			output += "<li><a class='theme1_sub_res' id='header_subcategori' href='#'>객실</a></li>";
 			output += "<li><a class='theme1_sub_res' id='header_subcategori' href='#'>다이닝</a></li>";
@@ -108,7 +108,7 @@ $.ajax({
 			output += "</div>";
 			output += "<div class='header_top_right'>";
 			output += "<div class='header_top_guest theme2_guest'>";
-			output += "<a class='header_login' href='#'>로그인</a>";
+			output += "<a class='header_login' href='http://localhost:9000/hotel/login.do'>로그인</a>";
 			output += "<a href='#'>예약확인</a>";
 			output += "</div>";
 			output += "</div>";
@@ -138,11 +138,43 @@ $.ajax({
 			output += "<a class='theme2_main_seach' href='#'>위치찾기</a>";
 			output += "</li>";
 			output += "<li class='header_maincategori_res'>";
-			output += "<a class='theme2_main_res' href='#'>예약</a>";
+			output += "<a class='theme2_main_res' href='http://localhost:9000/hotel/list.do'>예약</a>";
 			output += "</li>";
 			output += "</div>";
 			
 			output += "</ul>";
+			output += "</div>";
+			output += "</header>";
+		}else if(type = "thesilla"){
+		output += "<header class='theme1'>";
+			output += "<div class='header'>";	
+			
+			
+			output += "<div class='header_top_left left_hub'>";
+			output += "<div><a href='javascript:findhotel()'>호텔찾기</a></div>";
+			output += "<div><a href='http://localhost:9000/hotel/list.do'>예약</a></div>";  
+			output += "</div>"
+			
+			output += "<div class='header_top_mid'>";
+			output += "<a href='http://localhost:9000/hotel/theshilla.do' class='header_top_mid_logo logo_hub'></a>"
+			output += "</div>"
+			
+			output += "<div class='header_top_right'>";
+			output += "<div class='header_top_guest'>";			
+			output += "<a class='header_login' href='http://localhost:9000/hotel/login.do'>로그인</a>";
+			output += "<a href='#'>예약확인</a>";
+			output += "</div>";
+			
+			output += "<div class='header_top_list'>";
+			
+			 
+			output += "<a href='http://localhost:9000/hotel/shillastayindex.do'>호텔신라 소개</a>"
+			output += "<a href='http://localhost:9000/hotel/inquiry_list.do'>고객문의</a>"
+			output += "<a href='http://localhost:9000/hotel/shillastayindex/findHotel.do'>신라리워즈</a>"
+				
+			output += "</div>";
+			
+			output += "</div>";
 			output += "</div>";
 			output += "</header>";
 		}

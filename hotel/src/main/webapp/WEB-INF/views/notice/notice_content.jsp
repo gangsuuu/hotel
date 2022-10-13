@@ -10,10 +10,16 @@
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/am-pagination.css">
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+	var hotelname = "theshilla";
+</script>
 </head>
 <body>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
 <div class="sub_title">
-<div class="header"></div>
 
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
@@ -55,6 +61,6 @@
 			</tr>			
 		</table>	
 	</div>
-			 <div class="footer"></div>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
 </body>
 </html>
