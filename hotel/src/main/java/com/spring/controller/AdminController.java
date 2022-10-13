@@ -532,7 +532,7 @@ public class AdminController {
 		mv.addObject("rPage", param.get("rPage"));
 		mv.addObject("keyword",keyword);
 		mv.addObject("search", "search");									// °Ë»ö µÆÀ½À» ¾Ë·ÁÁÖ´Â °´Ã¼
-		mv.setViewName("admin/admin_event_list_search");
+		mv.setViewName("admin/admin_notice/admin_event_list_search");
 		
 			return mv;
 		
@@ -558,7 +558,7 @@ public class AdminController {
 		mv.addObject("rPage", param.get("rPage"));
 		mv.addObject("keyword",keyword);
 		mv.addObject("search", "search");									// °Ë»ö ‰çÀ½À» ¾Ë·ÁÁÖ´Â °´Ã¼
-		mv.setViewName("admin/admin_notice_list_search");
+		mv.setViewName("admin/admin_notice/admin_notice_list_search");
 		
 		return mv;
 		
@@ -668,9 +668,9 @@ public class AdminController {
 		}
 		mv.addObject("vo", vo);
 		if(vo.getNtag().equals("event")) {
-			mv.setViewName("/admin/admin_event_content");
+			mv.setViewName("/admin/admin_notice/admin_event_content");
 		}else {
-			mv.setViewName("/admin/admin_notice_content");
+			mv.setViewName("/admin/admin_notice/admin_notice_content");
 		}
 		return mv;
 	}
@@ -687,7 +687,7 @@ public class AdminController {
 		vo.setNcontent(vo.getNcontent().replace("<br>","\r\n"));
 		
 		mv.addObject("vo",vo);
-		mv.setViewName("/admin/admin_event_update");
+		mv.setViewName("/admin/admin_notice/admin_event_update");
 		return mv;
 	}
 	
@@ -703,7 +703,7 @@ public class AdminController {
 		vo.setNcontent(vo.getNcontent().replace("<br>","\r\n"));
 		
 		mv.addObject("vo",vo);
-		mv.setViewName("/admin/admin_notice_update");
+		mv.setViewName("/admin/admin_notice/admin_notice_update");
 		return mv;
 	}
 	
@@ -712,7 +712,7 @@ public class AdminController {
 	 */
 	@RequestMapping(value="/admin_event_write.do" , method=RequestMethod.GET)
 	public String admin_event_write() {
-		String result =  "admin/admin_event_write";
+		String result =  "admin/admin_notice/admin_event_write";
 		return result;
 	}
 	
@@ -721,7 +721,7 @@ public class AdminController {
 	 */
 	@RequestMapping(value="/admin_notice_write.do" , method=RequestMethod.GET)
 	public String admin_notice_write() {
-		String result =  "admin/admin_notice_write";
+		String result =  "admin/admin_notice/admin_notice_write";
 		return result;
 	}
 	
@@ -741,7 +741,7 @@ public class AdminController {
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
 		mv.addObject("rPage", param.get("rPage"));
-		mv.setViewName("admin/admin_event_list");
+		mv.setViewName("admin/admin_notice/admin_event_list");
 			
 	
 			return mv;
@@ -762,14 +762,14 @@ public class AdminController {
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
 		mv.addObject("rPage", param.get("rPage"));
-			mv.setViewName("admin/admin_notice_list");
+			mv.setViewName("admin/admin_notice/admin_notice_list");
 			
 	
 			return mv;
 	}
 	
 	/*******************************************
-	 * ±è¹ÎÀç
+	 *±è¹ÎÀç ³¡
 	 *******************************************/
 	
 }
