@@ -4,7 +4,10 @@ import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.Email;
 import org.apache.commons.mail.HtmlEmail;
+import org.apache.commons.mail.SimpleEmail;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hotel.dao.HotelMemberDAO;
@@ -47,8 +50,8 @@ public class MemberServiceImpl implements MemberService {
 	 *  아이디 중복체크
 	 */
 	@Override
-	public int getIdCheck(String mid) {
-		int result = hotelMemberDAO.idCheck(mid);
+	public int getIdCheck(String hid) {
+		int result = hotelMemberDAO.idCheck(hid);
 		
 		return result;
 	}
@@ -56,44 +59,41 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public void sendEmail(HotelMemberVO vo, String div) throws Exception {
 		
-		// Mail Server 설정
+	/*	// Mail Server 설정
 		String charSet = "utf-8";
 		String hostSMTP = "smtp.naver.com"; //네이버 이용시 smtp.naver.com
 		String hostSMTPid = "서버 이메일 주소(보내는 사람 이메일 주소)";
 		String hostSMTPpwd = "서버 이메일 비번(보내는 사람 이메일 비번)";
 
 		// 보내는 사람 EMail, 제목, 내용
-		String fromEmail = "admin@hotel.co.kr";
+		String fromEmail = "admin@naver.com";
 		String fromName = "신라스테이";
 		String subject = "";
 		String msg = "";
-
+					
 		if(div.equals("findpw")) {
 			subject = "신라스테이 임시 비밀번호 입니다.";
 			msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
 			msg += "<h3 style='color: blue;'>";
-			msg += vo.getMid() + "님의 임시 비밀번호 입니다. 비밀번호를 변경하여 사용하세요.</h3>";
+			msg += vo.getHid() + "님의 임시 비밀번호 입니다. 비밀번호를 변경하여 사용하세요.</h3>";
 			msg += "<p>임시 비밀번호 : ";
 			msg += vo.getPass() + "</p></div>";
-		}
+		}*/
 
 		// 받는 사람 E-Mail 주소
-		String mail = vo.getHemail();
 		try {
-			HtmlEmail email = new HtmlEmail();
-			email.setDebug(true);
-			email.setCharset(charSet);
-			email.setSSL(true);
-			email.setHostName(hostSMTP);
-			email.setSmtpPort(587); //네이버 이용시 465
-
-			email.setAuthentication(hostSMTPid, hostSMTPpwd);
-			email.setTLS(true);
-			email.addTo(mail, charSet);
-			email.setFrom(fromEmail, fromName, charSet);
-			email.setSubject(subject);
-			email.setHtmlMsg(msg);
-			email.send();
+				Email email = new SimpleEmail(); 
+				email.setHostName("smtp.naver.com");
+				email.setSmtpPort(587) ;
+				email.setAuthenticator(new DefaultAuthenticator("fkiieyu4455@naver.com", "dlwlals1?")) ;
+				email.setStartTLSRequired(true) ;
+				email.setFrom("fkiieyu4455@naver.com") ;
+				email.setSubject("신라스테이 임시 비밀번호 입니다.") ;
+				email.setMsg(vo.getMid() + "님의 임시 비밀번호 입니다. 비밀번호를 변경하여 사용하세요."+"임시 비밀번호 :"+ vo.getPass());
+				email.addTo(vo.getHemail());  //받는사람
+				email.send();
+		
+				
 		} catch (Exception e) {
 			System.out.println("메일발송 실패 : " + e);
 		}
@@ -127,5 +127,4 @@ public class MemberServiceImpl implements MemberService {
 			out.close();
 		}
 	}
-	
 }

@@ -32,7 +32,7 @@ if(join_result == 'ok'){
 <section logincontain="" class="subcontain">
 	<div topstyl="" logincontain="" class="sub-top-area forms">
 		<div topstyl="" class="container">
-			<h2 topstyl="">로그인</h2>				
+			<h2 topstyl="">Login</h2>				
 		</div>
 	</div>
 </section>

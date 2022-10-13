@@ -11,7 +11,7 @@
     </update>
 
 <!--  notice search -->
-  	<select id="notice_search" parameterType="map" resultType="com.notice.vo.NoticeVO">
+  	<select id="notice_search" parameterType="map" resultType="com.hotel.vo.NoticeVO">
   	
    select rno, nid, ntag, ntitle, nhits, ndate
  from (select rownum rno, nid, ntag, ntitle, nhits, to_char(ndate, 'yyyy-mm-dd') ndate
@@ -21,7 +21,7 @@
   	
   	</select>
 <!--  event search -->
-  	<select id="event_search" parameterType="map" resultType="com.notice.vo.NoticeVO">
+  	<select id="event_search" parameterType="map" resultType="com.hotel.vo.NoticeVO">
   	
    select rno, nid, ntag, ntitle, nhits, ndate
  from (select rownum rno, nid, ntag, ntitle, nhits, to_char(ndate, 'yyyy-mm-dd') ndate
@@ -31,7 +31,7 @@
   	
   	</select>
   <!-- notice_list -->
- 	<select id="notice_list" parameterType="map" resultType="com.notice.vo.NoticeVO">
+ 	<select id="notice_list" parameterType="map" resultType="com.hotel.vo.NoticeVO">
  
  	select rno, nid, ntag, ntitle, nhits, ndate
  from (select rownum rno, nid, ntag, ntitle, nhits, to_char(ndate, 'yyyy-mm-dd') ndate
@@ -42,7 +42,7 @@
  </select>
  
   <!-- event_list -->
- 	<select id="event_list" parameterType="map" resultType="com.notice.vo.NoticeVO">
+ 	<select id="event_list" parameterType="map" resultType="com.hotel.vo.NoticeVO">
  
  	select rno, nid, ntag, ntitle, nhits, ndate
  from (select rownum rno, nid, ntag, ntitle, nhits, to_char(ndate, 'yyyy-mm-dd') ndate
@@ -53,7 +53,7 @@
  </select>
 
   <!-- insert -->	
-  <insert id="insert" parameterType="com.notice.vo.NoticeVO">
+  <insert id="insert" parameterType="com.hotel.vo.NoticeVO">
   
   	insert into notice_list values 
   	('n_'||sequ_notice_list.nextval, #{ntag}, #{ntitle}, #{ncontent}, 
@@ -62,7 +62,7 @@
   </insert>
   
   <!-- update -->
-	<update id="update" parameterType="com.notice.vo.NoticeVO">
+	<update id="update" parameterType="com.hotel.vo.NoticeVO">
 	
 		update notice_list set ntitle=#{ntitle}, ntag=#{ntag}, ncontent=#{ncontent}, nfile=#{nfile}, nsfile=#{nsfile} 
 		 where nid=#{nid}
@@ -73,7 +73,7 @@
 		delete from notice_list where nid=#{nid}
 	</delete>	
   <!--  content -->
-	<select id="content" parameterType="java.lang.String" resultType="com.notice.vo.NoticeVO">
+	<select id="content" parameterType="java.lang.String" resultType="com.hotel.vo.NoticeVO">
 	
 		select nid,ntag,ntitle,ncontent,nhits,ndate,nfile,nsfile 
 		from notice_list where nid=#{nid}
