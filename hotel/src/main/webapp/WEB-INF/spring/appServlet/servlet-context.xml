@@ -24,22 +24,24 @@
 	<!-- multipartResolver -->
 	<beans:bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver"> </beans:bean>
 	
-	<!-- service -->
+	<!-- service 김수민 -->
 	<beans:bean id="inquiryService" class="com.spring.service.InquiryServiceImpl"></beans:bean>
 	<beans:bean id="pageService" class="com.spring.service.PageServiceImpl"></beans:bean>
 	<beans:bean id="fileService" class="com.spring.service.FileServiceImpl"></beans:bean>
 	<beans:bean id="replyService" class="com.spring.service.ReplyInquiryServiceImpl"></beans:bean>
-	<beans:bean id="memberService" class="com.spring.service.MemberServiceImpl"></beans:bean>
+	<!--  service 이지민  -->
+	<beans:bean id ="memberService" class="com.spring.service.MemberServiceImpl"></beans:bean>
 		
-	<!-- dao 객체 생성 : 서비스impl객체에서 호출 -->
+	<!-- dao 객체 생성 : 김수민 -->
 	<beans:bean id="hotelinquirytDao"  class="com.hotel.dao.HotelInquiryDAO"></beans:bean>
 	<beans:bean id="replyinquirtDao"  class="com.hotel.dao.ReplyInquiryDAO"></beans:bean>
 	<beans:bean id="hotelmemberDao"  class="com.hotel.dao.HotelMemberDAO"></beans:bean>	
+	<!--  DAO 객체 생성 : 이지민  -->
+	<beans:bean id ="hotelMemberDAO" class="com.hotel.dao.HotelMemberDAO"></beans:bean>
+	
 	
 	<!-- Interceptor 객체 생성 -->
 	<beans:bean id="authInterceptor"  class="com.spring.interceptor.AuthInterceptor"></beans:bean>
-	
-	
 	
 		
 	<context:component-scan base-package="com.spring.hotel" />
