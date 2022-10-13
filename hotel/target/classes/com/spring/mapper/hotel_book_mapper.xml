@@ -6,7 +6,8 @@
 	
 	<!-- basket insert -->
 	<insert id="insert" parameterType="com.hotel.vo.BookVO">
-		insert into book (mid,bid,radatestart,radateend,price,booknum) values(#{mid},#{bid},#{radatestart},#{radateend},#{price},book_SEQ.nextval)
+		insert into book (mid,bid,radatestart,radateend,price,booknum) 
+		values(#{mid},#{bid},#{radatestart},#{radateend},#{price},book_SEQ.nextval)
 	</insert>
 	
 	

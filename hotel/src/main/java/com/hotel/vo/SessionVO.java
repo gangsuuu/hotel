@@ -4,7 +4,7 @@ public class SessionVO {
 
 	//변수선언
 	int loginresult;
-	String hid;
+	String mid;
 	
 	//setter,getter
 	public int getLoginresult() {
@@ -13,11 +13,11 @@ public class SessionVO {
 	public void setLoginresult(int loginresult) {
 		this.loginresult = loginresult;
 	}
-	public String getHid() {
-		return hid;
+	public String getMid() {
+		return mid;
 	}
-	public void setHid(String hid) {
-		this.hid = hid;
+	public void setMid(String mid) {
+		this.mid = mid;
 	}
 	
 	

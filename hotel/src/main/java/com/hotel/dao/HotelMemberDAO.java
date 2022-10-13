@@ -4,12 +4,17 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hotel.vo.HotelMemberVO;
+import com.hotel.vo.SessionVO;
 
 public class HotelMemberDAO extends DBConn{
 
 
 @Autowired
 private SqlSessionTemplate sqlSession;
+
+	public SessionVO login(HotelMemberVO vo) {
+		return sqlSession.selectOne("mapper.hotel.member.sessionlogin",vo);
+	}
 
 	/*
 	 * 비밀번호변경
@@ -46,9 +51,9 @@ private SqlSessionTemplate sqlSession;
 	/*
 	 * idCheck : 아이디 중복 체크
 	 */
-	public int idCheck(String hid) {
+	public int idCheck(String mid) {
 	
-		return sqlSession.selectOne("mapper.hotel.member.idcheck",hid);
+		return sqlSession.selectOne("mapper.hotel.member.idcheck",mid);
 		
 	}
 	

@@ -2,7 +2,7 @@
 	회원가입 폼 유효성 체크 --> 서버의 효율성을 높이기위함:부하를 줄임
 **********************/
 joinCheck = () => {
-	const hid = document.getElementById("hid");
+	const mid = document.getElementById("mid");
 	const pass = document.getElementById("pass");
 	const hpass = document.getElementById("hpass");
 	const hname = document.getElementById("hname");
@@ -15,9 +15,9 @@ joinCheck = () => {
 	const hpum2 = document.getElementById("hpum2");
 	const hpum3 = document.getElementById("hpum3");
 	
-	if(hid.value == ""){
+	if(mid.value == ""){
 		alert("아이디를 입력해주세요");
-		hid.focus();
+		mid.focus();
 		return false;
 	}else if(pass.value == ""){
 		alert("패스워드를 입력해주세요");
@@ -145,12 +145,12 @@ passCheck = () =>{
 **********************/
 //function loginCheck(){
 loginCheck = () => {  //arrow function:ES6
-	const hid = document.getElementById("hid");
+	const mid = document.getElementById("mid");
 	const pass = document.getElementById("pass");
 	
-	if(hid.value == ""){
+	if(mid.value == ""){
 		alert("아이디를 입력해주세요");
-		hid.focus();
+		mid.focus();
 		return false;
 	}else if(pass.value == ""){
 		alert("패스워드를 입력해주세요");

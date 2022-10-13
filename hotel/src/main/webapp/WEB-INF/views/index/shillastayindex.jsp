@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +24,8 @@
 		<div class='index_add'>
 		</div>
 		<div class='index_reservation'>
+		<h2>id:${svo.mid }</h2>
+		<button onclick="location.href='http://localhost:9000/hotel/book.do'"></button>
 		</div>
 		<div class='index_gallery'>
 		</div>

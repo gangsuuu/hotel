@@ -2,7 +2,7 @@ package com.hotel.vo;
 
 public class HotelMemberVO {
 
-	String hid, pass, hname, hemail1, hemail2,
+	String mid, pass, hname, hemail1, hemail2,
 	haddr1, haddr2, hp, hpum1, hpum2, hpum3, zonecode;
 
 	String hemail, pnumber;
@@ -34,13 +34,13 @@ public class HotelMemberVO {
 		this.pnumber = pnumber;
 	}
 
-	public String getHid() {
-		return hid;
+	public String getMid() {
+		return mid;
 	}
 
 
-	public void setHid(String hid) {
-		this.hid = hid;
+	public void setMid(String mid) {
+		this.mid = mid;
 	}
 
 	public String getPass() {

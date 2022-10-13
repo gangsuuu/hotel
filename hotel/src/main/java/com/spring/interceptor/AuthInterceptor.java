@@ -28,7 +28,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			return false;
 		}else {
 			//sid가 null이 아니고, admin인 경우에만 접속
-			if(!svo.getHid().equals("admin")) {
+			if(!svo.getMid().equals("admin")) {
 				response.sendRedirect("http://localhost:9000/hotel/login.do?auth=fail");//로그인 페이지로 보내기
 				return false;
 			}//inner-if

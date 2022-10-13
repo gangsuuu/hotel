@@ -4,23 +4,23 @@ $(document).ready(function(){
 		비밀번호 찾기
 	 **********************/
 	$("#findpw").click(function(){
-		if($("#hid").val() == ""){
+		if($("#mid").val() == ""){
 			alert("아이디를 입력해주세요");
-			$("#hid").focus();
+			$("#mid").focus();
 			
 		}else if($("#hemail").val() == ""){
 			alert("이메일을 입력해주세요");
 			$("#hemail").focus();
 		}else{
 			//비밀번호 찾기
-			let hid=$("#hid").val();
+			let mid=$("#mid").val();
 			let hemail=$("#hemail").val(); 
 			
 			$.ajax({
 				url : "findpw.do",
 				type : "POST",
 				data : {
-					hid : $("#hid").val(),
+					mid : $("#mid").val(),
 					hemail : $("#hemail").val()
 				},
 				success : function(result) {
@@ -50,9 +50,9 @@ $(document).ready(function(){
 	**********************/
 	$("#btnJoin").click(()=>{		
 		
-		if($("#hid").val() == ""){
+		if($("#mid").val() == ""){
 			alert("아이디를 입력해주세요");
-			$("#hid").focus();
+			$("#mid").focus();
 			return false;
 		}else if($("#pass").val() == ""){
 			alert("패스워드를 입력해주세요");
@@ -144,9 +144,9 @@ $(document).ready(function(){
 		로그인폼 체크 함수
 	**********************/
 	$("#btnLogin").click(()=>{
-		if($("#hid").val() == ""){
+		if($("#mid").val() == ""){
 			alert("아이디를 입력해주세요");
-			$("#hid").focus();
+			$("#mid").focus();
 			return false;
 		}else if($("#hpass").val() == ""){
 			alert("패스워드를 입력해주세요");

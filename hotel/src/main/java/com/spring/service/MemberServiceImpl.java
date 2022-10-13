@@ -9,12 +9,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hotel.dao.HotelMemberDAO;
 import com.hotel.vo.HotelMemberVO;
+import com.hotel.vo.SessionVO;
 
 public class MemberServiceImpl implements MemberService {
 	
 	
 	@Autowired
 	private HotelMemberDAO hotelMemberDAO; // 서블릿컨텍스트에 다오 객체 생성 오토와이어드로 뿌려주기.
+	
+	/**
+	 * 세션 연동
+	 */
+	@Override
+	public SessionVO getLogin(HotelMemberVO vo) {
+		return hotelMemberDAO.login(vo);
+	}
+	
 	/**
 	 * 회원가입 
 	 */
@@ -37,8 +47,8 @@ public class MemberServiceImpl implements MemberService {
 	 *  아이디 중복체크
 	 */
 	@Override
-	public int getIdCheck(String hid) {
-		int result = hotelMemberDAO.idCheck(hid);
+	public int getIdCheck(String mid) {
+		int result = hotelMemberDAO.idCheck(mid);
 		
 		return result;
 	}
@@ -62,7 +72,7 @@ public class MemberServiceImpl implements MemberService {
 			subject = "신라스테이 임시 비밀번호 입니다.";
 			msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
 			msg += "<h3 style='color: blue;'>";
-			msg += vo.getHid() + "님의 임시 비밀번호 입니다. 비밀번호를 변경하여 사용하세요.</h3>";
+			msg += vo.getMid() + "님의 임시 비밀번호 입니다. 비밀번호를 변경하여 사용하세요.</h3>";
 			msg += "<p>임시 비밀번호 : ";
 			msg += vo.getPass() + "</p></div>";
 		}

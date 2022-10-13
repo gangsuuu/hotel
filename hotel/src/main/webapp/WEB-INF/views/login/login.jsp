@@ -44,7 +44,7 @@ if(join_result == 'ok'){
 		<div logincontain="" class="container small pddt">
 			<div logincontain="" class="id-area">
 				<div ct="" logincontain="" class="input-area" clearable="">
-					<input ct="" id="hid" name="hid" autocomplete="on" placeholder="아이디를 입력해 주세요." maxlength="20" type="text" class="">
+					<input ct="" id="mid" name="mid" autocomplete="on" placeholder="아이디를 입력해 주세요." maxlength="20" type="text" class="">
 					
 					<a ct="" href="" class=""></a>
 					

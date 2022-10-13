@@ -18,6 +18,7 @@ public class JoinController {
 	@Autowired
 	private MemberServiceImpl memberService;
 	
+	
 
 	/*
 	 * joinCheck.do  회원가입 처리문
@@ -60,9 +61,9 @@ public class JoinController {
 	 */
 	@ResponseBody  //ajax 
 	@RequestMapping(value="/id_check.do",  method=RequestMethod.GET)
-	public String id_check(String hid){
+	public String id_check(String mid){
 	
-		return String.valueOf(memberService.getIdCheck(hid));  
+		return String.valueOf(memberService.getIdCheck(mid));  
 	}
 	
 	

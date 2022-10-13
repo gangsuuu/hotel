@@ -15,13 +15,13 @@ $(document).ready(function(){
 	//중복확인 버튼 이벤트 처리  AJAX 
 	$("#idCheck").click(function(){
 		
-		if($("#hid").val() == ""){
+		if($("#mid").val() == ""){
 			alert("아이디를 입력해주세요");
-			$("#hid").focus();
+			$("#mid").focus();
 		}else{
 		
 			$.ajax({
-				url:"id_check.do?hid="+$("#hid").val(),
+				url:"id_check.do?mid="+$("#mid").val(),
 				success:function(result){  	
 				
 				
@@ -51,7 +51,7 @@ $(document).ready(function(){
       <ul>
          <li>
             <label>아이디</label>
-            <input type="text" name="hid" id="hid" placeholder="*영문자숫자포함 8자이상">
+            <input type="text" name="mid" id="mid" placeholder="*영문자숫자포함 8자이상">
             	<button type="button" class="btn_style" id="idCheck">중복확인</button>
             <span id="idCheckMsg"></span>
          </li>
