@@ -1,14 +1,12 @@
-package com.spring.controller;
+package com.hotel.vo;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,222 +20,28 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.hotel.dao.HotelListDAO;
-import com.hotel.vo.HotelInquiryVO;
-import com.hotel.vo.HotelListVO;
-import com.hotel.vo.ReplyInquiryVO;
-import com.spring.service.FileServiceImpl;
-import com.spring.service.InquiryServiceImpl;
-import com.spring.service.PageServiceImpl;
-import com.spring.service.ReplyInquiryServiceImpl;
+
+
 
 @Controller
 public class AdminController {
-
-	@Autowired
-	private PageServiceImpl pageService;
-	
-	@Autowired
-	private InquiryServiceImpl inquiryService;
-	
-	@Autowired
-	private FileServiceImpl fileService;
-		
-	@Autowired
-	private ReplyInquiryServiceImpl replyinquiryService;
-	
-	
-	/**
-	 * 관리자 고객문의 답변 삭제처리
-	 * reply_delete_check.do
-	 */
-	@RequestMapping(value="/reply_delete_check.do", method=RequestMethod.POST)
-	public ModelAndView reply_delete_check(String iid, HttpServletRequest request) 
-	throws Exception {
-		ModelAndView mv = new ModelAndView();
-		
-		ReplyInquiryVO vo = replyinquiryService.getRiid(iid);
-		int result = replyinquiryService.getDelte(iid);
-				
-		mv.setViewName("redirect:/admin_inquiry_list.do");
-		return mv;
-	}
-	
-	
-	/**
-	 * 관리자 고객문의 답변글 상세보기
-	 * ajax : admin_reply_content_json
-	 */
-	@ResponseBody
-	@RequestMapping(value="admin_reply_content_json.do", method=RequestMethod.GET,
-			produces="text/plain;charset=UTF-8")
-	public String admin_reply_content_json(String iid) {
-		
-		//System.out.println(iid);
-		
-		ReplyInquiryVO vo = replyinquiryService.getRiid(iid);
-		Gson gson = new Gson();
-		JsonObject jobject = new JsonObject();
-		if(vo != null) {
-			jobject.addProperty("reid", vo.getReid());
-			jobject.addProperty("recontent", vo.getRecontent());
-			jobject.addProperty("redate", vo.getRedate());
-			jobject.addProperty("iid", vo.getIid());
-			jobject.addProperty("hcount", vo.getHcount());		
-			jobject.addProperty("reply", 1);		
-		}else {
-			jobject.addProperty("reply", 0);		
-			
-		}
-		
-		return gson.toJson(jobject);
-		
-	}
-	
-	
-	/**
-	 * 관리자 고객문의 답변등록 처리
-	 */
-	@RequestMapping(value="/admin_reply_check.do", method=RequestMethod.POST)
-	public ModelAndView admin_reply_check(ReplyInquiryVO vo, HttpServletRequest request) 
-													throws Exception {
-		ModelAndView mv = new ModelAndView();
-			
-		//DB 연동
-		//1. hotel_inquiry 테이블 저장 --> iid 생성
-		int result = replyinquiryService.getWriteResult(vo);
-		
-		/*if(result == 1) {
-			//2. iid값을 가져오기
-			//ReplyInquiryVO iid = replyinquiryService.getIid();
-			
-			//3. iid를 레퍼런스하는 reply_inquiry 테이블 저장
-
-			//int result2 = replyinquiryService.getWriteResult(vo);
-			
-		}*/		
-		
-		mv.setViewName("redirect:/admin_inquiry_list.do");
-		
-		return mv;
-	}
-	
-	
-	
-	/**
-	 * 관리자 고객문의 문의글 수정처리
-	 */
-	@RequestMapping(value="/admin_inquiry_update_check.do", method=RequestMethod.POST)
-	public ModelAndView admin_inquiry_update_check(HotelInquiryVO vo, HttpServletRequest request)
-	throws Exception {
-		ModelAndView mv = new ModelAndView();
-		
-		//기존파일이 존재하는 경우, 이름을 변수로 저장 - 맨위에 변수 선언!
-		String old_filename = vo.getIsfile();
-		
-		//수정하고 상세페이지 변경해주기
-		vo.setContent(vo.getContent().replace("\r\n","<br/>"));
-		
-		//수정 시, 새로운파일을 선택했는지 안했는지 확인
-		vo = fileService.fileCheck(vo);
-		int result = inquiryService.getUpdate(vo);
-		
-		if(result == 1) {
-			// 새로운 파일을 upload폴더에 저장
-			fileService.fileSave(vo, request);
-			mv.setViewName("redirect:/admin_inquiry_list.do");
-		}else {
-			mv.setViewName("errorpage");
-		}
-		
-		return mv;
-	}
-	
-	
-	/**
-	 * 관리자 고객문의 문의글 수정화면
-	 */
-	@RequestMapping(value="/admin_inquiry_update.do", method=RequestMethod.GET)
-	public ModelAndView admin_inquiry_update(String iid) {
-		ModelAndView mv = new ModelAndView();
-		
-		HotelInquiryVO vo = inquiryService.getContent(iid);
-		//System.out.println(vo.getContent());
-		
-		//DB에 <br/>를 \r\n으로 변경해서 vo에 content에 넣어줘서 보여준다.
-		vo.setContent(vo.getContent().replace("<br/>", "\r\n"));
-		
-		mv.addObject("vo", vo);
-		mv.setViewName("/admin/admin_inquiry_update");
-		return mv;
-	}	
-	
-	
-	/**
-	 * 관리자 고객문의 문의글 상세페이지
-	 */
-	@RequestMapping(value="/admin_inquiry_content.do", method=RequestMethod.GET)
-	public ModelAndView admin_inquiry_content(String iid) {
-		ModelAndView mv =  new ModelAndView();
-		
-		HotelInquiryVO vo = inquiryService.getContent(iid);
-		
-		mv.addObject("vo", vo);
-		mv.setViewName("/admin/admin_inquiry_content");
-		return mv;
-	}
-	
-	
-	/**
-	 * 관리자 고객문의 문의글 전체 리스트
-	 */
-	@RequestMapping(value="/admin_inquiry_list.do", method=RequestMethod.GET)
-	public ModelAndView admin_inquiry_list(String rpage) {
-		ModelAndView mv = new ModelAndView();
-		
-		Map<String, Integer> param = pageService.getPageResult(rpage, "inquiry", inquiryService);
-		
-		ArrayList<HotelInquiryVO> list = inquiryService.getBoardList(param.get("startCount"), param.get("endCount"));
-		
-		ArrayList<ReplyInquiryVO> reply = replyinquiryService.getIid();
-		
-		
-		mv.addObject("reply", reply);
-		mv.addObject("list", list);
-		mv.addObject("dbCount", param.get("dbCount"));
-		mv.addObject("pageSize", param.get("pageSize"));
-		mv.addObject("rpage", param.get("rpage"));		
-		mv.setViewName("/admin/admin_inquiry_list");
-		
-		return mv;
-	}
-	
-	/******************************************************
-						하경수
-	 *******************************************************/
 	
 	/************************************************************
-				1. Admin_edit_categori
+	 						admin categori
 	 ***********************************************************/
-	
-	/**
-	 *	admin_hotel_categori
-	 *	카테고리 페이지 출력
-	 *	호텔 리스트 전송
-	 */
 	@RequestMapping(value="/admin_hotel_categori.do",method=RequestMethod.GET, produces="application/text; charset=UTF-8")
 	public ModelAndView admin_hotel_categori() {
-	ModelAndView mv = new ModelAndView();
-	HotelListDAO dao = new HotelListDAO();
-	ArrayList<HotelListVO> list = dao.selecthotelist();
-	
-	mv.addObject("list",list);
-	mv.setViewName("admin/adming_categori/Categori");
-	return mv;
+		ModelAndView mv = new ModelAndView();
+		HotelListDAO dao = new HotelListDAO();
+		ArrayList<HotelListVO> list = dao.selecthotelist();
+		
+		mv.addObject("list",list);
+		mv.setViewName("admin/Categori");
+		return mv;
 	}
 	
 	/**
-	 * 	admin_categorilist.do
-	 * 	카테고리 수정 페이지에서 카테고리 정보 출력
+	 * admin_categorilist.do
 	 */
 	@ResponseBody
 	@RequestMapping(value="/admin_categorilist.do",method=RequestMethod.GET, produces="application/text; charset=UTF-8")
@@ -262,17 +66,21 @@ public class AdminController {
 		jobject.add("categori",jarray);
 		return gson.toJson(jobject);
 	}
-
+	
 	/**
 	 * categori_edit_insert
-	 *  ajax 새로운 카테고리 등록
+	 * 뉴카테고리 등록
 	 */
 	@ResponseBody
 	@RequestMapping(value="/admin_categori_insert.do")
 	public HashMap<String, Object> categori_edit_insert(@RequestParam String data) throws Exception{
 		HashMap<String, Object> result = new HashMap<String, Object>();
+		
 		ObjectMapper mapper = new ObjectMapper();
-		 ArrayList<HashMap<String, String>> list  = new ArrayList<HashMap<String,String>>(); 
+		
+		 ArrayList<HashMap<String, String>> list 
+         = new ArrayList<HashMap<String,String>>(); 
+		
 		list = mapper.readValue(data, new TypeReference<ArrayList<HashMap<String,String>>>() {});
 		if(list.size() == 0) {
 			result.put("empty", "empty");
@@ -296,18 +104,23 @@ public class AdminController {
 		}
 		return result;
 	}
-
+	
 	/**
 	 * admin_categori_update
-	 * 카테고리 수정
+	 * 뉴카테고리 등록
 	 */
 	@ResponseBody
 	@RequestMapping(value="/admin_categori_update.do")
 	public HashMap<String, Object> admin_categori_update(@RequestParam String data) throws Exception{
 		HashMap<String, Object> result = new HashMap<String, Object>();
+		
 		ObjectMapper mapper = new ObjectMapper();
-		ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String,String>>(); 
+		
+		ArrayList<HashMap<String, String>> list 
+		= new ArrayList<HashMap<String,String>>(); 
+		
 		list = mapper.readValue(data, new TypeReference<ArrayList<HashMap<String,String>>>() {});
+		
 		if(list.size() == 0) {
 			result.put("empty", "empty");
 		}else{
@@ -315,6 +128,8 @@ public class AdminController {
 			for(int i = 0; i < list.size(); i++) {
 				HashMap<String,String> test = list.get(i);
 				HotelListVO vo = new HotelListVO();
+				
+				
 				vo.setCategorigroup(Integer.parseInt(test.get("categorigroup")));
 				vo.setCategorinum(Integer.parseInt(test.get("categorinum")));
 				vo.setCategoriname(test.get("categoriname"));
@@ -323,11 +138,13 @@ public class AdminController {
 				
 				HotelListDAO dao = new HotelListDAO();
 				insert_result = dao.categori_update(vo);
+				 
 			}
 		}
 		return result;
 	}
-
+	
+	
 	/**
 	 *  admin_categorid_del
 	 *  카테고리제거
@@ -336,7 +153,9 @@ public class AdminController {
 	@RequestMapping(value="/admin_categorid_del.do", method=RequestMethod.POST,  produces="application/text; charset=UTF-8")
 	public String admin_categorid_del(@RequestParam HashMap<String, String> data)throws Exception{
 		String result = ""; 
+		
 		if(data.size() == 0) {
+			
 		}else{
 			HotelListVO vo = new HotelListVO();
 			vo.setHotelname(data.get("hotelname"));
@@ -344,11 +163,12 @@ public class AdminController {
 			vo.setCategorigroup(Integer.parseInt(data.get("categorigroup")));
 			vo.setCategoriseq(data.get("categoriseq"));
 			HotelListDAO dao = new HotelListDAO();
+			
 			result = dao.categori_delete(vo);
 		}
 		return result;
 	}
-
+	
 	/**
 	 * admin_categorid_del_update
 	 * 카테고리 삭제 후 나머지 업데이트
@@ -387,8 +207,9 @@ public class AdminController {
 		return result;
 	}
 	/************************************************************
-					2. admin_hotel_create
-	***********************************************************/
+						admin hotel
+	 ***********************************************************/
+	
 	/**
 	 * createhotel.do
 	 * 호텔등록 페이지 출력
@@ -400,9 +221,10 @@ public class AdminController {
 		ArrayList<HotelListVO> list = dao.selecthotelist();
 		
 		mv.addObject("list",list);
-		mv.setViewName("admin/admin_categori/createhotel");
+		mv.setViewName("admin/createhotel");
 		return mv;
 	}
+	
 	/**
 	 *  insert_hotel.do
 	 *  호텔 등록하기
@@ -417,25 +239,26 @@ public class AdminController {
 		}
 		return mv;
 	}
+	
 	/************************************************************
-				3. admin_edit_hotel
-	***********************************************************/
+						admin edit hotel
+	 ***********************************************************/
 	/**
-	*  edite_index.do
-	*  호텔 등록하기
-	*/
+	 *  edite_index.do
+	 *  호텔 등록하기
+	 */
 	@RequestMapping(value="/edite_index.do",method=RequestMethod.GET)
 	public ModelAndView edite_index() {
 		ModelAndView mv = new ModelAndView();		
 		HotelListDAO dao = new HotelListDAO();
 		ArrayList<HotelListVO> list = dao.selecthotelist();
 		mv.addObject("list",list);
-		mv.setViewName("admin/admin_categori/hoteledit");
+		mv.setViewName("admin/hoteledit");
 		return mv;
 	}
+	
 	/**
 	 *  edit_index_getfiles
-	 *  인덱스페이지에 사용되는 파일들 출력
 	 */
 	@ResponseBody
 	@RequestMapping(value="/edit_index_getfiles.do",method=RequestMethod.GET)
@@ -454,12 +277,18 @@ public class AdminController {
 			jarray.add(jo);
 		}
 		jobject.add("file", jarray);
+		
+		
+		
 		return gson.toJson(jobject);
 	}
 	
+	
+	
+	
 	/**
 	 * indexEdit_Logo.do
-	 * 호텔 로고 수정
+	 * 호텔 logo 수정
 	 */
 	@ResponseBody
 	@RequestMapping(value="/indexEdit_logo.do",method=RequestMethod.POST)
@@ -470,6 +299,7 @@ public class AdminController {
 				result = "false";
 			}else {
 				String oldfile = vo.getHotelcontentbsfile();
+				
 				UUID uuid = UUID.randomUUID();
 				vo.setHotelcontentfile(vo.getCategorifile1().getOriginalFilename());
 				vo.setHotelcontentbsfile(uuid+vo.getCategorifile1().getOriginalFilename());
@@ -480,6 +310,7 @@ public class AdminController {
 						path += "\\resources\\upload\\";
 						File file = new File(path+vo.getHotelcontentbsfile());
 						vo.getCategorifile1().transferTo(file);
+						result = "success";
 						
 						File rfile = new File(path + oldfile);
 						if(rfile.exists()) {
