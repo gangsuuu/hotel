@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="http://localhost:9000/notice/resources/css/notice.css">
-<script src="http://localhost:9000/notice/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/notice/resources/js/notice_jquery.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/notice.css">
+<script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/hotel/resources/js/notice_jquery.js"></script>
 <script>$('#ncontent').val().replace(/\n/g,"<br>")</script>
 </head>
 <body>

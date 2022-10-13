@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="http://localhost:9000/notice/resources/css/notice.css">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/notice.css">
 </head>
 <body>
 	<!---------------------------------------------->

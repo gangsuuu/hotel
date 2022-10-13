@@ -6,10 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="http://localhost:9000/notice/resources/css/notice.css">
-<link rel="stylesheet" href="http://localhost:9000/notice/resources/css/am-pagination.css">
-<script src="http://localhost:9000/notice/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/notice/resources/js/am-pagination.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/notice.css">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/am-pagination.css">
+<script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <script type="text/javascript">
 function delchk(nid){
@@ -84,7 +84,7 @@ function delchk(nid){
 				<th>내용</th>
 				<td colspan="3">${vo.ncontent }<br><br>
 				<c:if test="${vo.nsfile != null}">
-					<img src="http://localhost:9000/notice/resources/upload/${vo.nsfile }"
+					<img src="http://localhost:9000/hotel/resources/upload/${vo.nsfile }"
 						width="200" height="140">
 				</c:if>
 				<br><br></td>

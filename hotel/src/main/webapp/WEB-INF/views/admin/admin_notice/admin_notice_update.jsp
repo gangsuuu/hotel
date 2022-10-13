@@ -6,10 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="http://localhost:9000/notice/resources/css/notice.css">
-<link rel="stylesheet" href="http://localhost:9000/notice/resources/css/am-pagination.css">
-<script src="http://localhost:9000/notice/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/notice/resources/js/am-pagination.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/notice.css">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/am-pagination.css">
+<script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
 </head>
 <body>
 <div class="sub_title">

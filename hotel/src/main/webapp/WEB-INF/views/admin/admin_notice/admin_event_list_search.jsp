@@ -6,10 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>notice</title>
-<link rel="stylesheet" href="http://localhost:9000/notice/resources/css/notice.css">
-<link rel="stylesheet" href="http://localhost:9000/notice/resources/css/am-pagination.css">
-<script src="http://localhost:9000/notice/resources/js/jquery-3.6.0.min.js"></script>
-<script src="http://localhost:9000/notice/resources/js/am-pagination.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/notice.css">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/am-pagination.css">
+<script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
+<script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
 <script>
 	$(document).ready(function(){
 		
@@ -36,10 +36,10 @@
 			var keyword = "${keyword}"
 			if(search == "search"){
 				jQuery('.showlabelsm').text('The selected page no: '+e.page);
-		        $(location).attr('href', "http://localhost:9000/notice/event_list_search.do?rpage="+e.page+"&keyword="+keyword);
+		        $(location).attr('href', "http://localhost:9000/hotel/event_list_search.do?rpage="+e.page+"&keyword="+keyword);
 			}else{
 				jQuery('.showlabelsm').text('The selected page no: '+e.page);
-		       $(location).attr('href', "http://localhost:9000/notice/event_list.do?rpage="+e.page);
+		       $(location).attr('href', "http://localhost:9000/hotel/event_list.do?rpage="+e.page);
 			}
 	    });
 		
