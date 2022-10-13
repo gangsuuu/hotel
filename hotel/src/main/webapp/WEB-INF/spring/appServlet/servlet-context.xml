@@ -31,13 +31,21 @@
 	<beans:bean id="replyService" class="com.spring.service.ReplyInquiryServiceImpl"></beans:bean>
 	<!--  service 이지민  -->
 	<beans:bean id ="memberService" class="com.spring.service.MemberServiceImpl"></beans:bean>
-		
+	<!-- service 조진희 -->
+	<beans:bean id="basketService"  class="com.spring.service.BasketServiceImpl"></beans:bean>
+	<beans:bean id="bookService"  class="com.spring.service.BookServiceImpl"></beans:bean>
+	<beans:bean id="myroomService"  class="com.spring.service.MyroomServiceImpl"></beans:bean>
+	
 	<!-- dao 객체 생성 : 김수민 -->
 	<beans:bean id="hotelinquirytDao"  class="com.hotel.dao.HotelInquiryDAO"></beans:bean>
 	<beans:bean id="replyinquirtDao"  class="com.hotel.dao.ReplyInquiryDAO"></beans:bean>
 	<beans:bean id="hotelmemberDao"  class="com.hotel.dao.HotelMemberDAO"></beans:bean>	
 	<!--  DAO 객체 생성 : 이지민  -->
 	<beans:bean id ="hotelMemberDAO" class="com.hotel.dao.HotelMemberDAO"></beans:bean>
+	<!-- dao객체 생성 : 조진희 -->
+	<beans:bean id="basketDao" class="com.hotel.dao.BasketDAO"></beans:bean>
+	<beans:bean id="BookDao" class="com.hotel.dao.BookDAO"></beans:bean>
+	<beans:bean id="MyroomDao" class="com.hotel.dao.MyroomDAO"></beans:bean>
 	
 	
 	<!-- Interceptor 객체 생성 -->
