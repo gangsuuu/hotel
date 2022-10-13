@@ -29,15 +29,15 @@
 	</beans:bean>
 		
 	<!-- service 객체 생성 -->
-	<beans:bean id="noticeService" class="com.notice.service.NoticeServiceImpl"> </beans:bean>
-	<beans:bean id="fileService" class="com.notice.service.FileServiceImpl"> </beans:bean>
-	<beans:bean id="pageService" class="com.notice.service.PageServiceImpl"> </beans:bean>
+	<beans:bean id="noticeService" class="com.spring.service.NoticeServiceImpl"> </beans:bean>
+	<beans:bean id="fileService" class="com.spring.service.FileServiceImpl"> </beans:bean>
+	<beans:bean id="pageService" class="com.spring.service.PageServiceImpl"> </beans:bean>
 	
 	<!--  dao 객체 생성 -->
-	<beans:bean id="noticeDao" class="com.notice.dao.NoticeDAO"> </beans:bean>
+	<beans:bean id="noticeDao" class="com.hotel.dao.NoticeDAO"> </beans:bean>
 	
 	<context:component-scan base-package="com.spring.notice" />
-	<context:component-scan base-package="com.notice.controller" />
+	<context:component-scan base-package="com.spring.controller" />
 
 	
 	

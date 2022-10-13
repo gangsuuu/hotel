@@ -1,4 +1,4 @@
-package com.notice.dao;
+package com.hotel.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

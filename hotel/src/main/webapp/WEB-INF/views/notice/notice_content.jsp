@@ -23,7 +23,7 @@
 			 <!-- 좌측 메뉴 end-->
 			 <!-- contents -->
 			<div class="contents">
-		<h1>이벤트-상세보기</h1>
+		<h1>공지사항-상세보기</h1>
 		<table class="boardContent">	
 			<tr>				
 				<th>태그</th>
@@ -48,7 +48,7 @@
 			</tr>
 			<tr>
 				<td colspan="4">
-					<a href="event_list.do">
+					<a href="notice_list.do">
 						<button type="button" class="btn_style">리스트</button></a>
 				<!-- 	<a href=""><button type="button" class="btn_style">관리자홈</button></a> -->
 				</td>

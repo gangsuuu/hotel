@@ -52,9 +52,12 @@
 
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
-	<!---------------------------------------------->	
+	<!---------------------------------------------->
+    <div class="content">
+				
+			</div>		
 			<!-- 좌측 메뉴 -->
-			 <%@ include file="./admin_left_bar.jsp" %>
+			<%@ include file="./left_bar.jsp" %>
 			 <!-- 좌측 메뉴 end-->
 		
 			<!-- contents -->
@@ -62,11 +65,11 @@
 			<input id="pageIndex" name="pageIndex" type="hidden" value="3"/>
 				<div class="inner">
 					<div class="headtit">
-					<h2>이벤트</h2>
+					<h2>공지사항</h2>
 					</div>
 					<div class="contents_area">
-										<!-- 검색 -->
-					<form name="form1" method="get" action="admin_event_list_search.do" id="search">
+					<!-- 검색 -->
+					<form name="form1" method="get" action="event_list_search.do" id="search">
 					<div class="search">
 						<span>SEARCH</span>
 						<span class="select">
@@ -89,9 +92,6 @@
 					<!-- 일반게시판_List -->
 						<table class="contents_table">
 							<td colspan="4">
-								<a href="admin_event_write.do">
-								<button type="button" class="btn_style">글쓰기</button>
-								</a>
 							</td>
 								<tr>
 									<th>번호</th>
@@ -102,7 +102,7 @@
 					                <c:forEach var="vo"  items="${list}">
 								<tr>
 									<td>${vo.rno }</td>
-									<td><a href="admin_notice_content.do?nid=${vo.nid }">${vo.ntitle }</a></td>
+									<td><a href="notice_content.do?nid=${vo.nid }">${vo.ntitle }</a></td>
 									<td>${vo.nhits }</td>
 									<td>${vo.ndate }</td>
 								</tr>
@@ -114,7 +114,7 @@
 						</div>
 					</div>
 					<!-- //일반게시판_List -->
-				<!-- contents-end -->	
+					
 	</div>
 	</div>
 	<div class="footer"></div>

@@ -1,4 +1,4 @@
-package com.notice.vo;
+package com.hotel.vo;
 
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 

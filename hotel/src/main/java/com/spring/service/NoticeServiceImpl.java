@@ -1,12 +1,12 @@
-package com.notice.service;
+package com.spring.service;
 
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.notice.dao.NoticeDAO;
-import com.notice.vo.NoticeVO;
+import com.hotel.dao.NoticeDAO;
+import com.hotel.vo.NoticeVO;
 
 @Repository
 public class NoticeServiceImpl implements NoticeService{
@@ -46,12 +46,12 @@ public class NoticeServiceImpl implements NoticeService{
 	/**
 	 * notice 昏力 贸府
 	 */
-	/*@Override
-	public int getDelete(String nid) {
-		NoticeDAO dao = new NoticeDAO();
-		int result = dao.delete(nid);
+	@Override
+	public int getDelete(NoticeVO vo) {
+		//NoticeDAO dao = new NoticeDAO();
+		int result = noticeDao.delete(vo);
 		return result;
-	}*/
+	}
 	/**
 	 * notice 荐沥 贸府
 	 */

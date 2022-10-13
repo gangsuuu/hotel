@@ -64,10 +64,14 @@
   <!-- update -->
 	<update id="update" parameterType="com.notice.vo.NoticeVO">
 	
-		update notice_list set ntitle=#{ntitle}, ncontent=#{ncontent}, nfile=#{nfile}, nsfile=#{nsfile} 
+		update notice_list set ntitle=#{ntitle}, ntag=#{ntag}, ncontent=#{ncontent}, nfile=#{nfile}, nsfile=#{nsfile} 
 		 where nid=#{nid}
 	</update> 
-	
+
+<!-- delete -->
+	<delete id="delete" parameterType="java.lang.String">
+		delete from notice_list where nid=#{nid}
+	</delete>	
   <!--  content -->
 	<select id="content" parameterType="java.lang.String" resultType="com.notice.vo.NoticeVO">
 	

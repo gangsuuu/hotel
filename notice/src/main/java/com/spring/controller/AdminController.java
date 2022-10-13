@@ -1,4 +1,4 @@
-package com.notice.controller;
+package com.spring.controller;
 
 import java.util.ArrayList;
 import java.io.File;
@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.notice.dao.NoticeDAO;
-import com.notice.service.FileServiceImpl;
-import com.notice.service.NoticeServiceImpl;
-import com.notice.vo.NoticeVO;
-import com.notice.service.PageServiceImpl;
+import com.hotel.dao.NoticeDAO;
+import com.hotel.vo.NoticeVO;
+import com.spring.service.FileServiceImpl;
+import com.spring.service.NoticeServiceImpl;
+import com.spring.service.PageServiceImpl;
 
 @Controller
-public class adminController {
+public class AdminController {
 	
 	@Autowired
 	private NoticeServiceImpl noticeService;
@@ -31,6 +31,10 @@ public class adminController {
 	@Autowired
 	private PageServiceImpl pageService;
 
+	/*******************************************
+	 * 김민재
+	 *******************************************/
+	
 
 	/**
 	 * admin_event_list_search.do : 이벤트 검색 기능
@@ -83,41 +87,33 @@ public class adminController {
 		return mv;
 		
 	}
+	/**
+	 * admin_notice_del_ok.do : 게시물 삭제 처리(이벤트 포함)
+	 */
+	@RequestMapping(value="/admin_notice_del_ok.do", method=RequestMethod.POST)
+	public ModelAndView admin_notice_del_ok(String nid, HttpServletRequest request) 
+			throws Exception{
+		ModelAndView mv= new ModelAndView();
+		
+		NoticeVO vo = noticeService.getContent(nid);
+		int result = noticeService.getDelete(vo);
+		if(result == 1){
+			fileService.fileDelete(vo, request);
+			if(vo.getNtag().equals("event")) {
+			mv.setViewName("redirect:/admin_event_list.do");
+			}else {
+				mv.setViewName("redirect:/admin_notice_list.do");	
+			}
+		}else{
+			mv.setViewName("error_page");
+		}
+
+		return mv;
+	}
 	
 
 	/**
-	 * admin_event_write_check.do : 이벤트 글쓰기 처리
-	 */
-	@RequestMapping(value="/admin_event_write_check.do", method=RequestMethod.POST)
-	public ModelAndView admin_event_write(NoticeVO vo, HttpServletRequest request) 
-			throws Exception{
-		ModelAndView mv = new ModelAndView();
-		
-		//파일이 선택 되었는지 체크
-		vo = fileService.fileCheck(vo);
-		
-		vo.setNcontent(vo.getNcontent().replace("\r\n", "<br>"));
-		
-		int result = noticeService.getWriteResult(vo);
-		if(result == 1){	
-			//파일 있는경우 upload 폴더에 파일 저장
-			if(!vo.getNfile().equals("")) {
-				//upload 폴더의 경로를 가져오기 위해, HttpServletRequest 객체를 파라미터로 가져옴!
-				fileService.fileSave(vo, request);
-			}
-			mv.setViewName("redirect:/admin_event_list.do");
-		}else{
-			
-			mv.setViewName("error_page");
-		}
-		
-		
-		return mv;
-		
-	}
-	
-	/**
-	 * admin_notice_write_check.do : 공지사항 글쓰기 처리
+	 * admin_notice_write_check.do : 게시물 글쓰기 처리(이벤트 포함)
 	 */
 	@RequestMapping(value="/admin_notice_write_check.do", method=RequestMethod.POST)
 	public ModelAndView admin_notice_write(NoticeVO vo, HttpServletRequest request) 
@@ -136,7 +132,11 @@ public class adminController {
 						//upload 폴더의 경로를 가져오기 위해, HttpServletRequest 객체를 파라미터로 가져옴!
 						fileService.fileSave(vo, request);
 					}
-					mv.setViewName("redirect:/admin_notice_list.do");
+					if(vo.getNtag().equals("event")) {
+						mv.setViewName("redirect:/admin_event_list.do");
+					}else {
+						mv.setViewName("redirect:/admin_notice_list.do");	
+					}
 				}else{
 
 					mv.setViewName("error_page");
@@ -145,33 +145,6 @@ public class adminController {
 
 				return mv;
 	
-	}
-	
-	/**
-	 * admin_event_update_check.do : 이벤트 수정 처리
-	 */
-	@RequestMapping(value="/admin_event_update_check.do", method=RequestMethod.POST)
-	public ModelAndView admin_event_update_check(NoticeVO vo, HttpServletRequest request) 
-			throws Exception{
-		ModelAndView mv = new ModelAndView();
-
-		String old_filename = vo.getNsfile(); 
-		
-		vo = fileService.update_fileCheck(vo);
-		
-		vo.setNcontent(vo.getNcontent().replace("\r\n", "<br>"));
-		
-		int result = noticeService.getUpdate(vo);
-		if(result ==1){
-			//새로운 파일을 upload 폴더에 저장한 후 기존의 파일 삭제
-			fileService.notice_filesave(vo, request, old_filename);
-
-			mv.setViewName("redirect:/admin_event_list.do");
-		}else{
-			mv.setViewName("error_page");
-		}
-
-		return mv;
 	}
 	
 	/**
@@ -192,8 +165,11 @@ public class adminController {
 		if(result ==1){
 			//새로운 파일을 upload 폴더에 저장한 후 기존의 파일 삭제
 			fileService.notice_filesave(vo, request, old_filename);
-			
-			mv.setViewName("redirect:/admin_notice_list.do");
+			if(vo.getNtag().equals("event")) {
+				mv.setViewName("redirect:/admin_event_list.do");
+			}else {
+				mv.setViewName("redirect:/admin_notice_list.do");
+			}		
 		}else{
 			mv.setViewName("error_page");
 		}
@@ -202,22 +178,6 @@ public class adminController {
 	}
 	
 	
-	
-	/**
-	 * admin_event_content.do : 이벤트 상세 정보 
-	 */
-	@RequestMapping(value="/admin_event_content.do", method=RequestMethod.GET)
-	public ModelAndView admin_event_content(String nid) {
-		ModelAndView mv = new ModelAndView();
-		
-		NoticeVO vo = noticeService.getContent(nid);
-		if(vo != null){
-			noticeService.getUpdateHits(nid);
-		}
-		mv.addObject("vo", vo);
-		mv.setViewName("/admin/admin_event_content");
-		return mv;
-	}
 	
 	/**
 	 * admin_notice_content.do : 공지사항 상세 정보 
@@ -231,7 +191,11 @@ public class adminController {
 			noticeService.getUpdateHits(nid);
 		}
 		mv.addObject("vo", vo);
-		mv.setViewName("/admin/admin_notice_content");
+		if(vo.getNtag().equals("event")) {
+			mv.setViewName("/admin/admin_event_content");
+		}else {
+			mv.setViewName("/admin/admin_notice_content");
+		}
 		return mv;
 	}
 	
@@ -327,4 +291,8 @@ public class adminController {
 	
 			return mv;
 	}
+	
+	/*******************************************
+	 * 김민재
+	 *******************************************/	
 }

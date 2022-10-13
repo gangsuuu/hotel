@@ -36,10 +36,10 @@
 			var keyword = "${keyword}"
 			if(search == "search"){
 				jQuery('.showlabelsm').text('The selected page no: '+e.page);
-		        $(location).attr('href', "http://localhost:9000/notice/event_list_search.do?rpage="+e.page+"&keyword="+keyword);
+		        $(location).attr('href', "http://localhost:9000/notice/notice_list_search.do?rpage="+e.page+"&keyword="+keyword);
 			}else{
 				jQuery('.showlabelsm').text('The selected page no: '+e.page);
-		       $(location).attr('href', "http://localhost:9000/notice/event_list.do?rpage="+e.page);
+		       $(location).attr('href', "http://localhost:9000/notice/notice_list.do?rpage="+e.page);
 			}
 	    });
 		
@@ -54,7 +54,7 @@
 	<!--------------- Content ---------------------->
 	<!---------------------------------------------->	
 			<!-- 좌측 메뉴 -->
-			 <%@ include file="./admin_left_bar.jsp" %>
+			<%@ include file="./admin_left_bar.jsp" %>
 			 <!-- 좌측 메뉴 end-->
 		
 			<!-- contents -->
@@ -62,11 +62,11 @@
 			<input id="pageIndex" name="pageIndex" type="hidden" value="3"/>
 				<div class="inner">
 					<div class="headtit">
-					<h2>이벤트</h2>
+					<h2>공지사항</h2>
 					</div>
 					<div class="contents_area">
-										<!-- 검색 -->
-					<form name="form1" method="get" action="admin_event_list_search.do" id="search">
+					<!-- 검색 -->
+					<form name="form1" method="get" action="admin_notice_list_search.do" id="search">
 					<div class="search">
 						<span>SEARCH</span>
 						<span class="select">
@@ -89,7 +89,7 @@
 					<!-- 일반게시판_List -->
 						<table class="contents_table">
 							<td colspan="4">
-								<a href="admin_event_write.do">
+								<a href="admin_notice_write.do">
 								<button type="button" class="btn_style">글쓰기</button>
 								</a>
 							</td>

@@ -1,4 +1,4 @@
-package com.notice.service;
+package com.spring.service;
 
 import java.io.File;
 import java.util.UUID;
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import com.notice.vo.NoticeVO;
-import com.notice.service.NoticeServiceImpl;
+import com.hotel.vo.NoticeVO;
+import com.spring.service.NoticeServiceImpl;
 
 
 public class FileServiceImpl {
@@ -17,6 +17,11 @@ public class FileServiceImpl {
 	@Autowired
 	private NoticeServiceImpl noticeService;
 
+	/************************************************
+	 * 김민재
+	 ************************************************/
+	
+	
 	/**
 	 * 공지사항 : 게시글 삭제시 upload 폴더에 존재하는 파일이 있다면 삭제하기
 	 */

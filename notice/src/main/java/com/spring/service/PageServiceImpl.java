@@ -1,11 +1,11 @@
-package com.notice.service;
+package com.spring.service;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.notice.service.NoticeServiceImpl;
+import com.spring.service.NoticeServiceImpl;
 
 
 public class PageServiceImpl {
