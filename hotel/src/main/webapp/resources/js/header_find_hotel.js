@@ -67,8 +67,8 @@ $.ajax({
 		find_hotel += "<div class='header_find_list'>";
 		
 		find_hotel += "<div class='header_find_location find_brand_list'>";
-		find_hotel += "<div class='header_find_location_img find_brand_img'>";
-		find_hotel += "</div>";
+		find_hotel += "<a href='http://localhost:9000/hotel/shillastayindex.do' class='header_find_location_img find_brand_img_shillastay'>";
+		find_hotel += "</a>";
 		find_hotel += "<div class='header_find_location_list'>";
 		for(hotel of dataset.hotellist){
 			if(hotel.hotelcsstype == 'type1'){
@@ -79,8 +79,8 @@ $.ajax({
 		find_hotel += "</div>";
 		
 		find_hotel += "<div class='header_find_location find_brand_list'>";
-		find_hotel += "<div class='header_find_location_img find_brand_img'>";
-		find_hotel += "</div>";
+		find_hotel += "<a href='http://localhost:9000/hotel/theshilla.do' class='header_find_location_img find_brand_img_theshilla'>";
+		find_hotel += "</a>";
 		find_hotel += "<div class='header_find_location_list'>";
 		for(hotel of dataset.hotellist){
 			if(hotel.hotelcsstype == 'type2'){

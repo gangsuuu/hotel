@@ -163,7 +163,7 @@ $.ajax({
 			output += "<div class='header_top_guest'>";			
 			output += "<a class='header_login' href='http://localhost:9000/hotel/login.do'>로그인</a>";
 			output += "<a href='#'>예약확인</a>";
-			output += "<a href='#'>admin</a>";
+			output += "<a href='http://localhost:9000/hotel/admin_hotel_categori.do'>admin</a>";
 			output += "</div>";
 			
 			output += "<div class='header_top_list'>";
