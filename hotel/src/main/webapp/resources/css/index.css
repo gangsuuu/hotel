@@ -76,7 +76,7 @@
 	.header_top_mid{
 	}
 	.header_top_mid_logo{
-	    height: 30px;
+	    height: 60px;
 	    width: 250px;
 	    position: absolute;
 	    top:50%; left: 50%; transform: translate3d(-50%, -50%, 0);
@@ -416,7 +416,6 @@
 	}
 	.header_find_location_img{
 	    width: 150px; height: 30px;
-	    border: 1px solid red;
 	    margin:0;
 	}
 	.header_find_location_list{
@@ -445,8 +444,17 @@
 	.find_brand_list{
 	    width: 900px;
 	}
-	.find_brand_img{
+	.find_brand_img_shillastay{
 	    margin-left: 30px;
+	    background-image: url(http://localhost:9000/hotel/resources/img/public/sillastaybrandlogo.gif);
+	    background-repeat: no-repeat;
+	    background-size: 100% 100%;
+	}
+	.find_brand_img_theshilla{
+	    margin-left: 30px;
+	    background-image: url(http://localhost:9000/hotel/resources/img/public/thesillabrandlogo.jpg);
+	    background-repeat: no-repeat;
+	    background-size: 100% 100%;
 	}
 	.brand_type{
 	display:none;
