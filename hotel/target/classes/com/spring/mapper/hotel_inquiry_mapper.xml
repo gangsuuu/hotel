@@ -20,7 +20,7 @@
 					order by idate desc
 				)      
 			) 
-		WHERE MID=#{MID}
+		WHERE MID=#{MID} 
 	
 	</select>
 	

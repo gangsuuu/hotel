@@ -15,7 +15,9 @@
 <script>
 	$(document).ready(function(){
 		$("#btnInquiryUpdate").click(function(){
-			if(("input[name='hotelname']:checked").length==0){
+			var isCheck = $('input[name=hotelname]:checked').val();
+			
+			if(!isCheck){
 				alert("호텔을 선택해 주세요.");
 				$("#hotelname").focus();
 				return false;
