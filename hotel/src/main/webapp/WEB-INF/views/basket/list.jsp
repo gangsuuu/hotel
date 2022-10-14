@@ -66,9 +66,9 @@ $(document).ready(function(){
 	</table>
 	<button type="submit">예약</button>
 	<button type="button" onclick="location.href='http://localhost:9000/hotel/delete.do'">삭제페이지 이동</button>
-	<button type="button" onclick="location.href='http://localhost:9000/hotel/main.do'">홈으로</button>
+	<button type="button" onclick="location.href='http://localhost:9000/hotel/theshilla.do'">홈으로</button>
 	
-	</div>
+	</div>4
 	
 </body>
 </html>

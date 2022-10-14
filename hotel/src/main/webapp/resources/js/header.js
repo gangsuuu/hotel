@@ -13,7 +13,7 @@ $.ajax({
 			
 			output += "<div class='header_top_left left_hub'>";
 			output += "<div><a href='javascript:findhotel()'>호텔찾기</a></div>";
-			output += "<div><a href='http://localhost:9000/hotel/list.do'>예약</a></div>";
+			output += "<div><a href='http://localhost:9000/hotel/book.do'>예약</a></div>";
 			output += "</div>"
 			
 			output += "<div class='header_top_mid'>";
@@ -86,7 +86,7 @@ $.ajax({
 			
 			output += "<div>";	
 			output += "<li class='header_maincategori_res'>";
-			output += "<div><a href='http://localhost:9000/hotel/list.do'>예약</a></div>";  
+			output += "<div><a href='http://localhost:9000/hotel/book.do'>예약</a></div>";  
 			output += "<ul class='header_subcategori_list theme1_sub_res_container'>";
 			output += "<li><a class='theme1_sub_res' id='header_subcategori' href='#'>객실</a></li>";
 			output += "<li><a class='theme1_sub_res' id='header_subcategori' href='#'>다이닝</a></li>";
@@ -138,7 +138,7 @@ $.ajax({
 			output += "<a class='theme2_main_seach' href='#'>위치찾기</a>";
 			output += "</li>";
 			output += "<li class='header_maincategori_res'>";
-			output += "<a class='theme2_main_res' href='http://localhost:9000/hotel/list.do'>예약</a>";
+			output += "<a class='theme2_main_res' href='http://localhost:9000/hotel/book.do'>예약</a>";
 			output += "</li>";
 			output += "</div>";
 			
@@ -152,7 +152,7 @@ $.ajax({
 			
 			output += "<div class='header_top_left left_hub'>";
 			output += "<div><a href='javascript:findhotel()'>호텔찾기</a></div>";
-			output += "<div><a href='http://localhost:9000/hotel/list.do'>예약</a></div>";  
+			output += "<div><a href='http://localhost:9000/hotel/book.do'>예약</a></div>";  
 			output += "</div>"
 			
 			output += "<div class='header_top_mid'>";

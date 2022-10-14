@@ -54,7 +54,7 @@
 	</table>
 	<button type="button" onclick="reservation();">예약</button>
 	<button type="button" onclick="location.href='http://localhost:9000/hotel/myroom.do?mid=${svo.mid}'">나의 예약목록 확인</button>
-	<button type="button" onclick="location.href='http://localhost:9000/hotel/main.do'">홈으로</button>
+	<button type="button" onclick="location.href='http://localhost:9000/hotel/theshilla.do'">홈으로</button>
 	
 		</div>
 	</form>
