@@ -7,7 +7,7 @@
 <mapper namespace="mapper.inquiry">
 	
 	<!-- inquiry mylist -->
-	<select id="mylist" parameterType="map" resultType="com.hotel.vo.HotelInquiryVO">
+	<select id="mylist" parameterType="map" resultType="java.lang.String">
 	
 		SELECT RNO, IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID, RCOUNT FROM
 			(SELECT ROWNUM RNO, IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID, rcount FROM
