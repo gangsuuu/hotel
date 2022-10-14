@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="mapper.myroom">
+    
+    <!-- myroom selectAll -->
+	<select id="selectAll" parameterType="java.lang.String" resultType="com.hotel.vo.MyroomVO">
+		select HOTEL_MEMBER.mid,basket.bid,book.radatestart,book.radateend,book.price,book.booknum,basket.brname from HOTEL_MEMBER,book,basket
+		where HOTEL_MEMBER.mid = book.mid and book.bid = basket.bid and HOTEL_MEMBER.mid=#{mid}
+	</select>
+	
+	<!-- <delete id="deletMyroom" parameterType="java.util.List"> 
+		DELETE FROM book 
+		<where> 
+			<foreach collection="list" item="item" open="" close="" separator="OR"> 
+			(IDX = #{item.idx} AND VIN = #{item.vin}) 
+			</foreach> 
+		</where> 
+	</delete> -->
+    
+</mapper>

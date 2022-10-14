@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="mapper.reply">
+	
+	<!-- reply delete -->
+	<delete id="delete" parameterType="java.lang.String">
+		
+		DELETE FROM REPLY_INQUIRY WHERE IID = #{iid}
+		
+	</delete>
+	
+	<!-- reply content -->
+	<select id="content" parameterType="java.lang.String" resultType="com.hotel.vo.ReplyInquiryVO">
+	
+		select iid, reid, recontent, redate, hcount from
+			(select iid, reid, recontent, redate, count(hcount) hcount from
+				(select ri.iid, reid, recontent, redate, hi.iid hcount
+				from reply_inquiry ri, hotel_inquiry hi where ri.iid = hi.iid(+))
+			group by iid, reid, recontent, redate)
+			where iid = #{iid}
+	
+	</select>
+	
+	<!-- reply insert -->
+	<insert id="insert" parameterType="com.hotel.vo.ReplyInquiryVO">
+		
+		insert into reply_inquiry values('re_'||sequ_reply_inquiry.nextval, #{recontent}, sysdate, #{iid})
+	
+	</insert>
+	
+	<!-- reply list -->
+	<select id="list" parameterType="map" resultType="com.hotel.vo.ReplyInquiryVO">
+	
+		select reid, recontent, redate, iid from reply_inquiry
+	
+	</select>
+	
+</mapper>
