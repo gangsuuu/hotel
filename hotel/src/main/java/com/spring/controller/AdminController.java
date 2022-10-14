@@ -425,7 +425,7 @@ public class AdminController {
 		HotelListDAO dao = new HotelListDAO();
 		int result = dao.insert_hotel(vo);
 		if(result == 1) {
-			mv.setViewName("admin/createhotel");
+			mv.setViewName("admin/admin_categori/admin_createhotel");
 		}
 		return mv;
 	}

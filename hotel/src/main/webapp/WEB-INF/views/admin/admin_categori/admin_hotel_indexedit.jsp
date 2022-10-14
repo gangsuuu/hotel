@@ -13,10 +13,7 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <script>
-	var hotelname = "${hotelname}"
-	if(hotelname == ""){
 		hotelname = "stayhub"
-	}
 </script>
 <script type="text/javascript">
 	$( function() {
@@ -33,8 +30,6 @@
 <script>
 	///f로고등록
 	function editLogo(){
-		
-		
 		let edit = confirm("사진을 등록하시겠습니까?");
 		if(edit){
 			let selectedhotel = $("#hotel_List").val()  
@@ -191,7 +186,7 @@
                 <h2 class="suject">Admin</h2>
                 <ul>
                    <li><a href="http://localhost:9000/hotel/admin_hotel_categori.do" class="content_list">카데고리 수정</a></li>
-                   <li class=" content_selected"><a href="http://localhost:9000/hotel/createhotel.do" class="content_list content_selected">호테 생성</a></li>
+                   <li class=" content_selected"><a href="http://localhost:9000/hotel/createhotel.do" class="content_list content_selected">호텔 생성</a></li>
                    <!-- 백그라운드 컬러,  after 보더 컬러-->
                    <li><a href="http://localhost:9000/hotel/edit_index.do" class="content_list">인덱스페이지</a></li>
                 </ul>
