@@ -18,7 +18,7 @@
 		
 		    maxSize: 5,	    		// max page size
 		    totals: '${dbCount}',	// total rows	
-		    page: '${rPage}',		// initial page		
+		    page: '${rpage}',		// initial page		
 		    pageSize: '${pageSize}',	// max number items per page
 		
 		    // custom labels		

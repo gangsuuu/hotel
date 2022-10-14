@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/am-pagination.css">
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
+
 <script>
 	$(document).ready(function(){
 		
@@ -18,7 +19,7 @@
 		
 		    maxSize: 5,	    		// max page size
 		    totals: '${dbCount}',	// total rows	
-		    page: '${rPage}',		// initial page		
+		    page: '${rpage}',		// initial page		
 		    pageSize: '${pageSize}',	// max number items per page
 		
 		    // custom labels		

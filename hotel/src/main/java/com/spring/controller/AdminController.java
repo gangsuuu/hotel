@@ -531,7 +531,7 @@ public class AdminController {
 		mv.addObject("list", list);
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
-		mv.addObject("rPage", param.get("rPage"));
+		mv.addObject("rpage", param.get("rpage"));
 		mv.addObject("keyword",keyword);
 		mv.addObject("search", "search");									// 검색 됐음을 알려주는 객체
 		mv.setViewName("admin/admin_notice/admin_event_list_search");
@@ -557,7 +557,7 @@ public class AdminController {
 		mv.addObject("list", list);
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
-		mv.addObject("rPage", param.get("rPage"));
+		mv.addObject("rpage", param.get("rpage"));
 		mv.addObject("keyword",keyword);
 		mv.addObject("search", "search");									// 검색 됬음을 알려주는 객체
 		mv.setViewName("admin/admin_notice/admin_notice_list_search");
@@ -742,7 +742,7 @@ public class AdminController {
 		mv.addObject("list", list);
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
-		mv.addObject("rPage", param.get("rPage"));
+		mv.addObject("rpage", param.get("rpage"));
 		mv.setViewName("admin/admin_notice/admin_event_list");
 			
 	
@@ -763,7 +763,7 @@ public class AdminController {
 		mv.addObject("list", list);
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
-		mv.addObject("rPage", param.get("rPage"));
+		mv.addObject("rpage", param.get("rpage"));
 			mv.setViewName("admin/admin_notice/admin_notice_list");
 			
 	

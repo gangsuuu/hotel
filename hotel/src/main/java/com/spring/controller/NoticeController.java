@@ -51,7 +51,7 @@ public class NoticeController {
 		mv.addObject("list", list);
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
-		mv.addObject("rPage", param.get("rPage"));
+		mv.addObject("rpage", param.get("rpage"));
 		mv.addObject("keyword",keyword);
 		mv.addObject("search", "search");									// 검색 됬음을 알려주는 객체
 		mv.setViewName("/notice/event_list_search");
@@ -75,7 +75,7 @@ public class NoticeController {
 		mv.addObject("list", list);
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
-		mv.addObject("rPage", param.get("rPage"));
+		mv.addObject("rpage", param.get("rpage"));
 		mv.addObject("keyword",keyword);
 		mv.addObject("search", "search");									// 검색 됬음을 알려주는 객체
 		mv.setViewName("/notice/notice_list_search");
@@ -119,7 +119,7 @@ ModelAndView mv = new ModelAndView();
 		mv.addObject("list", list);
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
-		mv.addObject("rPage", param.get("rPage"));
+		mv.addObject("rpage", param.get("rpage"));
 					mv.setViewName("/notice/event_list");
 					
 			
@@ -139,7 +139,7 @@ ModelAndView mv = new ModelAndView();
 		mv.addObject("list", list);
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
-		mv.addObject("rPage", param.get("rPage"));
+		mv.addObject("rpage", param.get("rpage"));
 					mv.setViewName("/notice/notice_list");
 					
 			
