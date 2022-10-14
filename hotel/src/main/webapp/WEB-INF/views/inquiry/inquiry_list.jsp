@@ -13,7 +13,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
-
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+	var hotelname = "theshilla";
+</script>
 <script>
 	
 	function modalopen(iid){ 
@@ -146,7 +150,8 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<iframe></iframe>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
 
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
@@ -291,6 +296,6 @@
 	</div>
 
 	<!-- Footer Include -->
-	<iframe src="hotel_footer.do" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
 </body>
 </html>

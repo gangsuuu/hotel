@@ -26,9 +26,12 @@ if(join_result == 'ok'){
 }
 
 </script>
+</head>
+<body>
+<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
+<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>	
 
 <!-- top -->
-
 <section logincontain="" class="subcontain">
 	<div topstyl="" logincontain="" class="sub-top-area forms">
 		<div topstyl="" class="container">
@@ -38,8 +41,6 @@ if(join_result == 'ok'){
 </section>
 
 <!-- main  -->	
-
-
 	<form name= "loginForm" action="loginCheck.do" method="post">
 		<div logincontain="" class="container small pddt">
 			<div logincontain="" class="id-area">
@@ -74,10 +75,12 @@ if(join_result == 'ok'){
 						class="joincolor">회원이 아니신가요? 가입하기</button>
 
 
-
 				</div>
 			</div>
+			
 	</form>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
+	
+</body>
 
-</head>
 </html>
