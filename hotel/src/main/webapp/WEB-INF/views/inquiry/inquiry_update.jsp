@@ -7,11 +7,6 @@
 <meta charset="UTF-8">
 <title>Customer Inquiry</title>
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script>
-	var hotelname = "theshilla";
-</script>
 <script>
 	$(document).ready(function(){
 		$("#btnInquiryUpdate").click(function(){
@@ -106,8 +101,7 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
+	<iframe></iframe>
 
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
@@ -270,6 +264,6 @@
 	</form>
 	
 	<!-- Footer Include -->
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
+	<iframe src="hotel_footer.do" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
 </body>
 </html>
