@@ -76,7 +76,7 @@
 	.header_top_mid{
 	}
 	.header_top_mid_logo{
-	    height: 30px;
+	    height: 60px;
 	    width: 250px;
 	    position: absolute;
 	    top:50%; left: 50%; transform: translate3d(-50%, -50%, 0);

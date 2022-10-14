@@ -24,7 +24,6 @@ $.ajax({
 			output += "<div class='header_top_guest'>";			
 			output += "<a class='header_login' href='http://localhost:9000/hotel/login.do'>로그인</a>";
 			output += "<a href='#'>예약확인</a>";
-			output += "<a href='http://localhost:9000/hotel/createhotel.do>admin</a>";
 			output += "</div>";
 			
 			output += "<div class='header_top_list'>";
@@ -164,12 +163,14 @@ $.ajax({
 			output += "<div class='header_top_guest'>";			
 			output += "<a class='header_login' href='http://localhost:9000/hotel/login.do'>로그인</a>";
 			output += "<a href='#'>예약확인</a>";
+			output += "<a href='#'>admin</a>";
 			output += "</div>";
 			
 			output += "<div class='header_top_list'>";
 			
 			 
 			output += "<a href='http://localhost:9000/hotel/shillastayindex.do'>호텔신라 소개</a>"
+			output += "<a href='http://localhost:9000/hotel/notice_list.do'>공지사항</a>"
 			output += "<a href='http://localhost:9000/hotel/inquiry_list.do'>고객문의</a>"
 			output += "<a href='http://localhost:9000/hotel/shillastayindex/findHotel.do'>신라리워즈</a>"
 				
@@ -180,7 +181,12 @@ $.ajax({
 			output += "</header>";
 		}
 			$('body').children().first().before(output);
+			if(type == 'shillastay'){
+				$('.header_top_mid_logo').css({'background':"url(http://localhost:9000/hotel/resources/img/public/shillastaylogo.gif)", 'background-repeat' : 'no-repeat', 'background-size':'100% 100%'});
+			}else if(type == 'thesilla'){
+					$('.header_top_mid_logo').css({'background':"url(http://localhost:9000/hotel/resources/img/public/theshillalogo.gif)", 'background-repeat' : 'no-repeat', 'background-size':'100% 100%'});
+			}else{
 			$('.header_top_mid_logo').css({'background':"url(http://localhost:9000/hotel/resources/upload/hotelfile/"+logosrc+")", 'background-repeat' : 'no-repeat', 'background-size':'100% 100%'});
-			
+			}
 	}
 })
