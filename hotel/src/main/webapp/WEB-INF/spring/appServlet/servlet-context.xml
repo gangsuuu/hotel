@@ -40,8 +40,6 @@
 	<beans:bean id="myroomService"  class="com.spring.service.MyroomServiceImpl"></beans:bean>
 	<!-- service 김민재 -->
 	<beans:bean id="noticeService" class="com.spring.service.NoticeServiceImpl"> </beans:bean>
-	
-	
 	<!-- dao 객체 생성 : 김수민 -->
 	<beans:bean id="hotelinquirytDao"  class="com.hotel.dao.HotelInquiryDAO"></beans:bean>
 	<beans:bean id="replyinquirtDao"  class="com.hotel.dao.ReplyInquiryDAO"></beans:bean>
@@ -54,7 +52,6 @@
 	<beans:bean id="MyroomDao" class="com.hotel.dao.MyroomDAO"></beans:bean>
 	<!--  dao 객체 생성 : 김민재 -->
 	<beans:bean id="noticeDao" class="com.hotel.dao.NoticeDAO"> </beans:bean>
-	
 	
 	<!-- Interceptor 객체 생성 -->
 	<beans:bean id="authInterceptor"  class="com.spring.interceptor.AuthInterceptor"></beans:bean>

@@ -31,7 +31,7 @@ public class NoticeController {
 	 */
 	@RequestMapping(value="notice_home.do", method=RequestMethod.GET)
 	public String notice_home() {
-		return "/notice/notice_home";
+		return "notice_home";
 	}
 	
 	
@@ -54,7 +54,7 @@ public class NoticeController {
 		mv.addObject("rPage", param.get("rPage"));
 		mv.addObject("keyword",keyword);
 		mv.addObject("search", "search");									// 검색 됬음을 알려주는 객체
-		mv.setViewName("/notice/event_list_search");
+		mv.setViewName("event_list_search");
 		
 			return mv;
 		
@@ -78,7 +78,7 @@ public class NoticeController {
 		mv.addObject("rPage", param.get("rPage"));
 		mv.addObject("keyword",keyword);
 		mv.addObject("search", "search");									// 검색 됬음을 알려주는 객체
-		mv.setViewName("/notice/notice_list_search");
+		mv.setViewName("notice_list_search");
 		
 		return mv;
 		
@@ -98,9 +98,9 @@ ModelAndView mv = new ModelAndView();
 		}
 		mv.addObject("vo", vo);
 		if(vo.getNtag().equals("event")) {
-			mv.setViewName("/notice/event_content");	
+			mv.setViewName("/event_content");	
 		}else {
-			mv.setViewName("/notice/notice_content");
+			mv.setViewName("/notice_content");
 		}
 		return mv;
 	}
@@ -120,7 +120,7 @@ ModelAndView mv = new ModelAndView();
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
 		mv.addObject("rPage", param.get("rPage"));
-					mv.setViewName("/notice/event_list");
+					mv.setViewName("event_list");
 					
 			
 					return mv;
@@ -140,7 +140,7 @@ ModelAndView mv = new ModelAndView();
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
 		mv.addObject("rPage", param.get("rPage"));
-					mv.setViewName("/notice/notice_list");
+					mv.setViewName("notice_list");
 					
 			
 					return mv;

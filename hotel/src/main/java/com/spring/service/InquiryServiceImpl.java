@@ -1,7 +1,6 @@
 package com.spring.service;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,13 +12,6 @@ public class InquiryServiceImpl implements InquiryService {
 	@Autowired
 	private HotelInquiryDAO hotelinquiryDao;
 	
-	/**
-	 * 본인 문의글 리스트
-	 */
-	@Override
-	public List<HotelInquiryVO> getMyList(String mid){
-		return hotelinquiryDao.myselect(mid);
-	}
 	
 	/**
 	 * 문의글 검색 게시물 갯수 출력

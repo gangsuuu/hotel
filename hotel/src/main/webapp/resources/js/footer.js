@@ -3,6 +3,7 @@ $.ajax({
 	success:function(result){
 		let dataset = JSON.parse(result)
 		let footer = ""; 
+		let logosrc = dataset.logoSrc
 		if(hotelnmae = 'type1'){
 		footer += "<footer>";
 		footer += "<div class='foot hub_foot footdongtan'>";
@@ -10,7 +11,7 @@ $.ajax({
 		footer += "<div class='localBox'>";
 		footer += "<div class='localBoxer'>";
 		footer += "<div class='compInfo'>";
-		footer += "<a class='"+hotelname+"_logo' href='shillastayindex.do'></a>";
+		footer += "<a class='footer_logo' href='shillastayindex.do'></a>";
 		footer += "<div class='foot_hotelinfo'>";
 		footer += "<p>"+dataset.hotelname+"</p>";
 		footer += "<p>"+dataset.hoteladdress+"</p>";
@@ -49,8 +50,6 @@ $.ajax({
 		//footer상단부 - end 
 		
 		
-		
-		
 		//footer 하단부
 		footer += "<div class='footer'>";
 		footer += "<div class='footer_topbox'>";
@@ -73,14 +72,11 @@ $.ajax({
 		footer += "</div>";
 		//footer 하단부-end
 		
-		
 		footer += "</div>";
 		footer += "<footer>";
 		
-		
-		
-		
 		}//type1
 		$('body').children().last().after(footer);
+		$(".footer_logo").css({'background':"url(http://localhost:9000/hotel/resources/upload/hotelfile/"+logosrc+")", 'background-repeat' : 'no-repeat', 'background-size':'100% 100%'});
 	},//success
 })//ajax

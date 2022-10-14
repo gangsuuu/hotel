@@ -1,11 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Customer Inquiry</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+	var hotelname = "theshilla";
+</script>
 <script>
 	$(document).ready(function(){
 	
@@ -34,7 +39,8 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<iframe></iframe>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
 
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
@@ -97,34 +103,48 @@
 					<table class="customerBoard">
 						<tr>
 							<th>No.</th>
-							<th>구분</th>
-							<th>문의</th>
+							<th>분류</th>
 							<th>제목</th>
 							<th>작성자</th>							
 							<th>등록일자</th>							
 						</tr>
-						<c:forEach var="vo" items="${mlist}">
-							<tr>
-								<td>${ vo.rno }</td>
-								<td>${ vo.hotelname }</td>
-								<td>${ vo.category }</td>
-								<td>
-									<c:choose>
-										<c:when test="${ vo.rcount != 0 }">
-											<a href="inquiry_content.do?iid=${ vo.iid }">${ vo.title }<div class="commentimg"></div></a>
-										</c:when>
-										<c:otherwise>
-											<a href="inquiry_content.do?iid=${ vo.iid }">${ vo.title }</a>
-										</c:otherwise>
-									</c:choose>		 
-								</td>
-								<td>${ vo.mid }</td>
-								<td>${ vo.idate }</td>
-							</tr>
-						</c:forEach>
-						
 						<tr>
-							<td colspan="6"> << 1 2 3 4 5 >> </td>
+							<td>1</td>
+							<td>예약문의</td>
+							<td>문의글</td>
+							<td>test1</td>
+							<td>2022-08-31</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>계정문의</td>
+							<td>문의글2</td>
+							<td>test1</td>
+							<td>2022-08-30</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>예약문의</td>
+							<td>문의글3</td>
+							<td>test1</td>
+							<td>2022-08-30</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>기타</td>
+							<td>문의글4</td>
+							<td>test1</td>
+							<td>2022-08-29</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>기타</td>
+							<td>문의글5</td>
+							<td>test1</td>
+							<td>2022-08-28</td>
+						</tr>
+						<tr>
+							<td colspan="4"> << 1 2 3 4 5 >> </td>
 						</tr>
 					</table>
 					<form name="list_search" action="inquiry_list_search.do" method="get" id="search" >
@@ -149,6 +169,6 @@
 	</div>
 
 	<!-- Footer Include -->
-	<iframe></iframe>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
 </body>
 </html>

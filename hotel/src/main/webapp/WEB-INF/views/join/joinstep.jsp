@@ -6,11 +6,18 @@
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/hotel.css">
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/myhotel_jquery.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	var hotelname = "theshilla";
+</script>
 </head>
 <body>
 <div class="content">
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
 		
 		<form name="joinStep"  action="joinStep.do"  method="get">
 		<script>
@@ -1030,5 +1037,6 @@ function jsJoinStep1Validation() {
 		
 </form>
 </div>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
 </body>
 </html>

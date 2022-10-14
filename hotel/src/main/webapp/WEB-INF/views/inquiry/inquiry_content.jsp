@@ -10,6 +10,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+	var hotelname = "theshilla";
+</script>
 <script>
 	
 	//전체글 수정하기 버튼 클릭 시, 비번체크
@@ -175,7 +180,8 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<iframe></iframe>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
 
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
@@ -259,7 +265,7 @@
 						<!-- 작성자는 id값을 가져온다. 지금은 수동으로 넣음 -->
 						<tr>
 							<th colspan="2">작성자</th>
-							<td colspan="2">${vo.mid }</td>
+							<td colspan="2">test1</td>
 						</tr>
 						
 						<tr>
@@ -325,6 +331,6 @@
 	</div>
 
 	<!-- Footer Include -->
-	<iframe src="hotel_footer.do" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
 </body>
 </html>

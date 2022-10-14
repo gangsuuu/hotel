@@ -258,29 +258,7 @@ public class HotelInquiryDAO extends DBConn{
 		
 		return sqlSession.update("mapper.inquiry.update", vo);
 	}
-	
-	/**
-	 * myselect : 본인 문의글 리스트 출력
-	 */
-	/*
-	 * public ArrayList<HotelInquiryVO> myselect1(int startCount, int endCount){
-	 * Map<String, Integer> param = new HashMap<String, Integer>();
-	 * param.put("start", startCount); param.put("end", endCount);
-	 * 
-	 * List<HotelInquiryVO> list = sqlSession.selectList("mapper.inquiry.mylist",
-	 * param);
-	 * 
-	 * return (ArrayList<HotelInquiryVO>)list; }
-	 */
-	
-	/**
-	 * myselect : 본인 문의글 리스트 출력
-	 */
-	public List<HotelInquiryVO> myselect(String mid) {
-		return sqlSession.selectList("mapper.inquiry.mylist",mid);
-	}
-	
-	
+		
 	/**
 	 * select : 문의글 전체 리스트 출력
 	 */

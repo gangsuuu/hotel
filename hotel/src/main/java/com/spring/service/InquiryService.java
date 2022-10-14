@@ -1,7 +1,6 @@
 package com.spring.service;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.hotel.vo.HotelInquiryVO;
 
@@ -33,8 +32,5 @@ public interface InquiryService {
 	
 	//문의글 전체 리스트
 	ArrayList<HotelInquiryVO> getBoardList(int startCount, int endCount);
-	
-	//본인 문의글 리스트
-	List<HotelInquiryVO> getMyList(String mid);
 }
 

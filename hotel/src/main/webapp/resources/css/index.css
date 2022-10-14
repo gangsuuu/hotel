@@ -699,7 +699,7 @@
 	
 	/* localBox css */
 	.linkInfo {
-        background : url(http://localhost:9000/index/resources/images/public/localBoxLinkInfo.gif) no-repeat transparent;
+        background : url(http://localhost:9000/hotel/resources/img/public/localBoxLinkInfo.gif) no-repeat transparent;
 		position : relative;
 		float : left;
 		width : 500px;
@@ -743,7 +743,7 @@
     }
 	.foot .localBox .snsNews .sns .dt{
         float:left; 
-        background:url(http://localhost:9000/index/resources/images/public/localBoxSnsNews.gif) no-repeat 0 -39px; 
+        background:url(http://localhost:9000/hotel/resources/img/public/localBoxSnsNews.gif) no-repeat 0 -39px; 
         width:33px; height:23px; 
         text-indent:-9999%; 
         overflow:hidden; 
@@ -754,7 +754,7 @@
     }
 	.foot .localBox .snsNews .sns dd a{ 
         width:23px; height:23px; 
-        background:url(http://localhost:9000/index/resources/images/public/localBoxSnsNews.gif); 
+        background:url(http://localhost:9000/hotelresources/img/public/localBoxSnsNews.gif); 
         vertical-align:middle; 
         display: block; 
         overflow:hidden; 
@@ -859,7 +859,7 @@
 	
 	.footer .adressBox{
         height:100px; width:1200px; 
-        background-image: url(http://localhost:9000/index/resources/images/public/footCopyright.gif);
+        background-image: url(http://localhost:9000/hotel/resources/img/public/footCopyright.gif);
         background-repeat: no-repeat;
         text-indent: -9999%;
 	}
