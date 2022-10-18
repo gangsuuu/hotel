@@ -18,7 +18,6 @@
 <script>
 	var hotelname = "theshilla";
 </script>
-
 <script>
 	
 	function modalopen(iid){ 
@@ -172,7 +171,7 @@
 								<a href="inquiry_write.do"><span>문의하기</span></a>
 							</li>
 							<li class="">
-								<a href="inquiry_my_list.do"><span>내문의함</span></a>
+								<a href="inquiry_my_list.do?mid=${svo.mid }"><span>내문의함</span></a>
 							</li>
 						</ul>
 				</div>
@@ -261,7 +260,7 @@
 								
 														
 							</td>
-							<td>writer</td>
+							<td>${ vo.mid }</td>
 							<td>${ vo.idate }</td>
 						</tr>
 						</c:forEach>

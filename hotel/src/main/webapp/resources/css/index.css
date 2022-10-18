@@ -581,10 +581,9 @@
     *****************************************/
     .content{
         margin: auto; margin-top:150px;
-        width:1200px;
+        width:1300px;
         display: flex;
        	justify-content: space-between;
-       	border: 1px solid red;
     }
     .content_lists{
         width:262px;
@@ -683,11 +682,122 @@
    
    
     .content_menu{
-        width:875px;
+        width:950px;
         display: inline-block;
         border:1px solid black;
         margin:0;
+       	position: relative;
     }
+    .content-location{
+ 	position:absolute;
+ 	right:0; top:0;
+ 	display: flex;
+ 	height:40px;
+ 	align-items: center;
+ 	
+ 	}
+ 	.content-location span{
+ 	font-size:12px;
+ 	margin-left: 8px;
+ 	}
+ 	.content-block{
+ 	height: 5px;
+ 	background-color: var(--hub-font);
+ 	margin:10px 0 0 0;
+ 	
+ 	}
+ 	.content-rooms>img{
+ 	width: 950px;
+ 	}
+ 	.content-rooms-info{
+ 	display: flex;
+ 	width: 950px;
+ 	margin: 50px 0 0 0;
+ 	justify-content: space-between;
+ 	}
+ 	.content-rooms-info-left{
+ 	margin: 0px;
+ 	}
+ 	.content-rooms-info-right{
+ 	margin: 0px;
+ 	width: 360px
+ 	}
+ 	.content-rooms-info-inroom-img{
+ 	width: 100px; 
+ 	margin: 0;
+ 	}
+ 	.content-room-amenity{
+ 	margin: 40px 0 40px 0;
+ 	}
+ 	.content-room-amenity>a>img{
+ 	width: 170px;
+ 	}
+ 	.content-room-info-block{
+ 	width: 530px; height:1px;
+ 	background-color: var(--hub-background);
+ 	margin: 30px 0 30px 0;
+ 	}
+ 	.content-rooms-info-inroom, .content-rooms-info-inhotel {
+ 	display:flex;
+ 	align-items: center;
+ 	}
+ 	.content-rooms-info-inroom-img>img, .content-rooms-info-inhotel-img>img{
+ 	width: 50px;
+ 	}
+ 	.content-rooms-info-ul{
+ 	margin: 0;
+ 	width: 450px;
+ 	}
+ 	.content-rooms-info-ul ul li{
+ 	font-size:12px;
+ 	list-style-image: url(http://localhost:9000/hotel/resources/img/accommodation/bgDot.gif);
+ 	margin: 5px 0 5px 0;
+ 	letter-spacing: 1px;
+ 	}
+ 	.content-rooms-info-ul ul li::marker{
+ 	color:#aaa;
+ 	font-size:0.5mm;
+ 	}
+ 	
+ 	.content-rooms-info-btns{
+ 	display: flex;
+ 	justify-content: space-between;
+ 	gap:5px;
+ 	}
+ 	.content-rooms-info-btns img{
+ 	 width: 115px;
+ 	}
+ 	.content-rooms-info-hotelinfo{
+ 	background: rgb(250,247,237);
+ 	margin-top:50px;
+ 	
+ 	}
+ 	.content-rooms-info-content{
+ 	padding:25px;
+ 	}
+ 	.content-info-container{
+ 	margin-top:25px;
+ 	}
+ 	.content-info-content p{
+ 	margin: 5px 0 5px 10px;
+ 	}
+ 	.content-info-title{
+ 	padding-left:10px;
+ 	background-image:url(http://localhost:9000/hotel/resources/img/accommodation/bgDot.gif);
+ 	background-repeat: no-repeat;
+    background-position: top 50% left;
+   	font-size: 13px;
+   	font-weight: bold;
+ 	}
+ 	.content-info-content{
+ 	font-size:13px;
+ 	}
+ 	.content-info-content-dept{
+ 	padding-left: 10px;
+ 	}
+ 	.all-rooms img{
+ 	width: 100%; 
+ 	}
     /*******************************************
                 테마2 컬러
     *******************************************/
@@ -993,3 +1103,10 @@
  	background-color: rgba(154,11,58,0.5);
  	height: 500px;
  }
+ /**********************************************************
+ 					content_menu
+ ***********************************************************/
+ 
+ 
+ 
+ 

@@ -183,6 +183,7 @@
 	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
 	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
 
+
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
 	<!---------------------------------------------->
@@ -265,7 +266,7 @@
 						<!-- 작성자는 id값을 가져온다. 지금은 수동으로 넣음 -->
 						<tr>
 							<th colspan="2">작성자</th>
-							<td colspan="2">test1</td>
+							<td colspan="2">${vo.mid }</td>
 						</tr>
 						
 						<tr>

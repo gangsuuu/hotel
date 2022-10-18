@@ -49,7 +49,7 @@ public class PublicController {
 	 * 공통으로 들어가는 헤더에서 호텔에 따른 출력
 	 */
 	@ResponseBody
-	@RequestMapping(value="header_getCategori.do",method=RequestMethod.GET, produces="application/text; charset=UTF-8")
+	@RequestMapping(value="/header_getCategori.do",method=RequestMethod.GET, produces="application/text; charset=UTF-8")
 	public String header_getCategori(String hotelname){
 		HotelListDAO dao = new HotelListDAO();
 		JsonObject jobject = new JsonObject();
@@ -113,8 +113,6 @@ public class PublicController {
 		HotelListDAO dao = new HotelListDAO();
 		JsonObject jobject = new JsonObject();
 		Gson  gson =  new Gson();
-		
-		String logoSrc = dao.getLogo(hotelname);
 		HotelListVO vo = dao.selectOnehotelist(hotelname);
 			jobject.addProperty("hotelnum", vo.getHotelnum());
 			jobject.addProperty("hotelname",vo.getHotelname());
@@ -124,9 +122,6 @@ public class PublicController {
 			jobject.addProperty("hoteladdress",vo.getHoteladdress());
 			jobject.addProperty("hotellocation",vo.getHotellocation());
 			jobject.addProperty("hotelcsstype",vo.getHotelcsstype());
-			jobject.addProperty("logoSrc", logoSrc);
-			
-			
 		return gson.toJson(jobject); 
 	}
 	/**

@@ -139,6 +139,8 @@
 	<!---------------------------------------------->	
 		<div class="contents" id="contents">
 		<form name="inquireWriteForm" id="inquireForm" method="POST" enctype="multipart/form-data" action="inquiry_write_check.do">
+		${ svo.mid }
+		<input type="hidden" name="mid" value="${ svo.mid }">
 				<div class="ctnInquires ctnCtUs">
 					<div class="location">
 						<p class="list">

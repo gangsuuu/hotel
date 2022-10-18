@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hotel.vo.HotelInquiryVO;
+import com.hotel.vo.MyroomVO;
 import com.hotel.vo.ReplyInquiryVO;
 import com.spring.service.FileServiceImpl;
 import com.spring.service.InquiryServiceImpl;
@@ -41,6 +42,19 @@ public class InquiryController {
 	@RequestMapping(value="/hotel_footer.do", method=RequestMethod.GET)
 	public String hotel_footer() {
 		return "/hotel_footer";
+	}
+	
+	/**
+	 * inquiry_my_list.do 호출 : 문의글 전체 리스트
+	 */
+	@RequestMapping(value="/inquiry_my_list.do", method=RequestMethod.GET)
+	public ModelAndView inquiry_my_list(String mid) {
+		ModelAndView mv = new ModelAndView();
+		ArrayList<HotelInquiryVO> mlist = (ArrayList<HotelInquiryVO>)inquiryService.getMyList(mid);
+		mv.addObject("mlist", mlist);
+		mv.setViewName("/inquiry/inquiry_my_list");
+		
+		return mv;
 	}
 	
 	
@@ -171,13 +185,6 @@ public class InquiryController {
 		return mv;
 	}
 	
-	/**
-	 * inquiry_my_list 호출 : 내문의함
-	 */
-	@RequestMapping(value="/inquiry_my_list.do", method=RequestMethod.GET)
-	public String inquiry_my_list() {
-		return "/inquiry/inquiry_my_list";
-	}
 	
 	/**
 	 * inquiry_list.do 호출 : 문의글 전체 리스트
