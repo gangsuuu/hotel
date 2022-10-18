@@ -17,6 +17,7 @@
         }
     :root{
     /* hub */
+    --content-modal:rgb(143,130,114);
     --hub-background:rgb(235,231,227);
     --hub-font:rgb(79,76,74);
     --hub-hover:rgb(59,59,58);
@@ -78,8 +79,8 @@
 	.header_top_mid_logo{
 	    height: 60px;
 	    width: 250px;
-	    position: absolute;
-	    top:50%; left: 50%; transform: translate3d(-50%, -50%, 0);
+	    position: absolute; transform: translate3d(-50%, -50%, 0);
+	    top:50%; left: 50%;
 	    
 	}
 	.header_top_right{
@@ -594,12 +595,13 @@
         position: relative;
         display: flex;
        	flex-direction: column;
-       	border: 1px solid blue;
+       	background-color:var(--hub-background);
     }
     .content_lists h2{
         font-size: 24px;
-        font-weight: 600;
-        margin-bottom: 30px;
+        font-weight: 500;
+        margin-bottom: 20px;
+       color:var(--hub-font);
     }    
     .content_lists h2::after{
         margin-top: 20px;
@@ -607,29 +609,97 @@
         display: block;
         width: 200px;
         height: 5px;
+        background-color: var(--hub-font);
     }
     .content_inmenu li{
         position: relative;
         left:0px;
-        margin: 20px 0px;
-        
     }
-    .content_list {
-        font-weight: 500;
+    #content_list_one{
+    	margin: 30px 0 0 0;
+    }
+  	#content_list_bundle{
+    	margin: 5px 0 5px 0x;
+    }
+    .content_list{
+        font-weight: 700;
         height: 20px;
         padding: 1px 5px 0  5px;
         display: block;
         margin: 0;
         align-items: center;
-        font-size: 13px;
+        font-size: 14px;
+        color:var(--hub-font);
+    }
+    .sub_list{
+    margin: 10px 0 10px 0;
+    color:var(--theme2-subcategori_font)
+    }
+   
+    .content_selected{
+    background: var(--theme2-subcategori);
+    color: white;
     }
     .content_selected::After{
         content:"";
         display: inline-block;
         width: 4px;height: 4px;
         position: absolute;
-        top:40%;right: 23px;
+        top:40%;right: 10px;
         transform: rotate(45deg);
+        border-top: 1px solid white;
+        border-right: 1px solid white;
+    }
+    .content_allrooms{
+    background-color:var(--theme2-subcategori);
+    color:white;
+    text-align: center;
+    width:210px; padding: 15px 0;
+    display:inline-block; 
+    font-size: 14px; font-weight:500;
+    margin-top: 20px;
+    }
+    .modal-background{
+    background-color:rgba(255,255,255,0.5);
+    z-index:50;
+    position:fixed; 
+    display: none;
+    width: 100vw;
+	height: 100vh;
+    }
+    
+    .content-modal{
+    display:none;
+	position:fixed;
+	z-index:51;
+	top:50%; left:50%;  transform: translate3d(-50%, -50%, 0);
+	background-color:var(--content-modal); 
+    }
+    
+    .modal-header{
+    display: flex;
+    justify-content: space-between;
+   	background-color:var(--content-modal);
+   	width:auto;
+   	height:auto;
+   	padding: 10px 10px 10px 10px;
+    }
+    .modal-header>div{
+    margin:0;
+    }
+    .modal-content-container{
+    background-color:white;
+    border:5px solid var(--content-modal);
+    width: auto; height:auto; 
+    
+    }
+    .modal-content-block{
+    width:100%; height: 1px;
+    background-color: var(--content-modal);
+    }
+    .modal-content{
+    display: flex;
+    justify-content:center;
     }
     /***************************************
                 테마 컬러

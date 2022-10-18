@@ -20,13 +20,13 @@
             <div class="content_inmenu">
              	<h2 class="suject">객실</h2>
                 <ul>
-                    <li><a href="http://localhost:9000/hotel/accommodation/standard.do" class="content_list">스탠다드</a></li>
-                    <li class=" content_selected"><a href="http://localhost:9000/hotel/accommodation/deluxe.do" class="content_list">디럭스</a></li>
-                    <li><a href="http://localhost:9000/hotel/accommodation/deluxe.do" class="content_list content_selected">디럭스</a></li>
-                    <li><a href="http://localhost:9000/hotel/accommodation/deluxeOnDol.do" class="content_list">디럭스 온돌</a></li>
-                    <li><a href="http://localhost:9000/hotel/accommodation/primierDeluxe.do" class="content_list">프리미어 디럭스</a></li>
-                    <li><a href="http://localhost:9000/hotel/accommodation/grand.do" class="content_list">그랜드</a></li>
-                    <li><a href="http://localhost:9000/hotel/accommodation/allrooms.do" class="content_allrooms btn">전체 객실 보기</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/standard.do" class="content_list">스탠다드</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/deluxe.do" class="content_list">디럭스</a></li>
+                    <li id="content_list_bundle"><a href="http://localhost:9000/hotel/accommodation/deluxe.do" class="content_list sub_list">디럭스</a></li>
+                    <li id="content_list_bundle"><a href="http://localhost:9000/hotel/accommodation/deluxeOnDol.do" class="content_list sub_list content_selected">디럭스 온돌</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/primierDeluxe.do" class="content_list">프리미어 디럭스</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/grand.do" class="content_list">그랜드</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/allrooms.do" class="content_allrooms btn">전체 객실 보기</a></li>
                 </ul>
             </div>
         </div>

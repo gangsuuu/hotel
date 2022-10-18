@@ -15,18 +15,19 @@
 <body>
 	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
 	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
+	<div class="modal-background"></div>
 	<div class="content">
        <div class="content_lists">
             <div class="content_inmenu">
              	<h2 class="suject">객실</h2>
                 <ul>
-                    <li><a href="http://localhost:9000/hotel/accommodation/standard.do" class="content_list content_selected">스탠다드</a></li>
-                    <li class=" content_selected"><a href="http://localhost:9000/hotel/accommodation/deluxe.do" class="content_list">디럭스</a></li>
-                    <li><a href="http://localhost:9000/hotel/accommodation/deluxe.do" class="content_list ">디럭스</a></li>
-                    <li><a href="http://localhost:9000/hotel/accommodation/deluxeOnDol.do" class="content_list">디럭스 온돌</a></li>
-                    <li><a href="http://localhost:9000/hotel/accommodation/primierDeluxe.do" class="content_list">프리미어 디럭스</a></li>
-                    <li><a href="http://localhost:9000/hotel/accommodation/grand.do" class="content_list">그랜드</a></li>
-                    <li><a href="http://localhost:9000/hotel/accommodation/allrooms.do" class="content_allrooms btn">전체 객실 보기</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/standard.do" class="content_list content_selected">스탠다드</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/deluxe.do" class="content_list">디럭스</a></li>
+                    <li id="content_list_bundle"><a href="http://localhost:9000/hotel/accommodation/deluxe.do" class="content_list sub_list">디럭스</a></li>
+                    <li id="content_list_bundle"><a href="http://localhost:9000/hotel/accommodation/deluxeOnDol.do" class="content_list sub_list ">디럭스 온돌</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/primierDeluxe.do" class="content_list">프리미어 디럭스</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/grand.do" class="content_list ">그랜드</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/allrooms.do" class="content_allrooms btn">전체 객실 보기</a></li>
                 </ul>
             </div>
         </div>
@@ -49,9 +50,62 @@
             		   <img src="http://localhost:9000/hotel/resources/img/accommodation/R0000001DKM7_KR.jpg">
             		 </div>
             		 <div class="content-room-amenity">
-            		   <a href="#">
+            		   <a href="javascript:showamenity()">
             		     <img src="http://localhost:9000/hotel/resources/img/accommodation/btnAmenityview.gif">
             		   </a>
+            		   <div id="amenity-modal" class="content-modal">
+            		   		<div class="modal-header">
+            		   			<div>
+            		   				<img src="http://localhost:9000/hotel/resources/img/accommodation/accAmenityPopTitle.gif">
+            		   			</div>
+            		   			<div class="amnity-close btn">
+            		   				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
+            		   			</div>
+            		   		</div>
+            		   		<div class="modal-content-container">
+            		   		<div class="modal-content-block"></div>
+            		   		<div class="modal-content">
+            		   			<div>
+            		   				<img src="http://localhost:9000/hotel/resources/img/accommodation/accBathroomTit.gif">
+            		   				<ul>
+            		   					<li>다회용 어메니티</li>
+            		   					<li>덴탈 키트</li>
+            		   					<li>머리빗</li>
+            		   					<li>코튼세트(면봉, 화장솜)</li>
+            		   					<li>헤어드라이기</li>
+            		   					<li>배스로브</li>
+            		   					<li>배스타월</li>
+            		   					<li>핸드타월</li>
+            		   					<li>워시타월</li>
+            		   					<li>배스매트</li>
+            		   					<li>비상벨</li>
+            		   				</ul>
+            		   			</div>
+            		   			<div>
+            		   				<img src="http://localhost:9000/hotel/resources/img/accommodation/accBedroomTit.gif">
+            		   				<ul>
+            		   					<li>침대</li>
+            		   					<li>거위털 이불</li>
+            		   					<li>오리털 베개</li>
+            		   					<li>전화기</li>
+            		   					<li>개별 냉난방 조절기</li>
+            		   					<li>유니버셜 어탭터</li>
+            		   				</ul>
+            		   			</div>
+            		   			<div>
+            		   				<img src="http://localhost:9000/hotel/resources/img/accommodation/accClosetTit.gif">
+            		   				<ul>
+            		   				<li>개인금고</li>
+            		   				<li>다리미 세트</li>
+            		   				<li>구둣주걱</li>
+            		   				<li>슈 클리너</li>
+            		   				<li>비상 손전등</li>
+            		   				</ul>
+            		   			</div>
+            		   		</div>
+            		   		<div class="modal-content-block"></div>
+            		   		</div>
+            		   </div>
             		 </div>
             		 <div class="content-room-info-block"></div>
             		 <div class="content-rooms-info-inroom">
@@ -152,5 +206,16 @@
             </div>
         </div>
  	</div>
+ 	<script>
+ 		function showamenity(){
+ 			$(".modal-background").css("display","block");
+ 			$("#amenity-modal").css("display","block");
+ 			
+ 			$(".amnity-close").click(function(){
+ 				$(".modal-background").css("display","none");
+ 	 			$("#amenity-modal").css("display","none"); 				
+ 			});
+ 		}
+ 	</script>
 </body>
 </html>
