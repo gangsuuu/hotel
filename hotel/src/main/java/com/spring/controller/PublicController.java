@@ -18,6 +18,14 @@ import com.hotel.vo.HotelListVO;
 public class PublicController {
 	
 	/**
+	 *  header.do
+	 */
+	@RequestMapping(value="/header.do",method=RequestMethod.GET)
+	public String header() {
+		return "header";
+	}
+	
+	/**
 	 * header_gethotellist
 	 * 호텔리스트 출력
 	 */

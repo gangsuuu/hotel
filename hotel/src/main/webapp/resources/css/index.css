@@ -79,17 +79,19 @@
 	.header_top_mid_logo{
 	    height: 60px;
 	    width: 250px;
-	    position: absolute; transform: translate3d(-50%, -50%, 0);
-	    top:50%; left: 50%;
-	    
+	    position: absolute; transform: translateX(-50%);
+	    left: 50%;
 	}
 	.header_top_right{
 	    width: 500px;
 	    text-align: right;
+	    display: flex;
+	    flex-direction: column-reverse;
+	    justify-content: space-between;
 	}
 	.header_top_guest{
 	    display: flex; justify-content: right;
-	    gap:10px;
+	    gap:20px;
 	}
 	.header_top_guest a{
 	    padding: 5px 0 5px 0;
@@ -100,7 +102,7 @@
 	    content:"";
 	    display: inline-block;
 	    width: 1px;   height: 10px;
-	    margin-left: 10px;
+	    margin-left: 20px;
 	}
 	
 	.header_top_list{
@@ -134,7 +136,7 @@
 	    z-index: 10;
 	    width: 1300px;
 	    margin: auto;
-	    display: flex; justify-content: space-between;
+	    display: flex;
 	}
 	.header_maincategori_lists>div{
 		display: flex;
