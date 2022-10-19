@@ -929,18 +929,24 @@
 	.foot .localBox .snsNews .sns{ 
         position:absolute; 
         left:0; 
-        top:39px;
+        top:0;
+        height:100%;
+        width:200px;
+        background:url(http://localhost:9000/hotel/resources/img/public/localBoxSnsNews.gif);
+        display: flex;
+        gap:3px;
+        align-items: center;
     }
 	.foot .localBox .snsNews .sns .dt{
-        float:left; 
-        background:url(http://localhost:9000/hotel/resources/img/public/localBoxSnsNews.gif) no-repeat 0 -39px; 
+        background-position:left top;
         width:33px; height:23px; 
-        text-indent:-9999%; 
-        overflow:hidden; 
+        text-indent:-9999%;
+        margin: 0;
     }
-	.foot .localBox .snsNews .sns dd{ 
-        float:left; 
+	.foot .localBox .snsNews .sns dd{
         margin:0 0 0 5px;
+        margin: 0;
+        width:23px; height:23px; 
     }
 	.foot .localBox .snsNews .sns dd a{ 
         width:23px; height:23px; 
@@ -950,6 +956,7 @@
         overflow:hidden; 
         line-height:100px;
         text-indent:-9999%;
+        margin: 0;
     }
 	.foot .localBox .snsNews .sns .facebook a{
         background-position:-38px -39px;
@@ -966,7 +973,6 @@
 	.footer{
         width:1200px;
         margin:0 auto;
-        height:300px; 
         position:relative; 
         overflow:hidden;
     }
@@ -1012,21 +1018,27 @@
     }
 	/***********************/	
 	
-	
 	.compInfo {
-         position : relative; float : left;
-         width : 550px; height : 100px;
-         display: flex; align-items: center;
-         gap:60px;
+       position : relative; float : left;
+       width : 500px; height : 100px;
+       display: flex; align-items: center;
+       gap:60px;
+    }
+    .foot_hotelinfo{
+    	overflow: hidden;
     }
 	.compInfo p {   
         font-size: 13px; font-weight: 600;
         color: var(--theme2-maincategori_font);
+        left: -9999%;
+   		overflow: hidden;
     }
     .compInfo span{
         font-weight: 700;
         font-size: 12px;
         color: var(--theme2-subcategori_font);
+        left: -9999%;
+    	overflow: hidden;
     }
 	.compInfo a {
         text-decoration:none;

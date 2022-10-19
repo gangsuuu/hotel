@@ -26,6 +26,14 @@ public class PublicController {
 	}
 	
 	/**
+	 *  footer.do
+	 */
+	@RequestMapping(value="/footer.do",method=RequestMethod.GET)
+	public String footer() {
+		return "footer";
+	}
+	
+	/**
 	 * header_gethotellist
 	 * 호텔리스트 출력
 	 */
