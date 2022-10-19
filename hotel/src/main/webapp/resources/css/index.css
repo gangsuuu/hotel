@@ -1401,3 +1401,120 @@
  .content-info-container-service{
  	margin-top:20px;
  }
+ /**********************************
+ 			hotelinfo
+ **********************************/
+ .content-hotelinfo>img{
+ width: 850px;
+ }
+ .content-hotelinfo-second-one{
+ margin:30px 0;
+ 
+ }
+ .content-hotelinfo-table{
+ margin: 0 0px 70px 0px;
+ width: auto;
+ height:auto;
+ border-collapse: collapse;
+ font-size: 13px;
+ border-top: 1px solid rgb(205,203,190);
+ border-bottom: 1px solid rgb(205,203,190);
+  }
+ .content-hotelinfo-table tr:not(:first-child){
+ border-top:1px solid rgb(236,234,225);
+ }
+ .content-hotelinfo-table th{
+ 	width:200px;
+ 	text-align:center;
+ 	padding: 10px 0;
+ 	background-color: rgb(250,249,244);
+ 	font-weight: 600;
+ 	color:rgb(102,102,102);
+ }
+ .content-hotelinfo-table td{
+	width: 650px;
+	padding: 10px 0;
+	text-indent: 15px;
+ } 
+ .content-hotelinfo-around{
+	margin: 0 0 20px 0;
+ }
+ .content-hotelinfo-around img{
+ 	width: 850px
+ }
+ .content-hotelifo-last{
+ }
+ .content-hotellinfo-company{
+ display: flex;
+ justify-content:space-between;
+ width: 850px; height:40px;
+ background-color: var(--hub-background);
+ margin-bottom:20px; 
+ align-items: center;
+ }
+ .content-hotellinfo-company img{
+ margin: 0;
+ }
+ .content-hotellinfo-company a{
+ height: 27px;
+ }
+/**********************************
+ 			hotelmap
+ **********************************/
+ .content-hotelmap{
+ overflow: hidden;
+ }
+ .content-hotelinfo-eightfloors{
+ width: 800px;
+ margin:30px 0;
+ padding: 25px 25px 25px 25px;
+ border: 1px solid rgb(230,215,198);
+ 
+ }
+ .content-hotelinfo-eightfloors img{
+ display: block;
+ margin: 10px 0;
+ }
+ /**********************************
+ 			hotellocation
+ **********************************/
+ .content-hotellocation{
+ overflow: hidden;
+ }
+ .content-hotellocation-second img{
+ width: 850px;
+ margin: 10px 0; 
+ }
+ .content-hotellocation-bus{
+ 	margin: 20px 0;
+ }
+ .content-hotellocation-toairport{
+ 	margin: 5px 0;
+ }
+ .content-hotellocation-menubar{
+ 	padding:10px;
+ 	background-color: rgb(244,244,244);
+ 	width:830px; height: 20px;
+  	display: flex; 
+  	justify-content: space-between;
+  	align-items: center;
+  	margin: 0;
+  	border: 1px solid rgb(237,237,237);
+ }
+ .content-hotellocation-menuimg{
+ 	margin: 0;
+ }
+ .content-hotellocation-direction{
+ width: 15px; height: 15px;
+ border-top: 3px solid rgb(209,209,209);
+ border-left: 3px solid rgb(209,209,209);
+ transform: rotate(45deg);
+ margin-right: 30px;
+ }
+ .content-hotellocation-content{
+ display:none;
+ overflow:hidden;
+ }
+ .revers-btn{
+ 	transform: rotate(225deg);
+ }
