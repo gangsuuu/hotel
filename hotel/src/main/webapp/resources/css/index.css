@@ -134,7 +134,7 @@
 	    display: flex;
 	    justify-content: center;
 	    z-index: 10;
-	    width: 1300px;
+	    width: 1200px;
 	    margin: auto;
 	    display: flex;
 	}
@@ -686,7 +686,7 @@
     *****************************************/
     .content{
         margin: auto; margin-top:100px; margin-bottom:100px;
-        width:1300px;
+        width:1200px;
         display: flex;
        	justify-content: space-between;
     }
@@ -924,7 +924,7 @@
    
    
     .content_menu{
-        width:950px;
+        width:850px;
         display: inline-block;
         border:1px solid black;
         margin:0;
@@ -949,11 +949,11 @@
  	
  	}
  	.content-rooms>img{
- 	width: 950px;
+ 	width: 850px;
  	}
  	.content-rooms-info{
  	display: flex;
- 	width: 950px;
+ 	width: 850px;
  	margin: 50px 0 0 0;
  	justify-content: space-between;
  	}
@@ -962,7 +962,7 @@
  	}
  	.content-rooms-info-right{
  	margin: 0px;
- 	width: 360px
+ 	width: 330px
  	}
  	.content-rooms-info-inroom-img{
  	width: 100px; 
@@ -988,7 +988,7 @@
  	}
  	.content-rooms-info-ul{
  	margin: 0;
- 	width: 450px;
+ 	width: 390px;
  	}
  	.content-rooms-info-ul ul li{
  	font-size:11px;
@@ -1008,12 +1008,11 @@
  	gap:5px;
  	}
  	.content-rooms-info-btns>a>img{
- 	 width: 115px;
+ 	 width: 100px;
  	}
  	.content-rooms-info-hotelinfo{
  	background: rgb(250,247,237);
  	margin-top:50px;
- 	
  	}
  	.content-rooms-info-content{
  	padding:25px;
@@ -1359,9 +1358,46 @@
  	height: 500px;
  }
  /**********************************************************
- 					content_menu
+ 					guest_service
  ***********************************************************/
+ .content-services>img{
+ 	width: 850px;
+ }
+ .content-services-second{
+ 	margin: 40px 0;
+ 	display: flex; flex-direction: column;
+ 	gap:20px;
+ }
+ .content-services-second img{
+ margin-left: 0;
+ }
+ .content-service-info{
+ 	display: flex;
+ 	width: 850px;
+ 	margin: 50px 0 0 0;
+ 	justify-content: space-between;
+ }
+ .content-service-info-left{
+ 	margin: 0px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	gap:50px;
+}
+ .content-service-info-right{
+	 margin: 0px;
+ 	width: 550px
+ }
+ .content-service-info-inroom-img{
+ 	width: 100px; 
+	 margin: 0;
+ }
+ .content-service-info-content{
+ 	padding:25px;
+ }
  
- 
- 
- 
+ .content-service-info-hotelinfo{
+ 	background: rgb(250,247,237);
+ }
+ .content-info-container-service{
+ 	margin-top:20px;
+ }

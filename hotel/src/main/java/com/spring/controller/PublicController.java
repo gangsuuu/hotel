@@ -26,12 +26,53 @@ public class PublicController {
 	}
 	
 	/**
+	 *  /shllastya/hotelinfo.do
+	 */
+	@RequestMapping(value="/shillaStay/hotelinfo.do",method=RequestMethod.GET)
+	public String shllastya_hotelinfo() {
+		return "footerpage/hotelinfo";
+	}
+	
+	/**
+	 *  /shllastya/hotelMap.do
+	 */
+	@RequestMapping(value="/shillaStay/hotelMap.do",method=RequestMethod.GET)
+	public String hotelmap() {
+		return "footerpage/hotelmap";
+	}
+	
+	/**
+	 *  footer.do
+	 */
+	@RequestMapping(value="/shillaStay/hotellocation.do",method=RequestMethod.GET)
+	public String hotellocation() {
+		return "footerpage/location";
+	}
+	
+	/**
+	 *  footer.do
+	 */
+	@RequestMapping(value="/shillaStay/gallery.do",method=RequestMethod.GET)
+	public String hotelgallery() {
+		return "footerpage/gallery";	
+	}
+	
+	/**
 	 *  footer.do
 	 */
 	@RequestMapping(value="/footer.do",method=RequestMethod.GET)
 	public String footer() {
 		return "footer";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	/**
 	 * header_gethotellist
