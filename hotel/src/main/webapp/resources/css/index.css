@@ -3,8 +3,7 @@
         padding: 0;
         }
         body{
-            height: 2000px;
-            scroll-behavior: none;
+        scroll-behavior: none;
         }
         li{
         list-style-type: none;
@@ -151,7 +150,6 @@
 	}
 	.header_maincategori_lists li:hover .header_subcategori_list{
 	    display: block;
-	    position: absolute;
 	}
 	.header_maincategori_lists div>li a{
 	    padding: 15px 50px  16px 50px;
@@ -163,6 +161,7 @@
 	    width: 100%;
 	    display: none;
 	    height: 40px;
+	    position: absolute;
 	}
 	.header_subcategori_list>li{
 	    float: left;
@@ -583,7 +582,7 @@
                     menu-list
     *****************************************/
     .content{
-        margin: auto; margin-top:150px;
+        margin: auto; margin-top:100px; margin-bottom:100px;
         width:1300px;
         display: flex;
        	justify-content: space-between;

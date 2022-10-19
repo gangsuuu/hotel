@@ -8,14 +8,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
-<script>
-	var hotelname = "stayhub";
-</script>
 </head>
 <body>
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
-	<div class="content">
+	<%@ include file="../header.jsp" %><div class="content">
        <div class="content_lists">
             <div class="content_inmenu">
              	<h2 class="suject">객실</h2>
@@ -152,5 +147,10 @@
             </div>
         </div>
  	</div>
+ 	<%@ include file="../footer.jsp" %>
+ 	<script>
+ 	$("[data-nav=rooms]").css("display","block");
+ 	$("[data-nav=rooms]").children().eq(1).children().first().css("color","white");
+ 	</script>
 </body>
 </html>
