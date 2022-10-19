@@ -17,6 +17,7 @@
     :root{
     /* hub */
     --content-modal:rgb(143,130,114);
+    --content-modal-button:rgb(226,213,197);
     --hub-background:rgb(235,231,227);
     --hub-font:rgb(79,76,74);
     --hub-hover:rgb(59,59,58);
@@ -162,6 +163,7 @@
 	    display: none;
 	    height: 40px;
 	    position: absolute;
+	    z-index: 10;
 	}
 	.header_subcategori_list>li{
 	    float: left;
@@ -463,10 +465,111 @@
 	}
 		  
  
-     /*****************************************
-                    index
-     ****************************************/
-       
+    /*****************************************
+                   index
+    ****************************************/
+    .hotel-index-content{
+    margin: auto;
+    height: auto;
+    }
+    .hotel-index-add{
+    position: relative;
+    width: 1920px;
+    height: auto;
+    margin: auto;
+    }
+    .hotel-index-inner{
+   	position: relative;
+    top:0; left:0;
+    display:none; 
+  	margin: auto;
+    }
+    .hotel-index-inner img{
+    
+    }
+   	.add-selected{
+  	display: block;
+  	}
+    .hotel-index-add-btn{
+    display:flex; justify-content:space-between;
+    width:1200px;
+    position:absolute; top:50%; left:50%;
+    margin:auto;
+    transform:translate3d(-50%,-50%,0);
+    }
+    .hotel-index-add-btn-prve, .hotel-index-add-btn-next{
+    width:25px;
+    height:40px;
+    overflow: hidden;
+    position: relative;
+    }
+    .hotel-index-add-btn-prve, .hotel-index-add-btn-next{
+    }
+    .hotel-index-add-btn-next img{
+    position:relative;
+    left:-25px; 
+    }
+    .hotel-index-reservation{
+    height: 150px;
+    width: 1200px;
+    margin: auto;
+    background-color: rgba(255,0,0,0.5)
+    }
+    .hotel-index-event{
+    height: 400px;
+    width: 1200px;
+    margin: auto;
+    background-color: rgba(0,255,0,0.5)
+    }
+    .hotel-index-shillawars{
+    width: 100%;
+    height: auto;
+    background-color:rgb(246,246,246);
+    }
+    .hotel-index-shillawars-back{
+    width: 1200px;
+    height: auto;
+    background-color:rgb(246,246,246);
+    display: flex;
+    justify-content: space-between;
+    } 
+   	.hotel-index-shillawars-inner{
+    margin:  50px 100px 30px 0px;
+   	}
+   	.hotel-index-shillawars-inner-top{
+  	display: flex;
+  	gap:80px;
+  	margin-bottom:50px; 
+  	
+  	}
+    .hotel-index-shillawars-inner-top-left{
+    display:flex;
+    flex-direction: column; 
+    gap:30px;
+    }
+    .hotel-index-shillawars-inner-top-left{
+    position: relative;
+    }
+    .hotel-index-shillawars-inner-top-right .index-shillawars-img{
+    position:relative;
+    bottom: -40px;
+    }
+    .index-shillawars-img{
+    margin-left: 0;
+    }
+    .hotel-index-shillawars-inner-bottom{
+    display: flex;
+  	gap:50px;
+    }
+    .hotel-tripadvisor-api{
+    margin: 0;
+   	border-top:5px solid rgb(130,173,140);
+   	width: 350px;
+   	height: 280px;
+   	background-color: white;
+   	display: flex;
+   	justify-content: center
+    }
     /*****************************************
                     index - animation
     *****************************************/
@@ -663,7 +766,8 @@
     .modal-background{
     background-color:rgba(255,255,255,0.5);
     z-index:50;
-    position:fixed; 
+    position:fixed;
+    top:0; 
     display: none;
     width: 100vw;
 	height: 100vh;
@@ -692,7 +796,7 @@
     background-color:white;
     border:5px solid var(--content-modal);
     width: auto; height:auto; 
-    
+    padding: 35px 50px ;
     }
     .modal-content-block{
     width:100%; height: 1px;
@@ -700,7 +804,74 @@
     }
     .modal-content{
     display: flex;
-    justify-content:center;
+    justify-content:space-between;
+    border-color: solid var(--content-modal);
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    padding: 30px 0 55px 0;
+    gap:35px;
+    }
+    .modal-content-last{
+    padding-right: 50px;
+    }
+    .modal-content-list{
+    display:flex;
+   	flex-direction: column;
+   	gap:20px;
+    }
+    
+    .modal-content-center{
+    position: relative;
+    }
+    .modal-content-center::after, .modal-content-center::before{
+    content:"";
+    width: 1px;
+    height: 284px;
+    display:inline-block;
+    background-color:var(--content-modal);
+    position: absolute;
+    }
+    .modal-content-center::after{
+    left: -15px;
+    }
+    .modal-content-center::before{
+    right: -20px;
+    }
+    
+    .modal-content-list img{
+    margin-left: 0;
+    }
+    .modal-content-list-in{
+    margin: 0;
+    }
+    .modal-content-list-in>div{
+    padding-left:10px;
+    list-style:none;
+  	background-image:url(http://localhost:9000/hotel/resources/img/accommodation/bgDot.gif);
+ 	background-repeat: no-repeat;
+    background-position: top 50% left;
+   
+    }
+    .modal-content-roomtype{
+    }
+    .modal-content-roomtype-button{
+    width: 	140px;
+    height: 40px;
+    background: var(--content-modal-button);
+    border:1px solid var(--hub-background);
+    display: table-cell;
+    }
+    .modal-content-room-drawing{
+    }
+    .modal-content-drwaing{
+    display: none;
+    }
+    .show{
+    display: block;
+    }
+    .btn-selected{
+    background-color: white;
+    border-bottom: none;
     }
     /***************************************
                 테마 컬러
@@ -804,7 +975,7 @@
  	width: 170px;
  	}
  	.content-room-info-block{
- 	width: 530px; height:1px;
+ 	width: 100%; height:1px;
  	background-color: var(--hub-background);
  	margin: 30px 0 30px 0;
  	}
@@ -820,8 +991,9 @@
  	width: 450px;
  	}
  	.content-rooms-info-ul ul li{
- 	font-size:12px;
+ 	font-size:11px;
  	list-style-image: url(http://localhost:9000/hotel/resources/img/accommodation/bgDot.gif);
+ 	
  	margin: 5px 0 5px 0;
  	letter-spacing: 1px;
  	}
@@ -835,7 +1007,7 @@
  	justify-content: space-between;
  	gap:5px;
  	}
- 	.content-rooms-info-btns img{
+ 	.content-rooms-info-btns>a>img{
  	 width: 115px;
  	}
  	.content-rooms-info-hotelinfo{
