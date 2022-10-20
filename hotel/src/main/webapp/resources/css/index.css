@@ -796,10 +796,11 @@
     }
     .modal-content-container{
     background-color:white;
-    border:5px solid var(--content-modal);
     width: auto; height:auto; 
     padding: 35px 50px ;
     }
+    
+    
     .modal-content-block{
     width:100%; height: 1px;
     background-color: var(--content-modal);
@@ -820,6 +821,49 @@
     display:flex;
    	flex-direction: column;
    	gap:20px;
+    }
+    .modal-content-room-list{
+    margin-top:25px;
+    position: relative;
+    }
+    .modal-content-room-inner{
+    float:left;
+    position: absolute;
+    }
+    .modal-content-roomchange-btn{
+    padding: 10px 22px;
+    width:71px;
+    text-align:center;
+    margin-top:-38px;
+    position:absolute;
+    display:inline-block;
+    border:1px solid rgb(226,213,197);
+    color:var(--content-modal);
+    background-color: rgb(226,213,197);
+    font-size: 13px;
+    }
+    .selected-drawing-btn{
+    background: white;
+    border-bottom: 3px solid white;
+    }
+    .roomchangebtn-second{
+    left:118px;
+    }
+    .roomchangebtn-third{
+    left:236px;
+    }
+    .modal-drawaings-container{
+    background-color:white;
+    width: 550px; height:480px; 
+    padding: 35px 30px ;
+    }
+    
+    .modal-drawing-container{
+    border:1px solid rgb(226,213,197);
+    display: none;
+    }
+    .modal-room-drawing-img{
+    width: 550px;
     }
     
     .modal-content-center{
@@ -893,7 +937,9 @@
     
     
     
-    
+    .selected-drawing{
+    display: block;
+    }
     /***************************************
                 테마 컬러
     ****************************************/

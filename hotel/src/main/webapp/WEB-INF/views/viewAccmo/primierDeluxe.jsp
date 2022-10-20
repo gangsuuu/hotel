@@ -46,60 +46,9 @@
             		   <img src="http://localhost:9000/hotel/resources/img/accommodation/R0000001DKOW_KR.jpg">
             		 </div>
             		 <div class="content-room-amenity">
-            		   <a href="javascript:showamenity()">
+            		   <a href="javascript:showModal('amenity')">
             		     <img src="http://localhost:9000/hotel/resources/img/accommodation/btnAmenityview.gif">
             		   </a>
-            		   <div id="amenity-modal" class="content-modal">
-            		   		<div class="modal-header">
-            		   			<div>
-            		   				<img src="http://localhost:9000/hotel/resources/img/accommodation/accAmenityPopTitle.gif">
-            		   			</div>
-            		   			<div class="amnity-close btn">
-            		   				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
-            		   			</div>
-            		   		</div>
-            		   		<div class="modal-content-container">
-	            		   		<div class="modal-content">
-	            		   			<div class="modal-content-list">
-	            		   				<img src="http://localhost:9000/hotel/resources/img/accommodation/accBathroomTit.gif">
-	            		   				<div class="modal-content-list-in">
-	            		   					<div>다회용 어메니티</div>
-	            		   					<div>덴탈 키트</div>
-	            		   					<div>머리빗</div>
-	            		   					<div>코튼세트(면봉, 화장솜)</div>
-	            		   					<div>헤어드라이기</div>
-	            		   					<div>배스로브</div>
-	            		   					<div>배스타월</div>
-	            		   					<div>핸드타월</div>
-	            		   					<div>워시타월</div>
-	            		   					<div>배스매트</div>
-	            		   					<div>비상벨</div>
-	            		   				</div>
-	            		   			</div>
-	            		   			<div class="modal-content-list modal-content-center">
-	            		   				<img src="http://localhost:9000/hotel/resources/img/accommodation/accBedroomTit.gif">
-	            		   				<div class="modal-content-list-in">
-	            		   					<div>침대</div>
-	            		   					<div>거위털 이불</div>
-	            		   					<div>오리털 베개</div>
-	            		   					<div>전화기</div>
-	            		   					<div>개별 냉난방 조절기</div>
-	            		   					<div>유니버셜 어탭터</div>
-	            		   				</div>
-	            		   			</div>
-	            		   			<div class="modal-content-list modal-content-last">
-	            		   				<img src="http://localhost:9000/hotel/resources/img/accommodation/accClosetTit.gif">
-	            		   				<div class="modal-content-list-in">
-		            		   				<div>개인금고</div>
-		            		   				<div>다리미 세트</div>
-		            		   				<div>구둣주걱</div>
-		            		   				<div>슈 클리너</div>
-		            		   				<div>비상 손전등</div>
-	            		   				</div>
-	            		   			</div>
-	            		   		</div>
-            		   		</div>
-            		   </div>
             		 </div>
             		 <div class="content-room-info-block"></div>
             		 <div class="content-rooms-info-inroom">
@@ -136,7 +85,7 @@
             	</div>
             	<div class="content-rooms-info-right">
             		<div class="content-rooms-info-btns">
-            			<a href="#">
+            			<a href="javascript:showModal('drawing')">
             				<img src="http://localhost:9000/hotel/resources/img/accommodation/btnFloorPlanView.gif">
             			</a>
             			<a href="#">
@@ -200,6 +149,70 @@
             </div>
         </div>
  	</div>
+ 	<div id="amenitymodal" class="content-modal">
+   		<div class="modal-header">
+   			<div>
+   				<img src="http://localhost:9000/hotel/resources/img/accommodation/accAmenityPopTitle.gif">
+   			</div>
+   			<div class="modal-close btn">
+   				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
+   			</div>
+	   	</div>
+	   	<div class="modal-content-container">
+		  	<div class="modal-content">
+		   		<div class="modal-content-list">
+		   			<img src="http://localhost:9000/hotel/resources/img/accommodation/accBathroomTit.gif">
+		   			<div class="modal-content-list-in">
+		   				<div>다회용 어메니티</div>
+		   				<div>덴탈 키트</div>
+		   				<div>머리빗</div>
+		   				<div>코튼세트(면봉, 화장솜)</div>
+		   				<div>헤어드라이기</div>
+		   				<div>배스로브</div>
+		   				<div>배스타월</div>
+		   				<div>핸드타월</div>
+		   				<div>워시타월</div>
+		   				<div>배스매트</div>
+		   				<div>비상벨</div>
+		   			</div>
+		   		</div>
+		   		<div class="modal-content-list modal-content-center">
+		   			<img src="http://localhost:9000/hotel/resources/img/accommodation/accBedroomTit.gif">
+		   			<div class="modal-content-list-in">
+		   				<div>침대</div>
+		   				<div>거위털 이불</div>
+		   				<div>오리털 베개</div>
+		   				<div>전화기</div>
+		   				<div>개별 냉난방 조절기</div>
+		   				<div>유니버셜 어탭터</div>
+		   			</div>
+		   		</div>
+		   		<div class="modal-content-list modal-content-last">
+		   			<img src="http://localhost:9000/hotel/resources/img/accommodation/accClosetTit.gif">
+		   			<div class="modal-content-list-in">
+			   			<div>개인금고</div>
+			   			<div>다리미 세트</div>
+						<div>구둣주걱</div>
+			   			<div>슈 클리너</div>
+			   			<div>비상 손전등</div>
+		   			</div>
+	  			</div>
+	  		</div>
+		</div>
+	</div>
+ 	<div class="content-modal" id="drawingmodal">
+		<div class="modal-header">
+			<div>
+				<img src="http://localhost:9000/hotel/resources/img/accommodation/bzPremierDelxpopTitle.gif">
+			</div>
+			<div class="modal-close btn">
+				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
+			</div>
+		</div>
+		<div class="modal-content-one-container">
+			<img class="modal-content-one"  src="http://localhost:9000/hotel/resources/img/accommodation/R0000000XGTJ_KR.gif">
+   		</div>
+ 	</div>
  	<script>
  		function showamenity(){
  			$(".modal-background").css("display","block");
@@ -216,5 +229,6 @@
  	$("[data-nav=rooms]").css("display","block");
  	$("[data-nav=rooms]").children().eq(2).children().first().css("color","white");
  	</script>
+ 	<script src="http://localhost:9000/hotel/resources/js/showModal.jsp"></script>
 </body>
 </html>

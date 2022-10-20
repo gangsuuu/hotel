@@ -12,7 +12,6 @@
 <body>
 	<%@ include file="../header.jsp" %>
 	<div class="content">
-	<div class="modal-background"></div>
        <div class="content_lists">
             <div class="content_inmenu">
              	<h2 class="suject">객실</h2>
@@ -46,7 +45,7 @@
             		   <img src="http://localhost:9000/hotel/resources/img/accommodation/R0000001DKN4_KR.jpg">
             		 </div>
             		 <div class="content-room-amenity">
-            		   <a href="javascript:showamenity()">
+            		   <a href="javascript:showModal('amenity')">
             		     <img src="http://localhost:9000/hotel/resources/img/accommodation/btnAmenityview.gif">
             		   </a>
             		   <div id="amenity-modal" class="content-modal">
@@ -136,49 +135,9 @@
             	</div>
             	<div class="content-rooms-info-right">
             		<div class="content-rooms-info-btns">
-            			<a href="javascript:showdrwoing()">
+            			<a href="javascript:showModal('drawing')">
             				<img src="http://localhost:9000/hotel/resources/img/accommodation/btnFloorPlanView.gif">
             			</a>
-            			<div id="drwaing-modal" class="content-modal">
-	            			<div class="modal-header">
-	            		   		<div>
-	            		   			<img src="http://localhost:9000/hotel/resources/img/accommodation/bzDelxpopTitle.gif">
-	            		   		</div>
-	            		   		<div class="amnity-close btn">
-	            		   			<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
-	            		   		</div>
-	            		   	</div>
-	            		   	<div>
-		            		   	<div class="modal-content-container">
-			            		   	<table>
-			            		   		<tr>
-			            		   			<td>
-					            		   		<button class="modal-content-roomtype-button btn-selected" onclick="showtwinroom()">Twin</button>
-				            		   		</td>
-				            		   		<td>
-					            		   		<button class="modal-content-roomtype-button"onclick="showdoubleroom()">Double</button>
-					            		   	</td>
-					            		   	<td>
-					            		   	</td>
-					            		   	<td>
-					            		   	</td>
-			            		   		</tr>
-			            		   		<tr>
-			            		   			<td colspan="4">
-				            		   		<div class="modal-content-room-drawing">
-					            		   		<div class="modal-content-drwaing show" data-room="twin">
-													<img src="http://localhost:9000/hotel/resources/img/accommodation/R00000008Z04_KR.gif">	            		   		
-					            		   		</div>
-					            		   		<div class="modal-content-drwaing" data-room='double'>
-					            		   			<img src="http://localhost:9000/hotel/resources/img/accommodation/R00000008Z06_KR.gif">
-					            		   		</div>
-					            		   	</div>
-					            		   	</td>
-				            		   	</tr>
-				            		 </table>  	
-	            		   		</div>	
-	            		   	</div>
-	            		</div>
             			<a href="#">
             				<img src="http://localhost:9000/hotel/resources/img/accommodation/btnInquiry.gif">
             			</a>
@@ -240,30 +199,91 @@
             </div>
         </div>
  	</div>
+ 	 <div id="amenitymodal" class="content-modal">
+   		<div class="modal-header">
+   			<div>
+   				<img src="http://localhost:9000/hotel/resources/img/accommodation/accAmenityPopTitle.gif">
+   			</div>
+   			<div class="modal-close btn">
+   				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
+   			</div>
+	   	</div>
+	   	<div class="modal-content-container">
+		  	<div class="modal-content">
+		   		<div class="modal-content-list">
+		   			<img src="http://localhost:9000/hotel/resources/img/accommodation/accBathroomTit.gif">
+		   			<div class="modal-content-list-in">
+		   				<div>다회용 어메니티</div>
+		   				<div>덴탈 키트</div>
+		   				<div>머리빗</div>
+		   				<div>코튼세트(면봉, 화장솜)</div>
+		   				<div>헤어드라이기</div>
+		   				<div>배스로브</div>
+		   				<div>배스타월</div>
+		   				<div>핸드타월</div>
+		   				<div>워시타월</div>
+		   				<div>배스매트</div>
+		   				<div>비상벨</div>
+		   			</div>
+		   		</div>
+		   		<div class="modal-content-list modal-content-center">
+		   			<img src="http://localhost:9000/hotel/resources/img/accommodation/accBedroomTit.gif">
+		   			<div class="modal-content-list-in">
+		   				<div>침대</div>
+		   				<div>거위털 이불</div>
+		   				<div>오리털 베개</div>
+		   				<div>전화기</div>
+		   				<div>개별 냉난방 조절기</div>
+		   				<div>유니버셜 어탭터</div>
+		   			</div>
+		   		</div>
+		   		<div class="modal-content-list modal-content-last">
+		   			<img src="http://localhost:9000/hotel/resources/img/accommodation/accClosetTit.gif">
+		   			<div class="modal-content-list-in">
+			   			<div>개인금고</div>
+			   			<div>다리미 세트</div>
+						<div>구둣주걱</div>
+			   			<div>슈 클리너</div>
+			   			<div>비상 손전등</div>
+		   			</div>
+	  			</div>
+	  		</div>
+		</div>
+	</div>
+	<div class="content-modal" id="drawingmodal">
+		<div class="modal-header">
+			<div>
+				<img src="http://localhost:9000/hotel/resources/img/accommodation/bzDelxpopTitle.gif">
+			</div>
+			<div class="modal-close btn">
+				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
+			</div>
+		</div>
+		<div class="modal-drawaings-container">
+			<ul class="modal-content-room-list">
+				<li class="modal-content-room-inner">
+					<a class="modal-content-roomchange-btn selected-drawing-btn" href="javascript:changeDrawing('twin')" data-room='twin'>Twin</a>
+					<div class="modal-drawing-container selected-drawing" data-room="twin">
+						<img class="modal-room-drawing-img"src="http://localhost:9000/hotel/resources/img/accommodation/R00000008Z06_KR.gif">
+					</div>	
+				</li>
+			</ul>
+			<ul class="modal-content-room-list">
+				<li class="modal-content-room-inner">
+					<a class="modal-content-roomchange-btn roomchangebtn-second" href="javascript:changeDrawing('double')" data-room='double'>Double</a>
+					<div class="modal-drawing-container" data-room="double">
+						<img class="modal-room-drawing-img"src="http://localhost:9000/hotel/resources/img/accommodation/R00000008Z04_KR.gif">
+					</div>	
+				</li>
+			</ul>
+   		</div>
+ 	</div>
+ 	<div class="modal-background"></div>
  	<%@ include file="../footer.jsp" %>
- 	<script>
- 		function showamenity(){
- 			$(".modal-background").css("display","block");
- 			$("#amenity-modal").css("display","block");
- 			
- 			$(".amnity-close").click(function(){
- 				$(".modal-background").css("display","none");
- 	 			$("#amenity-modal").css("display","none"); 				
- 			});
- 		}
- 		function showdrwoing(){
- 			$(".modal-background").css("display","block");
- 			$("#drwaing-modal").css("display","block");
- 			
- 			$(".amnity-close").click(function(){
- 				$(".modal-background").css("display","none");
- 	 			$("#drwaing-modal").css("display","none"); 				
- 			});
- 		}
- 	</script>
  	<script>
  	$("[data-nav=rooms]").css("display","block");
  	$("[data-nav=rooms]").children().eq(1).children().first().css("color","white");
  	</script>
+ 	<script src="http://localhost:9000/hotel/resources/js/showModal.jsp"></script>
 </body>
 </html>
