@@ -56,10 +56,10 @@
 						</li>
 						<li class='header_maincategori theme2_after'>
 							<a href='#'>부대시설</a>
-							<ul class='header_subcategori_list theme2_sub_container' data-nav="public-content">
-								<li><a class='theme2_sub' id='header_subcategori' href='#'>미팅룸</a></li>
-								<li><a class='theme2_sub' id='header_subcategori' href='#'>비즈니스 코너</a></li>
-								<li><a class='theme2_sub' id='header_subcategori' href='#'>피트니스 센터</a></li>
+							<ul class='header_subcategori_list theme2_sub_container' data-nav="facilites">
+								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/shillastay/facilities/meetingRoom.do'>미팅룸</a></li>
+								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/shillastay/facilities/businessRoom.do'>비지니스 코너</a></li>
+								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/shillastay/facilities/fitnessRoom.do'>피트니스 센터</a></li>
 							</ul>
 						</li>
 						<li class='header_maincategori theme2_after'>

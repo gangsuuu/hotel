@@ -1563,8 +1563,40 @@
  	margin-top: 5px;
  }
  /**********************************
- 			dining
+ 			dining-loung
  **********************************/
  .content-dining-lounge{
  	background: rgb(250,247,237);
  }
+/**********************************
+ 			facilites
+ **********************************/
+ .content-facilites{
+ overflow: hidden;
+ }
+ .content-facilites-content{
+ margin:30px 0;
+ }
+ /**********************************
+ 			facilites - meetingroom
+ **********************************/
+ .content-facilites-meetingroom-tableposition {
+	display: flex;
+	width:850px;
+	flex-wrap: wrap;
+	gap:10px;
+ }
+.content-facilites-meetingroom-tableposition img{
+	width: 420px;
+	margin: 30px 0 0 0;
+}
+.content-facilites-meetingroom-price{
+	display: flex;
+	flex-direction: column; 
+	gap:30px;
+	margin-top: 40px;
+}
+.meetingroom-price-img {
+	width: 850px;	
+}
+ 
