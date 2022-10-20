@@ -40,11 +40,26 @@
             <div class="content-hotelinfo-map">
             	<div class="content-hotelinfo-eightfloors">
 	           		<img src="http://localhost:9000/hotel/resources/img/hotelinfo/Information.gif">
-	           		<a href=""><img src="http://localhost:9000/hotel/resources/img/hotelinfo/R0000000BROT_KR.gif"></a>
+	           		<a href="javascript:showModal('floorMap')"><img src="http://localhost:9000/hotel/resources/img/hotelinfo/R0000000BROT_KR.gif"></a>
            		</div>
            </div>
         </div>
  	</div>
+ 	<div class="modal-background"></div>
+ 	<div class="content-modal" id="floorMapmodal">
+		<div class="modal-header">
+			<div>
+				<img src="http://localhost:9000/hotel/resources/img/facilites/R000000093SB_KR.gif">
+			</div>
+			<div class="amnity-close btn">
+				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
+			</div>
+		</div>
+		<div class="modal-content-one-container">
+			<img class="modal-content-one"  src="http://localhost:9000/hotel/resources/img/facilites/R000000093S7_KR.gif">
+   		</div>
+ 	</div>
  	<%@ include file="../footer.jsp" %>
+ 	<script src="http://localhost:9000/hotel/resources/js/showModal.jsp"></script>
 </body>
 </html>

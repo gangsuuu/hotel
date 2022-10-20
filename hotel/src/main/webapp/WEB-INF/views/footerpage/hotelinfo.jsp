@@ -82,16 +82,66 @@
            <div class="content-hotelifo-last">
            		<div class="content-hotellinfo-company">
            			<img src="http://localhost:9000/hotel/resources/img/hotelinfo/fact_txt3.gif">
-           			<a href="#"><img src="http://localhost:9000/hotel/resources/img/hotelinfo/idFsDirectBtn.gif"></a>
+           			<a class="content-hotelinfo-companybtn" href="#"><img src="http://localhost:9000/hotel/resources/img/hotelinfo/idFsDirectBtn.gif"></a>
            		</div>
            		<div>
-           			<a href="#"><img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsAcmdBtn.gif"></a>
-           			<a href="#"><img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsDinningBtn.gif"></a>
-           			<a href="#"><img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsMeetingBtn.gif"></a>
+           			<a href="javascript:showModal('accommmodationsFactSheet')"><img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsAcmdBtn.gif"></a>
+           			<a href="javascript:showModal('diningFactSheet')"><img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsDinningBtn.gif"></a>
+           			<a href="javascript:showModal('meetingsFactSheet')"><img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsMeetingBtn.gif"></a>
            		</div>
            </div>
         </div>
  	</div>
+ 	<div class="modal-background"></div>
+ 	<div class="content-modal" id="accommmodationsFactSheetmodal">
+		<div class="modal-header">
+			<div>
+				<img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsAcmdPopTit.jpg">
+			</div>
+			<div class="modal-close btn">
+				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
+			</div>
+		</div>
+		<div class="modal-content-one-container">
+			<img src="http://localhost:9000/hotel/resources/img/hotelinfo/R0000001DLCR_KR.jpg">
+			<div class="modal-close modal-inner-btn btn">
+				<img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsPopCloseBtn.jpg">
+			</div>
+   		</div>
+ 	</div>
+ 	<div class="content-modal" id="diningFactSheetmodal">
+		<div class="modal-header">
+			<div>
+				<img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsDiningPopTit.jpg">
+			</div>
+			<div class="modal-close btn">
+				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
+			</div>
+		</div>
+		<div class="modal-content-one-container">
+			<img  src="http://localhost:9000/hotel/resources/img/hotelinfo/R0000000DGQT_KR.jpg">
+	   		<div class="modal-close modal-inner-btn btn">
+				<img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsPopCloseBtn.jpg">
+			</div>
+   		</div>
+ 	</div>
+ 	<div class="content-modal" id="meetingsFactSheetmodal">
+		<div class="modal-header">
+			<div>
+				<img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsMeetingTitPop.jpg">
+			</div>
+			<div class="modal-close btn">
+				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
+			</div>
+		</div>
+		<div class="modal-content-one-container">
+			<img src="http://localhost:9000/hotel/resources/img/hotelinfo/R000000093WY_KR.gif">
+			<div class="modal-close modal-inner-btn btn">
+				<img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsPopCloseBtn.jpg">
+			</div>
+   		</div>
+ 	</div>
  	<%@ include file="../footer.jsp" %>
+ 	<script src="http://localhost:9000/hotel/resources/js/showModal.jsp"></script>
 </body>
 </html>

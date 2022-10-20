@@ -778,7 +778,9 @@
 	position:fixed;
 	z-index:51;
 	top:50%; left:50%;  transform: translate3d(-50%, -50%, 0);
-	background-color:var(--content-modal); 
+	background-color:var(--content-modal);
+	border:5px solid var(--content-modal);
+    border-top:none; 
     }
     
     .modal-header{
@@ -787,10 +789,10 @@
    	background-color:var(--content-modal);
    	width:auto;
    	height:auto;
-   	padding: 10px 10px 10px 10px;
+   	padding: 10px 10px 5px 10px;
     }
     .modal-header>div{
-    margin:0;
+    margin: 0 20px;
     }
     .modal-content-container{
     background-color:white;
@@ -873,6 +875,25 @@
     background-color: white;
     border-bottom: none;
     }
+    
+    .modal-content-one{
+	border: 1px solid rgb(234,224,212);
+    }
+    .modal-content-one-container{
+    background-color:white;
+    width: auto; height:auto; 
+    padding: 15px 25px ;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    }
+    .modal-inner-btn{
+    margin: 20px auto 0 auto;
+    width: 85px;
+    
+    }
+    
+    
+    
+    
     /***************************************
                 테마 컬러
     ****************************************/
@@ -1455,11 +1476,12 @@
  .content-hotellinfo-company img{
  margin: 0;
  }
- .content-hotellinfo-company a{
+ .content-hotelinfo-companybtn{
  height: 27px;
+ margin-right:10px; 
  }
 /**********************************
- 			hotelmap
+ 			hotelmasp
  **********************************/
  .content-hotelmap{
  overflow: hidden;

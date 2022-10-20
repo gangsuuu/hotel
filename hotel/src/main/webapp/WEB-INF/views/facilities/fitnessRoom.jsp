@@ -40,14 +40,29 @@
 	           <img src="http://localhost:9000/hotel/resources/img/facilites/R0000001IRP9_KR.gif">
            </div>
            <div>
-           		<a href="#"><img src="http://localhost:9000/hotel/resources/img/facilites/FloorMap.gif"></a>
+           		<a href="javascript:showModal('floorMap')"><img src="http://localhost:9000/hotel/resources/img/facilites/FloorMap.gif"></a>
            </div>
         </div>
+ 	</div>
+ 	<div class="modal-background"></div>
+ 	<div class="content-modal" id="floorMapmodal">
+		<div class="modal-header">
+			<div>
+				<img src="http://localhost:9000/hotel/resources/img/facilites/R000000093SB_KR.gif">
+			</div>
+			<div class="modal-close btn">
+				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
+			</div>
+		</div>
+		<div class="modal-content-one-container">
+			<img class="modal-content-one"  src="http://localhost:9000/hotel/resources/img/facilites/R000000093S7_KR.gif">
+   		</div>
  	</div>
  	<%@ include file="../footer.jsp" %>
  	<script>
  	$("[data-nav=facilites]").css("display","block");
  	$("[data-nav=facilites]").children().eq(2).children().first().css("color","white");
  	</script>
+ 	<script src="http://localhost:9000/hotel/resources/js/showModal.jsp"></script>
 </body>
 </html>
