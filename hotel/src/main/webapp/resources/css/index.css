@@ -1518,3 +1518,53 @@
  .revers-btn{
  	transform: rotate(225deg);
  }
+ 
+ /**********************************
+ 			dining
+ **********************************/
+ .content-dining{
+ overflow: hidden;
+ }
+ .content-dining-info{
+ 	display: flex;
+ 	width: 850px;
+ 	margin: 50px 0 0 0;
+ 	justify-content: space-between;
+ }
+ .content-dining-info-left{
+ 	margin: 0px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	gap:50px;
+}
+ .content-dining-info-right{
+	margin: 0px;
+ 	width: 330px;
+ }
+  .content-dining-resturant{
+ 	background: rgb(250,247,237);
+ }
+ .content-dining-content-inner{
+ 	padding:25px;
+ }
+ ..content-dining-info{
+ 	display: flex;
+ 	width: 850px;
+ 	margin: 50px 0 0 0;
+ 	justify-content: space-between;
+ }
+ .content-dining-reservationbtn{
+ 	margin: 10px 0;
+ }
+ .content-dining-cafemenu-download{
+ 	display: flex;
+ 	justify-content: space-between;
+ 	gap:5px;
+ 	margin-top: 5px;
+ }
+ /**********************************
+ 			dining
+ **********************************/
+ .content-dining-lounge{
+ 	background: rgb(250,247,237);
+ }
