@@ -1,0 +1,97 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>신라스테이</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
+</head>
+<body>
+	<%@ include file="../header.jsp" %>
+	<div class="content">
+	<div class="modal-background"></div>
+       <div class="content_lists">
+            <div class="content_inmenu">
+             	<h2 class="suject">소개</h2>
+                <ul>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/shillaStay/hotelinfo.do" class="content_list content_selected">호텔정보</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/shillaStay/hotelMap.do" class="content_list ">층별안내도</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/shillaStay/hotellocation.do" class="content_list ">오시는길</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/shillaStay/gallery.do" class="content_list ">갤러리</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content_menu">
+        	<div class="content-location">
+        	  <img src="http://localhost:9000/hotel/resources/img/locaton.gif">
+        	  <span>> 소개 ></span>
+        	  <span> 호텔정보</span>
+        	</div>
+        	<div>
+        	  <img src="http://localhost:9000/hotel/resources/img/hotelinfo/subtit_factsheet.gif">
+        	</div>
+        	<div class="content-block"></div>
+        	<div class="content-hotelinfo">
+            </div>
+            <div class="content-hotelinfo-second">
+            	<div class="content-hotelinfo-second-one">
+	            	<img src="http://localhost:9000/hotel/resources/img/hotelinfo/R000000093X3_KR.gif">
+           		</div>
+           		<img src="http://localhost:9000/hotel/resources/img/hotelinfo/FactTxt_1.gif">
+           		<table class="content-hotelinfo-table">
+           			<tr>
+           				<th>개관일</th>
+           				<td>2015년 12월 22일</td>
+           			</tr>
+           			<tr>
+           				<th>주소</th>
+           				<td>서울시 종로구 삼봉로 71 (지번주소 : 종로구 수송동 51-8번지)</td>
+           			</tr>
+           			<tr>
+           				<th>대표전화</th>
+           				<td>02-6060-9000</td>
+           			</tr>
+           			<tr>
+           				<th>객실예약</th>
+           				<td>02-2230-0700</td>
+           			</tr>
+           			<tr>
+           				<th>홈페이지</th>
+           				<td><a href="#">http://www.shillastay.com/gwanghwamun</a></td>
+           			</tr>
+           			<tr>
+           				<th>구조</th>
+           				<td>지하 4층~지상 19층</td>
+           			</tr>
+           			<tr>
+           				<th>객실수</th>
+           				<td>총 338실</td>
+           			</tr>
+           			<tr>
+           				<th>시설</th>
+           				<td>객실, Cafe(뷔페 레스토랑), Bar, 미팅룸, 피트니스 센터, 비즈니스 코너</td>
+           			</tr>
+           		</table>
+           </div>
+           <div class="content-hotelinfo-around">
+           		<img src="http://localhost:9000/hotel/resources/img/hotelinfo/R000000093X1_KR.gif">
+           </div>
+           <div class="content-hotelifo-last">
+           		<div class="content-hotellinfo-company">
+           			<img src="http://localhost:9000/hotel/resources/img/hotelinfo/fact_txt3.gif">
+           			<a href="#"><img src="http://localhost:9000/hotel/resources/img/hotelinfo/idFsDirectBtn.gif"></a>
+           		</div>
+           		<div>
+           			<a href="#"><img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsAcmdBtn.gif"></a>
+           			<a href="#"><img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsDinningBtn.gif"></a>
+           			<a href="#"><img src="http://localhost:9000/hotel/resources/img/hotelinfo/fsMeetingBtn.gif"></a>
+           		</div>
+           </div>
+        </div>
+ 	</div>
+ 	<%@ include file="../footer.jsp" %>
+</body>
+</html>
