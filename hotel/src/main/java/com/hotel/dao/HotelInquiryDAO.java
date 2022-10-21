@@ -5,11 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hotel.vo.HotelInquiryVO;
 import com.hotel.vo.HotelSearchVO;
+import com.hotel.vo.SessionVO;
 
 public class HotelInquiryDAO extends DBConn{
 	
@@ -58,12 +61,40 @@ public class HotelInquiryDAO extends DBConn{
 //		return result;
 	}
 	
+	/**
+	 * mysearch : 나의문의글 검색
+	 */
+	public ArrayList<HotelInquiryVO> mysearch(String searchlist, String keyword, String mid){
+		
+		HotelSearchVO vo = new HotelSearchVO();
+		
+//		vo.setStart(startCount);
+//		vo.setEnd(endCount);
+		vo.setSearchlist(searchlist);
+		vo.setKeyword(keyword);
+		vo.setMid(mid);
+		
+		List<HotelInquiryVO> mlist = sqlSession.selectList("mapper.inquiry.mysearch", vo);
+		
+		return (ArrayList<HotelInquiryVO>)mlist;
+	}	
+	
 	
 	/**
 	 * search : 문의글 검색
 	 * searchlist - 제목, 작성자 / keyword - 검색값
 	 */
 	public ArrayList<HotelInquiryVO> search(int startCount, int endCount, String searchlist, String keyword){
+		
+		HotelSearchVO vo = new HotelSearchVO();
+		vo.setStart(startCount);
+		vo.setEnd(endCount);
+		vo.setSearchlist(searchlist);
+		vo.setKeyword(keyword);
+		
+		List<HotelInquiryVO> list = sqlSession.selectList("mapper.inquiry.search", vo);
+		
+		return (ArrayList<HotelInquiryVO>)list;
 		
 //		String sqlsearch="";
 //		
@@ -86,16 +117,6 @@ public class HotelInquiryDAO extends DBConn{
 //		System.out.println(param.get("end"));
 //		System.out.println(param.get("searchlist"));
 //		System.out.println(param.get("keyword"));
-		
-		
-		HotelSearchVO vo = new HotelSearchVO();
-		vo.setStart(startCount);
-		vo.setEnd(endCount);
-		vo.setSearchlist(searchlist);
-		vo.setKeyword(keyword);
-		
-		List<HotelInquiryVO> list = sqlSession.selectList("mapper.inquiry.search", vo);
-		
 		
 		
 		//ArrayList<HotelInquiryVO> list = new ArrayList<HotelInquiryVO>();
@@ -135,7 +156,6 @@ public class HotelInquiryDAO extends DBConn{
 //		}
 		
 		
-		return (ArrayList<HotelInquiryVO>)list;
 	}
 	
 	
@@ -185,7 +205,7 @@ public class HotelInquiryDAO extends DBConn{
 	/**
 	 * totalCount : DB에서 가져온 전체 행수(전체 로우수 출력)
 	 **/
-		public int totalCount() {
+		public int totalCount(HotelInquiryVO vo) {
 //			int result = 0;
 //			String sql = " select count(*) from hotel_inquiry ";
 //			
@@ -201,8 +221,8 @@ public class HotelInquiryDAO extends DBConn{
 //			}catch(Exception e) {
 //				e.printStackTrace();
 //			}
-			
-			return sqlSession.selectOne("mapper.inquiry.totalcount");
+
+			return sqlSession.selectOne("mapper.inquiry.totalcount", vo);
 		}	
 	
 	/**
@@ -259,19 +279,6 @@ public class HotelInquiryDAO extends DBConn{
 		return sqlSession.update("mapper.inquiry.update", vo);
 	}
 	
-	/**
-	 * myselect : 본인 문의글 리스트 출력
-	 */
-	/*
-	 * public ArrayList<HotelInquiryVO> myselect1(int startCount, int endCount){
-	 * Map<String, Integer> param = new HashMap<String, Integer>();
-	 * param.put("start", startCount); param.put("end", endCount);
-	 * 
-	 * List<HotelInquiryVO> list = sqlSession.selectList("mapper.inquiry.mylist",
-	 * param);
-	 * 
-	 * return (ArrayList<HotelInquiryVO>)list; }
-	 */
 	
 	/**
 	 * myselect : 본인 문의글 리스트 출력
@@ -292,6 +299,8 @@ public class HotelInquiryDAO extends DBConn{
 		param.put("end", endCount);
 		
 		List<HotelInquiryVO> list = sqlSession.selectList("mapper.inquiry.list", param);
+		
+		return (ArrayList<HotelInquiryVO>)list;
 		
 //		String sql = " SELECT RNO, IID, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, RCOUNT FROM"
 //				+ "    (SELECT ROWNUM RNO, IID, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, rcount FROM "
@@ -332,7 +341,6 @@ public class HotelInquiryDAO extends DBConn{
 //			e.printStackTrace();
 //		}
 		
-		return (ArrayList<HotelInquiryVO>)list;
 	}
 		
 	
