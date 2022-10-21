@@ -3,12 +3,17 @@ package com.spring.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import com.hotel.vo.HotelInquiryVO;
 
 public interface InquiryService {
 	
 	//문의글 검색 - 게시물 출력
 	int getSearchCount(String searchlist, String keyword);
+	
+	//나의문의글 검색
+	ArrayList<HotelInquiryVO> getMySearch(String searchlist, String keyword, String mid);
 	
 	//문의글 검색
 	ArrayList<HotelInquiryVO> getSearch(int startCount, int endCount, String searchlist, String keyword);
@@ -29,7 +34,7 @@ public interface InquiryService {
 	int getWriteResult(HotelInquiryVO vo);
 	 
 	//문의글 전체 수
-	int getTotalCount();
+	int getTotalCount(HotelInquiryVO vo);
 	
 	//문의글 전체 리스트
 	ArrayList<HotelInquiryVO> getBoardList(int startCount, int endCount);

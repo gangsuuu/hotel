@@ -3,10 +3,13 @@ package com.spring.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hotel.dao.HotelInquiryDAO;
 import com.hotel.vo.HotelInquiryVO;
+import com.hotel.vo.SessionVO;
 
 public class InquiryServiceImpl implements InquiryService {
 
@@ -29,6 +32,15 @@ public class InquiryServiceImpl implements InquiryService {
 		return hotelinquiryDao.searchCount(searchlist, keyword);
 	}
 	
+	/**
+	 * 나의 문의글 검색 처리 
+	 */
+	public ArrayList<HotelInquiryVO> getMySearch(String searchlist, String keyword, String mid){
+		
+		ArrayList<HotelInquiryVO> mlist = hotelinquiryDao.mysearch(searchlist, keyword, mid);
+		
+		return mlist;
+	}
 	
 	/**
 	 * 문의글 검색 처리
@@ -89,8 +101,8 @@ public class InquiryServiceImpl implements InquiryService {
 	 * 문의글 전체 글 수
 	 */
 	@Override
-	public int getTotalCount() {
-		return hotelinquiryDao.totalCount();
+	public int getTotalCount(HotelInquiryVO vo) {
+		return hotelinquiryDao.totalCount(vo);
 	}
 
 	/**

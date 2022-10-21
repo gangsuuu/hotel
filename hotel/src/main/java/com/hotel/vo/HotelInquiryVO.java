@@ -10,10 +10,10 @@ public class HotelInquiryVO {
 	String iid, category, title, content, ifile, isfile, idate, hotelname, mid;
 	
 
-
 	//ÆÄÀÏ
 	CommonsMultipartFile file1;
 
+	
 	//getter,setter	
 	public String getMid() {
 		return mid;

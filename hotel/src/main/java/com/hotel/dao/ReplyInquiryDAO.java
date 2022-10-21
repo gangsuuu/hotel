@@ -1,17 +1,39 @@
 package com.hotel.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.hotel.vo.HotelInquiryVO;
+import com.hotel.vo.HotelSearchVO;
 import com.hotel.vo.ReplyInquiryVO;
 
 public class ReplyInquiryDAO extends DBConn{
 	
 	@Autowired
 	private SqlSessionTemplate sqlSession;
+	
+	
+	/**
+	 * 관리자 검색
+	 */
+	public ArrayList<HotelInquiryVO> search(int startCount, int endCount, String searchlist, String keyword){
+		
+		HotelSearchVO vo = new HotelSearchVO();
+		vo.setStart(startCount);
+		vo.setEnd(endCount);
+		vo.setSearchlist(searchlist);
+		vo.setKeyword(keyword);
+		
+		List<HotelInquiryVO> list = sqlSession.selectList("mapper.reply.search", vo);
+		
+		return (ArrayList<HotelInquiryVO>)list;
+	}	
+	
 	
 	
 	/**
@@ -35,6 +57,20 @@ public class ReplyInquiryDAO extends DBConn{
 		return sqlSession.delete("mapper.reply.delete",iid);
 	}
 	
+	/**
+	 * 관리자 미답변 보기
+	 */
+	public ArrayList<HotelInquiryVO> select(int startCount, int endCount){
+		
+		//파라미터를 Map으로 정의
+		Map<String, Integer> param = new HashMap<String, Integer>();
+		param.put("start", startCount);
+		param.put("end", endCount);
+		
+		List<HotelInquiryVO> list = sqlSession.selectList("mapper.reply.replynone", param);
+		
+		return (ArrayList<HotelInquiryVO>)list;
+	}
 	
 	/**
 	 * 관리자 답글 상세보기

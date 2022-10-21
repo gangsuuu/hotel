@@ -6,14 +6,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/inquiry.css">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <title>Customer Inquiry</title>
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
+<script src="http://localhost:9000/hotel/resources/js/inquiry.js"></script>
+<script src="http://localhost:9000/hotel/resources/js/inquiry_javascript.js"></script>
 <script>
 	var hotelname = "theshilla";
 </script>
-<script>
+<!-- <script>
 	//문의글 등록하기
 	$(document).ready(function(){
 		$("#btnInquiryWrite").click(function(){
@@ -56,55 +59,7 @@
 		$("#content").val(key);
 	}
 
-</script>
-<style>
-.lnbAreaMenuBar{ float:left; }
-.lnbAreaMenuBar .MenuBar > .tit{ margin:0 0 29px 0; height:53px; background:url(http://localhost:9000/hotel/resources/img/lnbTitle.gif); display:block; /* text-indent:-9999%; */ overflow:hidden;}
-.MenuBar{ font-family:나눔명조OTF ExtraBold; width:216px; border:#ebe7e3 solid 1px; background:#ebe7e3; padding:23px; margin:0 0 30px 0;}
-.MenuBar .tit { margin-top:7px; font-family:나눔명조OTF; font-weight: lighter; color:rgb(88,88,88); margin:0;}
-.MenuBar .menu{ list-style:none; margin-top:20px; padding:0;}
-.MenuBar img { margin-left: -8px; margin-top: 9px; }
-.menu li a { color:rgb(88,88,88); }
-.menu img { float:right; margin-top:-18px; display:inline-block; }
-.MenuBar li{ margin:0 0 26px 0;}
-.MenuBar li a{ text-decoration:none; /* background:#9CC; */ height:21px; display:block;   /* text-indent:-9999%; */ overflow:hidden;}
-.MenuBar li a span{ margin-left:7px; display:block; margin-top:2px;} 
-.MenuBar li a.on{ font-weight:bold; background-color:rgb(119,114,109); color:white;}
-.MenuBar li li{ margin:0;}
-.MenuBar li li a{ background:#CC6; display:block;}
-.MenuBar li li a.on{ font-weight:bold;}
-
-.contain { display:flex; justify-content: center; width:1241px; height:895px; margin-right:202px; margin-bottom:100px; margin-left:202px;}
-.container { margin-right:100px; }
-.contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
-
-.tableTypeA{margin:20px 0px 0px 0px;border:none;border-top:#cdcbbe solid 1px; width:100%;border-collapse:collapse;table-layout:fixed;}
-.tableTypeA th,
-.tableTypeA td{border:none;padding:6px 13px;text-align:left;line-height: 22px;border-bottom:#eceae1 solid 1px;color:#333333;}
-.tableTypeA th{color:#666; background:#faf9f4; }
-.tableTypeA td{ background:#FFF; color:#1b1b1b}
-.tableTypeA .last th,.tableTypeA .last td {border-bottom:#cdcbbe solid 1px;}
-.tableTypeA .bdBot{border-bottom:#cdcbbe solid 1px !important; }
-
-.contentarea { width:670px; height:180px; vertical-align: middle; }
-.titlearea { width:668px; height:23px; vertical-align: middle;}
-#category {width:100px; height:23px;}
-#passwordlable { margin-left:30px; }
-#secretnum { width:100px; height:23px; }
-#category, .titlearea, #secretnum, .contentarea { border: #CCC solid 1px; }
-
-.list { float:right; }
-.tit { color: rgb(88,88,88); font-family: 나눔명조OTF; font-size:26px; margin-top:0; margin-bottom:10px;}
-
-.privacy { margin:20px 0 7px 0; font-size:16px; }
-.clauseBox{ margin:0 0 10px 0;}
-.clauseBox .scBox{ font-size:12px; border:#CCC solid 1px; height:60px; overflow:auto; overflow-x:hidden ;padding:10px;  margin:0 0 5px 0;}
-#btnWrite { text-align: center; }
-#btnInquiryWrite { margin-top:35px; background-color:rgb(58,49,37); color:rgb(250,241,208); width:99px; height:44px; vertical-align: middle;
-				   font-size:17px; font-weight: bold;}
-.ast {color:red;}
-
-</style>
+</script> -->
 </head>
 <body>
 	<!-- Header Include -->
@@ -129,7 +84,7 @@
 								<a href="inquiry_write.do" class="on"><span>문의하기</span><img src="http://localhost:9000/hotel/resources/img/gline1.jpg"></a>
 							</li>
 							<li class="">
-								<a href="inquiry_my_list.do" ><span>내문의함</span></a>
+								<a href="inquiry_my_list.do?mid=${svo.mid }" ><span>내문의함</span></a>
 							</li>
 						</ul>
 				</div>
@@ -141,7 +96,6 @@
 	<!---------------------------------------------->	
 		<div class="contents" id="contents">
 		<form name="inquireWriteForm" id="inquireForm" method="POST" enctype="multipart/form-data" action="inquiry_write_check.do">
-		${ svo.mid }
 		<input type="hidden" name="mid" value="${ svo.mid }">
 				<div class="ctnInquires ctnCtUs">
 					<div class="location">

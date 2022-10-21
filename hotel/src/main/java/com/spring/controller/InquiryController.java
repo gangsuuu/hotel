@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,8 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hotel.vo.HotelInquiryVO;
-import com.hotel.vo.MyroomVO;
 import com.hotel.vo.ReplyInquiryVO;
+import com.hotel.vo.SessionVO;
 import com.spring.service.FileServiceImpl;
 import com.spring.service.InquiryServiceImpl;
 import com.spring.service.PageServiceImpl;
@@ -44,16 +45,29 @@ public class InquiryController {
 		return "/hotel_footer";
 	}
 	
+	
 	/**
-	 * inquiry_my_list.do 호출 : 문의글 전체 리스트
+	 * inquiry_my_list_search.do : 문의글 검색하기
 	 */
-	@RequestMapping(value="/inquiry_my_list.do", method=RequestMethod.GET)
-	public ModelAndView inquiry_my_list(String mid) {
+	@RequestMapping(value="/inquiry_my_list_search.do", method=RequestMethod.POST)
+	public ModelAndView inquiry_my_list_search(String searchlist, String keyword, HttpSession session) {
+		//컨트롤러에서만 HttpSession을 쓰고, 나머지에서는 mid값은 String 값으로 넣어서 받는다.
 		ModelAndView mv = new ModelAndView();
-		ArrayList<HotelInquiryVO> mlist = (ArrayList<HotelInquiryVO>)inquiryService.getMyList(mid);
-		mv.addObject("mlist", mlist);
-		mv.setViewName("/inquiry/inquiry_my_list");
+		SessionVO svo = (SessionVO)session.getAttribute("svo");
 		
+		//System.out.println(searchlist);
+		//System.out.println(keyword);
+		//System.out.println(svo.getMid());
+		
+		ArrayList<HotelInquiryVO> mlist = inquiryService.getMySearch(searchlist, keyword, svo.getMid());
+		
+		mv.addObject("mlist", mlist);
+		mv.addObject("mlistSize", mlist.size());//검색된 문의글 없으면 표시하기 위해 1,0값으로 넣기! (안넣으면 nullpoint오류나옴)
+		mv.addObject("searchlist",searchlist);
+		mv.addObject("keyword",keyword);
+		mv.addObject("mid", svo.getMid());
+		mv.setViewName("/inquiry/inquiry_my_list");
+				
 		return mv;
 	}
 	
@@ -73,6 +87,7 @@ public class InquiryController {
 		//ArrayList<HotelInquiryVO> list = dao.search(sqlsearch, startCount, endCount, searchlist, keyword);
 		
 		mv.addObject("list", list);
+		mv.addObject("listSize", list.size());
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize",  param.get("pageSize"));
 		mv.addObject("rpage", rpage);		
@@ -182,6 +197,20 @@ public class InquiryController {
 		
 		mv.addObject("vo", vo);
 		mv.setViewName("/inquiry/inquiry_content");
+		return mv;
+	}
+	
+	
+	/**
+	 * inquiry_my_list.do 호출 : 문의글 전체 리스트
+	 */
+	@RequestMapping(value="/inquiry_my_list.do", method=RequestMethod.GET)
+	public ModelAndView inquiry_my_list(String mid) {
+		ModelAndView mv = new ModelAndView();
+		ArrayList<HotelInquiryVO> mlist = (ArrayList<HotelInquiryVO>)inquiryService.getMyList(mid);
+		mv.addObject("mlist", mlist);
+		mv.setViewName("/inquiry/inquiry_my_list");
+		
 		return mv;
 	}
 	
