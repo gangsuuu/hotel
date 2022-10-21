@@ -8,10 +8,21 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
 	
+	/**
+	 *  index.do
+	 */
+	@RequestMapping(value="/shillaStay.do",method=RequestMethod.GET)
+	public String header() {
+		return "index";
+	}
+	
 	/****************************
 	 		shlliastay
 	**************************** */
 
+	
+	
+	
 	
 	/**
 	 *	shillastayindex.do
@@ -69,8 +80,8 @@ public class IndexController {
 		return mv;
 	}
 	
-	
-	
+
+
 	
 	
 	/**

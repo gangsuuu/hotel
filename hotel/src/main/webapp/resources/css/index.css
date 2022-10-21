@@ -3,8 +3,7 @@
         padding: 0;
         }
         body{
-            height: 2000px;
-            scroll-behavior: none;
+        scroll-behavior: none;
         }
         li{
         list-style-type: none;
@@ -17,6 +16,8 @@
         }
     :root{
     /* hub */
+    --content-modal:rgb(143,130,114);
+    --content-modal-button:rgb(226,213,197);
     --hub-background:rgb(235,231,227);
     --hub-font:rgb(79,76,74);
     --hub-hover:rgb(59,59,58);
@@ -78,17 +79,19 @@
 	.header_top_mid_logo{
 	    height: 60px;
 	    width: 250px;
-	    position: absolute;
-	    top:50%; left: 50%; transform: translate3d(-50%, -50%, 0);
-	    
+	    position: absolute; transform: translateX(-50%);
+	    left: 50%;
 	}
 	.header_top_right{
 	    width: 500px;
 	    text-align: right;
+	    display: flex;
+	    flex-direction: column-reverse;
+	    justify-content: space-between;
 	}
 	.header_top_guest{
 	    display: flex; justify-content: right;
-	    gap:10px;
+	    gap:20px;
 	}
 	.header_top_guest a{
 	    padding: 5px 0 5px 0;
@@ -99,7 +102,7 @@
 	    content:"";
 	    display: inline-block;
 	    width: 1px;   height: 10px;
-	    margin-left: 10px;
+	    margin-left: 20px;
 	}
 	
 	.header_top_list{
@@ -131,9 +134,9 @@
 	    display: flex;
 	    justify-content: center;
 	    z-index: 10;
-	    width: 1300px;
+	    width: 1200px;
 	    margin: auto;
-	    display: flex; justify-content: space-between;
+	    display: flex;
 	}
 	.header_maincategori_lists>div{
 		display: flex;
@@ -148,7 +151,6 @@
 	}
 	.header_maincategori_lists li:hover .header_subcategori_list{
 	    display: block;
-	    position: absolute;
 	}
 	.header_maincategori_lists div>li a{
 	    padding: 15px 50px  16px 50px;
@@ -160,6 +162,8 @@
 	    width: 100%;
 	    display: none;
 	    height: 40px;
+	    position: absolute;
+	    z-index: 10;
 	}
 	.header_subcategori_list>li{
 	    float: left;
@@ -461,10 +465,111 @@
 	}
 		  
  
-     /*****************************************
-                    index
-     ****************************************/
-       
+    /*****************************************
+                   index
+    ****************************************/
+    .hotel-index-content{
+    margin: auto;
+    height: auto;
+    }
+    .hotel-index-add{
+    position: relative;
+    width: 1920px;
+    height: auto;
+    margin: auto;
+    }
+    .hotel-index-inner{
+   	position: relative;
+    top:0; left:0;
+    display:none; 
+  	margin: auto;
+    }
+    .hotel-index-inner img{
+    
+    }
+   	.add-selected{
+  	display: block;
+  	}
+    .hotel-index-add-btn{
+    display:flex; justify-content:space-between;
+    width:1200px;
+    position:absolute; top:50%; left:50%;
+    margin:auto;
+    transform:translate3d(-50%,-50%,0);
+    }
+    .hotel-index-add-btn-prve, .hotel-index-add-btn-next{
+    width:25px;
+    height:40px;
+    overflow: hidden;
+    position: relative;
+    }
+    .hotel-index-add-btn-prve, .hotel-index-add-btn-next{
+    }
+    .hotel-index-add-btn-next img{
+    position:relative;
+    left:-25px; 
+    }
+    .hotel-index-reservation{
+    height: 150px;
+    width: 1200px;
+    margin: auto;
+    background-color: rgba(255,0,0,0.5)
+    }
+    .hotel-index-event{
+    height: 400px;
+    width: 1200px;
+    margin: auto;
+    background-color: rgba(0,255,0,0.5)
+    }
+    .hotel-index-shillawars{
+    width: 100%;
+    height: auto;
+    background-color:rgb(246,246,246);
+    }
+    .hotel-index-shillawars-back{
+    width: 1200px;
+    height: auto;
+    background-color:rgb(246,246,246);
+    display: flex;
+    justify-content: space-between;
+    } 
+   	.hotel-index-shillawars-inner{
+    margin:  50px 100px 30px 0px;
+   	}
+   	.hotel-index-shillawars-inner-top{
+  	display: flex;
+  	gap:80px;
+  	margin-bottom:50px; 
+  	
+  	}
+    .hotel-index-shillawars-inner-top-left{
+    display:flex;
+    flex-direction: column; 
+    gap:30px;
+    }
+    .hotel-index-shillawars-inner-top-left{
+    position: relative;
+    }
+    .hotel-index-shillawars-inner-top-right .index-shillawars-img{
+    position:relative;
+    bottom: -40px;
+    }
+    .index-shillawars-img{
+    margin-left: 0;
+    }
+    .hotel-index-shillawars-inner-bottom{
+    display: flex;
+  	gap:50px;
+    }
+    .hotel-tripadvisor-api{
+    margin: 0;
+   	border-top:5px solid rgb(130,173,140);
+   	width: 350px;
+   	height: 280px;
+   	background-color: white;
+   	display: flex;
+   	justify-content: center
+    }
     /*****************************************
                     index - animation
     *****************************************/
@@ -580,11 +685,10 @@
                     menu-list
     *****************************************/
     .content{
-        margin: auto; margin-top:150px;
+        margin: auto; margin-top:100px; margin-bottom:100px;
         width:1200px;
         display: flex;
        	justify-content: space-between;
-       	border: 1px solid red;
     }
     .content_lists{
         width:262px;
@@ -595,12 +699,13 @@
         position: relative;
         display: flex;
        	flex-direction: column;
-       	border: 1px solid blue;
+       	background-color:var(--hub-background);
     }
     .content_lists h2{
         font-size: 24px;
-        font-weight: 600;
-        margin-bottom: 30px;
+        font-weight: 500;
+        margin-bottom: 20px;
+       color:var(--hub-font);
     }    
     .content_lists h2::after{
         margin-top: 20px;
@@ -608,29 +713,232 @@
         display: block;
         width: 200px;
         height: 5px;
+        background-color: var(--hub-font);
     }
     .content_inmenu li{
         position: relative;
         left:0px;
-        margin: 20px 0px;
-        
     }
-    .content_list {
-        font-weight: 500;
+    #content_list_one{
+    	margin: 30px 0 0 0;
+    }
+  	#content_list_bundle{
+    	margin: 5px 0 5px 0x;
+    }
+    .content_list{
+        font-weight: 700;
         height: 20px;
         padding: 1px 5px 0  5px;
         display: block;
         margin: 0;
         align-items: center;
-        font-size: 13px;
+        font-size: 14px;
+        color:var(--hub-font);
+    }
+    .sub_list{
+    margin: 10px 0 10px 0;
+    color:var(--theme2-subcategori_font)
+    }
+   
+    .content_selected{
+    background: var(--theme2-subcategori);
+    color: white;
     }
     .content_selected::After{
         content:"";
         display: inline-block;
         width: 4px;height: 4px;
         position: absolute;
-        top:40%;right: 23px;
+        top:40%;right: 10px;
         transform: rotate(45deg);
+        border-top: 1px solid white;
+        border-right: 1px solid white;
+    }
+    .content_allrooms{
+    background-color:var(--theme2-subcategori);
+    color:white;
+    text-align: center;
+    width:210px; padding: 15px 0;
+    display:inline-block; 
+    font-size: 14px; font-weight:500;
+    margin-top: 20px;
+    }
+    .modal-background{
+    background-color:rgba(255,255,255,0.5);
+    z-index:50;
+    position:fixed;
+    top:0; 
+    display: none;
+    width: 100vw;
+	height: 100vh;
+    }
+    
+    .content-modal{
+    display:none;
+	position:fixed;
+	z-index:51;
+	top:50%; left:50%;  transform: translate3d(-50%, -50%, 0);
+	background-color:var(--content-modal);
+	border:5px solid var(--content-modal);
+    border-top:none; 
+    }
+    
+    .modal-header{
+    display: flex;
+    justify-content: space-between;
+   	background-color:var(--content-modal);
+   	width:auto;
+   	height:auto;
+   	padding: 10px 10px 5px 10px;
+    }
+    .modal-header>div{
+    margin: 0 20px;
+    }
+    .modal-content-container{
+    background-color:white;
+    width: auto; height:auto; 
+    padding: 35px 50px ;
+    }
+    
+    
+    .modal-content-block{
+    width:100%; height: 1px;
+    background-color: var(--content-modal);
+    }
+    .modal-content{
+    display: flex;
+    justify-content:space-between;
+    border-color: solid var(--content-modal);
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    padding: 30px 0 55px 0;
+    gap:35px;
+    }
+    .modal-content-last{
+    padding-right: 50px;
+    }
+    .modal-content-list{
+    display:flex;
+   	flex-direction: column;
+   	gap:20px;
+    }
+    .modal-content-room-list{
+    margin-top:25px;
+    position: relative;
+    }
+    .modal-content-room-inner{
+    float:left;
+    position: absolute;
+    }
+    .modal-content-roomchange-btn{
+    padding: 10px 22px;
+    width:71px;
+    text-align:center;
+    margin-top:-38px;
+    position:absolute;
+    display:inline-block;
+    border:1px solid rgb(226,213,197);
+    color:var(--content-modal);
+    background-color: rgb(226,213,197);
+    font-size: 13px;
+    }
+    .selected-drawing-btn{
+    background: white;
+    border-bottom: 3px solid white;
+    }
+    .roomchangebtn-second{
+    left:118px;
+    }
+    .roomchangebtn-third{
+    left:236px;
+    }
+    .modal-drawaings-container{
+    background-color:white;
+    width: 550px; height:480px; 
+    padding: 35px 30px ;
+    }
+    
+    .modal-drawing-container{
+    border:1px solid rgb(226,213,197);
+    display: none;
+    }
+    .modal-room-drawing-img{
+    width: 550px;
+    }
+    
+    .modal-content-center{
+    position: relative;
+    }
+    .modal-content-center::after, .modal-content-center::before{
+    content:"";
+    width: 1px;
+    height: 284px;
+    display:inline-block;
+    background-color:var(--content-modal);
+    position: absolute;
+    }
+    .modal-content-center::after{
+    left: -15px;
+    }
+    .modal-content-center::before{
+    right: -20px;
+    }
+    
+    .modal-content-list img{
+    margin-left: 0;
+    }
+    .modal-content-list-in{
+    margin: 0;
+    }
+    .modal-content-list-in>div{
+    padding-left:10px;
+    list-style:none;
+  	background-image:url(http://localhost:9000/hotel/resources/img/accommodation/bgDot.gif);
+ 	background-repeat: no-repeat;
+    background-position: top 50% left;
+   
+    }
+    .modal-content-roomtype{
+    }
+    .modal-content-roomtype-button{
+    width: 	140px;
+    height: 40px;
+    background: var(--content-modal-button);
+    border:1px solid var(--hub-background);
+    display: table-cell;
+    }
+    .modal-content-room-drawing{
+    }
+    .modal-content-drwaing{
+    display: none;
+    }
+    .show{
+    display: block;
+    }
+    .btn-selected{
+    background-color: white;
+    border-bottom: none;
+    }
+    
+    .modal-content-one{
+	border: 1px solid rgb(234,224,212);
+    }
+    .modal-content-one-container{
+    background-color:white;
+    width: auto; height:auto; 
+    padding: 15px 25px ;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    }
+    .modal-inner-btn{
+    margin: 20px auto 0 auto;
+    width: 85px;
+    
+    }
+    
+    
+    
+    .selected-drawing{
+    display: block;
     }
     /***************************************
                 테마 컬러
@@ -683,11 +991,122 @@
    
    
     .content_menu{
-        width:875px;
+        width:850px;
         display: inline-block;
         border:1px solid black;
         margin:0;
+       	position: relative;
     }
+    .content-location{
+ 	position:absolute;
+ 	right:0; top:0;
+ 	display: flex;
+ 	height:40px;
+ 	align-items: center;
+ 	
+ 	}
+ 	.content-location span{
+ 	font-size:12px;
+ 	margin-left: 8px;
+ 	}
+ 	.content-block{
+ 	height: 5px;
+ 	background-color: var(--hub-font);
+ 	margin:10px 0 0 0;
+ 	
+ 	}
+ 	.content-rooms>img{
+ 	width: 850px;
+ 	}
+ 	.content-rooms-info{
+ 	display: flex;
+ 	width: 850px;
+ 	margin: 50px 0 0 0;
+ 	justify-content: space-between;
+ 	}
+ 	.content-rooms-info-left{
+ 	margin: 0px;
+ 	}
+ 	.content-rooms-info-right{
+ 	margin: 0px;
+ 	width: 330px
+ 	}
+ 	.content-rooms-info-inroom-img{
+ 	width: 100px; 
+ 	margin: 0;
+ 	}
+ 	.content-room-amenity{
+ 	margin: 40px 0 40px 0;
+ 	}
+ 	.content-room-amenity>a>img{
+ 	width: 170px;
+ 	}
+ 	.content-room-info-block{
+ 	width: 100%; height:1px;
+ 	background-color: var(--hub-background);
+ 	margin: 30px 0 30px 0;
+ 	}
+ 	.content-rooms-info-inroom, .content-rooms-info-inhotel {
+ 	display:flex;
+ 	align-items: center;
+ 	}
+ 	.content-rooms-info-inroom-img>img, .content-rooms-info-inhotel-img>img{
+ 	width: 50px;
+ 	}
+ 	.content-rooms-info-ul{
+ 	margin: 0;
+ 	width: 390px;
+ 	}
+ 	.content-rooms-info-ul ul li{
+ 	font-size:11px;
+ 	list-style-image: url(http://localhost:9000/hotel/resources/img/accommodation/bgDot.gif);
+ 	
+ 	margin: 5px 0 5px 0;
+ 	letter-spacing: 1px;
+ 	}
+ 	.content-rooms-info-ul ul li::marker{
+ 	color:#aaa;
+ 	font-size:0.5mm;
+ 	}
+ 	
+ 	.content-rooms-info-btns{
+ 	display: flex;
+ 	justify-content: space-between;
+ 	gap:5px;
+ 	}
+ 	.content-rooms-info-btns>a>img{
+ 	 width: 100px;
+ 	}
+ 	.content-rooms-info-hotelinfo{
+ 	background: rgb(250,247,237);
+ 	margin-top:50px;
+ 	}
+ 	.content-rooms-info-content{
+ 	padding:25px;
+ 	}
+ 	.content-info-container{
+ 	margin-top:25px;
+ 	}
+ 	.content-info-content p{
+ 	margin: 5px 0 5px 10px;
+ 	}
+ 	.content-info-title{
+ 	padding-left:10px;
+ 	background-image:url(http://localhost:9000/hotel/resources/img/accommodation/bgDot.gif);
+ 	background-repeat: no-repeat;
+    background-position: top 50% left;
+   	font-size: 13px;
+   	font-weight: bold;
+ 	}
+ 	.content-info-content{
+ 	font-size:13px;
+ 	}
+ 	.content-info-content-dept{
+ 	padding-left: 10px;
+ 	}
+ 	.all-rooms img{
+ 	width: 100%; 
+ 	}
     /*******************************************
                 테마2 컬러
     *******************************************/
@@ -747,18 +1166,24 @@
 	.foot .localBox .snsNews .sns{ 
         position:absolute; 
         left:0; 
-        top:39px;
+        top:0;
+        height:100%;
+        width:200px;
+        background:url(http://localhost:9000/hotel/resources/img/public/localBoxSnsNews.gif);
+        display: flex;
+        gap:3px;
+        align-items: center;
     }
 	.foot .localBox .snsNews .sns .dt{
-        float:left; 
-        background:url(http://localhost:9000/hotel/resources/img/public/localBoxSnsNews.gif) no-repeat 0 -39px; 
+        background-position:left top;
         width:33px; height:23px; 
-        text-indent:-9999%; 
-        overflow:hidden; 
+        text-indent:-9999%;
+        margin: 0;
     }
-	.foot .localBox .snsNews .sns dd{ 
-        float:left; 
+	.foot .localBox .snsNews .sns dd{
         margin:0 0 0 5px;
+        margin: 0;
+        width:23px; height:23px; 
     }
 	.foot .localBox .snsNews .sns dd a{ 
         width:23px; height:23px; 
@@ -768,6 +1193,7 @@
         overflow:hidden; 
         line-height:100px;
         text-indent:-9999%;
+        margin: 0;
     }
 	.foot .localBox .snsNews .sns .facebook a{
         background-position:-38px -39px;
@@ -784,7 +1210,6 @@
 	.footer{
         width:1200px;
         margin:0 auto;
-        height:300px; 
         position:relative; 
         overflow:hidden;
     }
@@ -830,21 +1255,27 @@
     }
 	/***********************/	
 	
-	
 	.compInfo {
-         position : relative; float : left;
-         width : 550px; height : 100px;
-         display: flex; align-items: center;
-         gap:60px;
+       position : relative; float : left;
+       width : 500px; height : 100px;
+       display: flex; align-items: center;
+       gap:60px;
+    }
+    .foot_hotelinfo{
+    	overflow: hidden;
     }
 	.compInfo p {   
         font-size: 13px; font-weight: 600;
         color: var(--theme2-maincategori_font);
+        left: -9999%;
+   		overflow: hidden;
     }
     .compInfo span{
         font-weight: 700;
         font-size: 12px;
         color: var(--theme2-subcategori_font);
+        left: -9999%;
+    	overflow: hidden;
     }
 	.compInfo a {
         text-decoration:none;
@@ -993,3 +1424,247 @@
  	background-color: rgba(154,11,58,0.5);
  	height: 500px;
  }
+ /**********************************************************
+ 					guest_service
+ ***********************************************************/
+ .content-services>img{
+ 	width: 850px;
+ }
+ .content-services-second{
+ 	margin: 40px 0;
+ 	display: flex; flex-direction: column;
+ 	gap:20px;
+ }
+ .content-services-second img{
+ margin-left: 0;
+ }
+ .content-service-info{
+ 	display: flex;
+ 	width: 850px;
+ 	margin: 50px 0 0 0;
+ 	justify-content: space-between;
+ }
+ .content-service-info-left{
+ 	margin: 0px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	gap:50px;
+}
+ .content-service-info-right{
+	 margin: 0px;
+ 	width: 550px
+ }
+ .content-service-info-inroom-img{
+ 	width: 100px; 
+	 margin: 0;
+ }
+ .content-service-info-content{
+ 	padding:25px;
+ }
+ 
+ .content-service-info-hotelinfo{
+ 	background: rgb(250,247,237);
+ }
+ .content-info-container-service{
+ 	margin-top:20px;
+ }
+ /**********************************
+ 			hotelinfo
+ **********************************/
+ .content-hotelinfo>img{
+ width: 850px;
+ }
+ .content-hotelinfo-second-one{
+ margin:30px 0;
+ 
+ }
+ .content-hotelinfo-table{
+ margin: 0 0px 70px 0px;
+ width: auto;
+ height:auto;
+ border-collapse: collapse;
+ font-size: 13px;
+ border-top: 1px solid rgb(205,203,190);
+ border-bottom: 1px solid rgb(205,203,190);
+  }
+ .content-hotelinfo-table tr:not(:first-child){
+ border-top:1px solid rgb(236,234,225);
+ }
+ .content-hotelinfo-table th{
+ 	width:200px;
+ 	text-align:center;
+ 	padding: 10px 0;
+ 	background-color: rgb(250,249,244);
+ 	font-weight: 600;
+ 	color:rgb(102,102,102);
+ }
+ .content-hotelinfo-table td{
+	width: 650px;
+	padding: 10px 0;
+	text-indent: 15px;
+ } 
+ .content-hotelinfo-around{
+	margin: 0 0 20px 0;
+ }
+ .content-hotelinfo-around img{
+ 	width: 850px
+ }
+ .content-hotelifo-last{
+ }
+ .content-hotellinfo-company{
+ display: flex;
+ justify-content:space-between;
+ width: 850px; height:40px;
+ background-color: var(--hub-background);
+ margin-bottom:20px; 
+ align-items: center;
+ }
+ .content-hotellinfo-company img{
+ margin: 0;
+ }
+ .content-hotelinfo-companybtn{
+ height: 27px;
+ margin-right:10px; 
+ }
+/**********************************
+ 			hotelmasp
+ **********************************/
+ .content-hotelmap{
+ overflow: hidden;
+ }
+ .content-hotelinfo-eightfloors{
+ width: 800px;
+ margin:30px 0;
+ padding: 25px 25px 25px 25px;
+ border: 1px solid rgb(230,215,198);
+ 
+ }
+ .content-hotelinfo-eightfloors img{
+ display: block;
+ margin: 10px 0;
+ }
+ /**********************************
+ 			hotellocation
+ **********************************/
+ .content-hotellocation{
+ overflow: hidden;
+ }
+ .content-hotellocation-second img{
+ width: 850px;
+ margin: 10px 0; 
+ }
+ .content-hotellocation-bus{
+ 	margin: 20px 0;
+ }
+ .content-hotellocation-toairport{
+ 	margin: 5px 0;
+ }
+ .content-hotellocation-menubar{
+ 	padding:10px;
+ 	background-color: rgb(244,244,244);
+ 	width:830px; height: 20px;
+  	display: flex; 
+  	justify-content: space-between;
+  	align-items: center;
+  	margin: 0;
+  	border: 1px solid rgb(237,237,237);
+ }
+ .content-hotellocation-menuimg{
+ 	margin: 0;
+ }
+ .content-hotellocation-direction{
+ width: 15px; height: 15px;
+ border-top: 3px solid rgb(209,209,209);
+ border-left: 3px solid rgb(209,209,209);
+ transform: rotate(45deg);
+ margin-right: 30px;
+ }
+ .content-hotellocation-content{
+ display:none;
+ overflow:hidden;
+ }
+ .revers-btn{
+ 	transform: rotate(225deg);
+ }
+ 
+ /**********************************
+ 			dining
+ **********************************/
+ .content-dining{
+ overflow: hidden;
+ }
+ .content-dining-info{
+ 	display: flex;
+ 	width: 850px;
+ 	margin: 50px 0 0 0;
+ 	justify-content: space-between;
+ }
+ .content-dining-info-left{
+ 	margin: 0px;
+ 	display: flex;
+ 	flex-direction: column;
+ 	gap:50px;
+}
+ .content-dining-info-right{
+	margin: 0px;
+ 	width: 330px;
+ }
+  .content-dining-resturant{
+ 	background: rgb(250,247,237);
+ }
+ .content-dining-content-inner{
+ 	padding:25px;
+ }
+ ..content-dining-info{
+ 	display: flex;
+ 	width: 850px;
+ 	margin: 50px 0 0 0;
+ 	justify-content: space-between;
+ }
+ .content-dining-reservationbtn{
+ 	margin: 10px 0;
+ }
+ .content-dining-cafemenu-download{
+ 	display: flex;
+ 	justify-content: space-between;
+ 	gap:5px;
+ 	margin-top: 5px;
+ }
+ /**********************************
+ 			dining-loung
+ **********************************/
+ .content-dining-lounge{
+ 	background: rgb(250,247,237);
+ }
+/**********************************
+ 			facilites
+ **********************************/
+ .content-facilites{
+ overflow: hidden;
+ }
+ .content-facilites-content{
+ margin:30px 0;
+ }
+ /**********************************
+ 			facilites - meetingroom
+ **********************************/
+ .content-facilites-meetingroom-tableposition {
+	display: flex;
+	width:850px;
+	flex-wrap: wrap;
+	gap:10px;
+ }
+.content-facilites-meetingroom-tableposition img{
+	width: 420px;
+	margin: 30px 0 0 0;
+}
+.content-facilites-meetingroom-price{
+	display: flex;
+	flex-direction: column; 
+	gap:30px;
+	margin-top: 40px;
+}
+.meetingroom-price-img {
+	width: 850px;	
+}
+ 

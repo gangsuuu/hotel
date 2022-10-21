@@ -18,7 +18,7 @@
 		
 		    maxSize: 5,	    		// max page size
 		    totals: '${dbCount}',	// total rows	
-		    page: '${rPage}',		// initial page		
+		    page: '${rpage}',		// initial page		
 		    pageSize: '${pageSize}',	// max number items per page
 		
 		    // custom labels		
@@ -36,7 +36,7 @@
 			var keyword = "${keyword}"
 			if(search == "search"){
 				jQuery('.showlabelsm').text('The selected page no: '+e.page);
-				 $(location).attr('href', "http://localhost:9000/hotel/admin_notice_list_search.do?rpage="+e.page+"&keyword="+keyword);
+		        $(location).attr('href', "http://localhost:9000/hotel/admin_notice_list_search.do?rpage="+e.page+"&keyword="+keyword);
 			}else{
 				jQuery('.showlabelsm').text('The selected page no: '+e.page);
 		       $(location).attr('href', "http://localhost:9000/hotel/notice_list.do?rpage="+e.page);

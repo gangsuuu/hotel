@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
 <script>
-<script>
 	var hotelname = "theshilla";
 </script>
 <script>
@@ -24,7 +23,7 @@
 		
 		    maxSize: 5,	    		// max page size
 		    totals: '${dbCount}',	// total rows	
-		    page: '${rPage}',		// initial page		
+		    page: '${rpage}',		// initial page		
 		    pageSize: '${pageSize}',	// max number items per page
 		
 		    // custom labels		

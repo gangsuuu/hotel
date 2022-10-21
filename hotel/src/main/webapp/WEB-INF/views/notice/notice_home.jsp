@@ -15,6 +15,11 @@
 <script>
 	var hotelname = "theshilla";
 </script>
+<style>
+footer{
+margin-top:300px;
+}
+</style>
 </head>
 <body>
 	<!-- Header Include -->
