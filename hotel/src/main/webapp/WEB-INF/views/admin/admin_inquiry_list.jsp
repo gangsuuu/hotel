@@ -76,13 +76,13 @@ $(document).ready(function(){
 		    btnSize:'sm'	// 'sm'  or 'lg'		
 		});
 	
-	}//ajax_page()
-	
 		//페이징 번호 클릭 시 이벤트 처리
 		jQuery('#ampaginationsm').on('am.pagination.change',function(e){		
 			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
 	           $(location).attr('href', "http://localhost:9000/hotel/admin_replynone_list_json.do?rpage="+e.page);         
 	    });
+	}//ajax_page()
+	
 	
 	
 	
