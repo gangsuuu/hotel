@@ -10,6 +10,49 @@
 <link rel="stylesheet" href="http://localhost:9000/notice/resources/css/am-pagination.css">
 <script src="http://localhost:9000/notice/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/notice/resources/js/am-pagination.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script type="text/javascript">
+function delchk(nid){
+	Swal.fire({
+        title: '글을 삭제하시겠습니까??',
+        text: "삭제하시면 다시 복구시킬 수 없습니다.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '삭제',
+        cancelButtonText: '취소'
+    }).then((result) => {
+    		if (result.value) {
+    			Swal.fire({
+    	        	title: '삭제되었습니다',
+    	        	text: "목록으로 돌아갑니다.",
+    	       		icon: 'success',
+    	        	showCancelButton: false,
+    	        	confirmButtonColor: '#3085d6',
+    	        	cancelButtonColor: '#d33',
+    	        	confirmButtonText: '삭제'
+    	    	}).then((result) => {
+    	    		 let f = document.createElement('form');
+    	                 
+    	                 let obj;
+    	                 obj = document.createElement('input');
+    	                 obj.setAttribute('type', 'hidden');
+    	                 obj.setAttribute('name', 'nid');
+    	                 obj.setAttribute('value', nid);
+    	                 
+    	                 f.appendChild(obj);
+    	                 f.setAttribute('method', 'post');
+    	                 f.setAttribute('action', 'admin_notice_del_ok.do');
+    	                 document.body.appendChild(f);
+    	                 f.submit();
+    	    		
+    	    	})
+            }
+    })
+
+}
+</script>
 
 </head>
 <body>
@@ -50,7 +93,7 @@
 			<tr>
 				<td colspan="4">
 					<a href="admin_event_update.do?nid=${vo.nid }"><button type="button" class="btn_style">수정하기</button></a>
-					<a href="admin_event_delete.do?nid=${vo.nid }"><button type="button" class="btn_style">삭제하기</button></a>
+					<a href="javascript:delchk('${vo.nid}')" ><button type="button" class="btn_style">삭제하기</button></a>
 					<a href="admin_event_list.do">
 						<button type="button" class="btn_style">리스트</button></a>
 				<!-- 	<a href=""><button type="button" class="btn_style">관리자홈</button></a> -->

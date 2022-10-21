@@ -23,7 +23,7 @@
 			 <!-- 좌측 메뉴 end-->
 			 <!-- contents -->
 			<div class="contents">
-		<h1>공지사항-상세보기</h1>
+		<h1>이벤트-상세보기</h1>
 		<table class="boardContent">	
 			<tr>				
 				<th>태그</th>

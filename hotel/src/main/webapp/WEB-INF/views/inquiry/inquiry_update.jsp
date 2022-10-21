@@ -5,103 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/inquiry.css">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <title>Customer Inquiry</title>
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://localhost:9000/hotel/resources/js/inquiry.js"></script>
+<script src="http://localhost:9000/hotel/resources/js/inquiry_javascript.js"></script>
 <script>
-	$(document).ready(function(){
-		$("#btnInquiryUpdate").click(function(){
-			if(("input[name='hotelname']:checked").length==0){
-				alert("호텔을 선택해 주세요.");
-				$("#hotelname").focus();
-				return false;
-			}else if($("#category").val()=="default"){
-				alert("질문유형을 선택해주세요");
-				$("#category").focus();
-				return false;
-			}else if($("#title").val()==""){
-				alert("제목을 입력해주세요.");
-				$("#title").focus();
-				return false;
-			} else if($("#secretnum").val()==""){
-				alert("비밀번호에 숫자 4자리를 입력하세요");
-				$("#secretnum").focus();
-				return false;
-			}else{
-				//서버전송
-				inquireUpdateForm.submit();
-			}
-		});	//click
-		
-		$("input[type=file]").change(function(){
-			if(window.FileReader){//파일선택창이 열렸으면~
-				let fname = $(this)[0].files[0].name; //$(this)[0] input타입 파일태그 여러개일때 첫번째인것
-				$("#upload_file").text(fname);
-			}
-		});//change	
-		
-	});//ready	
+	var hotelname = "theshilla";
 </script>
-<style>
-.lnbAreaMenuBar{ float:left; }
-.lnbAreaMenuBar .MenuBar > .tit{ margin:0 0 29px 0; height:53px; background:url(http://localhost:9000/hotel/resources/img/lnbTitle.gif); display:block; /* text-indent:-9999%; */ overflow:hidden;}
-.MenuBar{ font-family:나눔명조OTF ExtraBold; width:216px; border:#ebe7e3 solid 1px; background:#ebe7e3; padding:23px; margin:0 0 30px 0;}
-.MenuBar .tit { margin-top:7px; font-family:나눔명조OTF; font-weight: lighter; color:rgb(88,88,88); margin:0;}
-.MenuBar .menu{ list-style:none; margin-top:20px; padding:0;}
-.MenuBar img { margin-left: -8px; margin-top: 9px; }
-.menu li a { color:rgb(88,88,88); }
-.menu img { float:right; margin-top:-18px; display:inline-block; }
-.MenuBar li{ margin:0 0 26px 0;}
-.MenuBar li a{ text-decoration:none; /* background:#9CC; */ height:21px; display:block;   /* text-indent:-9999%; */ overflow:hidden;}
-.MenuBar li a span{ margin-left:7px; display:block; margin-top:2px;} 
-.MenuBar li a.on{ font-weight:bold; background-color:rgb(119,114,109); color:white;}
-.MenuBar li li{ margin:0;}
-.MenuBar li li a{ background:#CC6; display:block;}
-.MenuBar li li a.on{ font-weight:bold;}
-
-.contain { display:flex; width:1241px; height:895px; margin-right:202px; margin-bottom:100px; margin-left:202px;}
-.container { margin-right:100px; }
-.contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
-
-.list { float:right; }
-.tit { color: rgb(88,88,88); font-family: 나눔명조OTF; font-size:26px; margin-top:0; margin-bottom:10px;}
-.tit1 { color: rgb(88,88,88); font-family: 나눔명조OTF; font-size:26px; margin-top:30px; margin-bottom:10px;}
-#linewrite { margin-bottom: 5px; }
-
-.tableTypeF{ border:none; border-top:#cdcbbe solid 1px; width:100%; border-collapse:collapse; table-layout:auto;}
-.tableTypeF th,
-.tableTypeF td{ border:none; padding:6px 13px; text-align:left; line-height:22px; border-bottom:#eceae1 solid 1px; color:#333333}
-.tableTypeF th{color:#666; background:#faf9f4; text-align:center;}
-.tableTypeF td{ background:#FFF; color:#1b1b1b}
-.tableTypeF td strong{ margin-left:30px; }
-.tableTypeF .last th, .tableTypeF .last td {border-bottom:#cdcbbe solid 1px; }
-.ast {color:red;}
-
-.tableTypeA{margin:20px 0px 0px 0px;border:none;border-top:#cdcbbe solid 1px; width:100%;border-collapse:collapse;table-layout:fixed;}
-.tableTypeA th,
-.tableTypeA td{border:none;padding:6px 13px;text-align:left;line-height: 22px;border-bottom:#eceae1 solid 1px;color:#333333;}
-.tableTypeA th{color:#666; background:#faf9f4; }
-.tableTypeA td{ background:#FFF; color:#1b1b1b}
-.tableTypeA .last th,.tableTypeA .last td {border-bottom:#cdcbbe solid 1px;}
-.tableTypeA .bdBot{border-bottom:#cdcbbe solid 1px !important; }
-
-.contentarea { width:670px; height:180px; vertical-align: middle; }
-.titlearea { width:668px; height:23px; vertical-align: middle;}
-#category {width:100px; height:23px;}
-#passwordlable { margin-left:30px; }
-#secretnum { width:100px; height:23px; }
-#category, .titlearea, #secretnum, .contentarea { border: #CCC solid 1px; }
-#btnlist { text-align:center; margin-top:50px; }
-
-/***********추가******************/
-#upload_file { position:relative; display:inline-block; background-color: white; font-size:14px; width:120px; left:-181px; }
-#btnInquiryUpdate, #btnInquiryList, #btnRest { background-color:rgb(58,49,37); color:rgb(250,241,208); width:99px; height:35px; vertical-align: middle; font-size:14px; font-weight: bold; }
-
-
-</style>
 </head>
 <body>
 	<!-- Header Include -->
-	<iframe></iframe>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
 
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
@@ -121,7 +39,7 @@
 								<a href="inquiry_write.do"><span>문의하기</span></a>
 							</li>
 							<li class="">
-								<a href="inquiry_my_list.do"><span>내문의함</span></a>
+								<a href="inquiry_my_list.do?mid=${sessionScope.svo.mid }"><span>내문의함</span></a>
 							</li>
 						</ul>
 				</div>
@@ -157,7 +75,7 @@
 						</colgroup> 
 						<tbody> 
 							<tr> 
-								<th class="pe_qK" rowspan="2">00호텔</th> 
+								<th class="pe_qK" rowspan="2">신라호텔</th> 
 								<td><span>대표전화 </span><strong>02-1234-1234</strong><br></td> 
 							</tr> 
 							<tr> 
@@ -183,9 +101,9 @@
 									</th>
 									<td colspan="3">
 										<div class="selector">
-											<input type="radio" name="hotelname" value='hotel'><span>신라호텔</span>
-											<input type="radio" name="hotelname" value='stay'><span>신라스테이</span>
-											<input type="radio" name="hotelname" value='development'><span>호텔개발</span>
+											<input type="radio" name="hotelname" value='신라호텔'><span>신라호텔</span>
+											<input type="radio" name="hotelname" value='신라스테이'><span>신라스테이</span>
+											<input type="radio" name="hotelname" value='호텔개발'><span>호텔개발</span>
 										</div>
 									</td>
 								</tr>
@@ -264,6 +182,6 @@
 	</form>
 	
 	<!-- Footer Include -->
-	<iframe src="hotel_footer.do" width="100%" height="530px" scrolling="no" frameborder=0></iframe>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
 </body>
 </html>

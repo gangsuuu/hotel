@@ -1,0 +1,995 @@
+    *{
+        margin: 0 auto;
+        padding: 0;
+        }
+        body{
+            height: 2000px;
+            scroll-behavior: none;
+        }
+        li{
+        list-style-type: none;
+        }
+    	a{
+    	
+    	}
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    :root{
+    /* hub */
+    --hub-background:rgb(235,231,227);
+    --hub-font:rgb(79,76,74);
+    --hub-hover:rgb(59,59,58);
+    --hub-button:rgb(171,161,149);
+    /* theme1 */
+    --theme1-backgroud:rgb(241,227,196);
+    --theme1-maincategori:rgb(129,114,95);
+    --theme1-maincategori_font:rgb(202,190,176);
+    --theme1-subcategori:rgb(104,88,69);
+    --theme1-subcategori_font:rgb(219,209,179);
+    --theme1-maincategori_res:rgb(62,43,44);
+    --theme1-subcategori_res:rgb(83,64,57);
+    /* theme2 */
+    --theme2-backgroud:rgb(255,255,255);
+    --theme2-maincategori:rgb(219,214,208);
+    --theme2-maincategori_font:rgb(95,95,95);
+    --theme2-maincategori_after:rgb(186,185,183);
+    --theme2-subcategori:rgb(125,120,115);
+    --theme2-subcategori_font:rgb(191,187,182);
+    --theme2-maincategori_seach: rgb(88,85,83);
+    --theme2-maincategori_seach_font:rgb(255,255,255);
+    --theme2-maincategori_res:rgb(224,122,63);
+    --theme2-maicategori_res_font:rgb(83,64,57);
+    /* menu*/
+    --menu-theme1-selected:rgb(119,114,109);
+    --menu-theme2-selected:rgb(211,192,154);    
+    }
+    a{
+    text-decoration: none;
+    color:var(--hub-font);
+    }
+    .btn{
+    cursor: pointer;
+    }
+     /*****************************************
+                    header
+     ****************************************/
+	header{
+	    width: 100%;
+	}
+	.header{
+	    width: 1200px;
+	    display: flex; justify-content: space-between;
+	    height: 90px;
+	    position: relative;
+	}
+	.header div,a,ul,li{
+	    margin: 0;
+	}
+	.header_top_left{
+	}
+	.hub span{
+	    font-size: 15px;
+	    font-weight: 1000;
+	    
+	}
+	.header_top_mid{
+	}
+	.header_top_mid_logo{
+	    height: 60px;
+	    width: 250px;
+	    position: absolute;
+	    top:50%; left: 50%; transform: translate3d(-50%, -50%, 0);
+	    
+	}
+	.header_top_right{
+	    width: 500px;
+	    text-align: right;
+	}
+	.header_top_guest{
+	    display: flex; justify-content: right;
+	    gap:10px;
+	}
+	.header_top_guest a{
+	    padding: 5px 0 5px 0;
+	    font-size: 13px;
+	}
+	
+	.header_login::after{
+	    content:"";
+	    display: inline-block;
+	    width: 1px;   height: 10px;
+	    margin-left: 10px;
+	}
+	
+	.header_top_list{
+	    font-size: 15px;
+	    font-weight: 1000;
+	    display: flex; justify-content: right;
+	    gap:50px;
+	}
+	.header_top_list a{
+	    padding: 15px 0 20px 0;
+	    display: inline-block;
+	    text-align: center;
+	    vertical-align: bottom;
+	}
+	.header_categori_container{
+	    width: 100%; height: 50px;
+	}
+	.header_maincategori::after{
+	    content: "";
+	    display: inline-block;
+	    width: 1px; height: 10px;
+	}
+	.theme1_main_res{
+	    width: 100px;
+	    margin-left: 50px;
+	    text-align: center;
+	}
+	.header_maincategori_lists{
+	    display: flex;
+	    justify-content: center;
+	    z-index: 10;
+	    width: 1300px;
+	    margin: auto;
+	    display: flex; justify-content: space-between;
+	}
+	.header_maincategori_lists>div{
+		display: flex;
+		margin: 0
+	}
+	
+	.header_maincategori_lists a:hover {
+	    color: white;
+	}
+	header_maincategori_lists li{
+		z-index: 10;
+	}
+	.header_maincategori_lists li:hover .header_subcategori_list{
+	    display: block;
+	    position: absolute;
+	}
+	.header_maincategori_lists div>li a{
+	    padding: 15px 50px  16px 50px;
+	    display: inline-block;
+	    font-weight: 1000;	    font-size: 14px;
+	    z-index: 1;
+	}
+	.header_subcategori_list{
+	    width: 100%;
+	    display: none;
+	    height: 40px;
+	}
+	.header_subcategori_list>li{
+	    float: left;
+	}
+	#header_subcategori{
+	    padding: 10px 10px;
+	    font-size: 12px; font-weight: 700;
+	}
+	.header_subcategori_list li:first-child{
+	    margin-left: 40px;
+	}
+	/*********************************************
+	                    hub
+	**********************************************/
+	.hub{
+	    background-color: var(--hub-background);
+	}
+	.hub a, .hub span{
+	    color:var(--hub-font);
+	}
+	.header_login::after{
+	    background-color: var(--hub-font);
+	}
+	.hub .header_top_left div{
+	    width: 70px;
+	    height: 50px;
+	    vertical-align: bottom; 
+	    text-align: center;
+	    margin-top: auto;
+	}
+	.logo_hub{
+	    background-image: url(logo.gif);
+	    background-repeat: no-repeat;
+	}
+	.left_hub{
+	    display: flex; justify-content: space-around;
+	    margin-top: auto;
+	    gap:75px;
+	}
+	.theme2_main_res, .theme2_main_seach{
+	    width: 100px;
+	    text-align: center;
+	}
+	
+	/*********************************************
+	                    theme1
+	**********************************************/
+	.theme1{
+	    background-color: var(--theme1-backgroud);
+	}
+	.theme1 span, .theme1_guest a{
+	    color:var(--theme1-maincategori);
+	}
+	.theme1_categori{
+	    background-color: var(--theme1-maincategori);
+	}
+	.theme1_main>div>li>a{
+	 	color: var(--theme1-maincategori_font);
+	}
+	.theme1_after::after{
+	    background-color: var(--theme1-maincategori_font);
+	}
+	.theme1_main_res{
+	    background-color: var(--theme1-maincategori_res);
+	    text-decoration: underline;
+	}
+	.theme1_sub_container{
+	    background-color: var(--theme1-subcategori);
+	}
+	.theme1_sub{
+	    color: var(--theme1-subcategori_font);
+	}
+	.theme1_sub_container::after{
+	    content:"";
+	    display: inline-block;
+	    height: 40px;   width: 100%;
+	    position:absolute;
+	    left: -100%;
+	    background-color: var(--theme1-subcategori);
+	}
+	.theme1_sub_res_container{
+	    background-color: var(--theme1-subcategori_res);
+	    margin-left: 40px;
+	}
+	.theme1_sub_res_container::after{
+	    content:"";
+	    display: inline-block;
+	    height: 40px;   width: 100%;
+	    position:absolute;
+	    left: -100%;
+	    background-color: var(--theme1-subcategori_res);
+	}
+	.header_subcategori_list li:not(:last-of-type)::after{
+	    content: "";
+	    display: inline-block;
+	    width: 1px; height: 10px;
+	    background-color: var(--theme1-subcategori_font);
+	}
+	
+	/*********************************************
+	                    theme2
+	**********************************************/
+	.theme2{
+	    background-color: var(--theme2-backgroud);
+	}
+	.theme2 span, .theme2_guest a{
+	    color:var(--theme2-maincategori-font);
+	}
+	.theme2_categori{
+	    background-color: var(--theme2-maincategori);
+	}
+	.theme2_main>li>a{
+	 color: var(--theme2-maincategori_font);
+	}
+	.theme2_main > div> .header_maincategori_res > .theme2_main_res,
+	.theme2_main > div> .header_maincategori_seach > .theme2_main_seach
+	{
+	    color: var(--theme2-maincategori_seach_font);
+	}
+	.theme2_after::after{
+	    background-color: var(--theme2-maincategori_after);
+	}
+	.theme2_main_seach{
+	    background-color: var(--theme2-maincategori_seach);
+	}
+	.theme2_main_res{
+	    background-color: var(--theme2-maincategori_res);
+	}
+	.theme2_sub_container{
+	    background-color: var(--theme2-subcategori);
+	}
+	.theme2_sub{
+	    color: var(--theme2-subcategori_font);
+	}
+	.theme2_sub_container::after{
+	    content:"";
+	    display: inline-block;
+	    height: 40px;   width: 100%;
+	    position:absolute;
+	    left: -100%;
+	    background-color: var(--theme2-subcategori);
+	}
+	.theme2_sub_res_container{
+	    background-color: var(--theme2-subcategori_res);
+	    margin-left: 40px;
+	}
+	.theme2_sub_res_container::after{
+	    content:"";
+	    display: inline-block;
+	    height: 40px;   width: 100%;
+	    position:absolute;
+	    left: -100%;
+	    background-color: var(--theme2-subcategori_res);
+	}
+	.header_subcategori_list li:not(:last-of-type)::after{
+	    content: "";
+	    display: inline-block;
+	    width: 1px; height: 10px;
+	    background-color: var(--theme2-subcategori_font);
+	}
+	     
+     /*****************************************
+                    header_find
+     ****************************************/
+	  
+	.whiteboard{
+	    width: 100%;
+	    height: 100%;
+	    z-index: 1;
+	    zoom: 1;
+	    display: block;
+	    background-color: white;
+	    opacity: 0.5;
+	    display:none;
+	    position: absolute;;
+	
+	}
+	.header_find_hotel{
+	    position: fixed;
+	    top:15%; left: 50%;
+	    transform: translateX(-50%);
+	    background-color: white;
+	    z-index: 10;
+	    width: 950px;
+	    opacity: 1;
+	    display: none;
+	}
+	.header_find_type{
+	    height: 50px;
+	    background-color: rgb(247,247,247);
+	    display: flex; justify-content: space-between;
+	    align-items: center;
+	}
+	.header_find_type_list{
+	    margin-left: 30px;
+	}
+	.header_find_type a{
+	    text-decoration: none;
+	    color:black;
+	    padding: 13px 0px;
+	    margin-left: 15px;
+	
+	}
+	.header_find_selected{
+	    border-bottom: 2px solid black;
+	}
+	.header_find_close{
+	    position: relative;
+	    right: 20px;height: 20px;
+	    margin: 0px;
+	}
+	.close_1{
+	    width: 1px;
+	    height: 20px;
+	    background-color: black;
+	    transform: rotate(45deg);
+	    position: absolute;
+	}
+	.close_2{
+	    width: 1px;
+	    height: 20px;
+	    background-color: black;
+	    transform: rotate(-45deg);
+	    position: absolute;
+	}
+	.header_find_lists{
+	    display: flex;
+	    justify-content: space-between;
+	    padding-top: 20px;
+	}
+	.header_find_locatrion_type{
+		margin:0;
+	    margin-left: 45px;
+	}
+	.header_find_list{
+	    margin-right: 30px;
+	}
+	.header_find_location{
+	    display: flex;
+	    justify-content: space-between;
+	    width: 750px;
+	    padding-bottom: 20px;
+	    border-bottom:1px dotted rgba(0,0,0, 0.1);
+	    margin:0;
+	}
+	.header_find_list .header_find_location:not(:first-child){
+	    padding:20px 0;
+	    margin:0;
+	}
+	.header_find_list .header_find_location:last-child{
+		margin:0;
+	    padding-bottom:35px;
+	    border-bottom: none;
+	}
+	.header_find_location_img{
+	    width: 150px; height: 30px;
+	    margin:0;
+	}
+	.header_find_location_list{
+	    display: grid;
+	    grid-template-columns: 1fr 1fr 1fr;
+	    grid-gap: 5px;
+	    margin:0;
+	}
+	.header_find_location_list a{
+	    border: 1px solid #999;
+	    color: #999;;
+	    width: 180px;
+	    padding: 8px 0px;
+	    text-align: center;
+	    font-size: 11px; font-weight: 1000;
+	}
+	
+	.header_find_location_list a:hover{
+	    color:#856f56;
+	    border:2px solid #856f56;
+	    width: 178px; padding: 7px 0px;
+	}
+	.find_hotel_brand{
+	    justify-content: center;
+	}
+	.find_brand_list{
+	    width: 900px;
+	}
+	.find_brand_img_shillastay{
+	    margin-left: 30px;
+	    background-image: url(http://localhost:9000/hotel/resources/img/public/sillastaybrandlogo.gif);
+	    background-repeat: no-repeat;
+	    background-size: 100% 100%;
+	}
+	.find_brand_img_theshilla{
+	    margin-left: 30px;
+	    background-image: url(http://localhost:9000/hotel/resources/img/public/thesillabrandlogo.jpg);
+	    background-repeat: no-repeat;
+	    background-size: 100% 100%;
+	}
+	.brand_type{
+	display:none;
+	}
+		  
+ 
+     /*****************************************
+                    index
+     ****************************************/
+       
+    /*****************************************
+                    index - animation
+    *****************************************/
+    .active{
+        display: block;
+    }
+    .hide{
+        opacity: 0;
+    }
+    .show_menu_list{
+        color: transparent;
+        animation: show_list forwards;
+    }
+    .menu_list span:nth-child(9){
+        animation-duration: 0.16s;
+        animation-delay: 0.45s;
+    }
+    .menu_list span:nth-child(7){
+        animation-duration: 0.16s;
+        animation-delay: 0.52s;
+    }
+    .menu_list span:nth-child(5){
+        animation-duration: 0.16s;
+        animation-delay:0.58s;
+    }
+    .menu_list span:nth-child(3){
+        animation-duration: 0.17s;
+        animation-delay: 0.63s;
+    }
+    .menu_list span:nth-child(1){
+        animation-duration: 0.23s;
+        animation-delay:0.65s;
+    }
+    .show_menu_bar{
+        animation: show_list_bar forwards;
+    }
+    .menu_list div:nth-child(8){
+        animation-delay: 0.60s;
+    }
+    .menu_list div:nth-child(6){
+        animation-delay: 0.66s;
+    }
+    .menu_list div:nth-child(4){
+        animation-delay: 0.68s;
+    }
+    .menu_list div:nth-child(2){
+        animation-delay: 0.70s;
+    }
+    .scrolltop{
+        animation: header_scrolltop forwards;
+        animation-timing-function:  cubic-bezier(.65,.01,.68,1.05);
+        animation-duration: 0.5s;
+    }
+    @keyframes header_scrolling {
+        from{background-color: transparent;}  
+        to{background-color: var(--main-color-part1);}  
+    }
+    @keyframes header_scrolltop {
+        from{background-color: var(--main-color-part1);}
+        to{background-color: transparent;}
+    }
+    
+    @keyframes main_clicked {
+        from{padding:0px; opacity: 0.3;}
+        to{padding:13px; opacity: 1;}
+    }
+    @keyframes main_unclicked {
+        from{padding: 13px;}
+        to{padding:0px; }
+    }
+    @keyframes menu_spin{
+        from{
+            transform: rotate(0deg);top:25%
+        }
+        to{
+            transform: rotate(90deg);top:25%
+        }
+    }
+    @keyframes move_bar2 {
+        from{top:50%}
+        to{top:640px}
+    }
+    @keyframes show_list {
+        0%{
+            background:linear-gradient(to left,rgba(0,0,0,0.1),rgba(0,0,0,0.0)); 
+            -webkit-background-clip: text;
+        }
+        25%{
+            background:linear-gradient(to left,rgba(0,0,0,0.2),rgba(0,0,0,0.1)); 
+            -webkit-background-clip: text;
+        }
+        50%{background:linear-gradient(to left,rgba(0,0,0,0.3),rgba(0,0,0,0.2)); 
+            -webkit-background-clip: text;}
+        75%{background:linear-gradient(to left,rgba(0,0,0,0.8),rgba(0,0,0,0.6)); 
+            -webkit-background-clip: text;}
+        90%{background:linear-gradient(to left,rgba(0,0,0,1),rgba(0,0,0,0.8)); 
+            -webkit-background-clip: text;}
+        100%{
+            background:linear-gradient(to left,rgba(0,0,0,1),rgba(0,0,0,1));
+            -webkit-background-clip: text;
+        }
+    }
+    @keyframes show_list_bar{
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    
+    /*****************************************
+                    menu-list
+    *****************************************/
+    .content{
+        margin: auto; margin-top:150px;
+        width:1200px;
+        display: flex;
+       	justify-content: space-between;
+       	border: 1px solid red;
+    }
+    .content_lists{
+        width:262px;
+        margin: 0;
+    }
+    .content_inmenu{
+        padding:23px;
+        position: relative;
+        display: flex;
+       	flex-direction: column;
+       	border: 1px solid blue;
+    }
+    .content_lists h2{
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 30px;
+    }    
+    .content_lists h2::after{
+        margin-top: 20px;
+        content: "";
+        display: block;
+        width: 200px;
+        height: 5px;
+    }
+    .content_inmenu li{
+        position: relative;
+        left:0px;
+        margin: 20px 0px;
+        
+    }
+    .content_list {
+        font-weight: 500;
+        height: 20px;
+        padding: 1px 5px 0  5px;
+        display: block;
+        margin: 0;
+        align-items: center;
+        font-size: 13px;
+    }
+    .content_selected::After{
+        content:"";
+        display: inline-block;
+        width: 4px;height: 4px;
+        position: absolute;
+        top:40%;right: 23px;
+        transform: rotate(45deg);
+    }
+    /***************************************
+                테마 컬러
+    ****************************************/
+    .theme1_menu{
+        background-color:var(--hub-background);
+    }
+    .theme1_content_list{
+        color:var(--hub-font);
+    }
+    .theme1_subject{
+        color:var(--hub-font);
+    }
+    .theme1_subject::after{
+        background-color:var(--hub-font);
+    }
+    .theme1_selected1 a{
+        background-color:var(--menu-theme1-selected);
+        color:white; 
+    }
+    .theme1_selected1::after{
+        border-top: 1px solid white;
+        border-right: 1px solid white;
+    }
+    /*******************************************
+                테마2 컬러
+    *******************************************/
+    .theme2_menu{
+        background-color:var(--theme1-backgroud);
+    }
+    .theme2_content_list li a{
+        color:var(--theme1-maincategori);
+        font-weight: 500;
+    }
+    .theme2_subject{
+        color:var(--theme1-maincategori_res);
+    }
+    .theme2_subject::after{
+        background-color:var(--theme1-maincategori_res);
+    }
+    .theme2_selected1 a{
+        background-color:var(--menu-theme2-selected);
+    }
+    .theme2_selected1::after{
+        border-top: 1px solid white;
+        border-right: 1px solid white;
+    }
+   
+   
+   
+   
+    .content_menu{
+        width:875px;
+        display: inline-block;
+        border:1px solid black;
+        margin:0;
+    }
+    /*******************************************
+                테마2 컬러
+    *******************************************/
+    .localBox{ 
+        background-image:none;
+        background-color: var(--hub-background);
+        height:100px;
+
+    }
+
+	.localBox .localBoxer {
+        width:1200px; 
+        height: 200px;
+        margin:0 auto 0 auto; 
+        overflow:hidden; 
+    }
+	
+	/* localBox css */
+	.linkInfo {
+        background : url(http://localhost:9000/hotel/resources/img/public/localBoxLinkInfo.gif) no-repeat transparent;
+		position : relative;
+		float : left;
+		width : 500px;
+		height : 100px;
+	}
+	.Infolst{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap:14px;
+        height: 100px;
+    }
+    .Infolst ul{
+        display: flex;
+        margin-left: 30px;
+    }
+    .Infolst ul li, .Infolst ul li a {
+        font-size: 12px;
+        opacity: 0;
+        
+    }
+    .Infolst:first-child li:first-child{
+        width: 67px;
+    }
+    .Infolst ul li a {
+        padding: 0 9px 0 9px;
+    }
+	/************************/
+	
+	/* snsBox css */
+	.foot .localBox .snsNews{ 
+        float:right;
+        width:117px; 
+        height:100px; 
+        position:relative
+    } /* sns  메뉴 위치 수정 20210419 수정 */
+	.foot .localBox .snsNews .sns{ 
+        position:absolute; 
+        left:0; 
+        top:39px;
+    }
+	.foot .localBox .snsNews .sns .dt{
+        float:left; 
+        background:url(http://localhost:9000/hotel/resources/img/public/localBoxSnsNews.gif) no-repeat 0 -39px; 
+        width:33px; height:23px; 
+        text-indent:-9999%; 
+        overflow:hidden; 
+    }
+	.foot .localBox .snsNews .sns dd{ 
+        float:left; 
+        margin:0 0 0 5px;
+    }
+	.foot .localBox .snsNews .sns dd a{ 
+        width:23px; height:23px; 
+        background:url(http://localhost:9000/hotelresources/img/public/localBoxSnsNews.gif); 
+        vertical-align:middle; 
+        display: block; 
+        overflow:hidden; 
+        line-height:100px;
+        text-indent:-9999%;
+    }
+	.foot .localBox .snsNews .sns .facebook a{
+        background-position:-38px -39px;
+    }
+	.foot .localBox .snsNews .sns .blog a{
+        background-position:-66px -39px;
+    }
+	.foot .localBox .snsNews .sns .instagram a{
+        background-position:-94px -39px;
+    }
+	/***********************/
+	
+	/* linkBox css */
+	.footer{
+        width:1200px;
+        margin:0 auto;
+        height:300px; 
+        position:relative; 
+        overflow:hidden;
+    }
+	.footer .linkBox{
+        height: 60px; 
+        font-size:15px;
+    }
+    .footer .linkBox::after{
+        content: "";
+        width: 1300px; height: 1px;
+        display: inline-block;
+        background-color: var(--hub-background);
+        position: relative;
+        bottom: 15px
+
+    }
+	.footer .linkBox ul{
+        width:909px;
+        display: flex;
+    }
+
+	.footer .linkBox li{
+        padding: 25px 0;
+    }
+    .footer .linkBox ul li:not(:first-child)::before{
+        content: "";
+        width: 1px; height: 13px;
+        display: inline-block;
+        position: relative;
+        left:-12px;
+        background-color: var(--menu-theme2-selected);
+    }
+	.footer .linkBox li a{
+        font-weight:bold;
+        color:rgb(153,153,153);
+        height:14px;
+        margin:0; 
+        overflow:hidden;
+        padding: 0 25px;
+    }
+	.footer .linkBox li a:first-child{
+        padding-left: 0;
+    }
+	/***********************/	
+	
+	
+	.compInfo {
+         position : relative; float : left;
+         width : 550px; height : 100px;
+         display: flex; align-items: center;
+         gap:60px;
+    }
+	.compInfo p {   
+        font-size: 13px; font-weight: 600;
+        color: var(--theme2-maincategori_font);
+    }
+    .compInfo span{
+        font-weight: 700;
+        font-size: 12px;
+        color: var(--theme2-subcategori_font);
+    }
+	.compInfo a {
+        text-decoration:none;
+        font-size:20px;
+        color:rgb(153,153,153);
+        font-weight:bold;
+        display:inline-block ;
+        width: 170px;
+        height: 50px;
+        border: 1px solid red;
+    }
+    .compInfo::after {
+        content: "";
+        width: 1px; height: 45px;
+        display: inline-block;
+        background-color: var(--menu-theme2-selected);
+        position: absolute;
+        right: 0;
+       }
+	
+	.footer .adressBox{
+        height:100px; width:1200px; 
+        background-image: url(http://localhost:9000/hotel/resources/img/public/footCopyright.gif);
+        background-repeat: no-repeat;
+        text-indent: -9999%;
+	}
+	.footer .adressBox p {
+        padding:0; 
+        margin:0; 
+        font-size:13px; 
+        color:rgb(184,184,184); 
+        font-weight:bold;
+    }
+		
+	/* .selectLang ul{
+		display:flex; text-indent: 10px; float: right; width:194px; padding: 0;
+		list-style : none;
+	} */
+    .footer_topbox{
+        height: 100px;
+    }
+    
+    
+    
+    
+    
+  /*********************************************************
+  		aboutShillaStay. brandStory
+    *********************************************************/
+    .brand_story{
+    display: inline-block;
+    height: 300px;
+    }
+    .brand_story img{
+    display: block;
+    margin: 0  0 10px 0;
+    }
+    .brand_story_main img:nth-child(3){
+    margin: 40px 0;
+    }
+  /************************************************************
+  				findHotel.findHotel
+  *************************************************************/
+   .loacation{
+	   	display: block;
+	   	widows: 1200px; height:100px;
+		margin: auto;
+		text-align: left;
+   }
+   .loacation::After{
+   		content:"";
+   		width: 1200px; height: 5px;
+   		background-color:var(--container-color-bar1);
+  		display:block;
+  		margin-top:17px;
+   }
+  .loacation span{
+  		color:var(--container-color-bar1);
+  		font-size:30px;
+  }
+  #hub_map{
+  	width: 870px; height: 700px;
+  	position:relative;
+  	right:0;
+  }
+   .map_list_container{
+        width:262px;
+        float: left;
+        margin-right: 50px;
+        text-align: left;
+    }
+
+    .map_hotellist{
+        position: relative;
+    }
+  	.map_hotellist ul li{
+  	margin-bottom:40px;
+  	}
+  	.map_hotellist ul li a, .map_hotellist ul li img{
+  	margin: 12px 0 12px 0;
+  	display: block;
+  	}
+  	.map_hotellist a:hover{
+  	 background-color:var(--container-color-bar1);
+     color:var(--main-color-part1);
+  	 animation: map_list_hover forwards;
+     animation-timing-function:  cubic-bezier(.65,.01,.68,1.05);
+     animation-duration: 0.26s;
+  	}
+  	@keyframes map_list_hover{
+  		from{
+	        color:var(--container-color-bar1);
+	        background-color:var(--main-color-part1);
+  		}
+  		to{
+  			background-color:var(--container-color-bar1);
+  			color:var(--main-color-part1);
+  		}
+  	}
+ /**********************************************************
+ 					create_hotel
+ ***********************************************************/
+ .createhotel_brandlogo{
+ 	display: flex;
+ }
+ /**********************************************************
+ 					index_page
+ ***********************************************************/
+ .index_add{
+ 	witdh: 100%;
+ 	background-color: rgba(154,211,58,0.5);
+ 	height: 500px;
+ }
+ .index_reservation{ 
+ 	witdh: 100%;
+ 	background-color: rgba(255,211,58,0.5);
+ 	height: 500px;
+ }
+ .index_gallery{
+ 	witdh: 100%;
+ 	background-color: rgba(63,211,58,0.5);
+ 	height: 500px;
+ }
+ .index_map{
+ 	witdh: 100%;
+ 	background-color: rgba(154,11,58,0.5);
+ 	height: 500px;
+ }

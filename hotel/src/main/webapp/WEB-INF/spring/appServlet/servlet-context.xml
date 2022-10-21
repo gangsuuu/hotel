@@ -14,7 +14,10 @@
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
-
+	<resources mapping="/resources/css/**" location="/resources/css/" />
+	<resources mapping="/resources/js/**" location="/resources/js/" />
+	<resources mapping="/resources/img/**" location="/resources/img/" />
+	
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/views/" />
@@ -24,22 +27,36 @@
 	<!-- multipartResolver -->
 	<beans:bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver"> </beans:bean>
 	
-	<!-- service -->
+	<!-- service 김수민 -->
 	<beans:bean id="inquiryService" class="com.spring.service.InquiryServiceImpl"></beans:bean>
 	<beans:bean id="pageService" class="com.spring.service.PageServiceImpl"></beans:bean>
 	<beans:bean id="fileService" class="com.spring.service.FileServiceImpl"></beans:bean>
 	<beans:bean id="replyService" class="com.spring.service.ReplyInquiryServiceImpl"></beans:bean>
-	<beans:bean id="memberService" class="com.spring.service.MemberServiceImpl"></beans:bean>
-		
-	<!-- dao 객체 생성 : 서비스impl객체에서 호출 -->
+	<!--  service 이지민  -->
+	<beans:bean id ="memberService" class="com.spring.service.MemberServiceImpl"></beans:bean>
+	<!-- service 조진희 -->
+	<beans:bean id="basketService"  class="com.spring.service.BasketServiceImpl"></beans:bean>
+	<beans:bean id="bookService"  class="com.spring.service.BookServiceImpl"></beans:bean>
+	<beans:bean id="myroomService"  class="com.spring.service.MyroomServiceImpl"></beans:bean>
+	<!-- service 김민재 -->
+	<beans:bean id="noticeService" class="com.spring.service.NoticeServiceImpl"> </beans:bean>
+	
+	
+	<!-- dao 객체 생성 : 김수민 -->
 	<beans:bean id="hotelinquirytDao"  class="com.hotel.dao.HotelInquiryDAO"></beans:bean>
 	<beans:bean id="replyinquirtDao"  class="com.hotel.dao.ReplyInquiryDAO"></beans:bean>
 	<beans:bean id="hotelmemberDao"  class="com.hotel.dao.HotelMemberDAO"></beans:bean>	
+	<!--  DAO 객체 생성 : 이지민  -->
+	<beans:bean id ="hotelMemberDAO" class="com.hotel.dao.HotelMemberDAO"></beans:bean>
+	<!-- dao객체 생성 : 조진희 -->
+	<beans:bean id="basketDao" class="com.hotel.dao.BasketDAO"></beans:bean>
+	<beans:bean id="BookDao" class="com.hotel.dao.BookDAO"></beans:bean>
+	<beans:bean id="MyroomDao" class="com.hotel.dao.MyroomDAO"></beans:bean>
+	<!--  dao 객체 생성 : 김민재 -->
+	<beans:bean id="noticeDao" class="com.hotel.dao.NoticeDAO"> </beans:bean>
 	
 	<!-- Interceptor 객체 생성 -->
 	<beans:bean id="authInterceptor"  class="com.spring.interceptor.AuthInterceptor"></beans:bean>
-	
-	
 	
 		
 	<context:component-scan base-package="com.spring.hotel" />

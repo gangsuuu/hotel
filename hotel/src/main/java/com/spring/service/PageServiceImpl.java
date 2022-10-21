@@ -5,11 +5,14 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.hotel.vo.HotelInquiryVO;
+
 public class PageServiceImpl {
 
 	@Autowired
 	private InquiryServiceImpl inquiryService;
-	
+	@Autowired
+	private NoticeServiceImpl noticeService;
 
 	
 	/**
@@ -27,10 +30,21 @@ public class PageServiceImpl {
 		int dbCount = 0;	//DB에서 가져온 전체 행수
 		
 		if(serviceName.equals("inquiry")) {
+			HotelInquiryVO vo = new HotelInquiryVO();
+			vo.setRcount(0);
 			inquiryService = (InquiryServiceImpl)service;
-			dbCount = inquiryService.getTotalCount();
+			dbCount = inquiryService.getTotalCount(vo);
 			//pageSize=10; 여기서 페이지 사이즈 조절도 가능하다.
 		
+		}else if(serviceName.equals("notice")) {
+			noticeService = (NoticeServiceImpl)service;
+			dbCount = noticeService.getTotalCount();
+			pageSize = 10;
+		}else if(serviceName.equals("inquiry_replyno")) {
+			HotelInquiryVO vo = new HotelInquiryVO();
+			vo.setRcount(1);
+			inquiryService = (InquiryServiceImpl)service;
+			dbCount = inquiryService.getTotalCount(vo);
 		}
 				
 		//총 페이지 수 계산

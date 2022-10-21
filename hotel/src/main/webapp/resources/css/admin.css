@@ -1,0 +1,104 @@
+/**************************************
+			admin edit_index
+**************************************/
+.index_edit_container{
+	width: 100%;
+	position: relative;
+	margin: 20px 0;
+}
+.index_edit_container>div:not(:first-child){
+	witdh: 100%;
+	height: 200px;
+}
+.index_edit_header{
+ 	background-color: rgba(154,66,58,0.5);
+ 	display:flex;
+ 	justify-content:center;
+ 	align-items: center; 
+ 	height: 100px;
+}
+.index_edit_header_logo{
+	width: 200px;
+	height: 50px;
+	border: 1px solid black;
+	background-size: 100% 100%  ;
+	background-repeat: no-repeat;;
+}
+.hotel_edit_input_logo{
+	display: none;
+}
+
+
+.index_edit_add{
+	position:relative;
+ 	background-color: rgba(154,211,58,0.5);
+}
+.index_edit_add_content{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display:none;
+}
+
+.index_edit_add_btnlist{
+	position:absolute;
+	top:50%;
+	width:100%;
+	display: flex;
+	justify-content: space-between;
+}
+.index_edit_add_btnlist div{
+	margin: 0;
+}
+.index_move_btn{
+	width: 12px;
+	height: 12px;
+	background-color: white;
+	border-radius: 100%;
+}
+
+.index_edit_add_manage{
+	display:none;
+	justify-content: center;
+	gap: 10px;
+}
+.index_edit_add_insert, .index_edit_add_delete, .index_edit_add_update{
+	width: 50px;
+	height: 50px;
+}
+.index_edit_add_delete{
+	background-color: blue;
+}
+.index_edit_add_update{
+	background-color: white;
+}
+.index_edit_add_insert{
+	background-color: orange;
+}
+
+
+
+
+
+.index_edit_add:hover .index_edit_add_manage{
+	display:flex;
+}
+
+
+
+.index_edit_reservation{
+ 	background-color: rgba(255,211,58,0.5);
+}
+.index_edit_gallery{
+ 	background-color: rgba(63,211,58,0.5);
+}
+.index_edit_map{
+ 	background-color: rgba(154,11,58,0.5);
+	
+}
+
+
+
+.selected{
+	display: block;
+}

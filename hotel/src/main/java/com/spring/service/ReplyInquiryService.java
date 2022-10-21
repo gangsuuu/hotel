@@ -2,11 +2,16 @@ package com.spring.service;
 
 import java.util.ArrayList;
 
+import com.hotel.vo.HotelInquiryVO;
 import com.hotel.vo.ReplyInquiryVO;
 
 public interface ReplyInquiryService {
 	
+	//미답변 출력
+	ArrayList<HotelInquiryVO> replynoList(int startCount, int endCount);
 	
+	//문의글 검색
+	ArrayList<HotelInquiryVO> getSearch(int startCount, int endCount, String searchlist, String keyword);
 	
 	//문의글 답변등록 처리 
 	int getWriteResult(ReplyInquiryVO vo);

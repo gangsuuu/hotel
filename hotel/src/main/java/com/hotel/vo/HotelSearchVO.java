@@ -6,7 +6,17 @@ public class HotelSearchVO {
 	//º¯¼ö
 	int start, end;
 
-	String searchlist, keyword;
+	String searchlist, keyword, mid;
+
+	
+	//gettersetter
+	public String getMid() {
+		return mid;
+	}
+
+	public void setMid(String mid) {
+		this.mid = mid;
+	}
 
 	public int getStart() {
 		return start;
