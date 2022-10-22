@@ -15,9 +15,7 @@
 <script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script>
-	var hotelname = "theshilla";
-</script>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script>
 	
 	function modalopen(iid){ 
@@ -150,14 +148,22 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
-
+	<%@ include file="../header.jsp" %>
+	
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
 	<!---------------------------------------------->
-	
-	<div class="contain">
+	<div class="content_lists">
+            <div class="content_inmenu">
+             	<h2 class="suject">고객서비스</h2>
+                <ul>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/standard.do" class="content_list">호텔안내</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/deluxe.do" class="content_list">인근명소</a></li>
+                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/grand.do" class="content_list">고객센터</a></li>
+                </ul>
+            </div>
+        </div>
+	<div class="content">
 		<div class="container">
 			<div class="InAreaMenuBar">
 				<div class="MenuBar">
@@ -296,6 +302,6 @@
 	</div>
 
 	<!-- Footer Include -->
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
+	<%@ include file="../footer.jsp" %>
 </body>
 </html>

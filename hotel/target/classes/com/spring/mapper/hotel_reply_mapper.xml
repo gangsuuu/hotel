@@ -34,7 +34,7 @@
 	
 	<!-- reply list -->
 	<select id="list" parameterType="map" resultType="com.hotel.vo.ReplyInquiryVO">
-		select reid, RECONENT, redate, iid from reply_inquiry
+		select reid, RECONtENT, redate, iid from reply_inquiry
 	</select>
 	
 </mapper>

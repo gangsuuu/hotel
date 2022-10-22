@@ -180,9 +180,7 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
-
+	<%@ include file="../header.jsp" %>
 
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
@@ -332,6 +330,6 @@
 	</div>
 
 	<!-- Footer Include -->
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
+	<%@ include file="../footer.jsp" %>
 </body>
 </html>
