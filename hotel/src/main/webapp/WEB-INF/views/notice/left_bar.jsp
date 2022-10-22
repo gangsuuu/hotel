@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>항상 즐거움이 있는 SHILLA STAY!</title>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/notice.css">
 </head>
 <body>
