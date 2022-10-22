@@ -10,9 +10,6 @@
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script>
-	var hotelname = "theshilla";
-</script>
-<script>
 	$(document).ready(function(){
 		$("#btnInquiryUpdate").click(function(){
 			if(("input[name='hotelname']:checked").length==0){
@@ -89,12 +86,20 @@
 .tableTypeA .last th,.tableTypeA .last td {border-bottom:#cdcbbe solid 1px;}
 .tableTypeA .bdBot{border-bottom:#cdcbbe solid 1px !important; }
 
-.contentarea { width:670px; height:180px; vertical-align: middle; }
+.contentarea { width:670px; height:180px; vertical-align: middle; resize: none; overflow:auto; }
 .titlearea { width:668px; height:23px; vertical-align: middle;}
+.titlearea, .contentarea{
+	border:none; 
+}
 #category {width:100px; height:23px;}
 #passwordlable { margin-left:30px; }
 #secretnum { width:100px; height:23px; }
-#category, .titlearea, #secretnum, .contentarea { border: #CCC solid 1px; }
+#category,  #secretnum{ border: #CCC solid 1px; }
+#category, .titlearea, #secretnum, .contentarea:focus{
+	outline: none;
+}
+
+
 #btnlist { text-align:center; margin-top:50px; }
 
 /***********추가******************/
@@ -106,46 +111,35 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
-
+	<%@ include file="../header.jsp" %>
+	
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
 	<!---------------------------------------------->
 	
-	<div class="contain">
-		<div class="container">
-			<div class="InAreaMenuBar">
-				<div class="MenuBar">
-					<h2 class="tit">고객문의</h2>
-					<img src="http://localhost:9000/hotel/resources/img/gline.jpg">
-						<ul class="menu">
-							<li class="">
-								<a href="inquiry_list.do" class="on"><span>문의글</span><img src="http://localhost:9000/hotel/resources/img/gline1.jpg"></a>
-							</li>	
-							<li class="">
-								<a href="inquiry_write.do"><span>문의하기</span></a>
-							</li>
-							<li class="">
-								<a href="inquiry_my_list.do"><span>내문의함</span></a>
-							</li>
-						</ul>
-				</div>
-			</div>	
-		</div>
-		
+	<div class="content">
+		<div class="content_lists">
+			 <div class="content_inmenu">
+				  <h2 class="suject">고객서비스</h2>
+	              <ul>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/introhotel.do" class="content_list">호텔안내</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list">인근명소</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_list.do" class="content_list content_selected">고객센터</a></li>
+	              </ul>
+			 </div>
+		 </div>		
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
 	<!---------------------------------------------->	
 		<div class="contents" id="contents">
-		<form name="inquireUpdateForm" id="inquireForm" method="post" enctype="multipart/form-data" action="inquiry_update_check.do">
-		<input type="hidden" name="iid"  value="${ vo.iid }" >
-		<input type="hidden" name="ifile"  value="${ vo.ifile }" >
-		<input type="hidden" name="isfile"  value="${ vo.isfile }" >
+			<form name="inquireUpdateForm" id="inquireForm" method="post" enctype="multipart/form-data" action="inquiry_update_check.do">
+			<input type="hidden" name="iid"  value="${ vo.iid }" >
+			<input type="hidden" name="ifile"  value="${ vo.ifile }" >
+			<input type="hidden" name="isfile"  value="${ vo.isfile }" >
 				<div class="location">
 					<p class="list">
 						<span class="crPosit"></span>
-						 > 문의하기 >
+						> 문의하기 >
 						<strong>Contact Us</strong>
 					</p>
 				</div>
@@ -175,101 +169,102 @@
 					<h3 class="tit1">문의글</h3>
 					<img id="linewrite" src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
 		
-						<table class="tableTypeA tableCustomer">
-							<colgroup>
-				                <col width="16%" class="col1">
-				                <col width="50%" class="col2">
-				                <col width="18%" class="col3">
-				                <col width="16%" class="col4">
-	           				</colgroup>
-							<tbody>
-								<tr>
-									<th scope="row">
-										<label class=""> <span class="ast">*</span> 구분 </label>
-									</th>
-									<td colspan="3">
-										<div class="selector">
-											<input type="radio" name="hotelname" value='신라호텔'><span>신라호텔</span>
-											<input type="radio" name="hotelname" value='신라스테이'><span>신라스테이</span>
-											<input type="radio" name="hotelname" value='호텔개발'><span>호텔개발</span>
-										</div>
-									</td>
-								</tr>
-								<tr class="rq-type-rwd" id="show1" style="display: table-row;">
-									<th scope="row">
-											<label class=""> <span class="ast">*</span> 질문유형 </label>
-									</th>
-									<td colspan="3">
-										<div class="selector" id="selectForm" style="width: 135px;">
-												<select id="category" name="category">
-													<option disabled="선택">선택</option>
-													<option value="예약문의" title="Reserve">예약문의</option>
-													<option value="계정문의" title="Account">계정문의</option>
-													<option value="기타" title="ETC">기타</option>
-												</select>
-										</div>
-									</td>													
-								</tr>
-								<tr>
-									<th scope="row">
-										<label ><span class="ast">*</span> 제목</label>
-									</th>
-									<td colspan="3">
-										<input type="text" class="titlearea" name="title" id="title" value="${ vo.title }">
-									</td>
-								</tr>
-								<tr>
-									<th scope="row">
-										<label class=""><span class="ast">*</span> 내용<br></label>
-									</th>
-									<td colspan="3">
-										<textarea name="content" class="contentarea">${ vo.content }</textarea>
-									</td>
-								</tr>
-								<tr>
-									<th scope="row">
-										<label>파일첨부</label>
-									</th>
-									<td colspan="3">
-										<input type="file" name="file1">
-										<c:choose>
-											<c:when test="${vo.ifile != null}">
-												<span id="upload_file">${vo.ifile}</span>
-											</c:when>
-											<c:otherwise>
-												<span id="upload_file">선택된 파일 없음</span>
-											</c:otherwise>
-										</c:choose>
-									</td>
-								</tr>	
-								<tr>
-									<th scope="row">글설정</th>
-									<td colspan="3">
-										<div class="secret_form">
-			   								<input class="secret_input" type="checkbox" name="secret" id="secret" checked="checked" value=1 >
-			    							<label class="secret_label">비밀글</label>
-				    							<span>
-					    							<label id="passwordlable">비밀번호</label>
-					    							<input type="password" name="secretnum" id="secretnum" value="${ vo.secretnum }">
-				    							</span>
-										</div>
-									</td>	
-								</tr>	
-							</tbody>	
-						</table>
-						<div id="btnlist">
-							<button type="button" id="btnInquiryUpdate" >수정완료</button>
-							<button type="reset" id="btnRest">Reset</button>
-							<a href="inquiry_list.do"><button type="button" id="btnInquiryList">목록</button></a>
-						</div>
+					<table class="tableTypeA tableCustomer">
+						<colgroup>
+							<col width="16%" class="col1">
+							<col width="50%" class="col2">
+							<col width="18%" class="col3">
+							<col width="16%" class="col4">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">
+									<label class=""> <span class="ast">*</span> 구분 </label>
+								</th>
+								<td colspan="3">
+									<div class="selector">
+										<input type="radio" name="hotelname" value='신라호텔'><span>신라호텔</span>
+										<input type="radio" name="hotelname" value='신라스테이'><span>신라스테이</span>
+										<input type="radio" name="hotelname" value='호텔개발'><span>호텔개발</span>
+									</div>
+								</td>
+							</tr>
+							<tr class="rq-type-rwd" id="show1" style="display: table-row;">
+								<th scope="row">
+									<label class=""> <span class="ast">*</span> 질문유형 </label>
+								</th>
+								<td colspan="3">
+									<div class="selector" id="selectForm" style="width: 135px;">
+										<select id="category" name="category">
+											<option disabled="선택">선택</option>
+											<option value="예약문의" title="Reserve">예약문의</option>
+											<option value="계정문의" title="Account">계정문의</option>
+											<option value="기타" title="ETC">기타</option>
+										</select>
+									</div>
+								</td>													
+							</tr>
+							<tr>
+								<th scope="row">
+									<label ><span class="ast">*</span> 제목</label>
+								</th>
+								<td colspan="3">
+									<input type="text" class="titlearea" name="title" id="title" value="${ vo.title }">
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									<label class=""><span class="ast">*</span> 내용<br></label>
+								</th>
+								<td colspan="3">
+									<textarea name="content" class="contentarea">${ vo.content }</textarea>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									<label>파일첨부</label>
+								</th>
+								<td colspan="3">
+									<input type="file" name="file1">
+									<c:choose>
+										<c:when test="${vo.ifile != null}">
+											<span id="upload_file">${vo.ifile}</span>
+										</c:when>
+										<c:otherwise>
+											<span id="upload_file">선택된 파일 없음</span>
+										</c:otherwise>
+									</c:choose>
+								</td>
+							</tr>	
+							<tr>
+								<th scope="row">글설정</th>
+								<td colspan="3">
+									<div class="secret_form">
+										<input class="secret_input" type="checkbox" name="secret" id="secret" checked="checked" value=1 >
+										<label class="secret_label">비밀글</label>
+										<span>
+											<label id="passwordlable">비밀번호</label>
+											<input type="password" name="secretnum" id="secretnum" value="${ vo.secretnum }">
+										</span>
+									</div>
+								</td>	
+							</tr>	
+						</tbody>	
+					</table>
+					<div id="btnlist">
+						<button type="button" id="btnInquiryUpdate" >수정완료</button>
+						<button type="reset" id="btnRest">Reset</button>
+						<a href="inquiry_list.do"><button type="button" id="btnInquiryList">목록</button></a>
 					</div>
-					
-				</div>					
-			</div>
-		</div>
-	</form>
-	
+				</div>
+			</form>
+		</div>					
+	</div>
 	<!-- Footer Include -->
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
+	<%@ include file="../footer.jsp" %>
+	<script>
+ 	$("[data-nav=service]").css("display","block");
+ 	$("[data-nav=service]").children().eq(2).children().first().css("color","white");
+ 	</script>
 </body>
 </html>

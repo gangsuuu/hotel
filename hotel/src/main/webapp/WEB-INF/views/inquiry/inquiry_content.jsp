@@ -13,9 +13,6 @@
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script>
-	var hotelname = "theshilla";
-</script>
-<script>
 	
 	//전체글 수정하기 버튼 클릭 시, 비번체크
 	function modalopen2(iid){ 
@@ -139,6 +136,13 @@
 .MenuBar li li a{ background:#CC6; display:block;}
 .MenuBar li li a.on{ font-weight:bold;}
 
+
+.contents{
+	margin: 0;
+	width: 850px;
+}
+
+
 .contain { display:flex; width:1241px; height:1200px; margin-right:202px; margin-bottom:100px; margin-left:202px;}
 .container { margin-right:100px; }
 .contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
@@ -157,13 +161,22 @@
 #linewrite { margin-bottom: 5px; }
 
 /*******************/
-.customerBoard { border-collapse:collapse; text-align:center; width:869px; border-color:#cdcbbe; margin-left: 5px; }
+.customerBoard { border-collapse:collapse; text-align:center; width: 850px;px; border-color:#cdcbbe; margin: 10px 0 0 0; }
 .customerBoard tr:first-child { background-color: #ebe7e3; height:38px; font-size:16px;}
 .customerBoard tr:first-child td, .customerBoard tr:nth-child(2) td { text-align:center;}
 .customerBoard tr:nth-child(2) { background-color: #ebe7e3; height:38px; font-size:16px;}
 .customerBoard tr { height:35px; font-size:14px; }
 .customerBoard a { color:black; text-decoration:none; }
 .customerBoard td { text-align: left; padding-left: 10px; }
+.inquiry-table-state{
+}
+.inquiry-table-state th{
+	width: 160px;
+}
+.inquiry-table-state td{
+	width: 228px;
+}
+
 .tablecontent { height:340px; vertical-align: top; text-align: left; padding-left: 10px; padding-top: 10px; padding-bottom: 0px; padding-right: 0px; }
 #btnlist { text-align:center; margin-top:50px; }
 #btn_InquiryUpdate, #btn_InquiryDelete, #btn_InquiryList { background-color:rgb(58,49,37); color:rgb(250,241,208); width:99px; height:35px; vertical-align: middle; font-size:14px; font-weight: bold; }
@@ -186,27 +199,17 @@
 	<!--------------- MenuBar ---------------------->
 	<!---------------------------------------------->
 	
-	<div class="contain">
-		<div class="container">
-			<div class="InAreaMenuBar">
-				<div class="MenuBar">
-					<h2 class="tit">고객문의</h2>
-					<img src="http://localhost:9000/hotel/resources/img/gline.jpg">
-						<ul class="menu">
-							<li class="">
-								<a href="inquiry_list.do" class="on"><span>문의글</span><img src="http://localhost:9000/hotel/resources/img/gline1.jpg"></a>
-							</li>	
-							<li class="">
-								<a href="inquiry_write.do"><span>문의하기</span></a>
-							</li>
-							<li class="">
-								<a href="inquiry_my_list.do"><span>내문의함</span></a>
-							</li>
-						</ul>
-				</div>
-			</div>	
-		</div>
-		
+	<div class="content">
+		<div class="content_lists">
+			 <div class="content_inmenu">
+				  <h2 class="suject">고객서비스</h2>
+	              <ul>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/introhotel.do" class="content_list">호텔안내</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list">인근명소</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_list.do" class="content_list content_selected">고객센터</a></li>
+	              </ul>
+			 </div>
+		 </div>		
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
 	<!---------------------------------------------->	
@@ -223,7 +226,7 @@
 				<div class="account">
 					<div class="headTit">
 						<h3 class="tit">연락처</h3>
-						<img src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
+						<div class="content-block"></div>
 						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/contactText01.gif">
 					</div>
 					<table class="tableTypeF tableFactSheet tableBold" style="height: 139px;" border> 
@@ -243,33 +246,28 @@
 					</table>
 					
 					<h3 class="tit1">문의글</h3>
-					<img id="linewrite" src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
+					<div class="content-block"></div>
 					<table border=1 class="customerBoard">
 						<input type="hidden" >
-						<tr>
-							<th colspan="2">호텔선택</th>
-							<td colspan="2">${vo.hotelname }</td>
-						</tr>
-						<tr>
-							<th>문의유형</th>
-							<td>${ vo.category }</td>
+						<tr class="inquiry-table-state">
 							<th>등록일자</th>
 							<td>${ vo.idate }</td>													
+							<th>처리상태</th>
+							<td>처리상태</td>
 						</tr>
 						<tr>
-							<th colspan="2">제목</th>
-							<td colspan="2">${ vo.title }</td>
+							<th colspan="1">문의유형</th>
+							<td colspan="3">${ vo.category }</td>
+						</tr>
+						<tr>
+							<th colspan="1">제목</th>
+							<td colspan="3">${ vo.title }</td>
 						</tr>
 						
 						<!-- 작성자는 id값을 가져온다. 지금은 수동으로 넣음 -->
 						<tr>
-							<th colspan="2">작성자</th>
-							<td colspan="2">${vo.mid }</td>
-						</tr>
-						
-						<tr>
-							<th colspan="2">내용</th>
-							<td colspan="2" class="tablecontent" name="content" id="content">${ vo.content }<br><br>
+							<th colspan="1">내용</th>
+							<td colspan="3" class="tablecontent" name="content" id="content">${ vo.content }<br><br>
 								<!-- 파일업로드 출력 / 파일이 있는지 없는지 확인해서 출력 -->
 								<c:if test="${vo.isfile != null}">
 									<img src="http://localhost:9000/hotel/resources/upload/${vo.isfile}"
@@ -325,11 +323,13 @@
 				
 			</div>					
 		</div>
-
-	
 	</div>
-
 	<!-- Footer Include -->
 	<%@ include file="../footer.jsp" %>
+	<%@ include file="../footer.jsp" %>
+	<script>
+ 	$("[data-nav=service]").css("display","block");
+ 	$("[data-nav=service]").children().eq(2).children().first().css("color","white");
+ 	</script>
 </body>
 </html>

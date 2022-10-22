@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Customer Inquiry</title>
+<title>Shill</title>
 <link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/am-pagination.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
@@ -112,6 +112,11 @@
 
 .contain { display:flex; width:1241px; height:895px; margin-right:202px; margin-bottom:100px; margin-left:202px;}
 .container { margin-right:100px; }
+.contents {
+	margin:0px;
+	width: 850px;
+}
+
 .contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
 
 .tableTypeF{ border:none; border-top:#cdcbbe solid 1px; width:100%; border-collapse:collapse; table-layout:auto;}
@@ -129,10 +134,10 @@
 
 /**************** 추가 ***************/
 #btnInquiry { background-color:rgb(58,49,37); color:rgb(250,241,208); height: 34px; float:right; margin-top:-15px;}
-#listtable { border-collapse:collapse; text-align:center; width:869px; border-color:#cdcbbe; }
-#listtable tr:first-child { background-color: #ebe7e3; height:38px; font-size:16px;}
+#listtable { border-collapse:collapse; text-align:center; width:850px; border-color:#cdcbbe; margin-top:10px;}
+#listtable tr:first-child { background-color: #ebe7e3; height:38px; font-size:13px;}
 #tabletitle { width:340px; }
-#listtable tr { height:37px; font-size:14px; }
+#listtable tr { height:37px; font-size:13px; }
 #listtable tr:last-child > td { border-color: white; }
 #listtable a { color:black; text-decoration:none; }
 #search { text-align:center; margin-top: 25px; }
@@ -153,40 +158,22 @@
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
 	<!---------------------------------------------->
-	<div class="content_lists">
-            <div class="content_inmenu">
-             	<h2 class="suject">고객서비스</h2>
-                <ul>
-                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/standard.do" class="content_list">호텔안내</a></li>
-                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/deluxe.do" class="content_list">인근명소</a></li>
-                    <li id="content_list_one"><a href="http://localhost:9000/hotel/accommodation/grand.do" class="content_list">고객센터</a></li>
-                </ul>
-            </div>
-        </div>
-	<div class="content">
-		<div class="container">
-			<div class="InAreaMenuBar">
-				<div class="MenuBar">
-					<h2 class="tit">고객문의</h2>
-					<img src="http://localhost:9000/hotel/resources/img/gline.jpg">
-						<ul class="menu">
-							<li class="">
-								<a href="inquiry_list.do" class="on"><span>문의글</span><img src="http://localhost:9000/hotel/resources/img/gline1.jpg"></a>
-							</li>	
-							<li class="">
-								<a href="inquiry_write.do"><span>문의하기</span></a>
-							</li>
-							<li class="">
-								<a href="inquiry_my_list.do?mid=${svo.mid }"><span>내문의함</span></a>
-							</li>
-						</ul>
-				</div>
-			</div>	
-		</div>
-								
+	
+						
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
-	<!---------------------------------------------->				
+	<!---------------------------------------------->
+	<div class="content">
+		<div class="content_lists">
+			 <div class="content_inmenu">
+				  <h2 class="suject">고객서비스</h2>
+	              <ul>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/introhotel.do" class="content_list">호텔안내</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list">인근명소</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_list.do" class="content_list content_selected">고객센터</a></li>
+	              </ul>
+			 </div>
+		 </div>				
 		<div class="contents" id="contents">
 			<div class="ctnInquires ctnCtUs">
 				<div class="location">
@@ -200,9 +187,10 @@
 				<div class="account">
 					<div class="headTit">
 						<h3 class="tit">연락처</h3>
-						<img src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
+						<div class="content-block"></div>
 						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/contactText01.gif">
 					</div>
+					
 					<table class="tableTypeF tableFactSheet tableBold" style="height: 139px;" border> 
 						<colgroup> 
 						<col width="20%" class="col1"> 
@@ -220,8 +208,7 @@
 					</table>
 					
 					<h3 class="tit1">문의글</h3>
-					<img id="linewrite" src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
-					
+					<div class="content-block"></div>
 					<table id="listtable" border=1px solid>
 						<tr>
 							<th>No.</th>
@@ -297,11 +284,12 @@
 										
 			</div>					
 		</div>
-
-	
 	</div>
-
 	<!-- Footer Include -->
 	<%@ include file="../footer.jsp" %>
+	<script>
+ 	$("[data-nav=service]").css("display","block");
+ 	$("[data-nav=service]").children().eq(2).children().first().css("color","white");
+ 	</script>
 </body>
 </html>

@@ -11,9 +11,6 @@
     	a{
     	
     	}
-        ::-webkit-scrollbar {
-            display: none;
-        }
     :root{
     /* hub */
     --content-modal:rgb(143,130,114);
