@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -122,32 +121,87 @@
 .tableTypeF{ border:none; border-top:#cdcbbe solid 1px; width:100%; border-collapse:collapse; table-layout:auto;}
 .tableTypeF th,
 .tableTypeF td{ border:none; padding:6px 13px; text-align:left; line-height:22px; border-bottom:#eceae1 solid 1px; color:#333333}
-.tableTypeF th{color:#666; background:#faf9f4; text-align:center;}
-.tableTypeF td{ background:#FFF; color:#1b1b1b}
-.tableTypeF td strong{ margin-left:30px; }
-.tableTypeF .last th, .tableTypeF .last td {border-bottom:#cdcbbe solid 1px; }
+.tableTypeF th{color:#666; background:#faf9f4; font-size:13px }
+.tableTypeF td{ background:#FFF; color:#1b1b1b; font-size:13px }
 
+.tableTypeF td strong{ margin-left:30px; font-size:13px }
+.tableTypeF td span{font-size:13px }
+
+.tableTypeF .last th, .tableTypeF .last td {border-bottom:#cdcbbe solid 1px; }
+.tableTypeF>tobidy> tr:last-child>td {
+background: red;
+}
 .list { float:right; }
 .tit { color: rgb(88,88,88); font-family: 나눔명조OTF; font-size:26px; margin-top:0; margin-bottom:10px;}
 .tit1 { color: rgb(88,88,88); font-family: 나눔명조OTF; font-size:26px; margin-top:30px; margin-bottom:10px;}
 #linewrite { margin-bottom: 5px; }
 
 /**************** 추가 ***************/
-#btnInquiry { background-color:rgb(58,49,37); color:rgb(250,241,208); height: 34px; float:right; margin-top:-15px;}
-#listtable { border-collapse:collapse; text-align:center; width:850px; border-color:#cdcbbe; margin-top:10px;}
-#listtable tr:first-child { background-color: #ebe7e3; height:38px; font-size:13px;}
+#btnInquiry {
+ background-color:rgb(58,49,37); 
+ color:rgb(250,241,208); 
+ height: 34px; 
+ float:right; 
+ position:absolute;
+ right:0;
+ top:0; 
+ width: 110px;
+ font-weight:600;
+ 
+ 
+ }
+#listtable { 
+	border-collapse:collapse; 
+	text-align:center; 
+	width:850px; 
+	border:none; 
+	margin-top:10px;
+}
+
+#listtable tr:first-child {
+ background-color: #ebe7e3; 
+ height:38px;
+ font-size:12px; 
+ color:rgb(125,120,115);
+ border:1px solid #cdcbbe;
+ }
+ #listtable tbody{
+ border:none;
+ }
 #tabletitle { width:340px; }
 #listtable tr { height:37px; font-size:13px; }
-#listtable tr:last-child > td { border-color: white; }
+#listtable tr:last-child > td {
+ border:none; }
 #listtable a { color:black; text-decoration:none; }
 #search { text-align:center; margin-top: 25px; }
 #searchspan { font-size:12px; }
-.search_list { height:22px; }
-#searchName { height: 17px; }
-#btnSearch { background-color: rgb(58,49,37); color: rgb(250,241,208); height: 23px; font-size: 12px; }
+.search_list { height:22px; } 
+#searchName { 
+	height: 17px; 
+}
+#searchName:focus{
+outline: none;
+}
+#btnSearch { 
+	background-color: rgb(58,49,37); 
+	color: rgb(250,241,208); 
+	height: 23px; 
+	font-size: 12px; 
+	width: 40px;
+	border-radius: 2px;
+}
 #ampaginationsm { height:80px; }
 #ampaginationsm ul { margin-top:35px; }
 .commentimg { background : url(http://localhost:9000/hotel/resources/img/commentimg.jpg); background-size:contain; width: 21px; height: 21px; display: inline-block; float: right; margin-left: -36px; margin-right: 15px;}
+
+
+/****		경수추가목록		******/
+[alt="shillastay"]{
+margin: 10px 0;
+}
+.content-inquery{
+position: relative;
+}
 
 </style> 
 </head>
@@ -170,6 +224,7 @@
 	              <ul>
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/introhotel.do" class="content_list">호텔안내</a></li>
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list">인근명소</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/notice_list.do" class="content_list">공지사항</a></li>
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_list.do" class="content_list content_selected">고객센터</a></li>
 	              </ul>
 			 </div>
@@ -190,25 +245,29 @@
 						<div class="content-block"></div>
 						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/contactText01.gif">
 					</div>
-					
-					<table class="tableTypeF tableFactSheet tableBold" style="height: 139px;" border> 
-						<colgroup> 
-						<col width="20%" class="col1"> 
-						<col class="col2"> 
-						</colgroup> 
-						<tbody> 
-							<tr> 
-								<th class="pe_qK" rowspan="2">00호텔</th> 
-								<td><span>대표전화 </span><strong>02-1234-1234</strong><br></td> 
-							</tr> 
-							<tr> 
-								<td><span>객실예약 </span><strong>02-5678-5678</strong><br> * 평일(월~금요일) 09:00~18:00, 주말 및 공휴일 09:00~16:00</td> 
-							</tr> 
-						</tbody> 
-					</table>
-					
-					<h3 class="tit1">문의글</h3>
-					<div class="content-block"></div>
+					<div>
+						<img alt="shillastay" src="http://localhost:9000/hotel/resources/img/inquiry/telHtitle2.gif">
+						<table class="tableTypeF tableFactSheet tableBold" style="height: auto;" border> 
+							<colgroup> 
+							<col width="20%" class="col1"> 
+							<col class="col2"> 
+							</colgroup> 
+							<tbody> 
+								<tr> 
+									<th class="pe_qK" rowspan="2">신라스테이 광화문</th> 
+									<td><span>대표전화 </span><strong>02-6060-9000</strong><br></td> 
+								</tr> 
+								<tr> 
+									<td><span>객실예약 </span><strong>02-2230-0700</strong><br> * 평일(월~금요일) 09:00~18:00, 주말 및 공휴일 09:00~16:00</td> 
+								</tr> 
+							</tbody> 
+						</table>
+					</div>
+					<div class="content-inquery">
+						<h3 class="tit1">문의글</h3>
+						<a href="inquiry_write.do"><button class="btn" type="button" id="btnInquiry">문의하기</button></a>
+						<div class="content-block"></div>
+					</div>
 					<table id="listtable" border=1px solid>
 						<tr>
 							<th>No.</th>
@@ -216,46 +275,50 @@
 							<th>문의</th>
 							<th id="tabletitle">제목</th>
 							<th>작성자</th>							
-							<th>등록일자</th>							
+							<th>등록일자 </th>							
 						</tr>
+						
 						<c:forEach var="vo" items="${list}">
-						<tr>
-							<td>${ vo.rno }</td>
-							<td>${ vo.hotelname }</td>
-							<td>${ vo.category }</td>
-							<td>							
-							
-								<%-- <c:forEach var="re" items="${reply}"> --%>
-									<c:choose>
-										<c:when test="${vo.secret == 1}">
-											<c:choose>
-												<c:when test="${ vo.rcount != 0}">												
-													<a href="#ex1" rel="modal:open" class="reclass" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<div class="commentimg"></div><img src="http://localhost:9000/hotel/resources/img/icon_lock.gif"></a>
-												</c:when>
-												<c:otherwise>
-													<a href="#ex1" rel="modal:open" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<img src="http://localhost:9000/hotel/resources/img/icon_lock.gif"></a>
-												</c:otherwise>					
-											</c:choose>
-										</c:when>
-										<c:otherwise>
-											<c:choose>
-												<c:when test="${ vo.rcount != 0}">
-													<a class="reclass" id="${vo.iid}" href="inquiry_content.do?iid=${ vo.iid }">${ vo.title }<div class="commentimg"></div></a>
-												</c:when>
-												<c:otherwise>
-													<a class="reclass" id="${vo.iid}" href="inquiry_content.do?iid=${ vo.iid }">${ vo.title }</a>
-												</c:otherwise>
-											</c:choose>		
-										</c:otherwise>
-									</c:choose>
-								<%-- </c:forEach> --%> 
-							
-								
-														
-							</td>
-							<td>${ vo.mid }</td>
-							<td>${ vo.idate }</td>
-						</tr>
+							<c:choose>
+								<c:when test="">
+									<!-- 게시물 없을 때 출력 -->
+								</c:when>
+								<c:otherwise>
+									<tr>
+										<td>${ vo.rno }</td>
+										<td>${ vo.hotelname }</td>
+										<td>${ vo.category }</td>
+										<td>							
+											<%-- <c:forEach var="re" items="${reply}"> --%>
+												<c:choose>
+													<c:when test="${vo.secret == 1}">
+														<c:choose>
+															<c:when test="${ vo.rcount != 0}">												
+																<a href="#ex1" rel="modal:open" class="reclass" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<div class="commentimg"></div><img src="http://localhost:9000/hotel/resources/img/icon_lock.gif"></a>
+															</c:when>
+															<c:otherwise>
+																<a href="#ex1" rel="modal:open" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<img src="http://localhost:9000/hotel/resources/img/icon_lock.gif"></a>
+															</c:otherwise>					
+														</c:choose>
+													</c:when>
+													<c:otherwise>
+														<c:choose>
+															<c:when test="${ vo.rcount != 0}">
+																<a class="reclass" id="${vo.iid}" href="inquiry_content.do?iid=${ vo.iid }">${ vo.title }<div class="commentimg"></div></a>
+															</c:when>
+															<c:otherwise>
+																<a class="reclass" id="${vo.iid}" href="inquiry_content.do?iid=${ vo.iid }">${ vo.title }</a>
+															</c:otherwise>
+														</c:choose>		
+													</c:otherwise>
+												</c:choose>
+											<%-- </c:forEach> --%> 
+										</td>
+										<td>${ vo.mid }</td>
+										<td>${ vo.idate }</td>
+									</tr>
+								</c:otherwise>
+							</c:choose>
 						</c:forEach>
 						<tr>
 							<td colspan="6"><div id="ampaginationsm"></div></td>
@@ -269,7 +332,7 @@
 				 					<a rel="modal:close" >취소</a>
 								</div>							
 					
-					<a href="inquiry_write.do"><button type="button" id="btnInquiry">문의하기</button></a>
+					
 					<form name="list_search" action="inquiry_list_search.do" method="post" id="search" >
 						<span id="searchspan">검색어</span>
 						<select class="search_list" name="searchlist" id="searchlist">
@@ -278,7 +341,7 @@
 							<option value="writer">작성자</option>
 						</select>
 						<input type="text" name="keyword" id="searchName">
-						<button type="button" id="btnSearch">찾기</button>
+						<button class="btn" type="button" id="btnSearch">검색</button>
 					</form>
 				</div>
 										

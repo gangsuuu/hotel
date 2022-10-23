@@ -106,6 +106,10 @@
 #upload_file { position:relative; display:inline-block; background-color: white; font-size:14px; width:120px; left:-181px; }
 #btnInquiryUpdate, #btnInquiryList, #btnRest { background-color:rgb(58,49,37); color:rgb(250,241,208); width:99px; height:35px; vertical-align: middle; font-size:14px; font-weight: bold; }
 
+[alt="shillastay"]{
+margin: 10px 0;
+}
+
 
 </style>
 </head>
@@ -124,6 +128,7 @@
 	              <ul>
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/introhotel.do" class="content_list">호텔안내</a></li>
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list">인근명소</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/notice_list.do" class="content_list">공지사항</a></li>
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_list.do" class="content_list content_selected">고객센터</a></li>
 	              </ul>
 			 </div>
@@ -150,6 +155,8 @@
 						<img src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
 						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/contactText01.gif">
 					</div>
+					<div>
+					<img alt="shillastay" src="http://localhost:9000/hotel/resources/img/inquriy/telHtitle2.gif">
 					<table class="tableTypeF tableFactSheet tableBold" style="height: 139px;" border> 
 						<colgroup> 
 						<col width="20%" class="col1"> 
@@ -157,18 +164,17 @@
 						</colgroup> 
 						<tbody> 
 							<tr> 
-								<th class="pe_qK" rowspan="2">00호텔</th> 
-								<td><span>대표전화 </span><strong>02-1234-1234</strong><br></td> 
+								<th class="pe_qK" rowspan="2">신라스테이 광화문</th> 
+								<td><span>대표전화 </span><strong>02-6060-9000</strong><br></td> 
 							</tr> 
 							<tr> 
-								<td><span>객실예약 </span><strong>02-5678-5678</strong><br> * 평일(월~금요일) 09:00~18:00, 주말 및 공휴일 09:00~16:00</td> 
+								<td><span>객실예약 </span><strong>02-2230-0700</strong><br> * 평일(월~금요일) 09:00~18:00, 주말 및 공휴일 09:00~16:00</td> 
 							</tr> 
 						</tbody> 
 					</table>
-					
+					</div>
 					<h3 class="tit1">문의글</h3>
 					<img id="linewrite" src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
-		
 					<table class="tableTypeA tableCustomer">
 						<colgroup>
 							<col width="16%" class="col1">
