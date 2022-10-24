@@ -6,18 +6,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/inquiry.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <title>Customer Inquiry</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script src="http://localhost:9000/hotel/resources/js/inquiry.js"></script>
-<script src="http://localhost:9000/hotel/resources/js/inquiry_javascript.js"></script>
-<script>
-	var hotelname = "theshilla";
-</script>
 <script>
 	//전체글 수정하기 버튼 클릭 시, 비번체크
 	function modalopen2(iid){ 
@@ -236,7 +230,7 @@
 					<div class="headTit">
 						<h3 class="tit">연락처</h3>
 						<div class="content-block"></div>
-						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/contactText01.gif">
+						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/inquiry/contactText01.gif">
 					</div>
 					<div>
 						<img alt="shillastay" src="http://localhost:9000/hotel/resources/img/inquiry/telHtitle2.gif">
@@ -308,7 +302,7 @@
 					</div>
 					
 					<div id="ex1" class="modal">
-	  					<img src="http://localhost:9000/hotel/resources/img/delete.png" width=20%>
+	  					<img src="http://localhost:9000/hotel/resources/img/inquiry/delete.png" width=20%>
 	  					<p>정말로 <strong style="color:red">삭제</strong>하시겠습니까?</p>
 	  					<button type="button" id="modal_delete">확인</button></a>	
 	 					<a rel="modal:close" >취소</a>
@@ -316,7 +310,7 @@
 					
 					
 					<div id="ex2" class="modal">
-						<img src="http://localhost:9000/hotel/resources/img/lock.png" width=20%>
+						<img src="http://localhost:9000/hotel/resources/img/inquiry/lock.png" width=20%>
 						<p id="passCheckText"><strong>비밀번호</strong>를 입력해주세요.</p>
 				  		<input type="text" id="inputPass">
 				  		<button type="button" id="passCheck">확인</button>
@@ -324,7 +318,7 @@
 					</div>			
 					
 					<div id="ex3" class="modal">
-	  					<img src="http://localhost:9000/hotel/resources/img/delete.png" width=20%>
+	  					<img src="http://localhost:9000/hotel/resources/img/inquiry/delete.png" width=20%>
 	  					<p>정말로 <strong style="color:red"><u style="color:red">삭제</u></strong>하시겠습니까?</p>
 	  					<a href="#ex2" rel="modal:open" id="${vo.iid}" onclick="modalopen3('${vo.iid}')"><button type="button" id="modal_delete">확인</button></a>	
 	 					<a rel="modal:close" id="cancel">취소</a>

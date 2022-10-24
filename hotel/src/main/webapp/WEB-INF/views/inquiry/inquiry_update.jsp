@@ -5,13 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/inquiry.css">
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <title>Customer Inquiry</title>
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script src="http://localhost:9000/hotel/resources/js/inquiry.js"></script>
-<script src="http://localhost:9000/hotel/resources/js/inquiry_javascript.js"></script>
 <script>
 	$(document).ready(function(){
 		$("#btnInquiryUpdate").click(function(){
@@ -123,27 +120,6 @@ margin: 10px 0;
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
 	<!---------------------------------------------->
-	
-	<div class="contain">
-		<div class="container">
-			<div class="InAreaMenuBar">
-				<div class="MenuBar">
-					<h2 class="tit">고객문의</h2>
-					<img src="http://localhost:9000/hotel/resources/img/gline.jpg">
-						<ul class="menu">
-							<li class="">
-								<a href="inquiry_list.do" class="on"><span>문의글</span><img src="http://localhost:9000/hotel/resources/img/gline1.jpg"></a>
-							</li>	
-							<li class="">
-								<a href="inquiry_write.do"><span>문의하기</span></a>
-							</li>
-							<li class="">
-								<a href="inquiry_my_list.do?mid=${sessionScope.svo.mid }"><span>내문의함</span></a>
-							</li>
-						</ul>
-				</div>
-			</div>	
-		</div>
 		
 	<div class="content">
 		<div class="content_lists">
@@ -189,10 +165,6 @@ margin: 10px 0;
 						</colgroup> 
 						<tbody> 
 							<tr> 
-
-								<th class="pe_qK" rowspan="2">신라호텔</th> 
-								<td><span>대표전화 </span><strong>02-1234-1234</strong><br></td> 
-
 								<th class="pe_qK" rowspan="2">신라스테이 광화문</th> 
 								<td><span>대표전화 </span><strong>02-6060-9000</strong><br></td> 
 

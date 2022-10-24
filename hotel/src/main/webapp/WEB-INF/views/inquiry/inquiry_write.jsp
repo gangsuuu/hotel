@@ -6,23 +6,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/inquiry.css">
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <title>Customer Inquiry</title>
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
-<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
-<script src="http://localhost:9000/hotel/resources/js/inquiry.js"></script>
-<script src="http://localhost:9000/hotel/resources/js/inquiry_javascript.js"></script>
-<script>
-	var hotelname = "theshilla";
-</script>
-<!-- <script>
-=======
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script>
->>>>>>> branch 'main' of https://github.com/gangsuuu/hotel.git
 	//문의글 등록하기
 	$(document).ready(function(){
 		$("#btnInquiryWrite").click(function(){
@@ -65,8 +54,7 @@
 		$("#content").val(key);
 	}
 
-
-</script> -->
+</script>
 <style>
 .lnbAreaMenuBar{ float:left; }
 .lnbAreaMenuBar .MenuBar > .tit{ margin:0 0 29px 0; height:53px; background:url(http://localhost:9000/hotel/resources/img/lnbTitle.gif); display:block; /* text-indent:-9999%; */ overflow:hidden;}
@@ -134,27 +122,6 @@
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
 	<!---------------------------------------------->
-
-	<div class="contain">
-		<div class="container">
-			<div class="InAreaMenuBar">
-				<div class="MenuBar">
-					<h2 class="tit">고객문의</h2>
-					<img src="http://localhost:9000/hotel/resources/img/gline.jpg">
-						<ul class="menu">
-							<li class="">
-								<a href="inquiry_list.do" ><span>문의글</span></a>
-							</li>	
-							<li class="">
-								<a href="inquiry_write.do" class="on"><span>문의하기</span><img src="http://localhost:9000/hotel/resources/img/gline1.jpg"></a>
-							</li>
-							<li class="">
-								<a href="inquiry_my_list.do?mid=${svo.mid }" ><span>내문의함</span></a>
-							</li>
-						</ul>
-				</div>
-			</div>	
-		</div>
 		
 	<div class="content">
 		<div class="content_lists">
@@ -173,9 +140,6 @@
 	<!--------------- Content ---------------------->
 	<!---------------------------------------------->	
 		<div class="contents" id="contents">
-
-		<form name="inquireWriteForm" id="inquireForm" method="POST" enctype="multipart/form-data" action="inquiry_write_check.do">
-		<input type="hidden" name="mid" value="${ svo.mid }">
 
 			<form name="inquireWriteForm" id="inquireForm" method="POST" enctype="multipart/form-data" action="inquiry_write_check.do">
 			${ svo.mid }
@@ -267,6 +231,7 @@
 								</tr>
 	           				</tbody>
 						</table>
+						
 						<div class="privacyBox">			
 							<div class="">
 								<h4 class="privacy">필수적 개인정보 수집 및 이용에 대한 동의</h4>

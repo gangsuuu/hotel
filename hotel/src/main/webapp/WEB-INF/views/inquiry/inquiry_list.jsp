@@ -172,7 +172,7 @@ position: relative;
 					<img src="http://localhost:9000/hotel/resources/img/gline.jpg">
 						<ul class="menu">
 							<li class="">
-								<a href="inquiry_list.do" class="on"><span>문의글</span><img src="http://localhost:9000/hotel/resources/img/gline1.jpg"></a>
+								<a href="inquiry_list.do" class="on"><span>문의글</span><img src="http://localhost:9000/hotel/resources/img/inquiry/gline1.jpg"></a>
 							</li>	
 							<li class="">
 								<a href="inquiry_write.do"><span>문의하기</span></a>
@@ -214,29 +214,9 @@ position: relative;
 					<div class="headTit">
 						<h3 class="tit">연락처</h3>
 						<div class="content-block"></div>
-						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/contactText01.gif">
+						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/inquiry/contactText01.gif">
 					</div>
-
-					<table class="tableTypeF tableFactSheet tableBold" style="height: 139px;" border> 
-						<colgroup> 
-						<col width="20%" class="col1"> 
-						<col class="col2"> 
-						</colgroup> 
-						<tbody> 
-							<tr> 
-								<th class="pe_qK" rowspan="2">신라호텔</th> 
-								<td><span>대표전화 </span><strong>02-1234-1234</strong><br></td> 
-							</tr> 
-							<tr> 
-								<td><span>객실예약 </span><strong>02-5678-5678</strong><br> * 평일(월~금요일) 09:00~18:00, 주말 및 공휴일 09:00~16:00</td> 
-							</tr> 
-						</tbody> 
-					</table>
 					
-					<h3 class="tit1">문의글</h3>
-					<img id="linewrite" src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
-					
-
 					<div>
 						<img alt="shillastay" src="http://localhost:9000/hotel/resources/img/inquiry/telHtitle2.gif">
 						<table class="tableTypeF tableFactSheet tableBold" style="height: auto;" border> 
@@ -271,56 +251,12 @@ position: relative;
 							<th>등록일자 </th>							
 						</tr>
 
-						<c:choose>
-							<c:when test="${listSize == 0}">
+						
+							<%-- <c:when test="${listSize == 0}">
 								<tr>
 									<td colspan="6" id="no"> 검색된 문의글이 없습니다. </td>
 								</tr>
-							</c:when>
-							<c:otherwise>
-								<c:forEach var="vo" items="${list}">
-									<tr>
-										<td>${ vo.rno }</td>
-										<td>${ vo.hotelname }</td>
-										<td>${ vo.category }</td>
-										<td>							
-										
-											<%-- <c:forEach var="re" items="${reply}"> --%>
-												<c:choose>
-													<c:when test="${vo.secret == 1}">
-														<c:choose>
-															<c:when test="${ vo.rcount != 0}">												
-																<a href="#ex1" rel="modal:open" class="reclass" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<div class="commentimg"></div><img src="http://localhost:9000/hotel/resources/img/icon_lock.gif"></a>
-															</c:when>
-															<c:otherwise>
-																<a href="#ex1" rel="modal:open" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<img src="http://localhost:9000/hotel/resources/img/icon_lock.gif"></a>
-															</c:otherwise>					
-														</c:choose>
-													</c:when>
-													<c:otherwise>
-														<c:choose>
-															<c:when test="${ vo.rcount != 0}">
-																<a class="reclass" id="${vo.iid}" href="inquiry_content.do?iid=${ vo.iid }">${ vo.title }<div class="commentimg"></div></a>
-															</c:when>
-															<c:otherwise>
-																<a class="reclass" id="${vo.iid}" href="inquiry_content.do?iid=${ vo.iid }">${ vo.title }</a>
-															</c:otherwise>
-														</c:choose>		
-													</c:otherwise>
-												</c:choose>
-											<%-- </c:forEach> --%> 
-										
-											
-																	
-										</td>
-										<td>${ vo.mid }</td>
-										<td>${ vo.idate }</td>
-									</tr>
-								</c:forEach>
-							</c:otherwise>
-						</c:choose>
-						
-						<tr>
+							</c:when> --%>
 						
 						<c:forEach var="vo" items="${list}">
 							<c:choose>
@@ -338,10 +274,10 @@ position: relative;
 													<c:when test="${vo.secret == 1}">
 														<c:choose>
 															<c:when test="${ vo.rcount != 0}">												
-																<a href="#ex1" rel="modal:open" class="reclass" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<div class="commentimg"></div><img src="http://localhost:9000/hotel/resources/img/icon_lock.gif"></a>
+																<a href="#ex1" rel="modal:open" class="reclass" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<div class="commentimg"></div><img src="http://localhost:9000/hotel/resources/img/inquiry/icon_lock.gif"></a>
 															</c:when>
 															<c:otherwise>
-																<a href="#ex1" rel="modal:open" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<img src="http://localhost:9000/hotel/resources/img/icon_lock.gif"></a>
+																<a href="#ex1" rel="modal:open" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<img src="http://localhost:9000/hotel/resources/img/inquiry/icon_lock.gif"></a>
 															</c:otherwise>					
 														</c:choose>
 													</c:when>
@@ -370,7 +306,7 @@ position: relative;
 					</table>
 								<!-- div를 forEach안에 두면 계속 생겨서 오류걸림, 밖으로 빼기 -->
 								<div id="ex1" class="modal">
-									<img src="http://localhost:9000/hotel/resources/img/lock.png" width=20%>
+									<img src="http://localhost:9000/hotel/resources/img/inquiry/lock.png" width=20%>
 				  					<p id="passCheckText"><strong>비밀번호</strong>를 입력해주세요.</p>
 				  					<input type="text" id="inputPass">
 				  					<button type="button" id="passCheck">확인</button>
