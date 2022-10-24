@@ -5,19 +5,40 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
+<title>Shill</title>
 <link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/am-pagination.css">
-<title>Customer Inquiry</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
-<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script>
+function modalopen(iid){ 
+	$("#passCheck").attr('onclick',"checkPass('"+iid+"')");
+ }
+ 
+function checkPass(iid){
+	
+	const pass = $("#inputPass").val();
+	
+	$.ajax({
+		url:"inquiry_passCheck.do?iid="+iid+"&pass="+pass,
+		success:function(result){
+				if(result == 'ok'){
+					location.replace("inquiry_content.do?iid="+iid);
+				}else{
+					$("#passCheckText").text("비밀번호가 틀렸습니다.").css("color","red");
+					$("#inputPass").val("").focus();
+					//alert("비밀번호가 틀렸습니다.");	 
+				}				
+			}
+		}); 	
+		
+	}//checkPass
+
 $(document).ready(function(){
 	//페이징 처리
 	var pager = $('#ampaginationsm').pagination({
@@ -43,6 +64,30 @@ $(document).ready(function(){
 	    });
 	
 });//ready
+</script>
+<script>
+	$(document).ready(function(){
+	
+		//문의글 검색
+		var search="${search}";
+		
+		if(search == "search"){
+				$(".search_list").val("${searchlist}").prop("selected", true);
+			}else{
+				$(".search_list").val("title").prop("selected", true);
+			}
+			
+		$("#btnSearch").click(function(){
+			if($("#searchName").val()==""){
+				alert("내용을 입력해 주세요.");
+				$("#searchName").focus();
+			}else{
+				list_search.submit();
+			}
+
+		});//click	
+		
+	});//ready
 </script>
 <style>
 .lnbAreaMenuBar{ float:left; }
