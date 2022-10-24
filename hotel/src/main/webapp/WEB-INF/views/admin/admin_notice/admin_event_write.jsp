@@ -4,15 +4,25 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>항상 즐거움이 있는 SHILLA STAY!</title>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/notice.css">
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/notice_jquery.js"></script>
 <script>$('#ncontent').val().replace(/\n/g,"<br>")</script>
 </head>
 <body>
-<div class="sub_title">
-<div class="header"></div>
+<%@ include file="../../header.jsp" %>
+<div class="noticepage">
+<div class="common_wrap_yy" style="top: 0px;">
+	<div class="common_inner">
+		<div class="location" id="lnb"><ul>
+		<li><a href="http://localhost:9000/hotel/shillaStay.do">메인페이지</a></li>
+		<li><a href="http://localhost:9000/hotel/admin_event_list.do">이벤트</a></li>
+		<li><a href="http://localhost:9000/hotel/admin_event_write.do">글쓰기</a></li>
+		</ul>
+		</div>
+	</div>
+</div>	
 
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
@@ -55,6 +65,6 @@
 			</ul>
 		</form>
 	</div>
-<!-- footer Include -->
+<%@ include file="../../footer.jsp" %>
 </body>
 </html>

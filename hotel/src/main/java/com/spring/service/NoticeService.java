@@ -20,4 +20,5 @@ public interface NoticeService {
 	public int getTotalCount();
 	public ArrayList<NoticeVO> getList(int startCount, int endCount);
 	public ArrayList<NoticeVO> event_getList(int startCount, int endCount);
+	public ArrayList<NoticeVO> getRecentEvent();//최근이벤트
 }

@@ -80,9 +80,9 @@
 	
 	<!-- reply list -->
 	<select id="list" parameterType="map" resultType="com.hotel.vo.ReplyInquiryVO">
-	
-		select * from REPLY_INQUIRY
-	
+
+		select reid, recontent, redate, iid from reply_inquiry
+
 	</select>
 	
 </mapper>

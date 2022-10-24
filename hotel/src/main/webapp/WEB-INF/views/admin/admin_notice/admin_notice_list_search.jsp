@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>notice</title>
+<title>항상 즐거움이 있는 SHILLA STAY!</title>e>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/notice.css">
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/am-pagination.css">
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
@@ -47,8 +47,17 @@
 </script>
 </head>
 <body>
-<div class="sub_title">
-<div class="header"></div>
+<%@ include file="../../header.jsp" %>
+<div class="noticepage">
+<div class="common_wrap_yy" style="top: 0px;">
+	<div class="common_inner">
+		<div class="location" id="lnb"><ul>
+		<li><a href="http://localhost:9000/hotel/shillaStay.do">메인페이지</a></li>
+		<li><a href="http://localhost:9000/hotel/admin_notice_list.do">공지사항</a></li>
+		</ul>
+		</div>
+	</div>
+</div>	
 
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
@@ -61,8 +70,10 @@
 			<div class="contents" id="contents">
 			<input id="pageIndex" name="pageIndex" type="hidden" value="3"/>
 				<div class="inner">
-					<div class="headtit">
+					<div class="sub_title">
 					<h2>공지사항</h2>
+					<p>Notice</p>
+				<span>항상 즐거움이 있는 곳! 신라 호텔</span>
 					</div>
 					<div class="contents_area">
 					<!-- 검색 -->
@@ -81,7 +92,7 @@
 							</option>
 							</select>
 							<input name="keyword" value="${map.keyword}">
-    						<input type="submit" value="조회">
+    						<button type="submit">조회</button>
 					</div>
 					</form>
 					<!-- //검색 -->
@@ -117,6 +128,6 @@
 				<!-- contents-end -->	
 	</div>
 	</div>
-	<div class="footer"></div>
+<%@ include file="../../footer.jsp" %>
 </body>
 </html>
