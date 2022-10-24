@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -115,7 +116,24 @@ window.initMap = function () {
 			
 			</section>
 			<section class="hotel-index-event">
-			
+					<table>
+						<td colspan="4">
+						</td>
+						<tr>
+							<th>번호</th>
+							<th>제목</th>
+							<th>조회수</th>
+							<th>작성일</th>	
+						</tr>
+						<c:forEach var="noticeVO"  items="${eventlist}">
+						<tr>
+							<td>${noticeVO.rno }</td>
+							<td><a href="notice_content.do?nid=${noticeVO.nid }">${noticeVO.ntitle }</a></td>
+							<td>${noticeVO.nhits }</td>
+							<td>${noticeVO.ndate }</td>
+							</tr>	
+					</table>
+				</c:forEach>
 			</section>
 			<section class="hotel-index-map-container">
 				<div class="hotel-index-map-info">

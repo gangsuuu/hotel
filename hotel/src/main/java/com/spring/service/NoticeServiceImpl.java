@@ -15,6 +15,13 @@ public class NoticeServiceImpl implements NoticeService{
 	private NoticeDAO noticeDao;
 	
 	/**
+	 * 최근 이벤트 3건
+	 */
+	public ArrayList<NoticeVO> getRecentEvent(){
+		ArrayList<NoticeVO> list = noticeDao.getRecentEvent();
+		return list;
+	}
+	/**
 	 * 조회수 업데이트
 	 */
 	@Override
