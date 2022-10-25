@@ -5,21 +5,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>항상 즐거움이 있는 SHILLA STAY!</title>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/notice.css">
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/am-pagination.css">
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
+
 </head>
 <body>
-<div class="sub_title">
-<div class="header"></div>
+<%@ include file="../../header.jsp" %>
+<div class="noticepage">
+<div class="common_wrap_yy" style="top: 0px;">
+	<div class="common_inner">
+		<div class="location" id="lnb"><ul>
+		<li><a href="http://localhost:9000/hotel/shillaStay.do">메인페이지</a></li>
+		<li><a href="http://localhost:9000/hotel/admin_event_list.do">이벤트</a></li>
+		<li><a href="http://localhost:9000/hotel/admin_event_content.do?nid=${vo.nid }">글 상세보기</a></li>
+		<li><a href="http://localhost:9000/hotel/admin_event_update.do?nid=${vo.nid }">수정하기</a></li>
+		</ul>
+		</div>
+	</div>
+</div>	
 
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
 	<!---------------------------------------------->	
 			<!-- 좌측 메뉴 -->
-			<%@ include file="./admin_left_bar.jsp" %>
+		<%@ include file="../../header.jsp" %>
 			 <!-- 좌측 메뉴 end-->
 			 <!-- contents -->
 			<div class="contents">
@@ -60,6 +72,6 @@
 		</form>
 			
 	</div>
-			 <div class="footer"></div>
+<%@ include file="../../footer.jsp" %>
 </body>
 </html>

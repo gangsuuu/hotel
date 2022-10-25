@@ -11,9 +11,6 @@
     	a{
     	
     	}
-        ::-webkit-scrollbar {
-            display: none;
-        }
     :root{
     /* hub */
     --content-modal:rgb(143,130,114);
@@ -521,6 +518,61 @@
     margin: auto;
     background-color: rgba(0,255,0,0.5)
     }
+    .hotel-index-map-container{
+    height: auto;
+    width: 1200px;
+    margin: auto;
+    display:flex;
+    }
+    
+  .hotel-index-map{
+  	width: 870px; height: 400px;
+  	position:relative;
+  	right:0;
+  }
+  .hotel-index-map-info{
+  	padding:0 20px;
+  	background-color: #f6f6f6;
+  }
+  
+   .map_list_container{
+        width:262px;
+        float: left;
+        margin-right: 50px;
+        text-align: left;
+    }
+
+    .map_hotellist{
+        position: relative;
+    }
+  	.map_hotellist ul li{
+  	margin-bottom:40px;
+  	}
+  	.map_hotellist ul li a, .map_hotellist ul li img{
+  	margin: 12px 0 12px 0;
+  	display: block;
+  	}
+  	.map_hotellist a:hover{
+  	 background-color:var(--container-color-bar1);
+     color:var(--main-color-part1);
+  	 animation: map_list_hover forwards;
+     animation-timing-function:  cubic-bezier(.65,.01,.68,1.05);
+     animation-duration: 0.26s;
+  	}
+  	@keyframes map_list_hover{
+  		from{
+	        color:var(--container-color-bar1);
+	        background-color:var(--main-color-part1);
+  		}
+  		to{
+  			background-color:var(--container-color-bar1);
+  			color:var(--main-color-part1);
+  		}
+  	}
+    
+    
+    
+    
     .hotel-index-shillawars{
     width: 100%;
     height: auto;

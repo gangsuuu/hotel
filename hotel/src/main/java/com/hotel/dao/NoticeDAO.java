@@ -18,6 +18,13 @@ public class NoticeDAO {
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
+	/**
+	 * 최근 이벤트 3건
+	 */
+	public ArrayList<NoticeVO> getRecentEvent(){
+		List<NoticeVO> list = sqlSession.selectList("mapper.notice.revent");
+		return (ArrayList<NoticeVO>)list;
+	}
 	
 	
 	/**

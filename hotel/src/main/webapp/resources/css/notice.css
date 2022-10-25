@@ -1,21 +1,96 @@
 @charset "UTF-8";
-
+* {
+    margin: 0 auto;
+    padding: 0;
+}
 body { margin:0; padding:0; }
+body, input, button, textarea, select {
+    font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', '맑은 고딕', '돋움', ​Dotum, Tahoma, Arial;
+    color: #333;
+    line-height: 100%;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -1px;
+}
+ul, li, ol {
+    list-style-type: none;
+}
 
+.noticepage {
+	margin : 35px auto;
+	width : 85%;
+	
+}
+.common_wrap_yy {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0px;
+    background: #977f51;
+    z-index: 90;
+}
+.common_wrap_yy .common_inner {
+    position: relative;
+    width: 1100px;
+    margin: 0 auto;
+}
+.common_wrap_yy .location > ul {
+    display: inline-block;
+    height: 47px;
+}
+.common_wrap_yy .location > ul > li {
+    position: relative;
+    float: left;
+    padding-right: 25px;
+    background: url(https://www.sonohotelsresorts.com/img/sb/yy/images/common/bg_location.png) no-repeat right 0;
+}
+.common_wrap_yy .location > ul > li > a {
+    position: relative;
+    display: inline-block;
+    min-width: 180px;
+    height: 47px;
+    padding: 17px 40px 16px 20px;
+    color: #fff;
+    box-sizing: border-box;
+}
 .sub_title {
-	width:1200px;
-	margin:0 auto;
+    padding-top: 0px;
+    text-align: center;
+}
+.sub_title h2 {
+    position: relative;
+    padding: 60px 0 22px;
+    font-size: 28px;
+    line-height: 100%;
+    font-weight: normal;
+}
+.sub_title p {
+    margin: 15px 0 20px;
+    font-family: 'PT Serif', serif;
+    font-size: 46px;
+    font-style: italic;
+    line-height: 100%;
+}
+.sub_title > span {
+    display: block;
+    color: #999;
+    line-height: 160%;
 }
 .menu_list {
+	 position: sticky;
+	 width:220px;
+  	top: 0;
+  	align-self: flex-start;
 	display : inline-block;
 	float : left;
 	background: #ebe7e3;
 	padding : 3px;
+	margin: 200px auto;
 }
 
 .menu_list_inner {
 	width: 216px;
-	border: solid red 1px;
 	background: #ebe7e3;
 	padding 23px;
 	margin: 0 0 30px 0;
@@ -40,9 +115,6 @@ body { margin:0; padding:0; }
 #menu_name {
 	margin : 15px;
 }
-.contents {
-	folat : right;
-}
 
 ul.menu {
 	display : block;
@@ -54,25 +126,19 @@ ul.menu {
     
 }
 
-.headtit {
-	position: relative;
-    z-index: 8;
-    height: 47px;
-    border-bottom: #484343 solid 5px;
-    width: 866px;
-    display: flex;
-    margin-left: 30px;
-    padding : 0 0 13px 30px;
 
-}
 
 .contents_area {
-	border:2px solid blue;
 	overflow: hidden;
     width: 866px;
     padding-top: 40px;
-    
+    position: relative;
+    min-width: 180px;
+    padding: 17px 40px 16px 20px;
+    color: #fff;
+    box-sizing: border-box;  
 }
+
 
 .search {
 text-align: right;
@@ -88,6 +154,7 @@ text-align: right;
 }
 .contents_table tr td:not(:nth-child(2)) {
 	width : 180px;
+	text-align : center;
 }
 .contents_table tr td:nth-child(2) {
 	width: 900px;	
@@ -108,4 +175,166 @@ text-align: right;
 	text-align : center;
 
 }
+.contents_table td {
+    padding: 14px 0;
+    border-bottom: 1px solid #d8d8d8;
+    color: #777;
+}
+.contents_table button {
+	margin-left : 4px;
+	font-size : 15px;
+	text-align: center;
+	height : 22px;
+    width: 52px;
+    padding: 2px 0 2px;
+    background: #333;
+    color: #fff;
+    vertical-align: top;
+        border: 0 none;
+    font-size: 13px;
+    cursor: pointer;
+    box-sizing: border-box;
+	float : left;
+}
 .contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/home.jpg) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
+
+.search {
+    margin-bottom: 35px;
+    padding: 15px 0;
+    border-top: 2px solid #777;
+    border-bottom: 1px solid #d8d8d8;
+    font-size: 0;
+    text-align: center;
+}
+.search > span:first-child {
+    margin: 8px 10px 0 0;
+    font-size: 14px;
+}
+.search .select {
+    width: 95px;
+}
+.search .keyword {
+    width: 252px;
+}
+.search button {
+	margin-left : 4px;
+	font-size : 15px;
+	text-align: center;
+	height : 22px;
+    width: 52px;
+    padding: 2px 0 2px;
+    background: #333;
+    color: #fff;
+    vertical-align: top;
+        border: 0 none;
+    font-size: 13px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.contents{
+	padding: 35px 0 100px;
+	    position: relative;
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.boardContent tr:last-child{
+    text-align: right;
+
+}
+.boardContent tr:last-child .btn_style {
+    background: #977f51;
+    color: #fff;
+    display: inline-block;
+    min-width: 100px;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    border:none;
+}
+.boardContent {
+    padding: 35px 0 100px;
+	    position: relative;
+    width: 1100px;
+    margin: 0 auto;
+  
+}
+
+.boardContent tr{
+	display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+
+}
+.boardContent th {
+    padding: 14px 10px;
+    border-bottom: 1px solid #d8d8d8;
+    background: #ebe7e3;
+    
+}
+.boardContent td {
+    padding: 15px 20px;
+          border-bottom: 1px solid #ebe7e3;
+}
+.boardContent tr:nth-child(3) img {
+	position: center;
+}
+.writeContent {
+    padding: 35px 0 100px 300px;
+	    position: relative;
+    width: 1100px;
+    margin: 0 auto;
+  
+}
+.tag_box > .tit {
+    height: 100%;
+}
+.write_infobox {
+    position: relative;
+    margin: 16px 0 14px;
+    font-size: 12px;
+    color: #666;
+        clear: both;
+    display: inline-block;
+    min-width: 715px;
+    padding-right: 11px;
+    margin-top: 10px;
+}
+.write_infobox label {
+	backgroung-color : #ebe7e3;
+}
+.tag_box .write_infobox li {
+	padding: 5px 0px 5px 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #efefef;
+    font-size: 12px;
+}
+.clear [id="ntcwrite"]{
+	margin-left : 20px;
+	margin-top : 10px;
+}
+
+.clear [id="ntcwrite_button"]{
+	position: relative;
+	left : 400px;
+	top : 15px;
+}
+.clear button{
+	margin : 4px;
+	margin-left : 4px;
+	font-size : 15px;
+	text-align: center;
+	height : 22px;
+    width: 65px;
+    padding: 2px 0 2px;
+    background: #ebe7e3;
+    vertical-align: top;
+        border: 0 none;
+    font-size: 13px;
+    cursor: pointer;
+    box-sizing: border-box;
+	float : left;
+}
+
+
