@@ -10,14 +10,14 @@
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script>
-	var hotelname = "theshilla";
-</script>
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script>
 	//문의글 등록하기
 	$(document).ready(function(){
 		$("#btnInquiryWrite").click(function(){
-			if(("input[name='hotelname']:checked").length==0){
+			var isCheck = $('input[name=hotelname]:checked').val();
+			
+			if(!isCheck){
 				alert("호텔을 선택해 주세요.");
 				$("#hotelname").focus();
 				return false;
@@ -72,6 +72,13 @@
 .MenuBar li li a{ background:#CC6; display:block;}
 .MenuBar li li a.on{ font-weight:bold;}
 
+
+.contents{
+	margin: 0;
+	width: 850px;
+}
+
+
 .contain { display:flex; justify-content: center; width:1241px; height:895px; margin-right:202px; margin-bottom:100px; margin-left:202px;}
 .container { margin-right:100px; }
 .contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
@@ -84,12 +91,15 @@
 .tableTypeA .last th,.tableTypeA .last td {border-bottom:#cdcbbe solid 1px;}
 .tableTypeA .bdBot{border-bottom:#cdcbbe solid 1px !important; }
 
-.contentarea { width:670px; height:180px; vertical-align: middle; }
+.contentarea { width:670px; height:180px; vertical-align: middle; border:none; resize: none; overflow:auto; }
+#category, .titlearea, #secretnum, .contentarea:focus{
+	outline: none;
+}
 .titlearea { width:668px; height:23px; vertical-align: middle;}
 #category {width:100px; height:23px;}
 #passwordlable { margin-left:30px; }
 #secretnum { width:100px; height:23px; }
-#category, .titlearea, #secretnum, .contentarea { border: #CCC solid 1px; }
+#category, .titlearea, #secretnum { border: #CCC solid 1px; }
 
 .list { float:right; }
 .tit { color: rgb(88,88,88); font-family: 나눔명조OTF; font-size:26px; margin-top:0; margin-bottom:10px;}
@@ -98,47 +108,43 @@
 .clauseBox{ margin:0 0 10px 0;}
 .clauseBox .scBox{ font-size:12px; border:#CCC solid 1px; height:60px; overflow:auto; overflow-x:hidden ;padding:10px;  margin:0 0 5px 0;}
 #btnWrite { text-align: center; }
-#btnInquiryWrite { margin-top:35px; background-color:rgb(58,49,37); color:rgb(250,241,208); width:99px; height:44px; vertical-align: middle;
+#btnInquiryWrite { margin-top:35px; background-color:rgb(58,49,37); color:rgb(250,241,208); width:150px; height:44px; vertical-align: middle;
 				   font-size:17px; font-weight: bold;}
 .ast {color:red;}
 
 </style>
+
 </head>
 <body>
 	<!-- Header Include -->
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
-
+	<%@ include file="../header.jsp" %>
+	
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
 	<!---------------------------------------------->
-	
-	<div class="contain">
-		<div class="container">
-			<div class="InAreaMenuBar">
-				<div class="MenuBar">
-					<h2 class="tit">고객문의</h2>
-					<img src="http://localhost:9000/hotel/resources/img/gline.jpg">
-						<ul class="menu">
-							<li class="">
-								<a href="inquiry_list.do" ><span>문의글</span></a>
-							</li>	
-							<li class="">
-								<a href="inquiry_write.do" class="on"><span>문의하기</span><img src="http://localhost:9000/hotel/resources/img/gline1.jpg"></a>
-							</li>
-							<li class="">
-								<a href="inquiry_my_list.do" ><span>내문의함</span></a>
-							</li>
-						</ul>
-				</div>
-			</div>	
-		</div>
 		
+	<div class="content">
+		<div class="content_lists">
+			 <div class="content_inmenu">
+				  <h2 class="suject">고객서비스</h2>
+	              <ul>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/introhotel.do" class="content_list">호텔안내</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list">인근명소</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/notice_list.do" class="content_list">공지사항</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_list.do" class="content_list content_selected">고객센터</a></li>
+	              </ul>
+			 </div>
+		 </div>		
+
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
 	<!---------------------------------------------->	
 		<div class="contents" id="contents">
-		<form name="inquireWriteForm" id="inquireForm" method="POST" enctype="multipart/form-data" action="inquiry_write_check.do">
+
+			<form name="inquireWriteForm" id="inquireForm" method="POST" enctype="multipart/form-data" action="inquiry_write_check.do">
+			${ svo.mid }
+				<input type="hidden" name="mid" value="${ svo.mid }">
+
 				<div class="ctnInquires ctnCtUs">
 					<div class="location">
 						<p class="list">
@@ -147,7 +153,7 @@
 					</div>
 					<div class="customerCenterTit">
 						<h3 class="tit">문의하기</h3>
-						<img src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
+						<div class="content-block"></div>
 					</div>
 									
 					<div class="account">
@@ -199,7 +205,7 @@
 										<label class=""><span class="ast">*</span> 내용<br></label>
 									</th>
 									<td colspan="3">
-										<textarea cols="50" rows="5" id="content" name="content" class="contentarea"></textarea>
+										<textarea cols="50" rows="5" id="content" name="content" class="contentarea" placeholder="내용을 입력해주세요"></textarea>
 									</td>
 								</tr>
 								<tr>
@@ -212,31 +218,32 @@
 								</tr>
 								<tr>
 									<th scope="row">글설정</th>
-										<td colspan="3">
-											<div class="secret_form">
-		   										<input class="secret_input" type="checkbox" name="secret" id="secret" checked="checked" value=1>
-		    									<label class="secret_label">비밀글</label>
-			    									<span>
-				    									<lable id="passwordlable">비밀번호</lable>
-				    									<input type="password" name="secretnum" id="secretnum">
-			    									</span>
-											</div>
-										</td>	
+									<td colspan="3">
+										<div class="secret_form">
+		   									<input class="secret_input" type="checkbox" name="secret" id="secret" checked="checked" value=1>
+		    								<label class="secret_label">비밀글</label>
+			    							<span>
+				    							<label id="passwordlable">비밀번호</label>
+				    							<input type="password" name="secretnum" id="secretnum">
+			    							</span>
+										</div>
+									</td>	
 								</tr>
 	           				</tbody>
 						</table>
+						
 						<div class="privacyBox">			
 							<div class="">
 								<h4 class="privacy">필수적 개인정보 수집 및 이용에 대한 동의</h4>
 							</div>
 							<div class="clauseBox">
 								<div class="scBox reg_cona newpd" tabindex="0">
-												<p>신라호텔 고객의 문의 및 의견과 관련하여 귀사가 아래와 같이 본인의 개인정보를 수집 및 이용하는데 동의합니다.<br><br>
-												1. 필수적인 개인정보의 수집 ㆍ이용에 관한 사항<br>
-												<b style="font-size:12px;">① 수집ㆍ이용&nbsp;항목 | 성명(국문·영문),&nbsp;이메일, 휴대전화</b><br>
-									            <b style="font-size:12px;">② 수집ㆍ이용&nbsp;목적 | 문의에 대한 안내 및 서비스 제공</b><br>
-												<b style="font-size:12px;">③ 보유ㆍ이용 기간&nbsp;|&nbsp;수집ㆍ이용 동의일로부터 5년간</b><br>
-												※위 사항에 대한 동의를 거부할 수 있으나, 이에 대한 동의가 없을 경우 문의에 대한 안내 및 서비스 제공과 관련된 제반 절차 진행이 불가능 할 수 있음을 알려드립니다.</p>
+									<p>신라호텔 고객의 문의 및 의견과 관련하여 귀사가 아래와 같이 본인의 개인정보를 수집 및 이용하는데 동의합니다.<br><br>
+									1. 필수적인 개인정보의 수집 ㆍ이용에 관한 사항<br>
+									<b style="font-size:12px;">① 수집ㆍ이용&nbsp;항목 | 성명(국문·영문),&nbsp;이메일, 휴대전화</b><br>
+									<b style="font-size:12px;">② 수집ㆍ이용&nbsp;목적 | 문의에 대한 안내 및 서비스 제공</b><br>
+									<b style="font-size:12px;">③ 보유ㆍ이용 기간&nbsp;|&nbsp;수집ㆍ이용 동의일로부터 5년간</b><br>
+									※위 사항에 대한 동의를 거부할 수 있으나, 이에 대한 동의가 없을 경우 문의에 대한 안내 및 서비스 제공과 관련된 제반 절차 진행이 불가능 할 수 있음을 알려드립니다.</p>
 								</div>
 							</div>
 							<div>
@@ -250,29 +257,33 @@
 							</div>
 							<div class="clauseBox">
 								<div class="scBox reg_cona newpd" tabindex="0">
-												<p>신라호텔 고객의 문의 및 의견과 관련하여 귀사가 아래와 같이 본인의 개인정보를 수집 및 이용하는데 동의합니다.<br><br>
-		  										선택적인 개인정보의 수집 ㆍ이용에 관한 사항<br>
-									   			<b style="font-size:12px;">① 수집ㆍ이용 항목 | 자택전화</b> <br>
-							          			<b style="font-size:12px;">② 수집ㆍ이용 목적 | 문의에 대한 안내 및 서비스 제공</b><br>
-												<b style="font-size:12px;">③ 보유ㆍ이용 기간 | 수집ㆍ이용 동의일로부터 5년간</b><br>
-									 			※위 사항에 대한 동의를 거부할 수 있으나, 이에 대한 동의가 없을 경우 문의에 대한 안내 및 서비스 제공과 관련된 일반전화 안내 진행이 불가능 할 수 있음을 알려드립니다.</p>
+									<p>신라호텔 고객의 문의 및 의견과 관련하여 귀사가 아래와 같이 본인의 개인정보를 수집 및 이용하는데 동의합니다.<br><br>
+		  							선택적인 개인정보의 수집 ㆍ이용에 관한 사항<br>
+									<b style="font-size:12px;">① 수집ㆍ이용 항목 | 자택전화</b> <br>
+							        <b style="font-size:12px;">② 수집ㆍ이용 목적 | 문의에 대한 안내 및 서비스 제공</b><br>
+									<b style="font-size:12px;">③ 보유ㆍ이용 기간 | 수집ㆍ이용 동의일로부터 5년간</b><br>
+									※위 사항에 대한 동의를 거부할 수 있으나, 이에 대한 동의가 없을 경우 문의에 대한 안내 및 서비스 제공과 관련된 일반전화 안내 진행이 불가능 할 수 있음을 알려드립니다.</p>
 								</div>
 							</div>
-						<div>
-							<input type="checkbox" class="privacycheckbox" id="privacyChk2" name="personInfoUseYn" autocomplete="off" value="N">
-							<label>동의함</label>          
+							<div>
+								<input type="checkbox" class="privacycheckbox" id="privacyChk2" name="personInfoUseYn" autocomplete="off" value="N">
+								<label>동의함</label>          
+							</div>
 						</div>
-					</div>
 						<div id="btnWrite">
 							<button type="button" id="btnInquiryWrite" onclick="mykey()">등록</button>
 						</div>	
-					</div>
-				</div>					
-			</div>
+					</div>				
+				</div>
+			</form>
 		</div>
-	</form>
+	</div>
 	
 	<!-- Footer Include -->
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
+	<%@ include file="../footer.jsp" %>
+	<script>
+ 	$("[data-nav=service]").css("display","block");
+ 	$("[data-nav=service]").children().eq(2).children().first().css("color","white");
+ 	</script>
 </body>
 </html>

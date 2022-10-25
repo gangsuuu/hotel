@@ -185,8 +185,6 @@
             <div class="content_inmenu">   
                 <h2 class="suject">Admin</h2>
                 <ul>
-                
-                   <li><a href="http://localhost:9000/hotel/main.do" class="content_list">방 생성해주기</a></li>
                    <li><a href="http://localhost:9000/hotel/admin_inquiry_list.do" class="content_list">문의사항 관리</a></li>
                    <li><a href="http://localhost:9000/hotel/admin_notice_list.do" class="content_list">공지사항 관리</a></li>
                    <li><a href="http://localhost:9000/hotel/admin_hotel_categori.do" class="content_list">카데고리 수정</a></li>

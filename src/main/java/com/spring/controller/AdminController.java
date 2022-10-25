@@ -105,6 +105,61 @@ public class AdminController {
 		
 	}
 	
+	/**
+	 * 관리자 미답변 리스트 출력
+	 * ajax : admin_replynone_list_json
+	 */
+	@ResponseBody
+	@RequestMapping(value="admin_replynone_list_json.do", method=RequestMethod.GET,
+			produces="text/plain;charset=UTF-8")
+	public String admin_replynone_list_json(String rpage) {
+		
+		Map<String, Integer> param = pageService.getPageResult(rpage, "inquiry_replyno", inquiryService);			
+		ArrayList<HotelInquiryVO> list = replyinquiryService.replynoList(param.get("startCount"), param.get("endCount"));
+		
+		JsonObject jobject = new JsonObject();
+		JsonArray jarray = new JsonArray();
+		Gson gson = new Gson();
+
+		for(HotelInquiryVO vo : list) {
+			if(vo != null) {
+				JsonObject jo = new JsonObject();
+				jo.addProperty("rno", vo.getRno());
+				jo.addProperty("iid", vo.getIid());
+				jo.addProperty("hotelname", vo.getHotelname());
+				jo.addProperty("category", vo.getCategory());
+				jo.addProperty("title", vo.getTitle());
+				jo.addProperty("secret", vo.getSecret());
+				jo.addProperty("secretnum", vo.getSecretnum());
+				jo.addProperty("content", vo.getContent());
+				jo.addProperty("idate", vo.getIdate());
+				jo.addProperty("mid", vo.getMid());
+				jo.addProperty("rcount", vo.getRcount());
+				jo.addProperty("reply", 1);
+				
+				jarray.add(jo);
+				
+			}else {
+				jobject.addProperty("reply", 0);
+			}
+		}//for-end
+		
+		jobject.add("list", jarray); 
+		jobject.addProperty("dbCount", param.get("dbCount"));
+		jobject.addProperty("pageSize", param.get("pageSize"));
+		jobject.addProperty("rpage", param.get("rpage"));
+		jobject.addProperty("pageCount", param.get("pageCount"));
+		
+//		System.out.println(param.get("dbCount"));
+//		System.out.println(param.get("pageCount"));
+//		System.out.println(param.get("startCount"));
+//		System.out.println(param.get("endCount"));
+		
+		
+		return gson.toJson(jobject);
+		
+	}
+	
 	
 	/**
 	 * 관리자 고객문의 답변등록 처리
@@ -133,6 +188,28 @@ public class AdminController {
 		return mv;
 	}
 	
+	
+	/**
+	 * 관리자 고객문의 문의글 삭제처리
+	 */
+	@RequestMapping(value="/admin_inquiry_delete_check.do", method=RequestMethod.POST)
+	public ModelAndView admin_inquiry_delete_check(String iid, HttpServletRequest request) 
+	throws Exception {
+		ModelAndView mv = new ModelAndView();
+		
+		HotelInquiryVO vo = inquiryService.getContent(iid);
+		int result = inquiryService.getDelete(iid);
+		if(result == 1){
+			//게시글 삭제 시, upload폴더에 존재하는 파일이 있다면 삭제하기
+			fileService.fileDelete(vo, request);
+			
+			mv.setViewName("redirect:/admin_inquiry_list.do");
+		}else{
+			mv.setViewName("errorpage");
+		}
+				
+		return mv;
+	}
 	
 	
 	/**
@@ -220,6 +297,29 @@ public class AdminController {
 		mv.addObject("rpage", param.get("rpage"));		
 		mv.setViewName("/admin/admin_inquiry_list");
 		
+		return mv;
+	}
+	
+	
+	/**
+	 * admin_inquiry_list_search.do : 문의글 검색하기
+	 */
+	@RequestMapping(value="/admin_inquiry_list_search.do", method=RequestMethod.POST)
+	public ModelAndView admin_inquiry_list_search(String rpage, String searchlist, String keyword) {
+		ModelAndView mv = new ModelAndView();
+		
+		Map<String, Integer> param = pageService.getPageResult(rpage, "inquiry", inquiryService);			
+		ArrayList<HotelInquiryVO> list = replyinquiryService.getSearch(param.get("startCount"),param.get("endCount"), searchlist, keyword);
+		
+		mv.addObject("list", list);
+		mv.addObject("listSize", list.size());
+		mv.addObject("dbCount", param.get("dbCount"));
+		mv.addObject("pageSize",  param.get("pageSize"));
+		mv.addObject("rpage", rpage);		
+		mv.addObject("searchlist",searchlist);
+		mv.addObject("keyword",keyword);
+		mv.setViewName("/admin/admin_inquiry_list");
+				
 		return mv;
 	}
 	
@@ -507,8 +607,10 @@ public class AdminController {
 			}
 		return result;
 	}
+	
+	
 	/*******************************************
-	 * 김민재
+	 *				 김민재
 	 *******************************************/
 	
 

@@ -6,12 +6,7 @@
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/hotel.css">
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/myhotel_jquery.js"></script>
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <meta charset="UTF-8">
-<script>
-	var hotelname = "theshilla";
-</script>
 
 <script>
 let join_result = '${join_result}';
@@ -31,57 +26,61 @@ if(join_result == 'ok'){
 }
 
 </script>
-
-
 </head>
 <body>
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
-	<!-- top -->
-	<section logincontain="" class="subcontain">
-		<div topstyl="" logincontain="" class="sub-top-area forms">
-			<div topstyl="" class="container">
-				<h2 topstyl="">Login</h2>				
-			</div>
+<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
+<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>	
+
+<!-- top -->
+<section logincontain="" class="subcontain">
+	<div topstyl="" logincontain="" class="sub-top-area forms">
+		<div topstyl="" class="container">
+			<h2 topstyl="">Login</h2>				
 		</div>
-	</section>
-	<!-- main  -->	
-		<form name= "loginForm" action="loginCheck.do" method="post">
-			<div logincontain="" class="container small pddt">
-				<div logincontain="" class="id-area">
-					<div ct="" logincontain="" class="input-area" clearable="">
-						<input ct="" id="mid" name="mid" autocomplete="on" placeholder="아이디를 입력해 주세요." maxlength="20" type="text" class="">
-						
-						<a ct="" href="" class=""></a>
-						
-					</div>
-				</div>
-				<div logincontain="" class="id-area">
-					<div ct="" logincontain="" class="input-area">
-						<input ct="" id="pass" name="pass" autocomplete="on" placeholder="비밀번호를 입력해 주세요." maxlength="14" type="password"
-							class="">
+	</div>
+</section>
+
+<!-- main  -->	
+	<form name= "loginForm" action="loginCheck.do" method="post">
+		<div logincontain="" class="container small pddt">
+			<div logincontain="" class="id-area">
+				<div ct="" logincontain="" class="input-area" clearable="">
+					<input ct="" id="mid" name="mid" autocomplete="on" placeholder="아이디를 입력해 주세요." maxlength="20" type="text" class="">
 					
-					</div>
+					<a ct="" href="" class=""></a>
+					
 				</div>
-				<div logincontain="" class="normal-area between">
-					<div boxx="" logincontain="" class="check-area"></div>
-					<div class="">
-						<a logincontain="" href="search.do">아이디/비밀번호 찾기</a>
-							
-					</div>
+			</div>
+			<div logincontain="" class="id-area">
+				<div ct="" logincontain="" class="input-area">
+					<input ct="" id="pass" name="pass" autocomplete="on" placeholder="비밀번호를 입력해 주세요." maxlength="14" type="password"
+						class="">
+				
 				</div>
-				<div logincontain="" class="normal-area mt40 btn-group">
-					<div loginc="" logincontain="" class="btn_style">
-						<button loginc="" type="submit" class="logincolor">로그인</button>
-					</div>
+			</div>
+			<div logincontain="" class="normal-area between">
+				<div boxx="" logincontain="" class="check-area"></div>
+				<div class="">
+					<a logincontain="" href="search.do">아이디/비밀번호 찾기</a>
+						
+				</div>
+			</div>
+			<div logincontain="" class="normal-area mt40 btn-group">
+				<div loginc="" logincontain="" class="btn_style">
+					<button loginc="" type="submit" class="logincolor">로그인</button>
+				</div>
 				<div loginc="" logincontain="" class="btn_style">
 					<button loginc="" type="button"
 						onclick="location.href = 'http://localhost:9000/hotel/joinstep.do';"
 						class="joincolor">회원이 아니신가요? 가입하기</button>
+
+
 				</div>
 			</div>
+			
 	</form>
-	
 	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
+	
 </body>
+
 </html>

@@ -5,6 +5,15 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
 <mapper namespace="mapper.notice">
+
+<!--  recent event -->
+  	<select id="revent" parameterType="map" resultType="com.hotel.vo.NoticeVO">
+  	select rno, nid, ntag, ntitle, nhits, ndate
+ from (select rownum rno, nid, ntag, ntitle,ncontent, nhits, to_char(ndate, 'yyyy-mm-dd') ndate
+ from (select nid, ntag, ntitle,ncontent, nhits, ndate from notice_list
+ order by ndate desc)where ntag ='event' ) where rno between  '1' and '3'
+  	</select>
+
 <!--  notice updatehits -->
     <update id="updatehits" parameterType="java.lang.String">
     update notice_list set nhits=nhits+1 where nid=#{nid}

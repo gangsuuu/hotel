@@ -7,13 +7,22 @@ public class HotelInquiryVO {
 	//변수
 	int rno, secret, secretnum, rcount;
 
-	String iid, category, title, content, ifile, isfile, idate, hotelname;
+	String iid, category, title, content, ifile, isfile, idate, hotelname, mid;
 	
 
 	//파일
 	CommonsMultipartFile file1;
 
+	
 	//getter,setter	
+	public String getMid() {
+		return mid;
+	}
+	
+	public void setMid(String mid) {
+		this.mid = mid;
+	}
+	
 	public String getHotelname() {
 		return hotelname;
 	}

@@ -40,7 +40,7 @@
 			
 	</table>
 	<button type="submit">등록</button>
-	<button type="button" onclick="location.href='http://localhost:9000/hotel/theshilla.do'">홈으로</button>
+	<button type="button" onclick="location.href='http://localhost:9000/hotel/shillastayindex.do'">메인페이지 이동</button>
 	</form>
 	</div>
 	

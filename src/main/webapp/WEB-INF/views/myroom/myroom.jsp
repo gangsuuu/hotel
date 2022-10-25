@@ -41,7 +41,7 @@
 			</c:otherwise>
 			</c:choose>
 	</table>
-	<button type="button" onclick="check()">취소</button>
+	<button type="button" onclick="check()">예약 취소</button>
 	<button type="button" onclick="location.href='http://localhost:9000/hotel/myroom.do?mid=${svo.mid}'">나의 예약목록 확인</button>
 	<button type="button" onclick="location.href='http://localhost:9000/hotel/theshilla.do'">홈으로</button>
 	

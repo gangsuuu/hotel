@@ -5,11 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>notice</title>
+<title>항상 즐거움이 있는 SHILLA STAY!</title>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/notice.css">
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/am-pagination.css">
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
+
 <script>
 	$(document).ready(function(){
 		
@@ -18,7 +19,7 @@
 		
 		    maxSize: 5,	    		// max page size
 		    totals: '${dbCount}',	// total rows	
-		    page: '${rPage}',		// initial page		
+		    page: '${rpage}',		// initial page		
 		    pageSize: '${pageSize}',	// max number items per page
 		
 		    // custom labels		
@@ -36,7 +37,7 @@
 			var keyword = "${keyword}"
 			if(search == "search"){
 				jQuery('.showlabelsm').text('The selected page no: '+e.page);
-		        $(location).attr('href', "http://localhost:9000/hotel/event_list_search.do?rpage="+e.page+"&keyword="+keyword);
+		        $(location).attr('href', "http://localhost:9000/hotel/admin_event_list_search.do?rpage="+e.page+"&keyword="+keyword);
 			}else{
 				jQuery('.showlabelsm').text('The selected page no: '+e.page);
 		       $(location).attr('href', "http://localhost:9000/hotel/event_list.do?rpage="+e.page);
@@ -47,8 +48,17 @@
 </script>
 </head>
 <body>
-<div class="sub_title">
-<div class="header"></div>
+<%@ include file="../../header.jsp" %>
+<div class="noticepage">
+<div class="common_wrap_yy" style="top: 0px;">
+	<div class="common_inner">
+		<div class="location" id="lnb"><ul>
+		<li><a href="http://localhost:9000/hotel/shillaStay.do">메인페이지</a></li>
+		<li><a href="http://localhost:9000/hotel/admin_event_list.do">이벤트</a></li>
+		</ul>
+		</div>
+	</div>
+	</div>
 
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
@@ -61,8 +71,10 @@
 			<div class="contents" id="contents">
 			<input id="pageIndex" name="pageIndex" type="hidden" value="3"/>
 				<div class="inner">
-					<div class="headtit">
+					<div class="sub_title">
 					<h2>이벤트</h2>
+					<p>Event</p>
+				<span>항상 즐거움이 있는 곳! 신라 호텔</span>
 					</div>
 					<div class="contents_area">
 										<!-- 검색 -->
@@ -81,7 +93,7 @@
 							</option>
 							</select>
 							<input name="keyword" value="${map.keyword}">
-    						<input type="submit" value="조회">
+    						<button type="submit">조회</button>
 					</div>
 					</form>
 					<!-- //검색 -->
@@ -117,6 +129,6 @@
 				<!-- contents-end -->	
 	</div>
 	</div>
-	<div class="footer"></div>
+<%@ include file="../../footer.jsp" %>
 </body>
 </html>
