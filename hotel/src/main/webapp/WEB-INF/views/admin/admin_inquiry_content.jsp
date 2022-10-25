@@ -32,10 +32,10 @@
 			<div class="InAreaMenuBar">
 				<div class="MenuBar">
 					<h2 class="tit">고객문의</h2>
-					<img src="http://localhost:9000/hotel/resources/img/gline.jpg">
+					<img src="http://localhost:9000/hotel/resources/img/inquiry/gline.jpg">
 						<ul class="menu">
 							<li class="">
-								<a href="inquiry_list.do" class="on"><span>전체 문의글</span><img src="http://localhost:9000/hotel/resources/img/gline1.jpg"></a>
+								<a href="inquiry_list.do" class="on"><span>전체 문의글</span><img src="http://localhost:9000/hotel/resources/img/inquiry/gline1.jpg"></a>
 							</li>
 							<li class="">
 								<a href="admin_hotel_categori.do"><span>관리자홈</span></a>
@@ -61,27 +61,31 @@
 				<div class="account">
 					<div class="headTit">
 						<h3 class="tit">연락처</h3>
-						<img src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
-						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/contactText01.gif">
+						<img src="http://localhost:9000/hotel/resources/img/inquiry/linewrite.jpg">
+						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/inquiry/contactText01.gif">
 					</div>
-					<table class="tableTypeF tableFactSheet tableBold" style="height: 139px;" border> 
-						<colgroup> 
-						<col width="20%" class="col1"> 
-						<col class="col2"> 
-						</colgroup> 
-						<tbody> 
-							<tr> 
-								<th class="pe_qK" rowspan="2">신라호텔</th> 
-								<td><span>대표전화 </span><strong>02-1234-1234</strong><br></td> 
-							</tr> 
-							<tr> 
-								<td><span>객실예약 </span><strong>02-5678-5678</strong><br> * 평일(월~금요일) 09:00~18:00, 주말 및 공휴일 09:00~16:00</td> 
-							</tr> 
-						</tbody> 
-					</table>
+					
+					<div>
+						<img alt="shillastay" src="http://localhost:9000/hotel/resources/img/inquiry/telHtitle2.gif">
+						<table class="tableTypeF tableFactSheet tableBold" style="height: auto;" border> 
+							<colgroup> 
+							<col width="20%" class="col1"> 
+							<col class="col2"> 
+							</colgroup> 
+							<tbody> 
+								<tr> 
+									<th class="pe_qK" rowspan="2">신라스테이 광화문</th> 
+									<td><span>대표전화 </span><strong>02-6060-9000</strong><br></td> 
+								</tr> 
+								<tr> 
+									<td><span>객실예약 </span><strong>02-2230-0700</strong><br> * 평일(월~금요일) 09:00~18:00, 주말 및 공휴일 09:00~16:00</td> 
+								</tr> 
+							</tbody> 
+						</table>
+					</div>
 					
 					<h3 class="tit1">문의글</h3>
-					<img id="linewrite" src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
+					<img id="linewrite" src="http://localhost:9000/hotel/resources/img/inquiry/linewrite.jpg">
 					<table border=1 class="customerBoard">
 						<tr>
 							<th colspan="2">호텔선택</th>
@@ -151,7 +155,7 @@
 					</div>
 					
 					<div id="ex1" class="modal">
-	  					<img src="http://localhost:9000/hotel/resources/img/delete.png" width=20%>
+	  					<img src="http://localhost:9000/hotel/resources/img/inquiry/delete.png" width=20%>
 	  					<p>정말로 <strong style="color:red">삭제</strong>하시겠습니까?</p>
 	  					<button type="button" id="modal_delete" onclick="">삭제</button>	
 	 					<a rel="modal:close" >취소</a>

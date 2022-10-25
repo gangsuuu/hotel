@@ -188,7 +188,7 @@ outline: none;
 }
 #ampaginationsm { height:80px; }
 #ampaginationsm ul { margin-top:35px; }
-.commentimg { background : url(http://localhost:9000/hotel/resources/img/inquiry/commentimg.jpg); background-size:contain; width: 21px; height: 21px; display: inline-block; float: right; margin-left: -36px; margin-right: 15px;}
+.commentimg { background : url(http://localhost:9000/hotel/resources/img/inquiry/feedback.png); background-size:contain; width: 21px; height: 21px; display: inline-block; float: right; margin-left: -36px; margin-right: 15px;}
 #no {height: 200px; font-size:16px;}
 #nokeyword { margin-bottom: 12px; font-size:18px; }
 #solution { margin-right: 240px; }
@@ -283,6 +283,7 @@ position: relative;
 							</tbody> 
 						</table>
 					</div>
+					
 					<div class="content-inquery">
 						<h3 class="tit1">문의글</h3>
 						<a href="inquiry_write.do"><button class="btn" type="button" id="btnInquiry">문의하기</button></a>

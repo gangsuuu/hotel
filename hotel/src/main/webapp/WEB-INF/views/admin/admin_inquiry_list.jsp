@@ -153,6 +153,9 @@ $(document).ready(function(){
 	}//replynone()
 });//ready	
 </script>
+<style>
+.commentimg { background : url(http://localhost:9000/hotel/resources/img/inquiry/feedback.png); background-size:contain; width: 21px; height: 21px; display: inline-block; float: right; margin-left: -36px; margin-right: 15px;}
+</style>
 </head>
 <body>
 	<!-- Header Include -->
@@ -168,10 +171,10 @@ $(document).ready(function(){
 			<div class="InAreaMenuBar">
 				<div class="MenuBar">
 					<h2 class="tit">고객문의</h2>
-					<img src="http://localhost:9000/hotel/resources/img/gline.jpg">
+					<img src="http://localhost:9000/hotel/resources/img/inquiry/gline.jpg">
 						<ul class="menu">
 							<li class="">
-								<a href="admin_inquiry_list.do" class="on"><span>전체 문의글</span><img src="http://localhost:9000/hotel/resources/img/gline1.jpg"></a>
+								<a href="admin_inquiry_list.do" class="on"><span>전체 문의글</span><img src="http://localhost:9000/hotel/resources/img/inquiry/gline1.jpg"></a>
 							</li>
 							<li class="">
 								<a href="admin_hotel_categori.do"><span>관리자홈</span></a>
@@ -197,27 +200,31 @@ $(document).ready(function(){
 				<div class="account">
 					<div class="headTit">
 						<h3 class="tit">연락처</h3>
-						<img src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
-						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/contactText01.gif">
+						<img src="http://localhost:9000/hotel/resources/img/inquiry/linewrite.jpg">
+						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/inquiry/contactText01.gif">
 					</div>
-					<table class="tableTypeF tableFactSheet tableBold" style="height: 139px;" border> 
-						<colgroup> 
-						<col width="20%" class="col1"> 
-						<col class="col2"> 
-						</colgroup> 
-						<tbody> 
-							<tr> 
-								<th class="pe_qK" rowspan="2">신라호텔</th> 
-								<td><span>대표전화 </span><strong>02-1234-1234</strong><br></td> 
-							</tr> 
-							<tr> 
-								<td><span>객실예약 </span><strong>02-5678-5678</strong><br> * 평일(월~금요일) 09:00~18:00, 주말 및 공휴일 09:00~16:00</td> 
-							</tr> 
-						</tbody> 
-					</table>
+					
+					<div>
+						<img alt="shillastay" src="http://localhost:9000/hotel/resources/img/inquiry/telHtitle2.gif">
+						<table class="tableTypeF tableFactSheet tableBold" style="height: auto;" border> 
+							<colgroup> 
+							<col width="20%" class="col1"> 
+							<col class="col2"> 
+							</colgroup> 
+							<tbody> 
+								<tr> 
+									<th class="pe_qK" rowspan="2">신라스테이 광화문</th> 
+									<td><span>대표전화 </span><strong>02-6060-9000</strong><br></td> 
+								</tr> 
+								<tr> 
+									<td><span>객실예약 </span><strong>02-2230-0700</strong><br> * 평일(월~금요일) 09:00~18:00, 주말 및 공휴일 09:00~16:00</td> 
+								</tr> 
+							</tbody> 
+						</table>
+					</div>
 					
 					<h3 class="tit1">문의글</h3>
-					<img id="linewrite" src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
+					<img id="linewrite" src="http://localhost:9000/hotel/resources/img/inquiry/linewrite.jpg">
 					<div id="nonetable">
 						<button type="button" id="replynone" >미답변</button>
 						<spen>&nbsp&nbsp|&nbsp&nbsp</spen>
