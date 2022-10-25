@@ -12,7 +12,7 @@
 <title>Customer Inquiry</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
 <script src="http://localhost:9000/hotel/resources/js/inquiry.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/inquiry_javascript.js"></script>
 <script>	
@@ -123,7 +123,7 @@
 </script>
 <style>
 .lnbAreaMenuBar{ float:left; }
-.lnbAreaMenuBar .MenuBar > .tit{ margin:0 0 29px 0; height:53px; background:url(http://localhost:9000/hotel/resources/img/lnbTitle.gif); display:block; /* text-indent:-9999%; */ overflow:hidden;}
+.lnbAreaMenuBar .MenuBar > .tit{ margin:0 0 29px 0; height:53px; background:url(http://localhost:9000/hotel/resources/img/inquiry/lnbTitle.gif); display:block; /* text-indent:-9999%; */ overflow:hidden;}
 .MenuBar{ font-family:나눔명조OTF ExtraBold; width:216px; border:#ebe7e3 solid 1px; background:#ebe7e3; padding:23px; margin:0 0 30px 0;}
 .MenuBar .tit { margin-top:7px; font-family:나눔명조OTF; font-weight: lighter; color:rgb(88,88,88); margin:0;}
 .MenuBar .menu{ list-style:none; margin-top:20px; padding:0;}
@@ -147,7 +147,7 @@
 
 .contain { display:flex; width:1241px; height:1200px; margin-right:202px; margin-bottom:100px; margin-left:202px;}
 .container { margin-right:100px; }
-.contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
+.contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/inquiry/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
 
 .tableTypeF{ border:none; border-top:#cdcbbe solid 1px; width:100%; border-collapse:collapse; table-layout:auto;}
 .tableTypeF th,
@@ -235,7 +235,7 @@ margin: 10px 0;
 					<div class="headTit">
 						<h3 class="tit">연락처</h3>
 						<div class="content-block"></div>
-						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/contactText01.gif">
+						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/inquiry/contactText01.gif">
 					</div>
 					<div>
 						<img alt="shillastay" src="http://localhost:9000/hotel/resources/img/inquiry/telHtitle2.gif">
@@ -263,7 +263,16 @@ margin: 10px 0;
 							<th>등록일자</th>
 							<td>${ vo.idate }</td>													
 							<th>처리상태</th>
-							<td>처리상태</td>
+							
+							<c:choose>
+								<c:when test="${vo.rcount == 0}">
+									<td>진행중</td>
+								</c:when>
+								<c:otherwise>
+									<td>답변완료</td>
+								</c:otherwise>
+							</c:choose>
+							
 						</tr>
 						<tr>
 							<th colspan="1">문의유형</th>
@@ -307,7 +316,7 @@ margin: 10px 0;
 					</div>
 					
 					<div id="ex1" class="modal">
-	  					<img src="http://localhost:9000/hotel/resources/img/delete.png" width=20%>
+	  					<img src="http://localhost:9000/hotel/resources/img/inquiry/delete.png" width=20%>
 	  					<p>정말로 <strong style="color:red">삭제</strong>하시겠습니까?</p>
 	  					<button type="button" id="modal_delete">확인</button></a>	
 	 					<a rel="modal:close" >취소</a>
@@ -315,7 +324,7 @@ margin: 10px 0;
 					
 					
 					<div id="ex2" class="modal">
-						<img src="http://localhost:9000/hotel/resources/img/lock.png" width=20%>
+						<img src="http://localhost:9000/hotel/resources/img/inquiry/lock.png" width=20%>
 						<p id="passCheckText"><strong>비밀번호</strong>를 입력해주세요.</p>
 				  		<input type="text" id="inputPass">
 				  		<button type="button" id="passCheck">확인</button>
@@ -323,7 +332,7 @@ margin: 10px 0;
 					</div>			
 					
 					<div id="ex3" class="modal">
-	  					<img src="http://localhost:9000/hotel/resources/img/delete.png" width=20%>
+	  					<img src="http://localhost:9000/hotel/resources/img/inquiry/delete.png" width=20%>
 	  					<p>정말로 <strong style="color:red"><u style="color:red">삭제</u></strong>하시겠습니까?</p>
 	  					<a href="#ex2" rel="modal:open" id="${vo.iid}" onclick="modalopen3('${vo.iid}')"><button type="button" id="modal_delete">확인</button></a>	
 	 					<a rel="modal:close" id="cancel">취소</a>

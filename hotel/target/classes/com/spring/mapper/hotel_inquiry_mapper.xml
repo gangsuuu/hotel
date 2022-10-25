@@ -160,8 +160,18 @@
 	<!-- inquiry content -->
 	<select id="content" parameterType="java.lang.String" resultType="com.hotel.vo.HotelInquiryVO">
 	
-		select iid, hotelname, category, idate, title, content, secret, secretnum, ifile, isfile, mid from hotel_inquiry
-			where iid = #{iid}
+		SELECT IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, ifile, isfile, IDATE, MID, RCOUNT FROM
+			(SELECT IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, ifile, isfile, IDATE, MID, rcount FROM
+				(SELECT IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, ifile, isfile, IDATE, MID, count(rcount)  rcount FROM
+					(SELECT hi.IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, ifile, isfile, IDATE, MID, ri.iid rcount
+					FROM hotel_inquiry hi, reply_inquiry ri 
+					where hi.iid = ri.iid(+)
+					)
+					GROUP BY IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, ifile, isfile, IDATE, MID
+					order by idate desc
+				)
+			) 
+		WHERE iid = #{iid}
 	
 	</select>
 

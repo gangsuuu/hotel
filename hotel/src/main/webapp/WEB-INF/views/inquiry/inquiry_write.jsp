@@ -60,7 +60,7 @@
 
 <style>
 .lnbAreaMenuBar{ float:left; }
-.lnbAreaMenuBar .MenuBar > .tit{ margin:0 0 29px 0; height:53px; background:url(http://localhost:9000/hotel/resources/img/lnbTitle.gif); display:block; /* text-indent:-9999%; */ overflow:hidden;}
+.lnbAreaMenuBar .MenuBar > .tit{ margin:0 0 29px 0; height:53px; background:url(http://localhost:9000/hotel/resources/img/inquiry/lnbTitle.gif); display:block; /* text-indent:-9999%; */ overflow:hidden;}
 .MenuBar{ font-family:나눔명조OTF ExtraBold; width:216px; border:#ebe7e3 solid 1px; background:#ebe7e3; padding:23px; margin:0 0 30px 0;}
 .MenuBar .tit { margin-top:7px; font-family:나눔명조OTF; font-weight: lighter; color:rgb(88,88,88); margin:0;}
 .MenuBar .menu{ list-style:none; margin-top:20px; padding:0;}
@@ -84,7 +84,7 @@
 
 .contain { display:flex; justify-content: center; width:1241px; height:895px; margin-right:202px; margin-bottom:100px; margin-left:202px;}
 .container { margin-right:100px; }
-.contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
+.contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/inquiry/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
 
 .tableTypeA{margin:20px 0px 0px 0px;border:none;border-top:#cdcbbe solid 1px; width:100%;border-collapse:collapse;table-layout:fixed;}
 .tableTypeA th,
@@ -98,10 +98,10 @@
 #category, .titlearea, #secretnum, .contentarea:focus{
 	outline: none;
 }
-.titlearea { width:668px; height:23px; vertical-align: middle;}
-#category {width:100px; height:23px;}
+.titlearea { width:668px; height:23px; vertical-align: middle; padding-left: 5px;}
+#category {width:100px; height:23px; margin-left: -276px;}
 #passwordlable { margin-left:30px; }
-#secretnum { width:100px; height:23px; }
+#secretnum { width: 47px; height: 23px; padding-left: 8px; letter-spacing: 2px; font-size: 20px;}
 #category, .titlearea, #secretnum { border: #CCC solid 1px; }
 
 .list { float:right; }
@@ -114,7 +114,7 @@
 #btnInquiryWrite { margin-top:35px; background-color:rgb(58,49,37); color:rgb(250,241,208); width:150px; height:44px; vertical-align: middle;
 				   font-size:17px; font-weight: bold;}
 .ast {color:red;}
-
+.selector {word-spacing: 10px;}
 </style>
 
 </head>

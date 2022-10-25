@@ -9,64 +9,36 @@
 <link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/am-pagination.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script> -->
+<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script>
-function modalopen(iid){ 
-	$("#passCheck").attr('onclick',"checkPass('"+iid+"')");
- }
- 
-function checkPass(iid){
-	
-	const pass = $("#inputPass").val();
-	
-	$.ajax({
-		url:"inquiry_passCheck.do?iid="+iid+"&pass="+pass,
-		success:function(result){
-				if(result == 'ok'){
-					location.replace("inquiry_content.do?iid="+iid);
-				}else{
-					$("#passCheckText").text("비밀번호가 틀렸습니다.").css("color","red");
-					$("#inputPass").val("").focus();
-					//alert("비밀번호가 틀렸습니다.");	 
-				}				
-			}
-		}); 	
-		
-	}//checkPass
-
-$(document).ready(function(){
-	//페이징 처리
-	var pager = $('#ampaginationsm').pagination({
-		
-		    maxSize: 5,	    		// max page size
-		    totals: '${dbCount}',	// total rows	
-		    page: '${rpage}',		// initial page		
-		    pageSize: '${pageSize}',	// max number items per page 
-		
-		    // custom labels		
-		    lastText: '&raquo;&raquo;', 		
-		    firstText: '&laquo;&laquo;',		
-		    prevText: '&laquo;',		
-		    nextText: '&raquo;',
-				     
-		    btnSize:'sm'	// 'sm'  or 'lg'		
-		});
-		
-		//페이징 번호 클릭 시 이벤트 처리
-		jQuery('#ampaginationsm').on('am.pagination.change',function(e){		
-			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
-	           $(location).attr('href', "http://localhost:9000/hotel/inquiry_list.do?rpage="+e.page);         
-	    });
-	
-});//ready
 </script>
 <script>
 	$(document).ready(function(){
+		//페이징 처리
+		var pager = $('#ampaginationsm').pagination({
+			    maxSize: 5,	    		// max page size
+			    totals: '${dbCount}',	// total rows	
+			    page: '${rpage}',		// initial page		
+			    pageSize: '${pageSize}',	// max number items per page 
+			
+			    // custom labels		
+			    lastText: '&raquo;&raquo;', 		
+			    firstText: '&laquo;&laquo;',		
+			    prevText: '&laquo;',		
+			    nextText: '&raquo;',
+					     
+			    btnSize:'sm'	// 'sm'  or 'lg'		
+			});
+			
+			//페이징 번호 클릭 시 이벤트 처리
+			$('#ampaginationsm').on('am.pagination.change',function(e){		
+				   $('.showlabelsm').text('The selected page no: '+e.page);
+		           $(location).attr('href', "http://localhost:9000/hotel/inquiry_list.do?rpage="+e.page);         
+		    });
 	
 		//문의글 검색
 		var search="${search}";
@@ -76,7 +48,7 @@ $(document).ready(function(){
 			}else{
 				$(".search_list").val("title").prop("selected", true);
 			}
-			
+			 
 		$("#btnSearch").click(function(){
 			if($("#searchName").val()==""){
 				alert("내용을 입력해 주세요.");
@@ -87,11 +59,36 @@ $(document).ready(function(){
 
 		});//click	
 		
+		
 	});//ready
+	
+	function modalopen(iid){ 
+		$("#passCheck").attr('onclick',"checkPass('"+iid+"')");
+	 }
+	 
+	function checkPass(iid){
+		
+		const pass = $("#inputPass").val();
+		
+		$.ajax({
+			url:"inquiry_passCheck.do?iid="+iid+"&pass="+pass,
+			success:function(result){
+					if(result == 'ok'){
+						location.replace("inquiry_content.do?iid="+iid);
+					}else{
+						$("#passCheckText").text("비밀번호가 틀렸습니다.").css("color","red");
+						$("#inputPass").val("").focus();
+						//alert("비밀번호가 틀렸습니다.");	 
+					}				
+				}
+			}); 	
+			
+		}//checkPass
+	
 </script>
 <style>
 .lnbAreaMenuBar{ float:left; }
-.lnbAreaMenuBar .MenuBar > .tit{ margin:0 0 29px 0; height:53px; background:url(http://localhost:9000/hotel/resources/img/lnbTitle.gif); display:block; /* text-indent:-9999%; */ overflow:hidden;}
+.lnbAreaMenuBar .MenuBar > .tit{ margin:0 0 29px 0; height:53px; background:url(http://localhost:9000/hotel/resources/img/inquiry/lnbTitle.gif); display:block; /* text-indent:-9999%; */ overflow:hidden;}
 .MenuBar{ font-family:나눔명조OTF ExtraBold; width:216px; border:#ebe7e3 solid 1px; background:#ebe7e3; padding:23px; margin:0 0 30px 0;}
 .MenuBar .tit { margin-top:7px; font-family:나눔명조OTF; font-weight: lighter; color:rgb(88,88,88); margin:0;}
 .MenuBar .menu{ list-style:none; margin-top:20px; padding:0;}
@@ -113,7 +110,7 @@ $(document).ready(function(){
 	width: 850px;
 }
 
-.contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
+.contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/inquiry/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
 
 .tableTypeF{ border:none; border-top:#cdcbbe solid 1px; width:100%; border-collapse:collapse; table-layout:auto;}
 .tableTypeF th,
@@ -144,9 +141,8 @@ background: red;
  top:0; 
  width: 110px;
  font-weight:600;
- 
- 
- }
+  }
+  
 #listtable { 
 	border-collapse:collapse; 
 	text-align:center; 
@@ -162,13 +158,16 @@ background: red;
  color:rgb(125,120,115);
  border:1px solid #cdcbbe;
  }
+ 
  #listtable tbody{
  border:none;
  }
+ 
 #tabletitle { width:340px; }
 #listtable tr { height:37px; font-size:13px; }
 #listtable tr:last-child > td {
  border:none; }
+ 
 #listtable a { color:black; text-decoration:none; }
 #search { text-align:center; margin-top: 25px; }
 #searchspan { font-size:12px; }
@@ -189,8 +188,11 @@ outline: none;
 }
 #ampaginationsm { height:80px; }
 #ampaginationsm ul { margin-top:35px; }
-.commentimg { background : url(http://localhost:9000/hotel/resources/img/commentimg.jpg); background-size:contain; width: 21px; height: 21px; display: inline-block; float: right; margin-left: -36px; margin-right: 15px;}
-
+.commentimg { background : url(http://localhost:9000/hotel/resources/img/inquiry/commentimg.jpg); background-size:contain; width: 21px; height: 21px; display: inline-block; float: right; margin-left: -36px; margin-right: 15px;}
+#no {height: 200px; font-size:16px;}
+#nokeyword { margin-bottom: 12px; font-size:18px; }
+#solution { margin-right: 240px; }
+#solution2 { text-align: left; margin-left: 333px; margin-bottom: 40px; }
 
 /****		경수추가목록		******/
 [alt="shillastay"]{
@@ -210,15 +212,15 @@ position: relative;
 	<!--------------- MenuBar ---------------------->
 	<!---------------------------------------------->
 
-	<div class="contain">
+<%-- 	<div class="contain">
 		<div class="container">
 			<div class="InAreaMenuBar">
 				<div class="MenuBar">
 					<h2 class="tit">고객문의</h2>
-					<img src="http://localhost:9000/hotel/resources/img/gline.jpg">
+					<img src="http://localhost:9000/hotel/resources/img/inquiry/gline.jpg">
 						<ul class="menu">
 							<li class="">
-								<a href="inquiry_list.do" class="on"><span>문의글</span><img src="http://localhost:9000/hotel/resources/img/gline1.jpg"></a>
+								<a href="inquiry_list.do" class="on"><span>문의글</span><img src="http://localhost:9000/hotel/resources/img/inquiry/gline1.jpg"></a>
 							</li>	
 							<li class="">
 								<a href="inquiry_write.do"><span>문의하기</span></a>
@@ -229,7 +231,7 @@ position: relative;
 						</ul>
 				</div>
 			</div>	
-		</div>
+		</div> --%>
 
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
@@ -260,7 +262,7 @@ position: relative;
 					<div class="headTit">
 						<h3 class="tit">연락처</h3>
 						<div class="content-block"></div>
-						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/contactText01.gif">
+						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/inquiry/contactText01.gif">
 					</div>
 
 					<div>
@@ -296,53 +298,61 @@ position: relative;
 							<th>작성자</th>							
 							<th>등록일자 </th>							
 						</tr>
-<%-- 							<c:when test="${listSize == 0}">
-								<tr>
-									<td colspan="6" id="no"> 검색된 문의글이 없습니다. </td>
-								</tr> --%>
 						
-						<c:forEach var="vo" items="${list}">
 							<c:choose>
-								<c:when test="">
+								<c:when test="${listSize == 0}">
 									<!-- 게시물 없을 때 출력 -->
+									<tr>
+										<td colspan="6" id="no"> 
+											<img width="20%" src="http://localhost:9000/hotel/resources/img/inquiry/question.jpg">
+											<div id="nokeyword"><strong>"${keyword}"</strong>와(과) 일치하는 검색결과가 없습니다. </div>
+											<div id="solution"> 해결방법 : </div>
+											<ul id="solution2">
+												<li>ㆍ모든 단어의 철자가 정확한지 확인하세요.</li>
+												<li>ㆍ다른 검색어를 사용해 보세요.</li>
+												<li>ㆍ키워드 수를 줄여보세요.</li>
+											</ul>
+										</td>
+									</tr>
 								</c:when>
 								<c:otherwise>
-									<tr>
-										<td>${ vo.rno }</td>
-										<td>${ vo.hotelname }</td>
-										<td>${ vo.category }</td>
-										<td>							
-											<%-- <c:forEach var="re" items="${reply}"> --%>
-												<c:choose>
-													<c:when test="${vo.secret == 1}">
-														<c:choose>
-															<c:when test="${ vo.rcount != 0}">												
-																<a href="#ex1" rel="modal:open" class="reclass" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<div class="commentimg"></div><img src="http://localhost:9000/hotel/resources/img/icon_lock.gif"></a>
-															</c:when>
-															<c:otherwise>
-																<a href="#ex1" rel="modal:open" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<img src="http://localhost:9000/hotel/resources/img/icon_lock.gif"></a>
-															</c:otherwise>					
-														</c:choose>
-													</c:when>
-													<c:otherwise>
-														<c:choose>
-															<c:when test="${ vo.rcount != 0}">
-																<a class="reclass" id="${vo.iid}" href="inquiry_content.do?iid=${ vo.iid }">${ vo.title }<div class="commentimg"></div></a>
-															</c:when>
-															<c:otherwise>
-																<a class="reclass" id="${vo.iid}" href="inquiry_content.do?iid=${ vo.iid }">${ vo.title }</a>
-															</c:otherwise>
-														</c:choose>		
-													</c:otherwise>
-												</c:choose>
-											<%-- </c:forEach> --%> 
-										</td>
-										<td>${ vo.mid }</td>
-										<td>${ vo.idate }</td>
-									</tr>
+									<c:forEach var="vo" items="${list}">
+										<tr>
+											<td>${ vo.rno }</td>
+											<td>${ vo.hotelname }</td>
+											<td>${ vo.category }</td>
+											<td>							
+												<%-- <c:forEach var="re" items="${reply}"> --%>
+													<c:choose>
+														<c:when test="${vo.secret == 1}">
+															<c:choose>
+																<c:when test="${ vo.rcount != 0}">												
+																	<a href="#ex1" rel="modal:open" class="reclass" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<div class="commentimg"></div><img src="http://localhost:9000/hotel/resources/img/inquiry/icon_lock.gif"></a>
+																</c:when>
+																<c:otherwise>
+																	<a href="#ex1" rel="modal:open" id="${vo.iid}" onclick="modalopen('${vo.iid}')">문의드립니다<img src="http://localhost:9000/hotel/resources/img/inquiry/icon_lock.gif"></a>
+																</c:otherwise>					
+															</c:choose>
+														</c:when>
+														<c:otherwise>
+															<c:choose>
+																<c:when test="${ vo.rcount != 0}">
+																	<a class="reclass" id="${vo.iid}" href="inquiry_content.do?iid=${ vo.iid }">${ vo.title }<div class="commentimg"></div></a>
+																</c:when>
+																<c:otherwise>
+																	<a class="reclass" id="${vo.iid}" href="inquiry_content.do?iid=${ vo.iid }">${ vo.title }</a>
+																</c:otherwise>
+															</c:choose>		
+														</c:otherwise>
+													</c:choose>
+												<%-- </c:forEach> --%> 
+											</td>
+											<td>${ vo.mid }</td>
+											<td>${ vo.idate }</td>
+										</tr>
+									</c:forEach>
 								</c:otherwise>
 							</c:choose>
-						</c:forEach>
 
 						<tr>
 							<td colspan="6"><div id="ampaginationsm"></div></td>
@@ -350,7 +360,7 @@ position: relative;
 					</table>
 								<!-- div를 forEach안에 두면 계속 생겨서 오류걸림, 밖으로 빼기 -->
 								<div id="ex1" class="modal">
-									<img src="http://localhost:9000/hotel/resources/img/lock.png" width=20%>
+									<img src="http://localhost:9000/hotel/resources/img/inquiry/lock.png" width=20%>
 				  					<p id="passCheckText"><strong>비밀번호</strong>를 입력해주세요.</p>
 				  					<input type="text" id="inputPass">
 				  					<button type="button" id="passCheck">확인</button>

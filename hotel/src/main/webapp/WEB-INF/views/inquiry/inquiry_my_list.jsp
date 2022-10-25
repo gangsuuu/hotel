@@ -58,7 +58,7 @@ $(document).ready(function(){
 			<div class="InAreaMenuBar">
 				<div class="MenuBar">
 					<h2 class="tit">고객문의</h2>
-					<img src="http://localhost:9000/hotel/resources/img/gline.jpg">
+					<img src="http://localhost:9000/hotel/resources/img/inquiry/gline.jpg">
 						<ul class="menu">
 							<li class="">
 								<a href="inquiry_list.do"><span>문의글</span></a>
@@ -67,7 +67,7 @@ $(document).ready(function(){
 								<a href="inquiry_write.do"><span>문의하기</span></a>
 							</li>
 							<li class="">
-								<a href="inquiry_my_list.do?mid=${svo.mid }" class="on"><span>내문의함</span><img src="http://localhost:9000/hotel/resources/img/gline1.jpg"></a>
+								<a href="inquiry_my_list.do?mid=${svo.mid }" class="on"><span>내문의함</span><img src="http://localhost:9000/hotel/resources/img/inquiry/gline1.jpg"></a>
 							</li>
 						</ul>
 				</div>
@@ -91,8 +91,8 @@ $(document).ready(function(){
 			<div class="account">
 				<div class="headTit">
 					<h3 class="tit">연락처</h3>
-					<img src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
-						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/contactText01.gif">
+					<img src="http://localhost:9000/hotel/resources/img/inquiry/linewrite.jpg">
+						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/inquiry/contactText01.gif">
 				</div>
 				<table class="tableTypeF tableFactSheet tableBold" style="height: 139px;"> 
 					<colgroup> 
@@ -113,7 +113,7 @@ $(document).ready(function(){
 				
 				<!---------- content start ---------->
 				<h3 class="tit1">내문의글</h3>
-				<img id="linewrite" src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
+				<img id="linewrite" src="http://localhost:9000/hotel/resources/img/inquiry/linewrite.jpg">
 									
 					<table id="listtable" border=1px solid>
 						<tr>

@@ -48,7 +48,7 @@
 </script>
 <style>
 .lnbAreaMenuBar{ float:left; }
-.lnbAreaMenuBar .MenuBar > .tit{ margin:0 0 29px 0; height:53px; background:url(http://localhost:9000/hotel/resources/img/lnbTitle.gif); display:block; /* text-indent:-9999%; */ overflow:hidden;}
+.lnbAreaMenuBar .MenuBar > .tit{ margin:0 0 29px 0; height:53px; background:url(http://localhost:9000/hotel/resources/img/inquiry/lnbTitle.gif); display:block; /* text-indent:-9999%; */ overflow:hidden;}
 .MenuBar{ font-family:나눔명조OTF ExtraBold; width:216px; border:#ebe7e3 solid 1px; background:#ebe7e3; padding:23px; margin:0 0 30px 0;}
 .MenuBar .tit { margin-top:7px; font-family:나눔명조OTF; font-weight: lighter; color:rgb(88,88,88); margin:0;}
 .MenuBar .menu{ list-style:none; margin-top:20px; padding:0;}
@@ -65,7 +65,7 @@
 
 .contain { display:flex; width:1241px; height:895px; margin-right:202px; margin-bottom:100px; margin-left:202px;}
 .container { margin-right:100px; }
-.contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
+.contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/inquiry/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
 
 .list { float:right; }
 .tit { color: rgb(88,88,88); font-family: 나눔명조OTF; font-size:26px; margin-top:0; margin-bottom:10px;}
@@ -155,8 +155,8 @@ margin: 10px 0;
 				<div class="account">
 					<div class="headTit">
 						<h3 class="tit">연락처</h3>
-						<img src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
-						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/contactText01.gif">
+						<img src="http://localhost:9000/hotel/resources/img/inquiry/linewrite.jpg">
+						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/inquiry/contactText01.gif">
 					</div>
 					<div>
 					<img alt="shillastay" src="http://localhost:9000/hotel/resources/img/inquriy/telHtitle2.gif">
@@ -177,7 +177,7 @@ margin: 10px 0;
 					</table>
 					</div>
 					<h3 class="tit1">문의글</h3>
-					<img id="linewrite" src="http://localhost:9000/hotel/resources/img/linewrite.jpg">
+					<img id="linewrite" src="http://localhost:9000/hotel/resources/img/inquiry/linewrite.jpg">
 					<table class="tableTypeA tableCustomer">
 						<colgroup>
 							<col width="16%" class="col1">
