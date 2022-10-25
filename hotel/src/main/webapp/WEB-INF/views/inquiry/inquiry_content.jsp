@@ -13,8 +13,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
-<script src="http://localhost:9000/hotel/resources/js/inquiry.js"></script>
-<script src="http://localhost:9000/hotel/resources/js/inquiry_javascript.js"></script>
+<!-- <script src="http://localhost:9000/hotel/resources/js/inquiry.js"></script> -->
+<!-- <script src="http://localhost:9000/hotel/resources/js/inquiry_javascript.js"></script> -->
 <script>	
 	//전체글 수정하기 버튼 클릭 시, 비번체크
 	function modalopen2(iid){ 

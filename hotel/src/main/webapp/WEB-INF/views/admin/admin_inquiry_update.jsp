@@ -63,7 +63,7 @@
 					<img src="http://localhost:9000/hotel/resources/img/inquiry/gline.jpg">
 						<ul class="menu">
 							<li class="">
-								<a href="inquiry_list.do" class="on"><span>전체 문의글</span><img src="http://localhost:9000/hotel/resources/img/inquiry/gline1.jpg"></a>
+								<a href="admin_inquiry_list.do" class="on"><span>전체 문의글</span><img src="http://localhost:9000/hotel/resources/img/inquiry/gline1.jpg"></a>
 							</li>
 							<li class="">
 								<a href="admin_hotel_categori.do"><span>관리자홈</span></a>
