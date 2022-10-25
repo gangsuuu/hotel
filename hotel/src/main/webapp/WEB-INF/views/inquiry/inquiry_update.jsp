@@ -94,14 +94,14 @@
 .titlearea, .contentarea{
 	border:none; 
 }
-#category {width:100px; height:23px;}
+#category {width:100px; height:23px; margin-left: -321px;}
 #passwordlable { margin-left:30px; }
 #secretnum { width:100px; height:23px; }
 #category,  #secretnum{ border: #CCC solid 1px; }
 #category, .titlearea, #secretnum, .contentarea:focus{
 	outline: none;
 }
-
+.selector {word-spacing: 10px;}
 
 #btnlist { text-align:center; margin-top:50px; }
 
@@ -159,7 +159,7 @@ margin: 10px 0;
 						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/inquiry/contactText01.gif">
 					</div>
 					<div>
-					<img alt="shillastay" src="http://localhost:9000/hotel/resources/img/inquriy/telHtitle2.gif">
+					<img alt="shillastay" src="http://localhost:9000/hotel/resources/img/inquiry/telHtitle2.gif">
 					<table class="tableTypeF tableFactSheet tableBold" style="height: 139px;" border> 
 						<colgroup> 
 						<col width="20%" class="col1"> 
