@@ -20,7 +20,7 @@ public class HotelInquiryDAO extends DBConn{
 	private SqlSessionTemplate sqlSession;
 	
 	/**
-	 * searchcount : 문의글 검색 게시물 갯수 출력
+	 * searchcount : 문의글 검색 게시물 갯수 출력(사용안함!)
 	 */
 	public int searchCount(String searchlist, String keyword) {
 
@@ -200,6 +200,16 @@ public class HotelInquiryDAO extends DBConn{
 		
 	}
 	
+	//페이징 처리
+	/**
+	 * myCount : 나의 문의글 DB에서 가져온 전체 행수(전체 로우수 출력)
+	 **/
+		public int myCount(String mid) {
+			
+			return sqlSession.selectOne("mapper.inquiry.mycount",mid);
+		}	
+	
+	
 	
 	//페이징 처리
 	/**
@@ -283,8 +293,19 @@ public class HotelInquiryDAO extends DBConn{
 	/**
 	 * myselect : 본인 문의글 리스트 출력
 	 */
-	public List<HotelInquiryVO> myselect(String mid) {
-		return sqlSession.selectList("mapper.inquiry.mylist",mid);
+	public ArrayList<HotelInquiryVO> myselect(String mid, int startCount, int endCount) {
+		
+		HotelSearchVO vo = new HotelSearchVO();
+		vo.setStart(startCount);
+		vo.setEnd(endCount);
+		vo.setMid(mid);
+		
+		//System.out.println(vo.getMid()+"11111111111");
+		
+		List<HotelInquiryVO> mlist = sqlSession.selectList("mapper.inquiry.mylist", vo);
+		
+		return (ArrayList<HotelInquiryVO>)mlist;	
+		
 	}
 	
 	

@@ -5,13 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/inquiry.css">
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <title>Customer Inquiry</title>
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script src="http://localhost:9000/hotel/resources/js/inquiry.js"></script>
-<script src="http://localhost:9000/hotel/resources/js/inquiry_javascript.js"></script>
+<!-- <script src="http://localhost:9000/hotel/resources/js/inquiry.js"></script>
+<script src="http://localhost:9000/hotel/resources/js/inquiry_javascript.js"></script> -->
 <script>
 	$(document).ready(function(){
 		$("#btnInquiryUpdate").click(function(){
@@ -63,14 +62,16 @@
 .MenuBar li li a{ background:#CC6; display:block;}
 .MenuBar li li a.on{ font-weight:bold;}
 
-.contain { display:flex; width:1241px; height:895px; margin-right:202px; margin-bottom:100px; margin-left:202px;}
+
+.contents{
+	margin: 0;
+	width: 850px;
+}
+
+
+.contain { display:flex; width:1241px; height:1200px; margin-right:202px; margin-bottom:100px; margin-left:202px;}
 .container { margin-right:100px; }
 .contents .location .list{  display:block; font-size:11px; background:url(http://localhost:9000/hotel/resources/img/inquiry/locaton.gif) no-repeat 0 1px; line-height:12px; padding:0 0 0 17px;}
-
-.list { float:right; }
-.tit { color: rgb(88,88,88); font-family: 나눔명조OTF; font-size:26px; margin-top:0; margin-bottom:10px;}
-.tit1 { color: rgb(88,88,88); font-family: 나눔명조OTF; font-size:26px; margin-top:30px; margin-bottom:10px;}
-#linewrite { margin-bottom: 5px; }
 
 .tableTypeF{ border:none; border-top:#cdcbbe solid 1px; width:100%; border-collapse:collapse; table-layout:auto;}
 .tableTypeF th,
@@ -79,24 +80,45 @@
 .tableTypeF td{ background:#FFF; color:#1b1b1b}
 .tableTypeF td strong{ margin-left:30px; }
 .tableTypeF .last th, .tableTypeF .last td {border-bottom:#cdcbbe solid 1px; }
-.ast {color:red;}
 
-.tableTypeA{margin:20px 0px 0px 0px;border:none;border-top:#cdcbbe solid 1px; width:100%;border-collapse:collapse;table-layout:fixed;}
-.tableTypeA th,
-.tableTypeA td{border:none;padding:6px 13px;text-align:left;line-height: 22px;border-bottom:#eceae1 solid 1px;color:#333333;}
-.tableTypeA th{color:#666; background:#faf9f4; }
-.tableTypeA td{ background:#FFF; color:#1b1b1b}
-.tableTypeA .last th,.tableTypeA .last td {border-bottom:#cdcbbe solid 1px;}
-.tableTypeA .bdBot{border-bottom:#cdcbbe solid 1px !important; }
+.list { float:right; }
+.tit { color: rgb(88,88,88); font-family: 나눔명조OTF; font-size:26px; margin-top:0; margin-bottom:10px;}
+.tit1 { color: rgb(88,88,88); font-family: 나눔명조OTF; font-size:26px; margin-top:30px; margin-bottom:10px;}
+#linewrite { margin-bottom: 5px; }
+.content_list_two{ margin-top: -25px; font-weight: 500; margin-left: 10px; height: 20px; display: block; align-items: center; font-size: 14px; color:var(--hub-font);}
 
-.contentarea { width:670px; height:180px; vertical-align: middle; resize: none; overflow:auto; }
-.titlearea { width:668px; height:23px; vertical-align: middle;}
-.titlearea, .contentarea{
-	border:none; 
+/*******************/
+.customerBoard { border-collapse:collapse; text-align:center; width: 850px;px; border-color:#cdcbbe; margin: 10px 0 0 0; }
+.customerBoard tr:first-child { background-color: #ebe7e3; height:38px; font-size:16px;}
+.customerBoard tr:first-child td, .customerBoard tr:nth-child(2) td { text-align:center;}
+.customerBoard tr:nth-child(2) { background-color: #ebe7e3; height:38px; font-size:16px;}
+.customerBoard tr { height:35px; font-size:14px; }
+.customerBoard a { color:black; text-decoration:none; }
+.customerBoard td { text-align: left; padding-left: 10px; }
+.inquiry-table-state{
 }
-#category {width:100px; height:23px; margin-left: -321px;}
+.inquiry-table-state th{
+	width: 160px;
+}
+.inquiry-table-state td{
+	width: 228px;
+}
+
+.tablecontent { height:340px; vertical-align: top; text-align: left; padding-left: 10px; padding-top: 10px; padding-bottom: 0px; padding-right: 0px; }
+#btnlist { text-align:center; margin-top:50px; }
+#btn_InquiryUpdate, #btn_InquiryDelete, #btn_InquiryList { background-color:rgb(58,49,37); color:rgb(250,241,208); width:99px; height:35px; vertical-align: middle; font-size:14px; font-weight: bold; }
+#ex1 { text-align:center; }
+#ex3 { text-align:center; }
+#modal_delete { background-color: white; font-size: 16px; color: rgb(58,49,37); font-weight: 800; }
+
+#replydelete { float: right; margin-top: -1px; }
+.replytable { width: 868px; border-collapse: collapse; margin-left: 5px; border-color:#cdcbbe; margin-top: 20px; }
+.replytable tr:first-child { background-color: #ebe7e3; }
+.replytable #replycontent { vertical-align: text-top; padding: 10px; }
+/******/
+#category {width:100px; height:23px; margin-left: -276px;}
 #passwordlable { margin-left:30px; }
-#secretnum { width:100px; height:23px; }
+#secretnum { height:23px; width: 41px; letter-spacing: 3px; padding-left: 10px;}
 #category,  #secretnum{ border: #CCC solid 1px; }
 #category, .titlearea, #secretnum, .contentarea:focus{
 	outline: none;
@@ -104,6 +126,7 @@
 .selector {word-spacing: 10px;}
 
 #btnlist { text-align:center; margin-top:50px; }
+.content_list_two{ margin-top: -25px; font-weight: 500; margin-left: 10px; height: 20px; display: block; align-items: center; font-size: 14px; color:var(--hub-font);}
 
 /***********추가******************/
 #upload_file { position:relative; display:inline-block; background-color: white; font-size:14px; width:120px; left:-181px; }
@@ -132,6 +155,7 @@ margin: 10px 0;
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list">인근명소</a></li>
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/notice_list.do" class="content_list">공지사항</a></li>
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_list.do" class="content_list content_selected">고객센터</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_my_list.do?mid=${sessionScope.svo.mid }" class="content_list_two"> - 내문의함</a></li>
 	              </ul>
 			 </div>
 		 </div>		

@@ -20,8 +20,10 @@ public class InquiryServiceImpl implements InquiryService {
 	 * 본인 문의글 리스트
 	 */
 	@Override
-	public List<HotelInquiryVO> getMyList(String mid){
-		return hotelinquiryDao.myselect(mid);
+	public ArrayList<HotelInquiryVO> getMyList(String mid, int startCount, int endCount){
+		ArrayList<HotelInquiryVO> mlist = hotelinquiryDao.myselect(mid, startCount, endCount);
+
+		return mlist;
 	}
 	
 	/**
@@ -104,7 +106,15 @@ public class InquiryServiceImpl implements InquiryService {
 	public int getTotalCount(HotelInquiryVO vo) {
 		return hotelinquiryDao.totalCount(vo);
 	}
-
+	
+	/**
+	 * 나의문의글 전체 글 수
+	 */
+	@Override
+	public int getMyCount(String mid) {
+		return hotelinquiryDao.myCount(mid);
+	}
+	
 	/**
 	 * 게시판 전체 글 리스트
 	 */

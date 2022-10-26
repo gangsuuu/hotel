@@ -36,10 +36,13 @@ public interface InquiryService {
 	//문의글 전체 수
 	int getTotalCount(HotelInquiryVO vo);
 	
+	//나의 문의글 전체 수
+	int getMyCount(String mid);
+	
 	//문의글 전체 리스트
 	ArrayList<HotelInquiryVO> getBoardList(int startCount, int endCount);
 	
 	//본인 문의글 리스트
-	List<HotelInquiryVO> getMyList(String mid);
+	ArrayList<HotelInquiryVO> getMyList(String mid, int startCount, int endCount);
 }
 

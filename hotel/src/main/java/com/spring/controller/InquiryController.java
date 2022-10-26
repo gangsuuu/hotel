@@ -205,10 +205,20 @@ public class InquiryController {
 	 * inquiry_my_list.do 호출 : 문의글 전체 리스트
 	 */
 	@RequestMapping(value="/inquiry_my_list.do", method=RequestMethod.GET)
-	public ModelAndView inquiry_my_list(String mid) {
+	public ModelAndView inquiry_my_list(String rpage, HttpSession session) {
 		ModelAndView mv = new ModelAndView();
-		ArrayList<HotelInquiryVO> mlist = (ArrayList<HotelInquiryVO>)inquiryService.getMyList(mid);
+		SessionVO svo = (SessionVO)session.getAttribute("svo");
+		
+		//System.out.println("1111111"+svo.getMid());
+		
+		Map<String, Integer> param = pageService.getMyPageResult(rpage, "myinquiry", inquiryService,svo.getMid());
+		ArrayList<HotelInquiryVO> mlist = (ArrayList<HotelInquiryVO>)inquiryService.getMyList(svo.getMid(), param.get("startCount"), param.get("endCount"));
+		
 		mv.addObject("mlist", mlist);
+		mv.addObject("mid", svo.getMid());
+		mv.addObject("dbCount", param.get("dbCount"));
+		mv.addObject("pageSize", param.get("pageSize"));
+		mv.addObject("rpage", param.get("rpage"));	
 		mv.setViewName("/inquiry/inquiry_my_list");
 		
 		return mv;

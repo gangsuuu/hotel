@@ -30,7 +30,7 @@
 	</select>
 	
 	<!-- inquiry mylist -->
-	<select id="mylist" parameterType="java.lang.String" resultType="com.hotel.vo.HotelInquiryVO">
+	<select id="mylist" parameterType="com.hotel.vo.HotelSearchVO" resultType="com.hotel.vo.HotelInquiryVO">
 	
 		SELECT RNO, IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID, RCOUNT FROM
 			(SELECT ROWNUM RNO, IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID, rcount FROM
@@ -41,9 +41,10 @@
 					)
 					GROUP BY IID, HOTELNAME, CATEGORY, TITLE, SECRET, SECRETNUM, CONTENT, IDATE, MID
 					order by idate desc
-				)      
+				)   
+				WHERE MID=#{mid} 
 			) 
-		WHERE MID=#{MID} 
+			WHERE rno between #{start} and #{end}
 	
 	</select>
 	
@@ -121,6 +122,13 @@
 				 where rcount=0
 			</otherwise>	
 		</choose>
+		
+	</select>
+	
+	<!-- inquiry mycount -->
+	<select id="mycount" parameterType="java.lang.String" resultType="int">
+		
+		SELECT count(*) FROM HOTEL_INQUIRY WHERE MID=#{mid} 
 		
 	</select>
 	

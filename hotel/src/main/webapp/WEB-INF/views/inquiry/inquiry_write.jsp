@@ -115,6 +115,8 @@
 				   font-size:17px; font-weight: bold;}
 .ast {color:red;}
 .selector {word-spacing: 10px;}
+.content_list_two{ margin-top: -25px; font-weight: 500; margin-left: 10px; height: 20px; display: block; align-items: center; font-size: 14px; color:var(--hub-font);}
+
 </style>
 
 </head>
@@ -135,6 +137,7 @@
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list">인근명소</a></li>
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/notice_list.do" class="content_list">공지사항</a></li>
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_list.do" class="content_list content_selected">고객센터</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_my_list.do?mid=${sessionScope.svo.mid }" class="content_list_two"> - 내문의함</a></li>
 	              </ul>
 			 </div>
 		 </div>		
@@ -144,7 +147,7 @@
 	<!---------------------------------------------->	
 		<div class="contents" id="contents">
 			<form name="inquireWriteForm" id="inquireForm" method="POST" enctype="multipart/form-data" action="inquiry_write_check.do">
-			${ svo.mid }
+			<%-- ${ svo.mid } --%>
 				<input type="hidden" name="mid" value="${ svo.mid }">
 
 				<div class="ctnInquires ctnCtUs">

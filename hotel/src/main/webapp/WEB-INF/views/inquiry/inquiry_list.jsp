@@ -11,11 +11,9 @@
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
-<script>
-</script>
 <script>
 	$(document).ready(function(){
 		//페이징 처리
@@ -129,6 +127,17 @@ background: red;
 .tit { color: rgb(88,88,88); font-family: 나눔명조OTF; font-size:26px; margin-top:0; margin-bottom:10px;}
 .tit1 { color: rgb(88,88,88); font-family: 나눔명조OTF; font-size:26px; margin-top:30px; margin-bottom:10px;}
 #linewrite { margin-bottom: 5px; }
+#ex1 { text-align:center; }
+#ex3 { text-align:center; }
+#modal_delete { background-color: white; font-size: 16px; color: rgb(58,49,37); font-weight: 800; }
+#passCheck{background: none; border: none; font-size: 15px; font-weight: 700; margin-left: 5px; margin-right: 3px;}
+#passCheckText {margin-bottom: 15px; font-size: 17px; text-align: center; margin-top: 7px;}
+.modal {text-align: center; height: 200px;}
+#ex2 img {margin-top: 3px;}
+#ex2 a {margin-top: 8px;}
+#cancel {color: black; font-weight: 600;}
+#ex3 p {margin-top: 10px; font-size: 19px;}
+
 
 /**************** 추가 ***************/
 #btnInquiry {
@@ -193,6 +202,7 @@ outline: none;
 #nokeyword { margin-bottom: 12px; font-size:18px; }
 #solution { margin-right: 240px; }
 #solution2 { text-align: left; margin-left: 333px; margin-bottom: 40px; }
+.content_list_two{ margin-top: -25px; font-weight: 500; margin-left: 10px; height: 20px; display: block; align-items: center; font-size: 14px; color:var(--hub-font);}
 
 /****		경수추가목록		******/
 [alt="shillastay"]{
@@ -233,9 +243,6 @@ position: relative;
 			</div>	
 		</div> --%>
 
-	<!---------------------------------------------->
-	<!--------------- Content ---------------------->
-	<!---------------------------------------------->
 	<div class="content">
 		<div class="content_lists">
 			 <div class="content_inmenu">
@@ -245,9 +252,14 @@ position: relative;
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list">인근명소</a></li>
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/notice_list.do" class="content_list">공지사항</a></li>
 		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_list.do" class="content_list content_selected">고객센터</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_my_list.do?mid=${sessionScope.svo.mid }" class="content_list_two"> - 내문의함</a></li>
 	              </ul>
 			 </div>
-		 </div>				
+		 </div>	
+		 			
+	<!---------------------------------------------->
+	<!--------------- Content ---------------------->
+	<!---------------------------------------------->
 		<div class="contents" id="contents">
 			<div class="ctnInquires ctnCtUs">
 				<div class="location">
@@ -388,6 +400,7 @@ position: relative;
 		</div>
 		
 	</div>
+	
 	<!-- Footer Include -->
 	<%@ include file="../footer.jsp" %>
 	<script>
