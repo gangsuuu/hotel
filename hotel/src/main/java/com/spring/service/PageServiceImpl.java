@@ -11,9 +11,21 @@ public class PageServiceImpl {
 
 	@Autowired
 	private InquiryServiceImpl inquiryService;
+	
 	@Autowired
 	private NoticeServiceImpl noticeService;
 
+	/***조진희*****/
+	
+	@Autowired
+	private BasketServiceImpl basketService;
+	
+	@Autowired
+	private BookServiceImpl bookService;
+	
+	@Autowired
+	private MyroomServiceImpl myroomService; 
+	
 	
 	/**
 	 * 페이징 처리
@@ -45,6 +57,12 @@ public class PageServiceImpl {
 			vo.setRcount(1);
 			inquiryService = (InquiryServiceImpl)service;
 			dbCount = inquiryService.getTotalCount(vo);
+		}else if(serviceName.equals("basket")) {
+			basketService = (BasketServiceImpl)service;
+			dbCount = basketService.getTotalCount();
+		}else if(serviceName.equals("book")) {
+			bookService = (BookServiceImpl)service;
+			dbCount = bookService.getTotalCount();
 		}
 				
 		//총 페이지 수 계산
@@ -137,6 +155,60 @@ public class PageServiceImpl {
 		
 		return param;
 	}
+	
+	
+	/******* 조진희 ***********/
+	
+	
+	/**
+	 * 페이징 처리
+	 */
+	public Map<String, Integer> getPageResult(String rpage, String serviceName, Object service,String mid) {
+		Map<String, Integer> param = new HashMap<String, Integer>();
+		
+		//페이징 처리 - startCount, endCount 구하기
+		int startCount = 0;
+		int endCount = 0;
+		int pageSize = 4;	//한페이지당 게시물 수
+		int reqPage = 1;	//요청페이지	
+		int pageCount = 1;	//전체 페이지 수
+		int dbCount = 0;	//DB에서 가져온 전체 행수
+	
+		if(serviceName.equals("myroom")) {
+			myroomService = (MyroomServiceImpl)service;
+			dbCount = myroomService.getTotalCount(mid);
+		}
+		
+		//총 페이지 수 계산
+		if(dbCount % pageSize == 0){
+			pageCount = dbCount/pageSize;
+		}else{
+			pageCount = dbCount/pageSize+1;
+		}
+		
+		//요청 페이지 계산
+		if(rpage != null){
+			reqPage = Integer.parseInt(rpage);
+			startCount = (reqPage-1) * pageSize+1;
+			endCount = reqPage *pageSize;
+		}else{
+			startCount = 1;
+			endCount = pageSize;
+		}
+		
+		//리턴타입인 map에 데이터 추가
+		param.put("startCount", startCount);
+		param.put("endCount", endCount);
+		param.put("dbCount", dbCount);
+		param.put("pageSize", pageSize);
+		param.put("rpage", reqPage);
+		param.put("pageCount", pageCount);
+		
+		return param;
+		
+	}
+	
+	
 	
 }
 

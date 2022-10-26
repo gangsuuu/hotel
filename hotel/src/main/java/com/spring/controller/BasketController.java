@@ -1,6 +1,6 @@
 package com.spring.controller;
 
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.spring.service.BasketService;
 import com.spring.service.BasketServiceImpl;
 import com.spring.service.FileServiceImpl;
+import com.spring.service.PageServiceImpl;
 //import com.hotel.service.PageServiceImpl;
 import com.hotel.vo.BasketVO;
 
@@ -29,25 +30,16 @@ public class BasketController {
 	@Autowired
 	private FileServiceImpl fileService;
 	
-	//@Autowired PageServiceImpl pageService;
+	@Autowired 
+	private PageServiceImpl pageService;
 	
-	/*
-	@RequestMapping(value="/delete_result.do",method=RequestMethod.POST)
-	public ModelAndView delete_result(String bnum) {
-		ModelAndView mv=new ModelAndView();
-		
-		//basketService.getDelete(bnum);
-		mv.addObject("bnum",bnum);
-		mv.setViewName("/main");
-		
-		return mv;
-	}
-	*/
+	
 	@RequestMapping(value="/delete_result.do",method=RequestMethod.POST)
 	public ModelAndView delete_result(BasketVO vo,String bsfile,HttpServletRequest request) throws Exception{
-		ModelAndView mv=new ModelAndView();
-		//System.out.println(bsfile);
-		  int result=basketService.getDelete(vo.getBid());
+		  ModelAndView mv=new ModelAndView();
+		  for(String bm : vo.getAllbid()) {
+		  }
+		  int result=basketService.getDelete(vo);
 		  fileService.fileDelete(bsfile, request);
 		  if(result==1) {
 			mv.addObject("result","delete_ok");
@@ -59,9 +51,14 @@ public class BasketController {
 	
 	
 	@RequestMapping(value="/delete.do",method=RequestMethod.GET)
-	  public ModelAndView delete_list() { 
+	  public ModelAndView delete_list(String rpage) { 
 		ModelAndView mv=new ModelAndView();
-		ArrayList<BasketVO> blist=(ArrayList<BasketVO>)basketService.getList();
+		
+		Map<String, Integer> param = pageService.getPageResult(rpage, "basket", basketService);
+		ArrayList<BasketVO> blist=(ArrayList<BasketVO>)basketService.getList(param.get("startCount"), param.get("endCount"));
+		mv.addObject("dbCount", param.get("dbCount"));
+		mv.addObject("rpage", param.get("rpage"));
+		mv.addObject("pageSize", param.get("pageSize"));
 		mv.addObject("blist", blist);
 		mv.setViewName("/basket/delete");
 		return mv; 
@@ -76,9 +73,14 @@ public class BasketController {
 	
 	
 	@RequestMapping(value="/list.do", method=RequestMethod.GET)
-	public ModelAndView basket_list(){
+	public ModelAndView basket_list(String rpage){
 		ModelAndView mv = new ModelAndView();
-		ArrayList<BasketVO> blist = (ArrayList<BasketVO>)basketService.getList();
+		Map<String, Integer> param = pageService.getPageResult(rpage, "basket", basketService);
+		
+		ArrayList<BasketVO> blist=(ArrayList<BasketVO>)basketService.getList(param.get("startCount"), param.get("endCount"));
+		mv.addObject("dbCount", param.get("dbCount"));
+		mv.addObject("rpage", param.get("rpage"));
+		mv.addObject("pageSize", param.get("pageSize"));
 		mv.addObject("blist", blist);
 		mv.setViewName("/basket/list");
 		return mv;

@@ -7,7 +7,8 @@ import com.hotel.vo.MyroomVO;
 
 public interface MyroomService {
 	
-	List<MyroomVO> getSelect(String mid);
-	int getmyroomDelete(List<String> booknum);
-
+	List<MyroomVO> getSelect(String mid,int startCount, int endCount);
+	
+	int getmyroomDelete(MyroomVO vo);
+	int getTotalCount(String mid);
 }

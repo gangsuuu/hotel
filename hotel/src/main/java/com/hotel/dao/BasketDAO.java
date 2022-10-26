@@ -22,15 +22,25 @@ public class BasketDAO extends DBConn{
 	}
 	
 	
-	public List<BasketVO> selectAll(){ 
+	public List<BasketVO> selectAll(int startCount, int endCount){ 
 		
-		return sqlSession.selectList(namespace+".selectAll"); 
+		Map<String, Integer> param = new HashMap<String, Integer>();
+		param.put("start", startCount);	
+		param.put("end", endCount);
+		return sqlSession.selectList(namespace+".selectAll",param); 
 		
 	}
 	
 	
-	public int delete(String bid) {
-		return sqlSession.delete(namespace+".delete",bid);
+	public int delete(BasketVO vo) {
+		int count=0;
+		for(String str :vo.getAllbid() ) {
+			Map<String,String> param=new HashMap<String, String>();
+			param.put("bid", str);
+			count=sqlSession.delete(namespace+".delete",param);
+		}
+		
+		return count;
 	}
 	
 	public int insert(BasketVO vo) {

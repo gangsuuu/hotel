@@ -3,94 +3,60 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
 <!DOCTYPE html>
 <html>
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.js"></script> 
 <head>
 <meta charset="UTF-8">
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
- 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-
- 
- 	<script type="text/javascript">    
- 	$(document).ready(function () {            
- 		$.datepicker.setDefaults($.datepicker.regional['ko']);             
- 		$( ".sdate" ).datepicker({                 
- 			changeMonth: true,                  
- 			changeYear: true,                 
- 			nextText: '다음 달',                 
- 			prevText: '이전 달',                  
- 			dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],                 
- 			dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],                  
- 			monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
- 			monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
- 			dateFormat: "yymmdd",                 minDate: 0,                       
- 			// 선택할수있는 최소날짜, ( 0 : 오늘 이후 날짜 선택 가능)                 
- 			onClose: function( selectedDate ) {                          
- 				//시작일(startDate) datepicker가 닫힐때                      
- 				//종료일(endDate)의 선택할수있는 최소 날짜(minDate)를 선택한 시작일로 지정                     
- 				$(this).datepicker( "option", "minDate", selectedDate );                 
- 				}                 
- 				});            
- 				$( ".edate" ).datepicker({                 
- 					changeMonth: true,                  
- 					changeYear: true,                 
- 					nextText: '다음 달',                 
- 					prevText: '이전 달',                  
- 					dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],                 
- 					dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],                  
- 					monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
- 					monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
- 					dateFormat: "yymmdd",                 minDate: 0,                       
- 					// 선택할수있는 최대날짜, ( 0 : 오늘 이후 날짜 선택 불가)                 
- 					onClose: function( selectedDate ) {                         
- 						// 종료일(endDate) datepicker가 닫힐때                     
- 						// 시작일(startDate)의 선택할수있는 최대 날짜(maxDate)를 선택한 시작일로 지정                     
- 						$(this).datepicker( "option", "maxDate", selectedDate );  
- 						}                 
- 						});        
- 						});
- 	
- 	
- 	</script>
-
- <title>Insert title here</title>
+<script type="text/javascript">
+	function reservation(){
+		var isCheck = $('input[name=bid]:checked').val();
+		if(!isCheck){
+			alert("예약하실 방을 체크해 주세요");
+			window.location.reload(true);
+		}else{
+    		book.action="bookinsert.do";
+    		book.method="post";
+    		book.submit();
+		}
+	}
+</script>
+<title>Insert title here</title>
 </head>
 <body>
-	<form name="" action="" method="">
+<form name="book" action="bookinsert.do" method="POST">
+	<input type="hidden" name=mid value="${svo.mid}"/>
 	<div align="center">
 		<h2>방 목록</h2>
 	<table border="1">
 			<c:choose>
 			<c:when test="${empty basketlist}">
+			
 			<h3>등록된 방이 없습니다.</h3>
 			
 			</c:when>
 			<c:otherwise>
 			<tr>
 				<th width="30px">ROOM PICTURE</th>
+				<th width="150px">ROOM NAME</th>
 				<th width="50px">PRICE</th>
-				<th>ROOM NAME</th>
-				<th>DATE</th>
+				<th>RESERVATION</th>
 			</tr>
 			
 			<c:forEach var="item" items="${basketlist}"> 
 			<tr>
-				
-				<td align="center"><input type="hidden" name="bid" value="${item.bid}">
-				<img src="http://localhost:9000/hotel/resources/upload/${item.bsfile}" width="200"></td>
-				<td>${item.bprice}</td>
+				<td align="center"><img src="http://localhost:9000/hotel/resources/upload/${item.bsfile}" width="200"></a></td>
 				<td>${item.brname}</td>
-				<td>
-					<input type="text" name="radatestart" id="startDate_${item.bid }" class="sdate">
-					<input type="text" name="radateend" id="endDate_${item.bid }" class="edate">
-  				</td>		
+				<td>${item.bprice}</td>
+				<td><input type="radio" name="bid" id="bid" value="${item.bid }"/></td>
 			</tr>
 			</c:forEach>
 			</c:otherwise>
 			</c:choose>
 	</table>
-	<button type="submit">예약</button>
+	<button type="button" onclick="reservation();">예약</button>
+	<button type="button" onclick="location.href='http://localhost:9000/hotel/myroom.do?mid=${svo.mid}'">나의 예약목록 확인</button>
 	<button type="button" onclick="location.href='http://localhost:9000/hotel/main.do'">홈으로</button>
-	</div>
+	
+		</div>
 	</form>
 </body>
 </html>

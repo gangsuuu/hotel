@@ -28,13 +28,14 @@ public class BasketServiceImpl implements BasketService{
 	
 	
 	 @Override 
-	 public List<BasketVO> getList(){ 
-		  return basketDao.selectAll();
+	 public List<BasketVO> getList(int startCount, int endCount){ 
+		  return basketDao.selectAll(startCount, endCount);
 	 }
+	 
 	
 	@Override
-	public int getDelete(String bid) {
-		return basketDao.delete(bid);
+	public int getDelete(BasketVO vo) {
+		return basketDao.delete(vo);
 	}
 	
 	@Override

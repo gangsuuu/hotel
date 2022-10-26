@@ -9,7 +9,25 @@
 		alert("업데이트가 완료되었습니다.");
 		location.href = "main.do";
 	} 
-
+	
+	function update(){
+		var file1=$("#file1").val();
+		var bprice=$("#bprice").val();
+		var brname=$("#brname").val();
+		
+		if(!file1){
+			alert("사진을 업로드 해주세요");
+			return false;
+		}else if(bprice==""){
+			alert("금액을 입력해 주세요");
+			return false;
+		}else if(brname==""){
+			alert("방 이름을 입력해 주세요");
+			return false;
+		}
+		
+		baskdelete_result.submit();
+	}
 
 </script>
 <style>
@@ -48,16 +66,16 @@
 			
 			<tr>
 				
-				<td align="center">	 <input type="file" name="file1">
+				<td align="center">	 <input type="file" name="file1" id="file1">
 				<span id="upload_file">${vo.bfile }</span>
 				</td>
-				<td><input type="text" name="bprice" value="${vo.bprice }"></td>
-				<td><input type="text" name="brname" value="${vo.brname }"/> </td>	
+				<td><input type="text" name="bprice" id="bprice" value="${vo.bprice }"></td>
+				<td><input type="text" name="brname" id="brname" value="${vo.brname }"/> </td>	
 			</tr>
 			</c:otherwise>
 			</c:choose>
 	</table>
-		<button type="submit">수정</button>
+		<button type="button" onclick="update()">수정</button>
 		<button type="button" onclick="location.href='http://localhost:9000/hotel/main.do'">홈으로</button>
 	</form>
 	</div>

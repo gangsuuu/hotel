@@ -10,8 +10,8 @@ public interface BasketService {
 	
 	int getTotalCount();
 	int getInsert(BasketVO vo);
-	List<BasketVO> getList();
-	int getDelete(String bid);
+	List<BasketVO> getList(int startCount, int endCount);
+	int getDelete(BasketVO vo);
 	BasketVO getSelect(String bid);
 	int getUpdate(BasketVO vo);
 	

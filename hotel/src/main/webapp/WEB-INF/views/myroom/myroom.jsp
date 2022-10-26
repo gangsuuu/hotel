@@ -1,50 +1,112 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
+<script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script> 
+<link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/nav.css">
+<link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/form.css">
+<link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/search.css">
+<link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/am-pagination.css">
 <head>
 <meta charset="UTF-8">
+<script>
+$(document).ready(function(){
+		
+		//페이징 리스트 출력
+		var pager = jQuery('#ampaginationsm').pagination({
+		
+		    maxSize: 7,	    		// max page size
+		    totals: '${dbCount}',	// total rows	
+		    page: '${rpage}',		// initial page		
+		    pageSize: '${pageSize}',	// max number items per page
+		
+		    // custom labels		
+		    lastText: '&raquo;&raquo;', 		
+		    firstText: '&laquo;&laquo;',		
+		    prevText: '&laquo;',		
+		    nextText: '&raquo;',
+				     
+		    btnSize:'sm'	// 'sm'  or 'lg'		
+		});
+		
+		//페이징 번호 클릭 시 이벤트 처리
+		jQuery('#ampaginationsm').on('am.pagination.change',function(e){		
+			   jQuery('.showlabelsm').text('The selected page no: '+e.page);
+	           $(location).attr('href', "http://localhost:9000/hotel/delete.do?rpage="+e.page);         
+	    });
+		
+ 	});
+ 	</script>
+<script>
+	$(document).ready(function(){
+		$("#check").click(function(){
+		 	if($('input[name=booknumck]:checked').length==0){
+				alert("예약 취소하실 방을 체크해 주세요");
+				$("#booknumck").focus();				
+			}else{
+				$('input[name=booknumck]:checked').each(function( index ) {
+					  $( this ).val($(this).attr("id"));					  
+				});
+				
+				myroomlist.submit();				
+			}  
+		});
+		
+	});
+		
+</script>
 <title>Insert title here</title>
 </head>
 <body>
+	<form name="myroomlist" action="myroomcancel.do" method="POST">
 	<div align="center">
 		<h2>예약 목록</h2>
 	<table border="1">
 			<c:choose>
-			<c:when test="${empty mlist}">
+			<c:when test="${mlist eq null}">
 			<h3>등록된 방이 없습니다.</h3>
 			
 			</c:when>
 			<c:otherwise>
-			<tr>
-				<th width="30px">USER ID</th>
-				<th width="150px">ROOM NAME</th>
-				<th width="150px">CHECK IN DATE</th>
-				<th width="150px">CHECK OUT DATE</th>
-				<th width="120px">PRICE</th>
-				<th width="120px">예약번호</th>
-				<th width="80px">취소</th>
-			</tr>
-			
 			<c:forEach var="item" items="${mlist}"> 
-			<tr>
-				<td align="center">${item.mid}</td>
-				<td align="center">${item.brname}</td>
-				<td align="center">${item.radatestart}일</td>
-				<td align="center">${item.radateend}일</td>
-				<td align="center">${item.price}원</td>
-				<td align="center">${item.booknum}</td>
-				<td align="center"><input type="checkbox" name="mid" id="checkon" value="${item.mid}">
-			</tr>
-			</c:forEach>
+			<fmt:parseDate value="${item.radatestart}" var="radatestart" pattern="yyyyMMdd" />
+			<fmt:parseDate value="${item.radateend}" var="radateend" pattern="yyyyMMdd" />
+            <div class="tray" onclick="">
+                <div class="card" >
+                    <img src="http://localhost:9000/hotel/resources/upload/${item.bsfile}">
+                   
+                </div>
+                <div class="img_desc">
+                    <div>
+                        <div class="hotel_name">${item.brname}</div>
+                        
+                        <p><fmt:formatDate value="${radatestart}" pattern="yyyy.MM.dd" /> ~ <fmt:formatDate value="${radateend}" pattern="yyyy.MM.dd" /></p><br>
+                       
+                    </div>
+
+                    <div class="bottom">
+                        <!-- <div class="bottom_left">
+                            평점 4.1 (28)
+                        </div> -->
+                        <div class="bottom_right">
+                            ₩<fmt:formatNumber value="${item.price}" pattern="#,###" />
+                            <input type="checkbox" name="booknumck" id="${item.booknum}" value=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </c:forEach>
 			</c:otherwise>
 			</c:choose>
 	</table>
-	<button type="button" onclick="check()">예약 취소</button>
-	<button type="button" onclick="location.href='http://localhost:9000/hotel/myroom.do?mid=${svo.mid}'">나의 예약목록 확인</button>
-	<button type="button" onclick="location.href='http://localhost:9000/hotel/theshilla.do'">홈으로</button>
+				<div id="ampaginationsm"></div>
+	<button type="button" id="check">예약취소</button>
+	<button type="button" onclick="location.href='http://localhost:9000/hotel/book.do'">홈으로</button>
 	
 		</div>
+		</form>
 </body>
 </html>

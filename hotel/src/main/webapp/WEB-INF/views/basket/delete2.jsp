@@ -4,29 +4,14 @@
 <html>
 <script src="<%=request.getContextPath()%>/resources/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-	
-	function deleteFunction(){
-		var roomlist = document.getElementsByName("bid").length;
-		
-		 var bidlist= new Array();
-		
-		for (var i=0; i<roomlist; i++) {
-            if (document.getElementsByName("bid")[i].checked == true) {
-            	bidlist.push(document.getElementsByName("bid")[i].value);
-            }
-        }
-		$("bidlist");
-		alert(bidlist);
-		document.basketForm.action = "<%=request.getContextPath()%>/delete_result.do";
-		document.basketForm.method = "post";
-		document.basketForm.submit();
-			
-	}
+	 let delete_result='${result}';
+	if(delete_result=="delete_ok"){
+		alert("삭제가 완료되었습니다.");
+		location.href = "main.do";
+	} 
 
 
 </script>
-
-
 <head>
 <meta charset="UTF-8">
 <title>예약된 방 삭제하기</title>
@@ -34,7 +19,7 @@
 <body>
 	<div align="center">
 	<h2>호텔 삭제하기</h2>
-	<!--  <form name="baskdelete_result" action="delete_result.do" method="post"> -->
+	<form name="baskdelete_result" action="delete_result.do" method="post">
 	<table border="1">
 			<c:choose>
 			<c:when test="${empty blist}">
@@ -46,7 +31,6 @@
 			<tr>
 				<th width="30px">ROOM PICTURE</th>
 				<th width="50px">PRICE</th>
-				<th width="20px">DATE</th>
 				<th>ROOM NAME</th>
 				<th>선택</th>
 			</tr>
@@ -55,17 +39,22 @@
 				
 				<td align="center">	<img src="http://localhost:9000/hotel/resources/upload/${item.bsfile}" width="200"></td>
 				<td>${item.bprice}</td>
-				<td></td>
-				<td>${item.brname}</td>	
-				<td><input type="checkbox" name="bid" value="${item.bid}"/></td>
+				<td><input type="hidden" name="bsfile" value="${item.bsfile}"/> ${item.brname}</td>	
+				<td><input type="radio" name="bid" id="bid" value="${item.bid}"/></td>
 			</tr>
 			</c:forEach>
 			</c:otherwise>
 			</c:choose>
 	</table>
-	<button type="button" onclick="deleteFunction()">삭제</button>
-	<button type="button" onclick="location.href='http://localhost:9000/hotel/main.do'">홈으로</button>
-	<!--  </form> -->
+	<c:choose>
+		<c:when test="${empty blist}">
+		</c:when>
+		<c:otherwise>
+		<button type="submit">삭제</button>
+		</c:otherwise>
+	</c:choose>
+		<button type="button" onclick="location.href='http://localhost:9000/hotel/main.do'">홈으로</button>
+	</form>
 	</div>
 	
 </body>

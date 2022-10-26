@@ -15,21 +15,19 @@ import com.spring.service.BookServiceImpl;
 import com.spring.service.MemberServiceImpl;
 import com.hotel.vo.BasketVO;
 import com.hotel.vo.BookVO;
-import com.hotel.vo.HotelMemberVO;
 import com.hotel.vo.SessionVO;
 
 @Controller
 public class BookController {
 	
-	@Autowired
-	private MemberServiceImpl memberService;
+	
 	@Autowired 
 	private BasketServiceImpl basketService;
 	@Autowired
 	private BookServiceImpl bookService;
 	
 	
-	@RequestMapping(value="/bookinsert.do",method = RequestMethod.POST)
+	@RequestMapping(value="/bookinsert.do",method = RequestMethod.GET)
 	public ModelAndView bookinsert(String bid) {
 		ModelAndView mv=new ModelAndView();
 		BasketVO vo=basketService.getSelect(bid);
@@ -55,7 +53,7 @@ public class BookController {
 		return mv;
 	}
 	
-
+	
 	
 	
 }

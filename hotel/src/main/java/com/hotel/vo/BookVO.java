@@ -2,7 +2,16 @@ package com.hotel.vo;
 
 public class BookVO {
 	String mid,bid,radatestart,radateend,price,booknum;
+	int rno;
+	
 
+	public int getRno() {
+		return rno;
+	}
+
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
 
 	public String getBooknum() {
 		return booknum;

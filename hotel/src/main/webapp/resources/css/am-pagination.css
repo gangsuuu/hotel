@@ -61,8 +61,8 @@
 .am-pagination-default > .active > span:focus {
   z-index: 3;
   color: #fff;
-  background-color: rgb(233,210,158);
-  border-color: rgb(233,210,158);
+  background-color: #5eb95e;
+  border-color: #5eb95e;
   cursor: default;
 }
 .am-pagination-default > .disabled > span,

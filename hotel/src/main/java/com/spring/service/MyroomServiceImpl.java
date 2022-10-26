@@ -14,14 +14,21 @@ public class MyroomServiceImpl implements MyroomService{
 	MyroomDAO myroomDao;
 
 	@Override
-	public List<MyroomVO> getSelect(String mid) {
-		
-		return myroomDao.selectAll(mid);
+	public List<MyroomVO> getSelect(String mid,int startCount,int endCount) {
+		return myroomDao.selectAll(mid,startCount,endCount);
 	}
 
 	@Override
-	public int getmyroomDelete(List<String> booknum) {
-		return 0;
+	public int getTotalCount(String mid) {
+		return myroomDao.totalCount(mid);
 	}
+	
+	@Override
+	public int getmyroomDelete(MyroomVO vo) {
+		return myroomDao.myroomdelete(vo);
+	}
+
+
+	
 
 }

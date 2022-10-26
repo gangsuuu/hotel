@@ -8,7 +8,24 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 public class BasketVO {
 	
 	String bid,brname,bprice,bfile,bsfile;
-	
+	String[] allbid;
+	int rno;
+
+	public int getRno() {
+		return rno;
+	}
+
+	public void setRno(int rno) {
+		this.rno = rno;
+	}
+
+	public String[] getAllbid() {
+		return allbid;
+	}
+
+	public void setAllbid(String[] allbid) {
+		this.allbid = allbid;
+	}
 
 	CommonsMultipartFile file1;
 	

@@ -14,4 +14,10 @@ public class BookServiceImpl implements BookService{
 		return bookDao.bookinsert(vo);
 	}
 
+	@Override
+	public int getTotalCount() {
+		
+		return bookDao.totalCount();
+	}
+
 }

@@ -11,6 +11,10 @@ public class BookDAO extends DBConn{
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
+	public int totalCount() {
+		return sqlSession.selectOne("mapper.book.totalcount");
+	}
+	
 	public int bookinsert(BookVO vo) {
 		
 		return sqlSession.insert(namespace+".insert",vo);
