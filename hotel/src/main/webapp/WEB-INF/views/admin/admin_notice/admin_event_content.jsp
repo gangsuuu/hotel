@@ -57,7 +57,6 @@ function delchk(nid){
 </head>
 <body>
 <%@ include file="../../header.jsp" %>
-<div class="noticepage">
 <div class="common_wrap_yy" style="top: 0px;">
 	<div class="common_inner">
 		<div class="location" id="lnb"><ul>
@@ -68,6 +67,7 @@ function delchk(nid){
 		</div>
 	</div>
 </div>	
+<div class="noticepage">
 
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->

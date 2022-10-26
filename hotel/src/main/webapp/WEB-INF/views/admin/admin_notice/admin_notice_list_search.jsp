@@ -48,7 +48,6 @@
 </head>
 <body>
 <%@ include file="../../header.jsp" %>
-<div class="noticepage">
 <div class="common_wrap_yy" style="top: 0px;">
 	<div class="common_inner">
 		<div class="location" id="lnb"><ul>
@@ -58,6 +57,7 @@
 		</div>
 	</div>
 </div>	
+<div class="noticepage">
 
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
@@ -110,6 +110,23 @@
 									<th>조회수</th>
 									<th>작성일</th>	
 								</tr>
+								<c:choose>
+								<c:when test="${listSize == 0}">
+									<!-- 게시물 없을 때 출력 -->
+									<tr>
+										<td colspan="4" id="no"> 
+											<img width="20%" src="http://localhost:9000/hotel/resources/img/inquiry/question.jpg">
+											<div id="nokeyword"><strong>"${keyword}"</strong>와(과) 일치하는 검색결과가 없습니다. </div>
+											<div id="solution"> 해결방법 : </div>
+											<ul id="solution2">
+												<li>ㆍ모든 단어의 철자가 정확한지 확인하세요.</li>
+												<li>ㆍ다른 검색어를 사용해 보세요.</li>
+												<li>ㆍ키워드 수를 줄여보세요.</li>
+											</ul>
+										</td>
+									</tr>
+								</c:when>
+								<c:otherwise>
 					                <c:forEach var="vo"  items="${list}">
 								<tr>
 									<td>${vo.rno }</td>
@@ -118,6 +135,8 @@
 									<td>${vo.ndate }</td>
 								</tr>
 								</c:forEach>
+								</c:otherwise>
+						</c:choose>
 								<tr>
 	             					 <td colspan="4"><div id="ampaginationsm"></div></td>
               					</tr>

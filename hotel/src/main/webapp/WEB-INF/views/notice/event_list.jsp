@@ -51,8 +51,12 @@
 </head>
 <body>
 	<%@ include file="../header.jsp" %>
+<<<<<<< HEAD
 <div class="content">
 <div class="common_wrap_yy">
+=======
+<div class="common_wrap_yy" style="top: 0px;">
+>>>>>>> refs/remotes/origin/main
 	<div class="common_inner">
 		<div class="location" id="lnb"><ul>
 		<li><a href="http://localhost:9000/hotel/shillaStay.do">메인페이지</a></li>
@@ -61,6 +65,7 @@
 		</div>
 	</div>
 </div>
+<div class="noticepage">
 
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
