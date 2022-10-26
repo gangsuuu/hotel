@@ -8,10 +8,10 @@
 
 	if(result=="ok"){
 		alert("로그인이 성공하셨습니다");
-		if("${svo.mid}"=="jjh3205"){
-			location.href = "main.do";
+		if("${svo.mid}"=="admin"){
+			location.href = "main.do";//관리자 페이지로 이동
 		}else{
-		location.href = "book.do";
+		location.href = "theshilla.do";
 		}
 	}else if(result=="fail"){
 		alert("아이디를 확인해주시길 바랍니다");
