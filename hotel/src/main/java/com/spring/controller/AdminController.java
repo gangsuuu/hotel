@@ -625,10 +625,11 @@ public class AdminController {
 
 		ModelAndView mv = new ModelAndView();
 		
-		Map<String, Integer> param = pageService.getPageResult(rpage, "notice", noticeService);
+		Map<String, Integer> param = pageService.getNoticeSearchResult(rpage, "event", noticeService, search_option, keyword);
 			
 		ArrayList<NoticeVO> list = noticeService.event_list_search(param.get("startCount"), param.get("endCount"), search_option, keyword);
 		mv.addObject("list", list);
+		mv.addObject("listSize", list.size());
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
 		mv.addObject("rPage", param.get("rPage"));
@@ -651,10 +652,11 @@ public class AdminController {
 			)throws Exception {
 		
 		ModelAndView mv = new ModelAndView();
-		Map<String, Integer> param = pageService.getPageResult(rpage, "notice", noticeService);
+		Map<String, Integer> param = pageService.getNoticeSearchResult(rpage, "notice", noticeService, search_option, keyword);
 		
 		ArrayList<NoticeVO> list = noticeService.notice_list_search(param.get("startCount"), param.get("endCount"), search_option, keyword);
 		mv.addObject("list", list);
+		mv.addObject("listSize", list.size());
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
 		mv.addObject("rPage", param.get("rPage"));
@@ -835,7 +837,7 @@ public class AdminController {
 	ModelAndView admin_event_list(String rpage) {
 		ModelAndView mv = new ModelAndView();
 
-		Map<String, Integer> param = pageService.getPageResult(rpage, "notice", noticeService);
+		Map<String, Integer> param = pageService.getPageResult(rpage, "event", noticeService);
 		
 		ArrayList<NoticeVO> list = noticeService.event_getList(param.get("startCount"), param.get("endCount"));
 		

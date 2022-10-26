@@ -35,8 +35,8 @@
 		
 		//페이징 번호 클릭 시 이벤트 처리
 		jQuery('#ampaginationsm').on('am.pagination.change',function(e){
-			var keyword = "${keyword}"
 			var search = "${search}"
+			var keyword = "${keyword}"
 			if(search == "search"){
 				jQuery('.showlabelsm').text('The selected page no: '+e.page);
 		        $(location).attr('href', "http://localhost:9000/hotel/notice_list_search.do?rpage="+e.page);
@@ -51,7 +51,6 @@
 </head>
 <body>
 <%@ include file="../header.jsp" %>
-<div class="noticepage">
 <div class="common_wrap_yy" style="top: 0px;">
 	<div class="common_inner">
 		<div class="location" id="lnb"><ul>
@@ -61,6 +60,7 @@
 		</div>
 	</div>
 	</div>
+<div class="noticepage">
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
 	<!---------------------------------------------->

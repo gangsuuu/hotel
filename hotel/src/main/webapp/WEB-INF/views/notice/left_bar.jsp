@@ -15,7 +15,7 @@
 			 <div class="menu_list">
 			 	<div class="menu_list_inner">
 			 		<div id="menu_name">
-			 		<h3 class="menu_list_name">공지사항</h3>
+			 		<h2 class="menu_list_name">공지사항</h3>
 			 		</div>
 			 		<ul class="menu">
 			 			<li class="m1">
