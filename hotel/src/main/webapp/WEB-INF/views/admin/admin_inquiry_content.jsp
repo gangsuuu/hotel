@@ -15,35 +15,27 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/admin_inquiry.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/admin_inquiry_javascript.js"></script>
-<script>
-	var hotelname = "theshilla";
-</script>
 </head>
 <body>
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
 
+	<%@ include file="../header.jsp" %>
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
 	<!---------------------------------------------->
 	
-	<div class="contain">
-		<div class="container">
-			<div class="InAreaMenuBar">
-				<div class="MenuBar">
-					<h2 class="tit">고객문의</h2>
-					<img src="http://localhost:9000/hotel/resources/img/inquiry/gline.jpg">
-						<ul class="menu">
-							<li class="">
-								<a href="admin_inquiry_list.do" class="on"><span>전체 문의글</span><img src="http://localhost:9000/hotel/resources/img/inquiry/gline1.jpg"></a>
-							</li>
-							<li class="">
-								<a href="admin_hotel_categori.do"><span>관리자홈</span></a>
-							</li>		
-						</ul>
-				</div>
-			</div>	
-		</div>
+	<div class="content">
+		<div class="content_lists">
+			 <div class="content_inmenu">
+				  <h2 class="suject">고객서비스</h2>
+	              <ul>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/introhotel.do" class="content_list">호텔안내</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list">인근명소</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/notice_list.do" class="content_list">공지사항</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_list.do" class="content_list content_selected">고객센터</a></li>
+		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_my_list.do?mid=${sessionScope.svo.mid }" class="content_list_two"> - 내문의함</a></li>
+	              </ul>
+			 </div>
+		 </div>		
 		
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->

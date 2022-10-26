@@ -380,7 +380,6 @@ position: relative;
 				 					<a rel="modal:close" >취소</a>
 								</div>							
 					
-					<a href="inquiry_write.do"><button type="button" id="btnInquiry">문의하기</button></a>
 				
 					<form name="list_search" action="inquiry_list_search.do" method="post" id="search" >
 						<span id="searchspan">검색어</span>
@@ -405,7 +404,7 @@ position: relative;
 	<%@ include file="../footer.jsp" %>
 	<script>
  	$("[data-nav=service]").css("display","block");
- 	$("[data-nav=service]").children().eq(2).children().first().css("color","white");
+ 	$("[data-nav=service]").children().eq(3).children().first().css("color","white");
  	</script>
 </body>
 </html>

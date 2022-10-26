@@ -9,16 +9,11 @@
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/notice.css">
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/am-pagination.css">
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
-<<<<<<< HEAD
 <script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
-=======
 <script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
->>>>>>> branch 'main' of https://github.com/gangsuuu/hotel.git
-<script>
-	var hotelname = "theshilla";
-</script>
 <script>
 	$(document).ready(function(){
 		
@@ -57,8 +52,8 @@
 </head>
 <body>
 	<%@ include file="../header.jsp" %>
-<div class="noticepage">
-<div class="common_wrap_yy" style="top: 0px;">
+<div class="content">
+<div class="common_wrap_yy">
 	<div class="common_inner">
 		<div class="location" id="lnb"><ul>
 		<li><a href="http://localhost:9000/hotel/shillaStay.do">메인페이지</a></li>
@@ -73,7 +68,18 @@
 	<!---------------------------------------------->
 		
 			<!-- 좌측 메뉴 -->
-			<%@ include file="./left_bar.jsp" %>
+			<div class="content_lists">
+				 <div class="content_inmenu">
+					  <h2 class="suject">고객서비스</h2>
+		              <ul>
+			              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/introhotel.do" class="content_list">호텔안내</a></li>
+			              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list">인근명소</a></li>
+			              <li id="content_list_one"><a href="http://localhost:9000/hotel/notice_list.do" class="content_list content_selected">공지사항</a></li>
+			              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_list.do" class="content_list">고객센터</a></li>
+			              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_my_list.do?mid=${sessionScope.svo.mid }" class="content_list_two"> - 내문의함</a></li>
+		              </ul>
+				 </div>
+			 </div>	
 			 <!-- 좌측 메뉴 end-->
 		
 			<!-- contents -->
@@ -86,26 +92,7 @@
 				<span>항상 즐거움이 있는 곳! 신라 호텔</span>
 					</div>
 					<div class="contents_area">
-					<!-- 검색 -->
-					<form name="form1" method="get" action="notice_list_search.do" id="search">
-					<div class="search">
-						<span>SEARCH</span>
-						<span class="select">
-							
-							<select name="search_option">
-							<option value="ntitle"
-							<c:if test="${map.search_option == 'ntitle'}">selected</c:if>>제목
-							</option>
-							
-							<option value="ncontent" 
-							<c:if test="${map.search_option == 'ncontent'}">selected</c:if>>내용
-							</option>
-							</select>
-							<input name="keyword" value="${map.keyword}">
-    						<button type="submit">조회</button>
-					</div>
-					</form>
-					<!-- //검색 -->
+					
 
 					<!-- 일반게시판_List -->
 						<table class="contents_table">
@@ -132,10 +119,33 @@
 						</div>
 					</div>
 					<!-- //일반게시판_List -->
+					<!-- 검색 -->
+					<form name="form1" method="get" action="notice_list_search.do" id="search">
+					<div class="search">
+						<span>SEARCH</span>
+							
+							<select name="search_option">
+							<option value="ntitle"
+							<c:if test="${map.search_option == 'ntitle'}">selected</c:if>>제목
+							</option>
+							
+							<option value="ncontent" 
+							<c:if test="${map.search_option == 'ncontent'}">selected</c:if>>내용
+							</option>
+							</select>
+							<input name="keyword" value="${map.keyword}">
+    						<button type="submit">조회</button>
+					</div>
+					</form>
+					<!-- //검색 -->
 					
 	</div>
 	</div>
 	<%@ include file="../footer.jsp" %>	
+	<script>
+ 	$("[data-nav=service]").css("display","block");
+ 	$("[data-nav=service]").children().eq(3).children().first().css("color","white");
+ 	</script>
 	
 </body>
 </html>
