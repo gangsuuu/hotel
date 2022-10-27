@@ -96,8 +96,11 @@ window.initMap = function () {
 			<section class="hotel-index-reservation">
 			
 			</section>
+			
+			
 			<section class="hotel-index-event">
-					<table>
+				<%-- 
+				<table>
 						<td colspan="4">
 						</td>
 						<tr>
@@ -112,10 +115,13 @@ window.initMap = function () {
 							<td><a href="notice_content.do?nid=${noticeVO.nid }">${noticeVO.ntitle }</a></td>
 							<td>${noticeVO.nhits }</td>
 							<td>${noticeVO.ndate }</td>
-							</tr>	
+							</tSr>	
 					</table>
 				</c:forEach>
+				 --%>
 			</section>
+			
+			
 			<section class="hotel-index-map-container">
 				<div class="hotel-index-map-info">
 					<h2>신라스테이 광화문 소개</h2>
@@ -132,7 +138,6 @@ window.initMap = function () {
 				<div class="hotel-index-map" id="index-map">
 				</div>
 			</section>
-			
 			<section class="hotel-index-shillawars">
 				<div class="hotel-index-shillawars-back">
 					<div class="hotel-index-shillawars-inner">
@@ -298,15 +303,16 @@ xhr.onreadystatechange = function () {
         }
         
         
-        
         weathertext += "</div>"
         if(date.getHours() < 10){
-        	hour = "0"+date.getHours()
+        	hours = "0"+date.getHours()
+        }else{
+        	hours = date.getHours()
         }
         if(minutes < 10){
         	minutes = "0"+date.getMinutes()
         }
-        weathertext += "<p>"+year+"년 "+month+"월"+day+"일 "+hour+" : "+minutes+"</p>" 
+        weathertext += "<p>"+year+"년 "+month+"월"+day+"일 "+hours+" : "+minutes+"</p>" 
         $(".hotel-index-weather-content").append(weathertext);
     }
 	};

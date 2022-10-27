@@ -55,12 +55,12 @@ ul, li, ol {
     box-sizing: border-box;
 }
 .sub_title {
-    padding-top: 0px;
     text-align: center;
+    margin-bottom: 30px;
 }
 .sub_title h2 {
     position: relative;
-    padding: 60px 0 22px;
+    padding: 0px 0 10px;
     font-size: 28px;
     line-height: 100%;
     font-weight: normal;
@@ -130,11 +130,11 @@ ul.menu {
 
 .contents_area {
 	overflow: hidden;
-    width: 866px;
-    padding-top: 40px;
+    width: 850px;
+    padding-top: 10px;
     position: relative;
     min-width: 180px;
-    color: #fff;
+    color: rgb(125,120,115);
     box-sizing: border-box;  
 }
 
@@ -147,13 +147,21 @@ text-align: right;
 	overflow: hidden;
 	height: auto;
 	margin: 0;
+	border-collapse: collapse;
 }
 .contents_table tr{
 	margin:0 auto;
 }
+.contents_table tr:nth-child(2) th{
+	border-bottom:1px solid #d8d8d8;
+}
+.contents_table tr:nth-child(2) th:nth-child(3),.contents_table tr:nth-child(2) th:nth-child(2){
+	border:1px solid #d8d8d8;	
+}
 .contents_table tr th:not(:nth-child(2)) {
 	width : 180px;
 }
+
 .contents_table tr th:nth-child(2) {
 	width: 900px;	
 }
@@ -162,7 +170,12 @@ text-align: right;
 	text-align : center;
 }
 .contents_table tr td:nth-child(2) {
-	width: 900px;	
+	width: 600px;
+	padding:0 0 0 20px;	
+	border:1px solid #d8d8d8;
+}
+.contents_table tr td:nth-child(3){
+		border:1px solid #d8d8d8;	
 }
 .contents_table th {
 	background: #ebe7e3;
@@ -176,9 +189,10 @@ text-align: right;
 	margin:0 0 0 10px;
 }
 .contents_table td:not(:nth-child(2)) div{
-
 	text-align : center;
-
+}
+.contents_table tr:last-child td{
+	border:none;
 }
 .contents_table td {
     padding: 14px 0;
@@ -206,8 +220,6 @@ text-align: right;
 .search {
     margin-bottom: 35px;
     padding: 15px 0;
-    border-top: 2px solid #777;
-    border-bottom: 1px solid #d8d8d8;
     font-size: 0;
     text-align: center;
     display: flex;
@@ -265,39 +277,96 @@ text-align: right;
     border:none;
 }
 .boardContent {
-    padding: 35px 0 100px;
-	    position: relative;
-    width: 1100px;
-    margin: 0 auto;
-  
+    width: 850px;
+    border-collapse: collapse;
 }
 
 .boardContent tr{
 	display: table-row;
     vertical-align: inherit;
-    border-color: inherit;
-
+    border-color: #cdcbbe;
+}
+.boardContent tr:first-child{
+	border-top: 1px solid #cdcbbe;
 }
 .boardContent th {
     padding: 14px 10px;
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid #cdcbbe;
     background: #ebe7e3;
     
 }
 .boardContent td {
     padding: 15px 20px;
-          border-bottom: 1px solid #ebe7e3;
+          border-bottom: 1px solid #cdcbbe;
 }
 .boardContent tr:nth-child(3) img {
 	position: center;
 }
 .writeContent {
-    padding: 35px 0 100px 300px;
-	    position: relative;
-    width: 1100px;
-    margin: 0 auto;
+	position: relative;
+    width: 850px;
+    margin: 0px 0;
   
 }
+
+
+
+.admin-notice-write-box{
+	border-collapse: collapse;		
+	margin: 0;
+}
+.admin-notice-write-box tr{
+	border:1px solid #cdcbbe ;
+	border-left:none;
+	border-right:none;
+	width: 850px;	
+}
+.admin-notice-write-box th label{
+}
+.admin-notice-write-box th{
+	text-align: center;
+	width: 130px;
+	height: 40px;
+	border-right: 1px solid #cdcbbe ;
+	background-color: #ebe7e3;
+}
+.admin-notice-write-box tr:last-child th{
+	height: 160px
+}
+.admin-notice-write-option, .admin-notice-write-title, .admin-notice-write-file{
+	width: 700px;
+	padding: 0 20px; 
+}
+
+.admin-notice-write-box input[name=ntitle]{
+	font-size: 16px;
+	border:none;
+}
+
+.admin-notice-write-box input[name=ntitle]:focus, .admin-notice-write-box textarea[name=ncontent]{
+	outline: none;
+}
+.admin-notice-textarea{
+	width: 700px;
+	overflow: auto;
+	height: 160px;
+ 	border:none;
+ 	resize: none;
+}
+
+.img-container{
+	width: 100px;
+	padding: 20px;
+	margin: 0 40px;
+}
+.admin-write-show-img{
+	width: 100px;
+	margin: 0;
+}
+
+
+
+
 .tag_box > .tit {
     height: 100%;
 }
@@ -321,7 +390,7 @@ text-align: right;
     border-bottom: 1px solid #efefef;
     font-size: 12px;
 }
-.clear [id="ntcwrite"]{
+.clear [id="ntcwrite"], textarea[id="ntcwrite"] {
 	margin-left : 20px;
 	margin-top : 10px;
 }
@@ -332,12 +401,10 @@ text-align: right;
 	top : 15px;
 }
 .clear button{
-	margin : 4px;
-	margin-left : 4px;
 	font-size : 15px;
 	text-align: center;
-	height : 22px;
-    width: 65px;
+	height : 27px;
+    width: 73px;
     padding: 2px 0 2px;
     background: #ebe7e3;
     vertical-align: top;
@@ -346,6 +413,17 @@ text-align: right;
     cursor: pointer;
     box-sizing: border-box;
 	float : left;
+	border-radius: 2px;
+	transition: background-color 250ms;
+}
+.clear button:hover{
+	background-color:#cdcbbe;	
+}
+.admin-write-bottons{
+	display: flex;
+	justify-content: right;
+	gap:8px;
+	margin: 7px 0;
 }
 
 

@@ -12,9 +12,6 @@
 <script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <script>
-	var hotelname = "theshilla";
-</script>
-<script>
 	$(document).ready(function(){
 		
 		//페이징 리스트 출력

@@ -785,7 +785,7 @@ public class AdminController {
 		ModelAndView mv = new ModelAndView();
 		
 		NoticeVO vo = noticeService.getContent(nid);
-		
+
 		vo.setNcontent(vo.getNcontent().replace("<br>","\r\n"));
 		
 		mv.addObject("vo",vo);

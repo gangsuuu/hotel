@@ -12,9 +12,6 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/admin_inquiry.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/admin_inquiry_javascript.js"></script>
-<script>
-	var hotelname = "thesilla";
-</script>
 <!-- <script>
 	$(document).ready(function(){
 		$("#btnInquiryUpdate").click(function(){
@@ -48,9 +45,7 @@
 </head>
 <body>
 	<!-- Header Include -->
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
-
+	<%@ include file="../header.jsp" %>
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
 	<!---------------------------------------------->
@@ -213,6 +208,10 @@
 	</form>
 	
 	<!-- Footer Include -->
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
+	<%@ include file="../footer.jsp" %>
+	<script>
+ 	$("[data-nav=service]").css("display","block");
+ 	$("[data-nav=service]").children().eq(3).children().first().css("color","white");
+ 	</script>
 </body>
 </html>
