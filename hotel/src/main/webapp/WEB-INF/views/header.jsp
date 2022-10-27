@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +23,14 @@
 					<img src="http://localhost:9000/hotel/resources/img/public/header-call.png">
 				</div>
 				<div class='header_top_guest theme2_guest'>
+				<c:choose>	
+			<c:when test="${sessionScope.svo == null}">	
 					<a class='header_login' href='http://localhost:9000/hotel/login.do'>로그인</a>
+					</c:when>
+			<c:otherwise> 
+					<a class='header_login' href='http://localhost:9000/hotel/login.do'>로그아웃</a>
+					</c:otherwise>
+			</c:choose>
 					<a href='#'>예약확인</a>
 					<a href='http://localhost:9000/hotel/admin_inquiry_list.do'>admin</a>
 				</div>
