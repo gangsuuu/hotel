@@ -49,6 +49,7 @@
     .btn{
     cursor: pointer;
     }
+
      /*****************************************
                     header
      ****************************************/
@@ -115,9 +116,9 @@
 	    vertical-align: bottom;
 	}
 	.header_categori_container{
-	    width: 100%; height: 50px;
+	    width: 100%; height: 45px;
 	}
-	.header_maincategori::after{
+	.header_maincategori:not(:last-child)::after{
 	    content: "";
 	    display: inline-block;
 	    width: 1px; height: 10px;
@@ -129,7 +130,7 @@
 	}
 	.header_maincategori_lists{
 	    display: flex;
-	    justify-content: center;
+	    justify-content: space-between;
 	    z-index: 10;
 	    width: 1200px;
 	    margin: auto;
@@ -150,7 +151,7 @@
 	    display: block;
 	}
 	.header_maincategori_lists div>li a{
-	    padding: 15px 50px  16px 50px;
+	    padding: 15px 50px  12px 50px;
 	    display: inline-block;
 	    font-weight: 1000;	    font-size: 14px;
 	    z-index: 1;
@@ -202,6 +203,7 @@
 	}
 	.theme2_main_res, .theme2_main_seach{
 	    width: 100px;
+	    height:18px;
 	    text-align: center;
 	}
 	
@@ -521,8 +523,9 @@
     .hotel-index-map-container{
     height: auto;
     width: 1200px;
-    margin: auto;
+    margin: 50px auto;
     display:flex;
+    position: relative;
     }
     
   .hotel-index-map{
@@ -531,10 +534,51 @@
   	right:0;
   }
   .hotel-index-map-info{
-  	padding:0 20px;
+  	padding:0 40px;
   	background-color: #f6f6f6;
+  	position: relative;
+  }
+  .hotel-index-map-info h2{
+  margin: 20px 0;
+  color: var(--theme2-maincategori_font);
+  font-size:24px;
+  }
+  .hotel-index-map-info p{
+  	font-size: 12px;
+  	color: var(--theme2-maincategori_font); 
+  	
+  }
+  .hotel-index-weather-info{
+  width: 70px; 
+  height: 20px;
+  border: 2px solid var(--theme2-maincategori_font);
+  border-radius: 5px;
+  background-color:; 
+  text-align: center;
+  font-size:13px;
+  color: var(--theme2-maincategori_font);
+  margin: 0;
   }
   
+  .hotel-index-weather-box{
+  margin: 100px 0 20px 0;
+  }
+  
+  .hotel-index-weather-content{
+  display:  flex;
+  align-items: center;
+  justify-content: left;
+  }
+  .hotel-index-weather-content p{
+  	font-size: 20px;
+  	color: var(--theme2-maincategori_font);
+  	position: relative;
+  	bottom:3px;
+  	left:-10px;
+  }
+  .hotel-map-weather-img img{
+  width: 30px;
+  }
    .map_list_container{
         width:262px;
         float: left;
@@ -577,6 +621,7 @@
     width: 100%;
     height: auto;
     background-color:rgb(246,246,246);
+    margin: 50px auto;
     }
     .hotel-index-shillawars-back{
     width: 1200px;
@@ -741,6 +786,7 @@
         width:1200px;
         display: flex;
        	justify-content: space-between;
+       	position: relative;
     }
     .content_lists{
         width:262px;
@@ -1045,7 +1091,6 @@
     .content_menu{
         width:850px;
         display: inline-block;
-        border:1px solid black;
         margin:0;
        	position: relative;
     }
@@ -1168,7 +1213,13 @@
         height:100px;
 
     }
-
+	.localBoxBack {
+		height: 100px;
+		width:100%;
+		background-color:var(--hub-background);
+		position: absolute;
+		left:0;
+	}
 	.localBox .localBoxer {
         width:1200px; 
         height: 200px;
@@ -1264,6 +1315,9 @@
         margin:0 auto;
         position:relative; 
         overflow:hidden;
+    }
+    footer{
+    width: 100%;
     }
 	.footer .linkBox{
         height: 60px; 

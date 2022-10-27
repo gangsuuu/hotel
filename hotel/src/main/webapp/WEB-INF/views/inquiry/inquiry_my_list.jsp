@@ -339,7 +339,7 @@ position: relative;
 	<%@ include file="../footer.jsp" %>
 	<script>
  	$("[data-nav=service]").css("display","block");
- 	$("[data-nav=service]").children().eq(2).children().first().css("color","white");
+ 	$("[data-nav=service]").children().eq(3).children().first().css("color","white");
  	</script>
  </body>
 </html>

@@ -11,6 +11,8 @@
 <body>
 	<footer>
 		<div class='foot hub_foot footdongtan'>
+			<div class="localBoxBack">
+			</div>
 			<div class='localBox'>
 				<div class='localBoxer'>
 					<div class='compInfo btn'>
