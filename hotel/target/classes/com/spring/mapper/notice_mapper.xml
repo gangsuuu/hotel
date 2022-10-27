@@ -88,9 +88,26 @@
 		from notice_list where nid=#{nid}
 	</select>
 	
-  <!-- board totalcount -->
-	<select id="totalcount" resultType="int">
+  <!-- notice searchtotalcount -->
+	<select id="noticesearchtotalcount" resultType="int">
 		
-		select count(*) from notice_list
+		select count(*) from notice_list where ntag='notice' 
+		and ${search_option} like '%' || #{keyword}||'%'
+	</select>	
+  <!-- event searchtotalcount -->
+	<select id="eventsearchtotalcount" resultType="int">
+		
+		select count(*) from notice_list where ntag='event' 
+		and ${search_option} like '%' || #{keyword}||'%'
+	</select>	
+  <!-- notice totalcount -->
+	<select id="noticetotalcount" resultType="int">
+		
+		select count(*) from notice_list where ntag='notice'
+	</select>	
+  <!-- event totalcount -->
+	<select id="eventtotalcount" resultType="int">
+		
+		select count(*) from notice_list where ntag='event'
 	</select>	
 </mapper>

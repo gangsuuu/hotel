@@ -87,12 +87,39 @@ public class NoticeServiceImpl implements NoticeService{
 		return vo;
 	}
 	/**
+	 * notice 검색 전체 로우수
+	 */
+	@Override
+	public int getNoticeSearchTotalCount(String search_option, String keyword) {
+		NoticeDAO dao = new NoticeDAO();
+		int result = noticeDao.noticeSearchTotalCount(search_option, keyword);	//DB에서 가져온 전체 행수
+		return result;
+	}
+	/**
+	 * event 검색 전체 로우수
+	 */
+	@Override
+	public int getEventSearchTotalCount(String search_option, String keyword) {
+		NoticeDAO dao = new NoticeDAO();
+		int result = noticeDao.eventSearchTotalCount(search_option, keyword);	//DB에서 가져온 전체 행수
+		return result;
+	}
+	/**
 	 * notice 전체 로우수
 	 */
 	@Override
-	public int getTotalCount() {
+	public int getNoticeTotalCount() {
 		NoticeDAO dao = new NoticeDAO();
-		int result = noticeDao.totalCount();	//DB에서 가져온 전체 행수
+		int result = noticeDao.noticeTotalCount();	//DB에서 가져온 전체 행수
+		return result;
+	}
+	/**
+	 * event 전체 로우수
+	 */
+	@Override
+	public int getEventTotalCount() {
+		NoticeDAO dao = new NoticeDAO();
+		int result = noticeDao.eventTotalCount();	//DB에서 가져온 전체 행수
 		return result;
 	}
 	/**

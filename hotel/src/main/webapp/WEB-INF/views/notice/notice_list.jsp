@@ -100,6 +100,7 @@
 									<th>조회수</th>
 									<th>작성일</th>	
 								</tr>
+								
 					                <c:forEach var="vo"  items="${list}">
 								<tr>
 									<td>${vo.rno }</td>

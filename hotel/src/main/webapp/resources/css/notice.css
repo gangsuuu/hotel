@@ -426,4 +426,12 @@ text-align: right;
 	margin: 7px 0;
 }
 
-
+#no {height: 100px;}
+#replynone, #resetbutton{border:none; background-color:white;}
+#nonetable{
+	margin: 15px 0;
+	display: flex;
+	justify-content: right;
+	gap:50px;
+	position: relative;
+}
