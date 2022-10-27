@@ -28,6 +28,7 @@ if(join_result == 'ok'){
 </head>
 
 <body>
+	
 <form name= "loginForm" action="loginCheck.do" method="post">
     <section>
         <div class="content">
@@ -76,4 +77,5 @@ if(join_result == 'ok'){
 	
 
 </form>
+
 </body>

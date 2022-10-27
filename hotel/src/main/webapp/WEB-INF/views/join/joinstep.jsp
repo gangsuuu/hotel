@@ -10,6 +10,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<!-- Header Include -->
+	<%@ include file="../header.jsp" %>
+
 <div class="content">
 		
 		<form name="joinStep"  action="joinStep.do"  method="get">
@@ -1014,10 +1018,9 @@ function jsJoinStep1Validation() {
 					
 
 					<div class="btnJoin">
-						<!-- 다음 버튼 -->
-						<button  type="button"
-						onclick="location.href = 'http://localhost:9000/hotel/join.do';"
-						class="joincolor">다음</button>
+						  <!-- 다음 버튼 -->
+                  <button  type="button" id="btnJoinStep" id="btnJoinStep" class="joincolor">다음</button>
+
 
 					</div>
 				</div>
@@ -1030,5 +1033,12 @@ function jsJoinStep1Validation() {
 		
 </form>
 </div>
+
+	<!-- Footer Include -->
+	<%@ include file="../footer.jsp" %>
+	<script>
+ 	$("[data-nav=service]").css("display","block");
+ 	$("[data-nav=service]").children().eq(2).children().first().css("color","white");
+ 	</script> 
 </body>
 </html>

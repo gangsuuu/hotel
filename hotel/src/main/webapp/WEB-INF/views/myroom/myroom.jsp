@@ -10,6 +10,10 @@
 <link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/form.css">
 <link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/search.css">
 <link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/am-pagination.css">
+ <script>
+    $("[data-nav=service]").css("display","block");
+    $("[data-nav=service]").children().eq(2).children().first().css("color","white");
+    </script> 
 <head>
 <meta charset="UTF-8">
 <script>
@@ -18,7 +22,7 @@ $(document).ready(function(){
 		//페이징 리스트 출력
 		var pager = jQuery('#ampaginationsm').pagination({
 		
-		    maxSize: 7,	    		// max page size
+		    maxSize: 4,	    		// max page size
 		    totals: '${dbCount}',	// total rows	
 		    page: '${rpage}',		// initial page		
 		    pageSize: '${pageSize}',	// max number items per page
@@ -61,9 +65,10 @@ $(document).ready(function(){
 <title>Insert title here</title>
 </head>
 <body>
+	<%@ include file="../header.jsp" %>
 	<form name="myroomlist" action="myroomcancel.do" method="POST">
 	<div align="center">
-		<h2>예약 목록</h2>
+		
 	<table border="1">
 			<c:choose>
 			<c:when test="${mlist eq null}">
@@ -104,9 +109,10 @@ $(document).ready(function(){
 	</table>
 				<div id="ampaginationsm"></div>
 	<button type="button" id="check">예약취소</button>
-	<button type="button" onclick="location.href='http://localhost:9000/hotel/book.do'">홈으로</button>
+	<button type="button" onclick="location.href='http://localhost:9000/hotel/shillaStay.do'">홈으로</button>
 	
 		</div>
 		</form>
+		<%@ include file="../footer.jsp" %>
 </body>
 </html>

@@ -14,7 +14,9 @@
 <script>
 	$(document).ready(function(){
 		$("#btnInquiryUpdate").click(function(){
-			if(("input[name='hotelname']:checked").length==0){
+		var isCheck = $('input[name=hotelname]:checked').val();
+			
+			if(!isCheck){
 				alert("호텔을 선택해 주세요.");
 				$("#hotelname").focus();
 				return false;
@@ -127,7 +129,25 @@
 
 #btnlist { text-align:center; margin-top:50px; }
 .content_list_two{ margin-top: -25px; font-weight: 500; margin-left: 10px; height: 20px; display: block; align-items: center; font-size: 14px; color:var(--hub-font);}
+/***************/
+.tableTypeA{margin:20px 0px 0px 0px;border:none;border-top:#cdcbbe solid 1px; width:100%;border-collapse:collapse;table-layout:fixed;}
+.tableTypeA th,
+.tableTypeA td{border:none;padding:6px 13px;text-align:left;line-height: 22px;border-bottom:#eceae1 solid 1px;color:#333333;}
+.tableTypeA th{color:#666; background:#faf9f4; }
+.tableTypeA td{ background:#FFF; color:#1b1b1b}
+.tableTypeA .last th,.tableTypeA .last td {border-bottom:#cdcbbe solid 1px;}
+.tableTypeA .bdBot{border-bottom:#cdcbbe solid 1px !important; }
 
+.contentarea { width:670px; height:180px; vertical-align: middle; }
+.titlearea { width:668px; height:23px; vertical-align: middle;}
+#passwordlable { margin-left:30px; }
+#category, .titlearea, #secretnum, .contentarea { border: #CCC solid 1px; }
+#btnlist { text-align:center; margin-top:50px; }
+#upload_file { position:relative; display:inline-block; background-color: white; font-size:14px; width:120px; left:-181px; }
+#btnInquiryUpdate, #btnInquiryList, #btnRest { background-color:rgb(58,49,37); color:rgb(250,241,208); width:99px; height:35px; vertical-align: middle; font-size:14px; font-weight: bold; }
+.ast {color:red;}
+.selector {word-spacing: 10px;}
+#secretnum { width: 47px; height: 23px; padding-left: 8px; letter-spacing: 2px; font-size: 20px;}
 /***********추가******************/
 #upload_file { position:relative; display:inline-block; background-color: white; font-size:14px; width:120px; left:-181px; }
 #btnInquiryUpdate, #btnInquiryList, #btnRest { background-color:rgb(58,49,37); color:rgb(250,241,208); width:99px; height:35px; vertical-align: middle; font-size:14px; font-weight: bold; }
@@ -276,7 +296,7 @@ margin: 10px 0;
 										<input class="secret_input" type="checkbox" name="secret" id="secret" checked="checked" value=1 >
 										<label class="secret_label">비밀글</label>
 										<span>
-											<label id="passwordlable">비밀번호</label>
+											<label id="passwordlable"> <span class="ast">*</span>비밀번호</label>
 											<input type="password" name="secretnum" id="secretnum" value="${ vo.secretnum }">
 										</span>
 									</div>

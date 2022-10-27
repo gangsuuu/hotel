@@ -54,6 +54,9 @@ $(document).ready(function(){
 
 </head>
 <body>
+	<!-- Header Include -->
+	<%@ include file="../header.jsp" %>
+
 <form name="joinForm"  action="joinCheck.do"  method="post">
     <main>
         <article class="content">
@@ -166,6 +169,13 @@ $(document).ready(function(){
         </article>
 
     </main>
-</form> 
+</form>
+
+	<!-- Footer Include -->
+	<%@ include file="../footer.jsp" %>
+	<script>
+ 	$("[data-nav=service]").css("display","block");
+ 	$("[data-nav=service]").children().eq(2).children().first().css("color","white");
+ 	</script> 
 </body>
 </html>

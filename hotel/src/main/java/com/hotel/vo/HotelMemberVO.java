@@ -2,10 +2,72 @@ package com.hotel.vo;
 
 public class HotelMemberVO {
 
-	String mid, pass, hname, hemail1, hemail2,
-	haddr1, haddr2, hp, hpum1, hpum2, hpum3, zonecode;
+	String mid, pass, hname, npass,hemail1,hemail2,
+	haddr1, haddr2, hp, hpum1, hpum2, hpum3, zonecode,gender,ename1,ename2 ;
+	String hemail, pnumber,ename;
 
-	String hemail, pnumber;
+	public String getAddr1() {
+		return hemail1;
+	}
+
+	public void setAddr1(String addr1) {
+		this.hemail1 = addr1;
+	}
+
+	public String getAdrr2() {
+		return hemail2;
+	}
+
+	public void setAdrr2(String adrr2) {
+		this.hemail2 = adrr2;
+	}
+
+	
+	public String getNpass() {
+		return npass;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getEname1() {
+		return ename1;
+	}
+
+	public void setEname1(String ename1) {
+		this.ename1 = ename1;
+	}
+
+	public String getEname2() {
+		return ename2;
+	}
+
+	public void setEname2(String ename2) {
+		this.ename2 = ename2;
+	}
+
+	public String getEname() {
+		if(ename == null) {
+			return ename2+ename1; //변경
+		}else {
+			return ename;
+		}
+	}
+
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+
+	public void setNpass(String npass) {
+		this.npass = npass;
+	}
+
+	
 	
 	public void setHemail(String hemail) {
 		this.hemail = hemail;
@@ -24,12 +86,9 @@ public class HotelMemberVO {
 	}
 
 	public String getPnumber() {
-		if(pnumber == null) {
-			return hpum1+"-"+hpum2+"-"+hpum3; //변경
-		}else {
 			return pnumber;
 		}
-	}
+	
 	public void setPnumber(String pnumber) {
 		this.pnumber = pnumber;
 	}
@@ -59,22 +118,6 @@ public class HotelMemberVO {
 		this.hname = hname;
 	}
 
-	public String getHemail1() {
-		return hemail1;
-	}
-
-	public void setHemail1(String hemail1) {
-		this.hemail1 = hemail1;
-	}
-
-	public String getHemail2() {
-		return hemail2;
-	}
-
-	public void setHemail2(String hemail2) {
-		this.hemail2 = hemail2;
-		setHemail(hemail1+"@"+hemail2);
-	}
 
 	public String getHaddr1() {
 		return haddr1;
@@ -122,6 +165,7 @@ public class HotelMemberVO {
 
 	public void setHpum3(String hpum3) {
 		this.hpum3 = hpum3;
+		setPnumber(hpum1+hpum2+hpum3);
 	}
 
 

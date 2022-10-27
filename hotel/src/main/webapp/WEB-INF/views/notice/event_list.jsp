@@ -53,17 +53,10 @@
 </head>
 <body>
 	<%@ include file="../header.jsp" %>
-<<<<<<< main
-<<<<<<< HEAD
-<div class="content">
-<div class="common_wrap_yy">
-=======
-<div class="common_wrap_yy" style="top: 0px;">
->>>>>>> refs/remotes/origin/main
-=======
+
 <div class="noticepage">
 <div class="common_wrap_yy" style="top: 0px;">
->>>>>>> 13ad519 index 4/3 -> map, 날씨 api 연동완료 admin 4/1 오류수정 완료
+
 	<div class="common_inner">
 		<div class="location" id="lnb"><ul>
 		<li><a href="http://localhost:9000/hotel/shillaStay.do">메인페이지</a></li>

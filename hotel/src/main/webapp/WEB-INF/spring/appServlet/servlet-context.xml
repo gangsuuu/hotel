@@ -57,7 +57,25 @@
 	
 	<!-- Interceptor 객체 생성 -->
 	<beans:bean id="authInterceptor"  class="com.spring.interceptor.AuthInterceptor"></beans:bean>
+	<beans:bean id="myauthInterceptor"  class="com.spring.interceptor.MyAuthInterceptor"></beans:bean>
 	
+	<!-- 로그인을 하지 않은 상태에서 /admin.do 페이지를 요청하면 authInterceptor 객체에서 처리하도록 역할 부여 -->
+	<interceptors>
+		<!-- <interceptor>
+			<mapping path="/admin*"/>http://localhost:9000/mycgv/admin.do
+			<beans:ref bean="authInterceptor"/>
+		</interceptor> -->
+		
+		<interceptor>
+			<mapping path="/inquiry_my_list.do"/><!-- http://localhost:9000/hotel/inquiry_my_list.do -->
+			<beans:ref bean="myauthInterceptor"/>
+		</interceptor>
+		
+		<interceptor>
+			<mapping path="/mypage.do"/><!-- http://localhost:9000/hotel/inquiry_my_list.do -->
+			<beans:ref bean="myauthInterceptor"/>
+		</interceptor>
+	</interceptors>
 		
 	<context:component-scan base-package="com.spring.hotel" />
 	<context:component-scan base-package="com.spring.controller" />

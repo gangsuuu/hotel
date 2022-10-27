@@ -18,6 +18,10 @@
     <link rel="stylesheet" type="text/css" href="http://localhost:9000/hotel/resources/css/detail.css"/>
     <link rel="stylesheet" type="text/css" href="http://localhost:9000/hotel/resources/css/nav.css"/>
     
+    <script>
+    $("[data-nav=service]").css("display","block");
+    $("[data-nav=service]").children().eq(2).children().first().css("color","white");
+    </script> 
    
 	<script>    
  	$(document).ready(function () {  
@@ -110,6 +114,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<%@ include file="../header.jsp" %>
 	<form name="bookinsert" action="bookinsertresult.do" method="POST">
 	<input type="hidden" name="mid" value="${svo.mid}"/>
 	<input type="hidden" name="bid" value="${vo.bid}"/>
@@ -343,6 +348,7 @@
                 
                    
                     <input type="button" id="greenBtn" onclick="eve()" value="예약하기"/>
+                    <input type="button" id="greenBtn" onclick="location.href='http://localhost:9000/hotel/shillaStay.do'" value="홈으로"/>
                 
             </div>
         </div>
@@ -367,6 +373,7 @@ maps API 관련 코드
 <!--구글 맵스 API-->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq4C8917Pxr1jaL8LAMhaIKwASCPRYpok"></script>
 	</form>
+	<%@ include file="../footer.jsp" %>
 </body>
 </html>
 

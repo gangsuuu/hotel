@@ -1,4 +1,23 @@
 $(document).ready(function(){
+	 /*********************
+      조인스텝 체크박스
+   **********************/
+   $("#btnJoinStep").click(()=>{   
+      
+      if($("input[name='noti01']:checked").length == 0){
+         alert("홈페이지 이용약관을 동의해주세요.");
+         return false;
+      }else if($("input[name='noti02']:checked").length == 0){
+         alert("신라스테이 리워즈 회원 이용약관을 동의해주세요.");
+         return false;
+      }else if($("input[name='noti03']:checked").length == 0){
+         alert("개인정보수집 및 이용에 대한 동의를 동의해주세요.");
+         return false;
+      }else{
+         
+         $(location).attr("href","http://localhost:9000/hotel/join.do");
+      }
+    });
 	
 	/*******************
 	 	프로필수정 

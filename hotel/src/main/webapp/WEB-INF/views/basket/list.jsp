@@ -12,12 +12,16 @@
 <link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/trip_index.css">
 <html>
 <script>
+    $("[data-nav=service]").css("display","block");
+    $("[data-nav=service]").children().eq(2).children().first().css("color","white");
+    </script> 
+<script>
 $(document).ready(function(){
 	
 	//페이징 리스트 출력
 	var pager = jQuery('#ampaginationsm').pagination({
 	
-	    maxSize: 7,	    		// max page size
+	    maxSize: 6,	    		// max page size
 	    totals: '${dbCount}',	// total rows	
 	    page: '${rpage}',		// initial page		
 	    pageSize: '${pageSize}',	// max number items per page
@@ -61,6 +65,7 @@ li{
 	<title>방 목록</title>
 </head>
 <body>
+<%@ include file="../header.jsp" %>
 	<div align="center">
 	<div class="row">
     <div class="column">
@@ -111,6 +116,6 @@ li{
 	<button type="button" onclick="location.href='http://localhost:9000/hotel/main.do'">관리자 홈으로</button>
 	
 	</div>
-	
+	<%@ include file="../footer.jsp" %>
 </body>
 </html>

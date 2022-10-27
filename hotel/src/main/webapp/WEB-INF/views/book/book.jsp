@@ -9,6 +9,10 @@
 <link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/nav.css">
 <link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/trip_index.css">
 <link rel="stylesheet"  href="http://localhost:9000/hotel/resources/css/am-pagination.css">
+ <script>
+    $("[data-nav=service]").css("display","block");
+    $("[data-nav=service]").children().eq(2).children().first().css("color","white");
+    </script> 
 <head>
 <meta charset="UTF-8">
 <script>
@@ -17,7 +21,7 @@ $(document).ready(function(){
 		//페이징 리스트 출력
 		var pager = jQuery('#ampaginationsm').pagination({
 		
-		    maxSize: 7,	    		// max page size
+		    maxSize: 6,	    		// max page size
 		    totals: '${dbCount}',	// total rows	
 		    page: '${rpage}',		// initial page		
 		    pageSize: '${pageSize}',	// max number items per page
@@ -61,12 +65,12 @@ li{
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="../header.jsp" %>
 <!-- <form name="book" action="bookinsert.do" method="POST"> -->
   <div align="center">
 	<div class="row">
     <div class="column">
         <div class="item" style="border: 0px">
-            <div class="item_title">호텔룸 목록</div>
             
             <c:choose>
 			<c:when test="${empty basketlist}">
@@ -110,5 +114,6 @@ li{
 	<!-- <button type="button" onclick="location.href='http://localhost:9000/hotel/main.do'">홈으로</button> -->
 	<!-- </form> -->
 	</div>
+	<%@ include file="../footer.jsp" %>
 </body>
 </html>

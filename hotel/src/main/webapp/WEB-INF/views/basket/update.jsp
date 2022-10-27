@@ -3,6 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <script src="<%=request.getContextPath()%>/resources/js/jquery-3.6.0.min.js"></script>
+<script>
+    $("[data-nav=service]").css("display","block");
+    $("[data-nav=service]").children().eq(2).children().first().css("color","white");
+    </script> 
 <script type="text/javascript">
 	 let update_result='${result}';
 	if(update_result=="update_ok"){
@@ -46,6 +50,7 @@
 <title>룸 업데이트</title>
 </head>
 <body>
+<%@ include file="../header.jsp" %>
 	<div align="center">
 	<h2>룸 업데이트</h2>
 	<form name="baskdelete_result" action="update_excute.do" method="post" enctype="multipart/form-data">
@@ -76,9 +81,9 @@
 			</c:choose>
 	</table>
 		<button type="button" onclick="update()">수정</button>
-		<button type="button" onclick="location.href='http://localhost:9000/hotel/main.do'">홈으로</button>
+		<button type="button" onclick="location.href='http://localhost:9000/hotel/shillaStay.do'">홈으로</button>
 	</form>
 	</div>
-	
+	<%@ include file="../footer.jsp" %>
 </body>
 </html>

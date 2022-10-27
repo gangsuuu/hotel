@@ -13,7 +13,7 @@
 	 let delete_result='${result}';
 	if(delete_result=="delete_ok"){
 		alert("삭제가 완료되었습니다.");
-		location.href = "book.do";
+		location.href = "shillaStay.do";
 	} 
 </script>
 <script>
@@ -108,7 +108,7 @@ $(document).ready(function(){
 			<div id="ampaginationsm"></div>
     </div>
 		<button type="button" id="check">삭제</button>
-		<button type="button" onclick="location.href='http://localhost:9000/hotel/main.do'">홈으로</button>
+		<button type="button" onclick="location.href='http://localhost:9000/hotel/shillaStay.do'">홈으로</button>
 	</form>
 	</div>
 	

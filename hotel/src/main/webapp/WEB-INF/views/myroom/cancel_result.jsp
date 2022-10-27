@@ -11,7 +11,7 @@
 	
 	if(result=="ok"){
 		alert("예약취소가 완료되었습니다");
-		location.href = "book.do";
+		location.href = "shillaStay.do";
 	}
 </script>
 <body>

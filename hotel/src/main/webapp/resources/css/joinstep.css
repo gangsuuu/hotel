@@ -2596,3 +2596,22 @@ body.hidden { overflow:hidden;}
   text-align: center;
   color: red;
 }
+.joinstepbtn-container{
+    position: relative;
+}
+.joinstepbtn{
+    width: 250px;
+    height: 70px;
+    text-align: center;
+    border: 1px solid rgb(156,131,106);
+    background-color: rgb(156,131,106);
+    color: white;
+    font-size: 19px;
+    font-weight:500;
+    transition: background-color 350ms;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.joinstepbtn:hover{
+    background-color: rgb(138,112,87);
