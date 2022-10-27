@@ -93,7 +93,6 @@ public class NoticeController {
 	@RequestMapping(value="/notice_content.do", method=RequestMethod.GET)
 	public ModelAndView notice_content( String nid) {
 ModelAndView mv = new ModelAndView();
-		
 		NoticeVO vo = noticeService.getContent(nid);
 		if(vo != null){
 			noticeService.getUpdateHits(nid);
