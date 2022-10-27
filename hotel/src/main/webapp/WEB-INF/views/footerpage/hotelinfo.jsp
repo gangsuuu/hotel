@@ -20,7 +20,6 @@
                     <li id="content_list_one"><a href="http://localhost:9000/hotel/shillaStay/hotelinfo.do" class="content_list content_selected">호텔정보</a></li>
                     <li id="content_list_one"><a href="http://localhost:9000/hotel/shillaStay/hotelMap.do" class="content_list ">층별안내도</a></li>
                     <li id="content_list_one"><a href="http://localhost:9000/hotel/shillaStay/hotellocation.do" class="content_list ">오시는길</a></li>
-                    <li id="content_list_one"><a href="http://localhost:9000/hotel/shillaStay/gallery.do" class="content_list ">갤러리</a></li>
                 </ul>
             </div>
         </div>

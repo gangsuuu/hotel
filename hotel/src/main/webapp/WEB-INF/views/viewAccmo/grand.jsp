@@ -88,7 +88,7 @@
             			<a href="javascript:showModal('drawing')">
             				<img src="http://localhost:9000/hotel/resources/img/accommodation/btnFloorPlanView.gif">
             			</a>
-            			<a href="#">
+            			<a href="http://localhost:9000/hotel/inquiry_list.do">
             				<img src="http://localhost:9000/hotel/resources/img/accommodation/btnInquiry.gif">
             			</a>
             			<a href="#">

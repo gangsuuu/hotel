@@ -94,10 +94,7 @@ window.initMap = function () {
 				</div>			
 			</section>
 			<section class="hotel-index-reservation">
-			
 			</section>
-			
-			
 			<section class="hotel-index-event">
 				<c:forEach var="noticeVO"  items="${eventlist}">
 					<article class="hotel-index-article">

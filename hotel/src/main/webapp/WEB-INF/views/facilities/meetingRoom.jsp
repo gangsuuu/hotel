@@ -63,7 +63,7 @@
 			<div>
 				<img src="http://localhost:9000/hotel/resources/img/facilites/MapPopTit.gif">
 			</div>
-			<div class="amnity-close btn">
+			<div class="modal-close btn">
 				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
 			</div>
 		</div>
@@ -76,7 +76,7 @@
 			<div>
 				<img src="http://localhost:9000/hotel/resources/img/facilites/R000000093SB_KR.gif">
 			</div>
-			<div class="amnity-close btn">
+			<div class="modal-close btn">
 				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
 			</div>
 		</div>
