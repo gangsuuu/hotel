@@ -43,7 +43,10 @@
 					</c:otherwise>
 				</c:choose>	
 				</div>
-				
+
+				<div class='header_top_guest theme2_guest'>
+					<a class='header_login' href='http://localhost:9000/hotel/login.do'>로그인</a>
+					<a href='#'>예약확인</a>
 				</div>
 				
 				
@@ -58,7 +61,7 @@
 							<a href='#'>스페셜 오퍼</a>
 							<ul class='header_subcategori_list theme2_sub_container' data-nav="Special">
 								<li><a class='theme2_sub' id='header_subcategori' href='#'>객실 패키지</a></li>
-								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/event_list.do'>이벤트</a></li>
+								<li><a class='theme2_sub' id='header_subcategori' href='#'>이벤트</a></li>
 							</ul>
 						</li>
 						<li class='header_maincategori theme2_after' >
@@ -91,8 +94,8 @@
 							<ul class='header_subcategori_list theme2_sub_container' data-nav="service">
 								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/guestservice/introhotel.do'>호텔안내</a></li>
 								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/guestservice/viewGuestService.do'>인근명소</a></li>
-								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/notice_list.do'>공지사항</a></li>
 								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/inquiry_list.do'>고객센터</a></li>
+								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/notice_list.do'>공지사항</a></li>
 							</ul>
 						</li>
 					</div>

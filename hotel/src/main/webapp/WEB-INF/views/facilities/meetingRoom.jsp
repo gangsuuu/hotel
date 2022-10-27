@@ -88,12 +88,6 @@
  	<script>
  	$("[data-nav=facilites]").css("display","block");
  	$("[data-nav=facilites]").children().eq(0).children().first().css("color","white");
- 	$(".header_maincategori ").mouseover(function(){
- 		$("[data-nav=facilites]").css("z-index","5");
- 	})
- 	$(".header_maincategori ").mouseout(function(){
- 	})
- 	
  	</script>
  	<script src="http://localhost:9000/hotel/resources/js/showModal.jsp"></script>
 </body>
