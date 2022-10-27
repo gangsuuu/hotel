@@ -10,9 +10,11 @@
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/am-pagination.css">
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/am-pagination.js"></script>
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
+<script>
+	var hotelname = "theshilla";
+</script>
 <script>
 	$(document).ready(function(){
 		
@@ -51,12 +53,17 @@
 </head>
 <body>
 	<%@ include file="../header.jsp" %>
+<<<<<<< main
 <<<<<<< HEAD
 <div class="content">
 <div class="common_wrap_yy">
 =======
 <div class="common_wrap_yy" style="top: 0px;">
 >>>>>>> refs/remotes/origin/main
+=======
+<div class="noticepage">
+<div class="common_wrap_yy" style="top: 0px;">
+>>>>>>> 13ad519 index 4/3 -> map, 날씨 api 연동완료 admin 4/1 오류수정 완료
 	<div class="common_inner">
 		<div class="location" id="lnb"><ul>
 		<li><a href="http://localhost:9000/hotel/shillaStay.do">메인페이지</a></li>
@@ -71,15 +78,7 @@
 	<!---------------------------------------------->
 	
 			<!-- 좌측 메뉴 -->
-			<div class="content_lists">
-				<div class="content_inmenu">
-					  <h2 class="suject">고객서비스</h2>
-		              <ul>
-			              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/introhotel.do" class="content_list">스페셜오퍼</a></li>
-			              <li id="content_list_one"><a href="http://localhost:9000/hotel/notice_list.do" class="content_list content_selected">이벤트</a></li>
-		              </ul>
-				 </div>
-			 </div>
+			<%@ include file="./left_bar.jsp" %>
 			 <!-- 좌측 메뉴 end-->
 		
 			<!-- contents -->
@@ -92,7 +91,26 @@
 				<span>항상 즐거움이 있는 곳! 신라 호텔</span>
 					</div>
 					<div class="contents_area">
-					
+					<!-- 검색 -->
+					<form name="form1" method="get" action="event_list_search.do" id="search">
+					<div class="search">
+						<span>SEARCH</span>
+						<span class="select">
+							
+							<select name="search_option">
+							<option value="ntitle"
+							<c:if test="${map.search_option == 'ntitle'}">selected</c:if>>제목
+							</option>
+							
+							<option value="ncontent" 
+							<c:if test="${map.search_option == 'ncontent'}">selected</c:if>>내용
+							</option>
+							</select>
+							<input name="keyword" value="${map.keyword}">
+    						<button type="submit">조회</button>
+					</div>
+					</form>
+					<!-- //검색 -->
 
 					<!-- 일반게시판_List -->
 						<table class="contents_table">
@@ -136,34 +154,11 @@
               					</tr>
 						</table>
 						</div>
-						<!-- 검색 -->
-						<form name="form1" method="get" action="event_list_search.do" id="search">
-						<div class="search">
-							<span>SEARCH</span>
-								
-								<select name="search_option">
-								<option value="ntitle"
-								<c:if test="${map.search_option == 'ntitle'}">selected</c:if>>제목
-								</option>
-								
-								<option value="ncontent" 
-								<c:if test="${map.search_option == 'ncontent'}">selected</c:if>>내용
-								</option>
-								</select>
-								<input name="keyword" value="${map.keyword}">
-	    						<button type="submit">조회</button>
-						</div>
-						</form>
-						<!-- //검색 -->
 					</div>
 					<!-- //일반게시판_List -->
 					
 	</div>
 	</div>
 	<%@ include file="../footer.jsp" %>
-	<script>
- 	$("[data-nav=Special]").css("display","block");
- 	$("[data-nav=Special]").children().eq(1).children().first().css("color","white");
- 	</script>
 </body>
 </html>

@@ -19,6 +19,12 @@
 <script src="http://localhost:9000/hotel/resources/js/admin_inquiry_javascript.js"></script>
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
 <script>
+	var hotelname = "${hotelname}";
+	if(hotelname == ""){
+		hotelname = "theshilla";
+	}
+</script>
+<script>
 	$(document).ready(function(){
 		
 		//페이징 리스트 출력
@@ -147,28 +153,36 @@ $(document).ready(function(){
 	}//replynone()
 });//ready	
 </script>
+<style>
+.commentimg { background : url(http://localhost:9000/hotel/resources/img/inquiry/feedback.png); background-size:contain; width: 21px; height: 21px; display: inline-block; float: right; margin-left: -36px; margin-right: 15px;}
+</style>
 </head>
 <body>
 	<!-- Header Include -->
-	<%@ include file="../header.jsp" %>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>
 
 	<!---------------------------------------------->
 	<!--------------- MenuBar ---------------------->
 	<!---------------------------------------------->
 	
-	<div class="content">
-		<div class="content_lists">
-			 <div class="content_inmenu">
-				  <h2 class="suject">고객서비스</h2>
-	              <ul>
-		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/introhotel.do" class="content_list">호텔안내</a></li>
-		              <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list">인근명소</a></li>
-		              <li id="content_list_one"><a href="http://localhost:9000/hotel/notice_list.do" class="content_list">공지사항</a></li>
-		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_list.do" class="content_list content_selected">고객센터</a></li>
-		              <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_my_list.do?mid=${sessionScope.svo.mid }" class="content_list_two"> - 내문의함</a></li>
-	              </ul>
-			 </div>
-		 </div>	
+	<div class="contain">
+		<div class="container">
+			<div class="InAreaMenuBar">
+				<div class="MenuBar">
+					<h2 class="tit">고객문의</h2>
+					<img src="http://localhost:9000/hotel/resources/img/inquiry/gline.jpg">
+						<ul class="menu">
+							<li class="">
+								<a href="admin_inquiry_list.do" class="on"><span>전체 문의글</span><img src="http://localhost:9000/hotel/resources/img/inquiry/gline1.jpg"></a>
+							</li>
+							<li class="">
+								<a href="admin_hotel_categori.do"><span>관리자홈</span></a>
+							</li>	
+						</ul>
+				</div>
+			</div>	
+		</div>
 								
 	<!---------------------------------------------->
 	<!--------------- Content ---------------------->
@@ -186,7 +200,7 @@ $(document).ready(function(){
 				<div class="account">
 					<div class="headTit">
 						<h3 class="tit">연락처</h3>
-						<div class="content-block"></div>
+						<img src="http://localhost:9000/hotel/resources/img/inquiry/linewrite.jpg">
 						<img alt="연락처 설명 문구" src="http://localhost:9000/hotel/resources/img/inquiry/contactText01.gif">
 					</div>
 					
@@ -210,10 +224,11 @@ $(document).ready(function(){
 					</div>
 					
 					<h3 class="tit1">문의글</h3>
-					<div class="content-block"></div>
+					<img id="linewrite" src="http://localhost:9000/hotel/resources/img/inquiry/linewrite.jpg">
 					<div id="nonetable">
-						<button class="btn" type="button" id="replynone" >미답변</button>
-						<button class="btn" type="button" id="resetbutton" >초기화</button>
+						<button type="button" id="replynone" >미답변</button>
+						<spen>&nbsp&nbsp|&nbsp&nbsp</spen>
+						<button type="button" id="resetbutton" >초기화</button>
 					</div>
 					<table id="listtable" border=1px solid>
 						<tr>
@@ -229,7 +244,7 @@ $(document).ready(function(){
 							<td>${ vo.rno }</td>
 							<td>${ vo.hotelname }</td>
 							<td>${ vo.category }</td>
-							<td class="inquiry-title">
+							<td>
 								<%-- <c:forEach var="re" items="${reply}"> --%>
 									 <c:choose>
 										<c:when test="${ vo.rcount != 0 }">
@@ -259,6 +274,8 @@ $(document).ready(function(){
 				 					<a rel="modal:close" >취소</a>
 								</div>							
 					
+					<a href="inquiry_write.do"><button type="button" id="btnInquiry">문의하기</button></a>
+					
 					<!-- 검색기능 -->
 					<form name="admin_list_search" action="admin_inquiry_list_search.do" method="post" id="search" >
 						<span id="searchspan">검색어</span>
@@ -270,7 +287,7 @@ $(document).ready(function(){
 							<option value="category">문의선택</option>
 						</select>
 						<input type="text" name="keyword" id="searchName">
-						<button type="button" id="btnSearch">검색</button>
+						<button type="button" id="btnSearch">찾기</button>
 					</form>
 				</div>
 										
@@ -279,15 +296,8 @@ $(document).ready(function(){
 
 	
 	</div>
-	
-	</div>
 
 	<!-- Footer Include -->
-	<!-- Footer Include -->
-	<%@ include file="../footer.jsp" %>
-	<script>
- 	$("[data-nav=service]").css("display","block");
- 	$("[data-nav=service]").children().eq(3).children().first().css("color","white");
- 	</script>
+	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
 </body>
 </html>
