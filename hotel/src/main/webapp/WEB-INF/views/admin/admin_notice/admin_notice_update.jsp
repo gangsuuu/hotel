@@ -103,8 +103,15 @@
 							<label>파일첨부</label>
 						</th>
 						<td class='admin-notice-write-file'>	
-							<input type="file" name="file1" id="admin-notice-fileupload">
-							<span id="upload_file">${vo.nfile }</span>	
+							<input type="file" name="file1" id="admin-notice-fileupload" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<c:choose>
+						<c:when test="${vo.nfile != null }"> <!-- if~else -->
+							<span id="upload_file">${vo.nfile }</span>
+							</c:when>
+						<c:otherwise>
+				
+						</c:otherwise>
+					</c:choose>
 						</td>
 					</tr>
 					<tr>
@@ -122,5 +129,41 @@
 	</div>
 </div>
 <%@ include file="../../footer.jsp" %>
+<script>
+$("#admin-notice-fileupload").change(function(){
+	
+	var upload = document.querySelector("#admin-notice-fileupload");
+	var filename = upload.files[0].name;
+	var reader = new FileReader();
+	
+	reader.onload = function(event){
+		var div = document.createElement("div");
+	 	div.setAttribute("class",'img-container');
+	 	//img 생성
+		var img =document.createElement("img");
+		img.setAttribute("data-name",filename);
+		img.setAttribute("src",event.target.result);
+		img.setAttribute("class","admin-write-show-img")
+		div.appendChild(img);
+		
+		
+		if($(".admin_file_show").children().length >= 1){
+			$(".admin_file_show").empty();
+		}
+			$(".admin_file_show").append(div);
+		
+	}
+	reader.readAsDataURL(event.target.files[0]);
+});
+$(document).ready(function(){
+	//새로운 파일선택하는 이벤트 
+	$("input[type=file]").change(function(){
+		if(window.FileReader){
+			let fname = $(this)[0].files[0].name;
+			$("#upload_file").text(fname);
+		}
+	});
+});
+</script>
 </body>
 </html>
