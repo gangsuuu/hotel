@@ -219,7 +219,15 @@ public class InquiryController {
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
 		mv.addObject("rpage", param.get("rpage"));	
-		mv.setViewName("/inquiry/inquiry_my_list");
+		//mv.setViewName("/inquiry/inquiry_my_list");
+	
+		int result = inquiryService.getMyCount(svo.getMid());
+		
+		if(result != 0) {
+			mv.setViewName("/inquiry/inquiry_my_list"); 
+		} else {
+			mv.setViewName("/login/login"); 
+		}
 		
 		return mv;
 	}
