@@ -99,28 +99,18 @@ window.initMap = function () {
 			
 			
 			<section class="hotel-index-event">
-				<%-- 
-				<table>
-						<td colspan="4">
-						</td>
-						<tr>
-							<th>번호</th>
-							<th>제목</th>
-							<th>조회수</th>
-							<th>작성일</th>	
-						</tr>
-						<c:forEach var="noticeVO"  items="${eventlist}">
-						<tr>
-							<td>${noticeVO.rno }</td>
-							<td><a href="notice_content.do?nid=${noticeVO.nid }">${noticeVO.ntitle }</a></td>
-							<td>${noticeVO.nhits }</td>
-							<td>${noticeVO.ndate }</td>
-							</tSr>	
-					</table>
+				<c:forEach var="noticeVO"  items="${eventlist}">
+					<article>
+						<div>
+							<a class="hotel-index-event-box" href="http://localhostL9000/hotel/notice_content.do?nid=${noticeVO.nid }">
+								<img src="http://localhostL9000/hotel/resources/upload/${noticeVO.bsfile}">
+							</a>
+							<h3>${noticeVO.ntitle }</h3>
+							<p>${noticeVO.ncontent }</p>
+						</div>
+					</article>
 				</c:forEach>
-				 --%>
 			</section>
-			
 			
 			<section class="hotel-index-map-container">
 				<div class="hotel-index-map-info">
