@@ -763,7 +763,6 @@ public class AdminController {
 	@RequestMapping(value="/admin_notice_content.do", method=RequestMethod.GET)
 	public ModelAndView admin_notice_content(String nid) {
 		ModelAndView mv = new ModelAndView();
-		
 		NoticeVO vo = noticeService.getContent(nid);
 		if(vo != null){
 			noticeService.getUpdateHits(nid);
@@ -776,7 +775,6 @@ public class AdminController {
 		}
 		return mv;
 	}
-	
 	/**
 	 * admin_event_update.do : 이벤트 수정화면 
 	 */
@@ -784,11 +782,12 @@ public class AdminController {
 	public ModelAndView admin_event_update(String nid) {
 		ModelAndView mv = new ModelAndView();
 		
-		NoticeVO vo = noticeService.getContent(nid);
-
-		vo.setNcontent(vo.getNcontent().replace("<br>","\r\n"));
-		
-		mv.addObject("vo",vo);
+		 NoticeVO vo = noticeService.getContent(nid);
+		 
+		 vo.setNcontent(vo.getNcontent().replace("<br>","\r\n"));
+		  
+		 mv.addObject("vo",vo);
+		 
 		mv.setViewName("/admin/admin_notice/admin_event_update");
 		return mv;
 	}

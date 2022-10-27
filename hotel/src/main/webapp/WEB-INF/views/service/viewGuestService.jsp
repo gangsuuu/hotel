@@ -17,9 +17,12 @@
             <div class="content_inmenu">
              	<h2 class="suject">고객서비스</h2>
                 <ul>
-                    <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/introhotel.do" class="content_list ">호텔안내</a></li>
-                    <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list content_selected">인근명소</a></li>
-                </ul>
+	               <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/introhotel.do" class="content_list ">호텔안내</a></li>
+		           <li id="content_list_one"><a href="http://localhost:9000/hotel/guestservice/viewGuestService.do" class="content_list content_selected">인근명소</a></li>
+		           <li id="content_list_one"><a href="http://localhost:9000/hotel/notice_list.do" class="content_list ">공지사항</a></li>
+		           <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_list.do" class="content_list">고객센터</a></li>
+		           <li id="content_list_one"><a href="http://localhost:9000/hotel/inquiry_my_list.do?mid=${sessionScope.svo.mid }" class="content_list_two"> - 내문의함</a></li>
+               </ul>
             </div>
         </div>
         <div class="content_menu">
