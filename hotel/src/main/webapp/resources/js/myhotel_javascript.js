@@ -2,22 +2,23 @@
 	회원가입 폼 유효성 체크 --> 서버의 효율성을 높이기위함:부하를 줄임
 **********************/
 joinCheck = () => {
-	const mid = document.getElementById("mid");
+	const hid = document.getElementById("hid");
 	const pass = document.getElementById("pass");
 	const hpass = document.getElementById("hpass");
 	const hname = document.getElementById("hname");
-	const hemail1 = document.getElementById("hemail1");
-	const hemail2 = document.getElementById("hemail2");
-	const hemail3 = document.getElementById("hemail3");
-	const haddr1 = document.getElementById("haddr1");s
+	const gender = document.getElementById("gender");
+	const hname = document.getElementById("ename1");
+	const hname = document.getElementById("ename2");
+	const hemail1 = document.getElementById("hemail");
+	const haddr1 = document.getElementById("haddr1");
 	const haddr2 = document.getElementById("haddr2");
 	const hpum1 = document.getElementById("hpum1");
 	const hpum2 = document.getElementById("hpum2");
 	const hpum3 = document.getElementById("hpum3");
 	
-	if(mid.value == ""){
+	if(hid.value == ""){
 		alert("아이디를 입력해주세요");
-		mid.focus();
+		hid.focus();
 		return false;
 	}else if(pass.value == ""){
 		alert("패스워드를 입력해주세요");
@@ -31,13 +32,21 @@ joinCheck = () => {
 		alert("성명을 입력해주세요");
 		hname.focus();
 		return false;
-	}else if(hemail1.value == ""){
-		alert("이메일을 입력해주세요");
-		hemail1.focus();
+	}else if(gender.value == "default"){
+		alert("성별을 선택해주세요");
+		gender.focus();
 		return false;
-	}else if(hemail2.value == ""){
-		alert("이메일 주소를 선택해주세요");
-		hemail3.focus();
+	}else if(ename1.value == ""){
+		alert("영문이름을 입력해주세요");
+		ename1.focus();
+		return false;
+	}else if(ename2.value == ""){
+		alert("영문이름을 입력해주세요");
+		ename2.focus();
+		return false;
+	}else if(hemail.value == ""){
+		alert("이메일을 입력해주세요");
+		hemail.focus();
 		return false;
 	}else if(haddr1.value == ""){
 		alert("주소를 입력해주세요");
@@ -46,9 +55,6 @@ joinCheck = () => {
 	}else if(haddr2.value == ""){
 		alert("상세주소를 입력해주세요");
 		haddr2.focus();
-		return false;
-	}else if(checkCount("hp") == 0){
-		alert("통신사를 선택해주세요");
 		return false;
 	}else if(hpum1.value == "default"){
 		alert("폰번호를 선택해주세요");
@@ -70,42 +76,7 @@ joinCheck = () => {
 }
 
 
-/*********************
-	radio, checkbox --> checked 결과를 count로 체크
-**********************/
-//function checkCount(fname){
-checkCount = (fname) => {
-	const fnameList = document.getElementsByName(fname);
-	let count = 0;
-	
-	for(element of fnameList){
-		if(element.checked){
-			count++;
-		}
-	}
-	return count;
-}
 
-
-/*********************
-	이메일 주소 선택
-**********************/
-//function emailCheck(){
-emailCheck = () => {
-	const hemail2 = document.getElementById("hemail2");
-	const hemail3 = document.getElementById("hemail3");
-	
-	if(hemail3.value == "default"){
-		alert("이메일 주소를 선택해주세요");
-		hemail3.focus();
-		hemail2.value = "";
-	}else if(hemail3.value == "self"){
-		hemail2.value = "";
-		hemail2.focus();
-	}else{
-		hemail2.value = hemail3.value;
-	}	
-}
 
 
 
@@ -145,12 +116,12 @@ passCheck = () =>{
 **********************/
 //function loginCheck(){
 loginCheck = () => {  //arrow function:ES6
-	const mid = document.getElementById("mid");
+	const hid = document.getElementById("hid");
 	const pass = document.getElementById("pass");
 	
-	if(mid.value == ""){
+	if(hid.value == ""){
 		alert("아이디를 입력해주세요");
-		mid.focus();
+		hid.focus();
 		return false;
 	}else if(pass.value == ""){
 		alert("패스워드를 입력해주세요");

@@ -115,7 +115,7 @@
 .replytable { width: 868px; border-collapse: collapse; margin-left: 5px; border-color:#cdcbbe; margin-top: 20px; }
 .replytable tr:first-child { background-color: #ebe7e3; }
 .replytable #replycontent { vertical-align: text-top; padding: 10px; }
-/******/
+
 #category {width:100px; height:23px; margin-left: -276px;}
 #passwordlable { margin-left:30px; }
 #secretnum { height:23px; width: 41px; letter-spacing: 3px; padding-left: 10px;}

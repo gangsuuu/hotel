@@ -228,7 +228,7 @@
 		   									<input class="secret_input" type="checkbox" name="secret" id="secret" checked="checked" value=1>
 		    								<label class="secret_label">비밀글</label>
 			    							<span>
-				    							<label id="passwordlable">비밀번호</label>
+				    							<label id="passwordlable"><span class="ast">*</span>비밀번호</label>
 				    							<input type="password" name="secretnum" id="secretnum">
 			    							</span>
 										</div>

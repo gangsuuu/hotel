@@ -11,13 +11,35 @@ public class HotelMemberDAO extends DBConn{
 
 @Autowired
 private SqlSessionTemplate sqlSession;
+ 	
+     /*
+      * 회원 정보 불러오기
+      */
+	public HotelMemberVO memberContent(String mid) {
+		return sqlSession.selectOne("mapper.hotel.member.memberContent",mid);
+	}
+    /*
+ 	 * 프로필수정(마이페이지)
+ 	 */
+	public int memberUpdate(HotelMemberVO vo) {
+		return sqlSession.update("mapper.hotel.member.memberUpdate", vo);
+	}
 
-	public SessionVO login(HotelMemberVO vo) {
-		return sqlSession.selectOne("mapper.hotel.member.sessionlogin",vo);
+    /*
+	* 현재비밀번호변경 (마이페이지)
+	*/
+	public int mbrpassCheck(HotelMemberVO vo) {
+		return sqlSession.selectOne("mapper.hotel.member.mbrpassCheck", vo);
+	}
+	/*
+  	* 새비밀번호변경 (마이페이지)
+  	*/
+	public int updateMppw(HotelMemberVO vo) {
+		return sqlSession.update("mapper.hotel.member.updateMppw", vo);
 	}
 
 	/*
-	 * 비밀번호변경
+	 * 비밀번호변경 (이메일전송)
 	 */
 	public int updatePw(HotelMemberVO vo) {
 		return sqlSession.update("mapper.hotel.member.updatePw", vo);
@@ -28,7 +50,19 @@ private SqlSessionTemplate sqlSession;
 	public int memberCheck(HotelMemberVO vo) {
 		return sqlSession.selectOne("mapper.hotel.member.memberCheck", vo);
 	}
-
+	/*
+	 * 회원 조회(name,폰번호)
+	 * 
+	 */
+	public int nameCheck(HotelMemberVO vo) {
+		return sqlSession.selectOne("mapper.hotel.member.nameCheck", vo);
+	}
+	/*
+	 * 아이디찾기 mid 이메일
+	 */
+	public HotelMemberVO findId(HotelMemberVO vo) {
+		return sqlSession.selectOne("mapper.hotel.member.findId", vo);
+	}
 	/*
 	 * insert : 회원가입
 	 */
@@ -40,13 +74,12 @@ private SqlSessionTemplate sqlSession;
 	/*
 	 * select : 로그인
 	 */
-	public int select(HotelMemberVO vo) {
+	public SessionVO select(HotelMemberVO vo) {
 		
 		
 		return sqlSession.selectOne("mapper.hotel.member.login",vo);
 	}
 	
-
 	
 	/*
 	 * idCheck : 아이디 중복 체크
@@ -56,8 +89,8 @@ private SqlSessionTemplate sqlSession;
 		return sqlSession.selectOne("mapper.hotel.member.idcheck",mid);
 		
 	}
-	
-	
+
+		
 	/*
 	 * select : 로그인
 			public int select(HotelMemberVO vo) {

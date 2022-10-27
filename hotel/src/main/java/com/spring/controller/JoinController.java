@@ -18,7 +18,6 @@ public class JoinController {
 	@Autowired
 	private MemberServiceImpl memberService;
 	
-	
 
 	/*
 	 * joinCheck.do  회원가입 처리문
@@ -65,10 +64,6 @@ public class JoinController {
 	
 		return String.valueOf(memberService.getIdCheck(mid));  
 	}
-	
-	
-
-	
 	
 }
 

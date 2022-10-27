@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
-import org.apache.commons.mail.HtmlEmail;
 import org.apache.commons.mail.SimpleEmail;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -20,13 +19,10 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private HotelMemberDAO hotelMemberDAO; // 서블릿컨텍스트에 다오 객체 생성 오토와이어드로 뿌려주기.
 	
-	/**
-	 * 세션 연동
-	 */
-	@Override
-	public SessionVO getLogin(HotelMemberVO vo) {
-		return hotelMemberDAO.login(vo);
-	}
+	
+	/*****************************************
+	 *  로그인 회원가입
+	 ****************************************/
 	
 	/**
 	 * 회원가입 
@@ -41,20 +37,68 @@ public class MemberServiceImpl implements MemberService {
 	 *  로그인 
 	 */
 	@Override
-	public int getLoginResult(HotelMemberVO vo) {			
-		int result = hotelMemberDAO.select(vo);
+	public SessionVO getLoginResult(HotelMemberVO vo) {			
+		return hotelMemberDAO.select(vo);
 		
-		return result;
+		
 	}
 	/**
 	 *  아이디 중복체크
 	 */
 	@Override
-	public int getIdCheck(String hid) {
-		int result = hotelMemberDAO.idCheck(hid);
+	public int getIdCheck(String mid) {
+		int result = hotelMemberDAO.idCheck(mid);
 		
 		return result;
 	}
+	
+	
+	/*****************************************
+	 *  마이페이지 
+	 ****************************************/
+	/**
+	 *  회원 상세 정보
+	 */
+	
+	@Override
+	public HotelMemberVO getMemberContent(String mid) {
+		return hotelMemberDAO.memberContent(mid);
+	}
+	/**
+	 *  비밀번호 수정 체크 
+	 */
+	@Override
+	public int mbrpassCheck(HotelMemberVO vo) {
+	
+		return hotelMemberDAO.mbrpassCheck(vo);
+		
+	}
+	
+	/**
+	 * 비밀번호 수정(마이페이지)
+	 */
+	@Override
+	public int passUpdate(HotelMemberVO vo) {
+		int result = hotelMemberDAO.updateMppw(vo);
+		
+		return result;
+	}
+	
+	/**
+	 * 프로필 수정(마이페이지)
+	 */
+	
+	@Override
+	public int memberUpdateCheck(HotelMemberVO vo) {
+		int result = hotelMemberDAO.memberUpdate(vo);
+		
+		return result;
+	}
+	
+	/*****************************************
+	 *  아이디찾기, 비밀번호찾기
+	 ****************************************/
+	
 	//비밀번호 찾기 이메일발송
 	@Override
 	public void sendEmail(HotelMemberVO vo, String div) throws Exception {
@@ -75,7 +119,7 @@ public class MemberServiceImpl implements MemberService {
 			subject = "신라스테이 임시 비밀번호 입니다.";
 			msg += "<div align='center' style='border:1px solid black; font-family:verdana'>";
 			msg += "<h3 style='color: blue;'>";
-			msg += vo.getHid() + "님의 임시 비밀번호 입니다. 비밀번호를 변경하여 사용하세요.</h3>";
+			msg += vo.getMid() + "님의 임시 비밀번호 입니다. 비밀번호를 변경하여 사용하세요.</h3>";
 			msg += "<p>임시 비밀번호 : ";
 			msg += vo.getPass() + "</p></div>";
 		}*/
@@ -89,6 +133,10 @@ public class MemberServiceImpl implements MemberService {
 				email.setStartTLSRequired(true) ;
 				email.setFrom("fkiieyu4455@naver.com") ;
 				email.setSubject("신라스테이 임시 비밀번호 입니다.") ;
+				
+				
+				
+			
 				email.setMsg(vo.getMid() + "님의 임시 비밀번호 입니다. 비밀번호를 변경하여 사용하세요."+"임시 비밀번호 :"+ vo.getPass());
 				email.addTo(vo.getHemail());  //받는사람
 				email.send();
@@ -127,4 +175,47 @@ public class MemberServiceImpl implements MemberService {
 			out.close();
 		}
 	}
-}
+	// 아이디찾기
+
+	@Override
+	public void sendEmail2(HotelMemberVO vo, String div) throws Exception {
+		
+		// 받는 사람 E-Mail 주소
+		try {
+				Email email = new SimpleEmail(); 
+				email.setHostName("smtp.naver.com");
+				email.setSmtpPort(587) ;
+				email.setAuthenticator(new DefaultAuthenticator("fkiieyu4455@naver.com", "dlwlals1?")) ;
+				email.setStartTLSRequired(true) ;
+				email.setFrom("fkiieyu4455@naver.com") ;
+				email.setSubject("회원님의 아이디입니다") ;
+				email.setMsg(vo.getHname() + "님의 아이디는" + vo.getMid()+ "입니다");
+				email.addTo(vo.getHemail());  //받는사람
+				email.send();
+		
+				
+		} catch (Exception e) {
+			System.out.println("메일발송 실패 : " + e);
+		}
+	}
+	//아이디찾기
+	@Override
+	public void findId(HttpServletResponse response, HotelMemberVO vo) throws Exception {
+		response.setContentType("text/html;charset=utf-8");
+		int checkresult = hotelMemberDAO.nameCheck(vo);
+		PrintWriter out = response.getWriter();
+		// 가입된 이름이 없으면
+		if(checkresult == 0) {
+			out.print("등록되지 않은 회원입니다.");
+			out.close();
+		
+		}else {
+			HotelMemberVO sendvo = hotelMemberDAO.findId(vo);
+			sendEmail2(sendvo, "findid");
+
+			}			
+		    out.print("등록된 이메일로 아이디를 발송하였습니다.");
+			out.close();
+		}
+	}
+

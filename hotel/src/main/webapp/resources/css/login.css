@@ -1,0 +1,547 @@
+/*******************************
+ login, search, join css
+****************************/
+a{
+    text-decoration: none;
+    color:black;
+}
+li{
+    list-style: none;
+    padding:0;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+.loginintro{
+    width: 1200px;
+    padding: 40px 0;
+    margin: auto;
+}
+.loginintro h1{
+    font-size: 18px;
+    color:rgb(156,131,106);
+    margin-bottom: 20px;
+}
+.loginintro p{
+    font-size: 25px;
+    font-weight: 100;
+    color:rgb(116,116,116);
+    margin: 10px 0;
+}
+.login-container{
+    width: 100%;
+    background-color: rgb(249,249,249);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container-left{
+    margin:50px 0;
+
+}
+.login-type{
+    display: table;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+.login-type-btns{
+    display: table-cell;
+    border-collapse: collapse;
+    border-bottom: 1px solid rgb(156,131,106);;
+}
+.login-type-btn{
+    text-align: center;
+    width: 298px;
+    padding:10px 100px;
+    display: inline-block;
+    color: rgb(156,131,106);
+    font-weight: 600;
+}
+.login-user-selected{
+    border: 1px solid rgb(156,131,106);
+    border-bottom: none;
+}
+.login-input{
+    display: block;
+    margin: 10px 0;
+    width: 460px;
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: 100;
+    border: 1px solid rgb(230,227,223);
+    transition: border 350ms;
+}
+.login-input:focus{
+   outline: none;
+   border: 1px solid rgb(156,131,106);
+}
+
+.login-btn{
+    margin: 10px 0;
+    width: 502px;
+    height: 50px;
+    text-align: center;
+    border: 1px solid rgb(156,131,106);
+    background-color: rgb(156,131,106);
+    color: white;
+    font-size: 19px;
+    font-weight:500;
+    transition: background-color 350ms;
+}
+.login-btn:hover{
+    background-color: rgb(138,112,87);
+}
+.login-find-acount-{
+    width: 500px;
+}
+.login-find-acount-link{
+    text-align:right;
+    display: block;
+    color: rgb(156,131,106);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.login-container-right{
+    height: 100%;
+    width: 500px;
+}
+.login-join-text{
+    margin:  30px 0 40px  0;
+    
+}
+.login-join-text p{
+    margin: 3px 0;
+    color:rgb(116,116,116);
+    font-size: 15px;
+    
+}
+.login-join-text p:first-child{
+    color:rgb(156,131,106);
+    margin:16px 0 ;
+    font-size: 17px;
+    font-weight: 600;
+}
+.login-join-acount{
+    text-align: center;
+    display: block;
+    padding: 13px 0;
+    border: 1px solid rgb(156,131,106);
+    background-color: white;
+    color: rgb(156,131,106);
+    font-size: 17px;
+    font-weight: 600;
+    transition: background-color 500ms;
+}
+.login-join-acount:hover{
+    background-color:rgb(138,112,87);
+    color: white;
+}
+.login-block{
+    width: 1px;
+    margin: 0 80px;
+    height: 260px;
+    background-color: rgba(138,112,87,0.1);
+    
+}
+/***********************************
+            seach-id
+***********************************/
+.findid-container{
+    width: 100%;
+    background-color: rgb(249,249,249);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.findid-container-left{
+    margin:50px 0;
+}
+.findid-input{
+}
+.findid-name{
+    display: block;
+    margin: 10px 0;
+    width: 460px;
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: 100;
+    border: 1px solid rgb(230,227,223);
+    transition: border 350ms;
+}
+.findid-phone{
+    width: 120px;
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: 100;
+    border: 1px solid rgb(230,227,223);
+    transition: border 350ms;
+    margin: 0 1px;
+}
+.findid-phone option{
+    width: 120px;
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: 100;
+    border: 1px solid rgb(230,227,223);
+    transition: border 350ms;
+    margin: 0 1px;
+}
+.findid-phone-select{
+    width: 161px;
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: 100;
+    border: 1px solid rgb(230,227,223);
+    transition: border 350ms;
+    margin: 0 1px;
+    appearance:none;
+}
+.findid-input:focus{
+   outline: none;
+   border: 1px solid rgb(156,131,106);
+}
+.findid-input-phone{
+    position: relative;
+}
+.findid-input-arrow{
+    position: absolute;
+    margin-top: -7px;
+    top:50%; left:140px;
+    width: 7px;
+    height: 7px;
+    display: inline-block;
+    border-left: 2px solid rgb(138,112,87);
+    border-top: 2px solid rgb(138,112,87);
+    transform: rotate(-135deg);
+}
+
+.findid-btn{
+    margin: 10px 0;
+    width: 502px;
+    height: 50px;
+    text-align: center;
+    border: 1px solid rgb(156,131,106);
+    background-color: rgb(156,131,106);
+    color: white;
+    font-size: 19px;
+    font-weight:500;
+    transition: background-color 350ms;
+}
+
+.findid-btn:hover{
+    background-color: rgb(138,112,87);
+}
+.findid-btn:disabled{
+    background-color: rgb(196,191,187);
+    border: rgb(196,191,187);
+    color: rgb(232,222,207);
+}
+.search-blocks{
+    margin: 0 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-block{
+    width: 1px;
+    height: 100px;
+    background-color: rgba(138,112,87,0.2);
+}
+
+.findid-container-right{
+    margin:50px 0;
+}
+.findpass-inputs{}
+.findpass-input{
+}
+.findpass-name{
+    display: block;
+    margin: 10px 0;
+    width: 460px;
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: 100;
+    border: 1px solid rgb(230,227,223);
+    transition: border 350ms;
+}
+.findpass-email1{
+     display: block;
+    margin: 10px 0;
+    width: 460px;
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: 100;
+    border: 1px solid rgb(230,227,223);
+    transition: border 350ms;
+}
+.findpass-email2{
+    width: 100px;
+    padding: 16px 20px;
+    font-size: 14px;
+    font-weight: 100;
+    border: 1px solid rgb(230,227,223);
+    transition: border 350ms;
+    margin: 0 1px;
+}
+.findpass-phone option{
+    width: 120px;
+    padding: 16px 20px;
+    font-size: 17px;
+    font-weight: 100;
+    border: 1px solid rgb(230,227,223);
+    transition: border 350ms;
+}
+.findpass-domain-select{
+    width: 142px;
+    padding: 16px 20px;
+    font-size: 14px;
+    font-weight: 100;
+    border: 1px solid rgb(230,227,223);
+    transition: border 350ms;
+    margin: 0 0px;
+    appearance:none;
+}
+.findpass-input:focus{
+   outline: none;
+   border: 1px solid rgb(156,131,106);
+}
+.findpass-input-phone{
+    position: relative;
+}
+
+.findpass-btn{
+    margin: 10px 0;
+    width: 502px;
+    height: 50px;
+    text-align: center;
+    border: 1px solid rgb(156,131,106);
+    background-color: rgb(156,131,106);
+    color: white;
+    font-size: 19px;
+    font-weight:500;
+    transition: background-color 350ms;
+}
+
+.findpass-btn:hover{
+    background-color: rgb(138,112,87);
+}
+.findpass-btn:disabled{
+    background-color: rgb(196,191,187);
+    border: rgb(196,191,187);
+    color: rgb(232,222,207);
+}
+/******************************************
+        join
+*******************************************/
+.joinintro{
+    width: 1200px;
+    padding: 40px 0;
+    margin: auto;
+}
+.joinintro h1{
+    font-size: 18px;
+    color:rgb(156,131,106);
+    margin-bottom: 20px;
+}
+.joinintro p{
+    font-size: 25px;
+    font-weight: 100;
+    color:rgb(116,116,116);
+    margin: 10px 0;
+}
+.join-container{
+    width: 100%;
+    height: auto;
+    background-color: rgb(249,249,249);
+}
+.join-container-inner{
+    width: 1200px;
+    margin: auto;
+    padding: 30px 0;
+}
+.join-intro-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.join-input-list{
+    font-size: 15px;
+    font-weight: 600;
+}
+.join-input-notice{
+    font-size: 14px;
+    color: rgb(173, 173, 173);
+}
+.join-passcheck{
+	
+	
+}
+.join-input-box{
+    margin-bottom:20px;
+    position: relative;
+}
+.join-input-box h2{
+    color: rgb(156,131,106);
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+    text-align: left;
+}
+.join-input-box p{
+    margin: 5px 0;
+    font-size: 12px;
+    color: rgb(116,116,116);
+}
+.join-input-box span{
+    font-size: 15px;
+    color: rgb(116,116,116);
+}
+.input-pass-container{
+    display: flex;
+    justify-content: space-between;
+}
+.join-input{
+    font-size: 17px;
+    padding:10px 10px;
+    border:1px solid rgb(230,227,223)
+}
+.input-type1{
+    width: 550px;
+}
+.input-type2{
+    width: 261px;
+}
+.join-input:focus{
+    outline: none;
+    border: 1px solid rgb(156,131,106);
+ }
+ .join-block{
+    width: 100%;
+    height: 1px;
+    background-color: rgba(138,112,87,0.2);
+    margin: 40px 0;
+ }
+ .join-user-info{
+    display: flex;
+    justify-content: space-between;
+ }
+ .join-userinfo-right, .join-userinfo-left{
+    width: 572px;
+ }
+ .join-userinfo-right{
+    text-align: right;
+ }
+ .join-input-name{
+    width: 394px;
+ }
+ .join-input-gender{
+    width: 150px;
+    height: 42px;
+ }
+ select[class ~="join-input"]{
+    appearance: none;
+ }
+ .input-type3{
+    width: 186px;
+ }
+ .input-type4{
+    width: 172px;
+    margin-top: 1px;
+ }
+ .join-input-zonecode{
+    width: 400px;
+ }
+ .join-addrbtn{
+    text-align: center;
+    display: inline-block;
+    padding: 11px 27px;
+    border: 1px solid rgb(156,131,106);
+    background-color: white;
+    color: rgb(156,131,106);
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 300ms;
+}
+ .join-idCheck{
+    text-align: center;
+    display: inline-block;
+    padding: 11px 27px;
+    border: 1px solid rgb(156,131,106);
+    background-color: white;
+    color: rgb(156,131,106);
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 300ms;
+}
+.join-idCheck:hover{
+    background-color:rgb(138,112,87);
+    color: white;
+}
+.join-addrbtn:hover{
+    background-color:rgb(138,112,87);
+    color: white;
+}
+.join-input-addr1{
+    margin:5px 0;
+}
+.join-getid{
+    display: none;
+}
+.join-getid[type="checkbox"] + label{
+display: inline-block; height: 23px; width: 23px;
+background-color: white;
+    border:1px solid rgb(196,191,187)
+}
+.join-getid[type="checkbox"]:checked  + label{
+    border:1px solid rgb(156,131,106);
+}
+.join-getid-point{
+    width: 6px; height: 10px;
+    border-top: 3px solid rgb(196,191,187);
+    border-left: 3px solid rgb(196,191,187);
+    display: inline-block;
+    transform: rotate(-135deg);
+    position: relative;
+    left: 31%;top:1%;
+}
+.join-id-checked{
+    border-top: 3px solid rgb(156,131,106);
+    border-left: 3px solid rgb(156,131,106);
+}
+.join-submit-btn-container{
+    position: relative;
+}
+.join-submit-btn{
+    width: 250px;
+    height: 70px;
+    text-align: center;
+    border: 1px solid rgb(156,131,106);
+    background-color: rgb(156,131,106);
+    color: white;
+    font-size: 19px;
+    font-weight:500;
+    transition: background-color 350ms;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.join-submit-btn:hover{
+    background-color: rgb(138,112,87);
+}
+.join-arrow{
+    position: absolute;
+    margin-top: 15px;
+    margin-left:-27px;
+    width: 7px;
+    height: 7px;
+    display: inline-block;
+    border-left: 2px solid rgb(138,112,87);
+    border-top: 2px solid rgb(138,112,87);
+    transform: rotate(-135deg);
+}
+.arrow-typ1{
+    margin-left: -23px;
+}

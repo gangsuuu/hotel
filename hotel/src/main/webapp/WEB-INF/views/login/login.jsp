@@ -3,11 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/hotel.css">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/login.css">
 <script src="http://localhost:9000/hotel/resources/js/jquery-3.6.0.min.js"></script>
 <script src="http://localhost:9000/hotel/resources/js/myhotel_jquery.js"></script>
-<meta charset="UTF-8">
-
 <script>
 let join_result = '${join_result}';
 let login_result = '${login_result}';
@@ -27,60 +26,54 @@ if(join_result == 'ok'){
 
 </script>
 </head>
+
 <body>
-<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header.js"></script>
-<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/header_find_hotel.js"></script>	
-
-<!-- top -->
-<section logincontain="" class="subcontain">
-	<div topstyl="" logincontain="" class="sub-top-area forms">
-		<div topstyl="" class="container">
-			<h2 topstyl="">Login</h2>				
-		</div>
-	</div>
-</section>
-
-<!-- main  -->	
-	<form name= "loginForm" action="loginCheck.do" method="post">
-		<div logincontain="" class="container small pddt">
-			<div logincontain="" class="id-area">
-				<div ct="" logincontain="" class="input-area" clearable="">
-					<input ct="" id="mid" name="mid" autocomplete="on" placeholder="아이디를 입력해 주세요." maxlength="20" type="text" class="">
-					
-					<a ct="" href="" class=""></a>
-					
-				</div>
-			</div>
-			<div logincontain="" class="id-area">
-				<div ct="" logincontain="" class="input-area">
-					<input ct="" id="pass" name="pass" autocomplete="on" placeholder="비밀번호를 입력해 주세요." maxlength="14" type="password"
-						class="">
-				
-				</div>
-			</div>
-			<div logincontain="" class="normal-area between">
-				<div boxx="" logincontain="" class="check-area"></div>
-				<div class="">
-					<a logincontain="" href="search.do">아이디/비밀번호 찾기</a>
-						
-				</div>
-			</div>
-			<div logincontain="" class="normal-area mt40 btn-group">
-				<div loginc="" logincontain="" class="btn_style">
-					<button loginc="" type="submit" class="logincolor">로그인</button>
-				</div>
-				<div loginc="" logincontain="" class="btn_style">
-					<button loginc="" type="button"
-						onclick="location.href = 'http://localhost:9000/hotel/joinstep.do';"
-						class="joincolor">회원이 아니신가요? 가입하기</button>
-
-
-				</div>
-			</div>
-			
-	</form>
-	<script type="text/javascript"  src="http://localhost:9000/hotel/resources/js/footer.js"></script>
+<form name= "loginForm" action="loginCheck.do" method="post">
+    <section>
+        <div class="content">
+            <div class="loginintro">
+                <h1>로그인</h1>
+                <p>신라스테이 광화문에 오신 것을 환영합니다.</p>
+                <p>로그인을 하시고 더 편리하게 이용하세요.</p>
+            </div>
+            <div class="login-container">
+                <div class="login-container-left">
+                    <div class="login-type">
+                        <div class="login-type-btns login-user-selected">
+                            <a class="login-type-btn" href="">회원</a>
+                        </div>
+                      
+                    </div>
+                    <form>
+                        <div>
+                            <input type="text" id="mid" name="mid" class="login-input" placeholder="아이디를 입력해 주세요.">   
+                            <input type="password" id="pass" name="pass" class="login-input" placeholder="비밀번호를 입력해 주세요.">    
+                        </div>
+                        <div>
+                            <button type="submit" id="btnLogin" class="login-btn btn">로그인</button>
+                        </div>
+                        <div class="login-find-acount">
+                            <a class="login-find-acount-link" href="search.do">아이디/비밀번호 찾기</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="login-block">
+                </div>
+                <div class="login-container-right">
+                    <div class="login-join-text">
+                        <p>아직 회원이 아니신가요?</p>
+                        <p>회원이 되시면 신라스테이 회원으로서</p>
+                        <p>더 큰 혜택과 편리함을 누릴 수 있습니다.</p>
+                    </div>
+                    <div>
+                        <a class="login-join-acount" href="joinstep.do">회원가입</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
 	
-</body>
 
-</html>
+</form>
+</body>

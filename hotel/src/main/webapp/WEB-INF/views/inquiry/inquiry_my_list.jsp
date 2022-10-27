@@ -111,6 +111,7 @@ background: red;
 #linewrite { margin-bottom: 5px; }
 
 /**************** 추가 ***************/
+
 #btnInquiry {
  background-color:rgb(58,49,37); 
  color:rgb(250,241,208); 

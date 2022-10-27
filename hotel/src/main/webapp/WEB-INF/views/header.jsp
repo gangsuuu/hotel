@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,13 +21,35 @@
 			<div class='header_top_right'>
 				<div>
 					<img src="http://localhost:9000/hotel/resources/img/public/header-call.png">
+					
+				<c:choose>
+					<c:when test="${SesseionScope.svo == null}">
+						<div class='header_top_guest theme2_guest'>
+							<a class='header_login' href='http://localhost:9000/hotel/login.do'>로그인</a>
+							<a href='http://localhost:9000/hotel/mypage.do'>MyPage</a>
+							<a href='#'>예약확인</a>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class='header_top_guest theme2_guest'>
+							<a class='header_login' href='http://localhost:9000/hotel/logout.do'>로그아웃</a>
+							<a href='http://localhost:9000/hotel/mypage.do'>MyPage</a>
+							<a href='#'>예약확인</a>
+							<!-- 관리자 일때, 메뉴 생성 -->
+							<c:if test="${SessionScope.svo.mid == 'admin' }">
+								<a href='http://localhost:9000/hotel/admin_inquiry_list.do'>admin</a>
+							</c:if>
+						</div>						
+					</c:otherwise>
+				</c:choose>	
 				</div>
-				<div class='header_top_guest theme2_guest'>
-					<a class='header_login' href='http://localhost:9000/hotel/login.do'>로그인</a>
-					<a href='#'>예약확인</a>
-					<a href='http://localhost:9000/hotel/admin_inquiry_list.do'>admin</a>
+				
 				</div>
+				
+				
+				
 			</div>
+			
 		</div>
 			<div class='header_categori_container theme2_categori'>
 				<ul class='header_maincategori_lists theme2_main'>
@@ -78,7 +101,7 @@
 							<a class='theme2_main_seach' href='#'>위치찾기</a>
 						</li>
 						<li class='header_maincategori_res'>
-							<a class='theme2_main_res' href='http://localhost:9000/hotel/list.do'>예약</a>
+							<a class='theme2_main_res' href='http://localhost:9000/hotel/book.do'>예약</a>
 						</li>
 					</div>
 				</ul>

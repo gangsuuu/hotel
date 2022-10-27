@@ -11,7 +11,7 @@
 		if("${svo.mid}"=="admin"){
 			location.href = "main.do";//관리자 페이지로 이동
 		}else{
-		location.href = "theshilla.do";
+		location.href = "shillaStay.do";
 		}
 	}else if(result=="fail"){
 		alert("아이디를 확인해주시길 바랍니다");

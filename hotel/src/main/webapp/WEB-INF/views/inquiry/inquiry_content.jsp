@@ -188,7 +188,7 @@
 #modal_delete { background-color: white; font-size: 16px; color: rgb(58,49,37); font-weight: 800; }
 
 #replydelete { float: right; margin-top: -1px; }
-.replytable { width: 868px; border-collapse: collapse; margin-left: 5px; border-color:#cdcbbe; margin-top: 20px; }
+.replytable { width: 850px; border-collapse: collapse; border-color:#cdcbbe; margin-top: 20px; margin-left: 1px; }
 .replytable tr:first-child { background-color: #ebe7e3; }
 .replytable #replycontent { vertical-align: text-top; padding: 10px; }
 
