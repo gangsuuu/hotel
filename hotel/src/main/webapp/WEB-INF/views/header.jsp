@@ -39,14 +39,14 @@
 			<div class='header_categori_container theme2_categori'>
 				<ul class='header_maincategori_lists theme2_main'>
 					<div>
-						<li class='header_maincategori theme2_after'>
+						<li class='header_maincategori theme2_after' data-num="1">
 							<a href='#'>스페셜 오퍼</a>
 							<ul class='header_subcategori_list theme2_sub_container' data-nav="Special">
 								<li><a class='theme2_sub' id='header_subcategori' href='#'>객실 패키지</a></li>
 								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/event_list.do'>이벤트</a></li>
 							</ul>
 						</li>
-						<li class='header_maincategori theme2_after' >
+						<li class='header_maincategori theme2_after' data-num="2">
 							<a href='http://localhost:9000/hotel/accommodation/standard.do'>객실</a>
 							<ul class='header_subcategori_list theme2_sub_container' data-nav="rooms">
 								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/accommodation/standard.do'>스탠다드</a></li>
@@ -56,14 +56,14 @@
 								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/accommodation/allrooms.do'>전체 객실 보기</a></li>
 							</ul>
 						</li>
-						<li class='header_maincategori theme2_after'>
+						<li class='header_maincategori theme2_after' data-num="3">
 							<a href='#'>다이닝</a>
 							<ul class='header_subcategori_list theme2_sub_container' data-nav="restaurant">
 								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/shillastay/dining/resturant.do'>레스토랑</a></li>
 								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/shillastay/dining/lounge.do'>라운지 & 바</a></li>
 							</ul>
 						</li>
-						<li class='header_maincategori theme2_after'>
+						<li class='header_maincategori theme2_after' data-num="4">
 							<a href='#'>부대시설</a>
 							<ul class='header_subcategori_list theme2_sub_container' data-nav="facilites">
 								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/shillastay/facilities/meetingRoom.do'>미팅룸</a></li>
@@ -71,8 +71,9 @@
 								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/shillastay/facilities/fitnessRoom.do'>피트니스 센터</a></li>
 							</ul>
 						</li>
-						<li class='header_maincategori theme2_after'>
+						<li class='header_maincategori theme2_after' data-num="5">
 							<a href='#'>고객서비스</a>
+							<div></div>
 							<ul class='header_subcategori_list theme2_sub_container' data-nav="service">
 								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/guestservice/introhotel.do'>호텔안내</a></li>
 								<li><a class='theme2_sub' id='header_subcategori' href='http://localhost:9000/hotel/guestservice/viewGuestService.do'>인근명소</a></li>
@@ -92,5 +93,15 @@
 				</ul>
 			</div>
 	</header>
+	<script>
+		$(".header_maincategori ").mouseover(function(){
+			var num = $(this).data("num");
+			$("[data-num="+num+"]").css('z-index','10');
+	 	})
+	 	$(".header_maincategori ").mouseout(function(){
+	 		var num = $(this).data("num");
+	 		$("[data-num="+num+"]").css('z-index','5');
+	 	})
+	</script>
 </body>
 </html>
