@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>항상 즐거움이 있는 SHILLA STAY!</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
@@ -102,7 +102,7 @@ window.initMap = function () {
 				<c:forEach var="noticeVO"  items="${eventlist}">
 					<article class="hotel-index-article">
 						<div>
-							<a class="hotel-index-event-box" href="http://localhost:9000/hotel/event_content.do?nid=${noticeVO.nid }">
+							<a class="hotel-index-event-box" href="http://localhost:9000/hotel/notice_content.do?nid=${noticeVO.nid }">
                         		<img src="http://localhost:9000/hotel/resources/upload/${noticeVO.nsfile}">
                         	</a>
 							<h3>${noticeVO.ntitle }</h3>
