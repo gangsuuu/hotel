@@ -515,11 +515,41 @@
     background-color: rgba(255,0,0,0.5)
     }
     .hotel-index-event{
-    height: 400px;
+    height: auto;
     width: 1200px;
-    margin: auto;
-    background-color: rgba(0,255,0,0.5)
+    margin: 50px auto;
+    display: flex;
+    justify-content:space-between
     }
+    .hotel-index-article{
+    margin: 20px 0 0 0;
+    }
+    .hotel-index-event-box{
+    width: 370px;
+    height: auto;
+    overflow:hidden; 
+    text-overflow: ellipsis;
+    display: block;
+    }
+    .hotel-index-event-box img{
+    width: 370px;
+    height: 180px;
+    }
+    .hotel-index-event-box h3{
+    margin: 10px 0 5px 0;
+    }
+    .hotel-index-event-box p{
+    width: 370px;
+    height: 20px;
+    font-size: 12px;
+    display: block;
+    white-space: nowrap;
+    overflow:hidden; 
+    text-overflow: ellipsis;
+    }
+    
+    
+    
     .hotel-index-map-container{
     height: auto;
     width: 1200px;
@@ -1165,6 +1195,9 @@
  	color:#aaa;
  	font-size:0.5mm;
  	}
+ 	
+ 	
+ 	
  	
  	.content-rooms-info-btns{
  	display: flex;

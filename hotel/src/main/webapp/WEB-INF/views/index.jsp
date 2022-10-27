@@ -100,17 +100,18 @@ window.initMap = function () {
 			
 			<section class="hotel-index-event">
 				<c:forEach var="noticeVO"  items="${eventlist}">
-					<article>
+					<article class="hotel-index-article">
 						<div>
-							<a class="hotel-index-event-box" href="http://localhostL9000/hotel/notice_content.do?nid=${noticeVO.nid }">
-								<img src="http://localhostL9000/hotel/resources/upload/${noticeVO.bsfile}">
-							</a>
+							<a class="hotel-index-event-box" href="http://localhost:9000/hotel/event_content.do?nid=${noticeVO.nid }">
+                        		<img src="http://localhost:9000/hotel/resources/upload/${noticeVO.nsfile}">
+                        	</a>
 							<h3>${noticeVO.ntitle }</h3>
 							<p>${noticeVO.ncontent }</p>
 						</div>
 					</article>
 				</c:forEach>
 			</section>
+			
 			
 			<section class="hotel-index-map-container">
 				<div class="hotel-index-map-info">
