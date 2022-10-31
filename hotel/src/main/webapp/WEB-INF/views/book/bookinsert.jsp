@@ -6,13 +6,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-	
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
- 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
-	
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+   <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+   
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+   <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+   
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="http://localhost:9000/hotel/resources/css/detail.css"/>
@@ -23,105 +23,115 @@
     $("[data-nav=service]").children().eq(2).children().first().css("color","white");
     </script> 
    
-	<script>    
- 	$(document).ready(function () {  
- 		$.datepicker.setDefaults($.datepicker.regional['ko']);             
- 		$( ".sdate" ).datepicker({                 
- 			changeMonth: true,                  
- 			changeYear: true,                 
- 			nextText: '다음 달',                 
- 			prevText: '이전 달',                  
- 			dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],                 
- 			dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],                  
- 			monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
- 			monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
- 			dateFormat: "yymmdd",                 minDate: 0,                       
- 			// 선택할수있는 최소날짜, ( 0 : 오늘 이후 날짜 선택 가능)                 
- 			onClose: function( selectedDate ) {                          
- 				//시작일(startDate) datepicker가 닫힐때                      
- 				//종료일(endDate)의 선택할수있는 최소 날짜(minDate)를 선택한 시작일로 지정                     
- 				$(this).datepicker( "option", "minDate", selectedDate );                 
- 				}                 
- 				});            
- 				$( ".edate" ).datepicker({                 
- 					changeMonth: true,                  
- 					changeYear: true,                 
- 					nextText: '다음 달',                 
- 					prevText: '이전 달',                  
- 					dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],                 
- 					dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],                  
- 					monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
- 					monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
- 					dateFormat: "yymmdd",                 minDate: 0,                       
- 					// 선택할수있는 최대날짜, ( 0 : 오늘 이후 날짜 선택 불가)                 
- 					onClose: function( selectedDate ) {                         
- 						// 종료일(endDate) datepicker가 닫힐때                     
- 						// 시작일(startDate)의 선택할수있는 최대 날짜(maxDate)를 선택한 시작일로 지정                     
- 						$(this).datepicker( "option", "maxDate", selectedDate );  
- 						}                 
- 						});  
- 							$( this ).val($(this).attr("id"));
- 						});
- 	</script>
- 	<script>
- 	 $( document ).ready( function() {
- 		 var bprice='${vo.bprice}';
- 		 
+   <script>    
+    $(document).ready(function () {  
+       $.datepicker.setDefaults($.datepicker.regional['ko']);             
+       $( ".sdate" ).datepicker({                 
+          changeMonth: true,                  
+          changeYear: true,                 
+          nextText: '다음 달',                 
+          prevText: '이전 달',                  
+          dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],                 
+          dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],                  
+          monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
+          monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
+          dateFormat: "yy-mm-dd",                 minDate: 0,                       
+          // 선택할수있는 최소날짜, ( 0 : 오늘 이후 날짜 선택 가능)                 
+          onClose: function( selectedDate ) {                          
+             //시작일(startDate) datepicker가 닫힐때                      
+             //종료일(endDate)의 선택할수있는 최소 날짜(minDate)를 선택한 시작일로 지정                     
+             $(this).datepicker( "option", "minDate", selectedDate );                 
+             }                 
+             });            
+             $( ".edate" ).datepicker({                 
+                changeMonth: true,                  
+                changeYear: true,                 
+                nextText: '다음 달',                 
+                prevText: '이전 달',                  
+                dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],                 
+                dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],                  
+                monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
+                monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
+                dateFormat: "yy-mm-dd",                 minDate: 0,                       
+                // 선택할수있는 최대날짜, ( 0 : 오늘 이후 날짜 선택 불가)                 
+                onClose: function( selectedDate ) {                         
+                   // 종료일(endDate) datepicker가 닫힐때                     
+                   // 시작일(startDate)의 선택할수있는 최대 날짜(maxDate)를 선택한 시작일로 지정                     
+                   $(this).datepicker( "option", "maxDate", selectedDate );  
+                   }                 
+                   });  
+                      $( this ).val($(this).attr("id"));
+                   });
+    </script>
+    <script>
+     $( document ).ready( function() {
+        var bprice = '${vo.bprice}';
+        
          $( '#startDate_, #endDate_' ).change( function() {
-        	 var start= $( '#startDate_' ).val();
-             var end = $( '#endDate_' ).val();
-             var day = (end-start);
-             var last = (end-start)*bprice;
+            var start= $( '#startDate_' ).val();
+             var d = new Date(start);
             
-	           if(end == "" ){
-	        	   $( '#per_date' ).text( "" );
-	               $( '#sumprice' ).text( "" );
-	               $( '#total' ).text( "" );
-	           }else if(last<=0){
-	        	   alert("날짜를 정확히 확인해주시기 바랍니다.");
-	        	   location.reload();
-	           }
-	        	else{
-	            last=last.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-	            $( '#per_date' ).text( day );
-	            $( '#sumprice' ).text( last );
-	            $( '#total' ).text( last );
-	          }
+             var end = $( '#endDate_' ).val();
+             var v = new Date(end);
+             var sum=(v.getTime() - d.getTime()) / (1000 * 3600 * 24);//총 날짜
+             var day = sum;
+             var last = (sum)*bprice;
+            
+              if(end == "" ){
+                 $( '#per_date' ).text( "" );
+                  $( '#sumprice' ).text( "" );
+                  $( '#total' ).text( "" );
+              }else if(last<=0){
+                 alert("날짜를 정확히 확인해주시기 바랍니다.");
+                 location.reload();
+              }
+              else{
+               last=last.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+               $( '#per_date' ).text( day );
+               $( '#sumprice' ).text( last );
+               $( '#price' ).val( last );               
+               $( '#total' ).text( last );
+             }
            
          });
- 		 
+        
        });
- 	
- 	</script>
- 	<script type="text/javascript">
- 	
- 	function eve(){
- 		var radatestart = $("#startDate_").val();
- 		var radateend   = $("#endDate_").val();
- 		
- 		if(radatestart==""){
- 			alert("입실 날짜를 선택해 주세요");
- 			return false;
- 		}else if(radateend==""){
- 			alert("퇴실 날짜를 선택해 주세요");
- 			return false;
- 		}
- 		bookinsert.submit();
- 	}
- 	
- 	
- 	</script>
+    
+    </script>
+ <script type="text/javascript">
+    
+    function eve(){
+       var mid         = $("#mid").val();
+       var radatestart = $("#startDate_").val();
+       var radateend   = $("#endDate_").val();
+       
+       if(radatestart==""){
+          alert("입실 날짜를 선택해 주세요");
+          return false;
+       }else if(radateend==""){
+          alert("퇴실 날짜를 선택해 주세요");
+          return false;
+       }else if(mid==""){
+          alert("로그인후 예약을 진행해 주세요");
+          location.reload();
+          return false;
+       }
+       bookinsert.submit();
+    }
+    
+    
+    </script>
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file="../header.jsp" %>
-	<form name="bookinsert" action="bookinsertresult.do" method="POST">
-	<input type="hidden" name="mid" value="${svo.mid}"/>
-	<input type="hidden" name="bid" value="${vo.bid}"/>
-	<input type="hidden" id="price" name="price" value="${vo.bprice}"/>
-	<input type="hidden" name="bsfile" id="bsfile" value="${vo.bsfile}" />
-	<input type="hidden" name="brname" id="brname" value="${vo.brname}"/>
-		
+   <%@ include file="../header.jsp" %>
+   <form name="bookinsert" action="bookinsertresult.do" method="POST">
+   <input type="hidden" id="mid" name="mid" value="${svo.mid}"/>
+   <input type="hidden" name="bid" value="${vo.bid}"/>
+   <input type="hidden" id="price" name="price" value=""/>
+   <input type="hidden" name="bsfile" id="bsfile" value="${vo.bsfile}" />
+   <input type="hidden" name="brname" id="brname" value="${vo.brname}"/>
+      
 
 <!--본문-->
 <!-- 숙소 이미지-->
@@ -311,7 +321,7 @@
                 <div class="reservation_tray">
                    
                        <input type="text" name="radatestart" id="startDate_" class="sdate">
-						<input type="text" name="radateend" id="endDate_" class="edate">
+                  <input type="text" name="radateend" id="endDate_" class="edate">
                     
                 </div>
             </div>
@@ -372,14 +382,7 @@ maps API 관련 코드
 
 <!--구글 맵스 API-->
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBq4C8917Pxr1jaL8LAMhaIKwASCPRYpok"></script>
-	</form>
-	<%@ include file="../footer.jsp" %>
+   </form>
+   <%@ include file="../footer.jsp" %>
 </body>
 </html>
-
-
-
-
-
-
-

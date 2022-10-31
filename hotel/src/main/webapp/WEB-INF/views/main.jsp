@@ -31,6 +31,7 @@
 	<title>호텔 방 입력</title>
 </head>
 <body>
+<%@ include file="./header.jsp" %>
 	<div align="center">
 	<h2>호텔 방 입력</h2>
 	<a href="http://localhost:9000/hotel/list.do">방 확인하기</a>
@@ -56,6 +57,6 @@
 	<button type="button" onclick="book()">등록</button>
 	</form>
 	</div>
-	
+	<%@ include file="./footer.jsp" %>
 </body>
 </html>

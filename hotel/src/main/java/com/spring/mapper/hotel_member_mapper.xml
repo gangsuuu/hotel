@@ -7,9 +7,9 @@
      <!--  회원가입  ?-> #{}, java + ; 다삭제 -->
    <insert id="join" parameterType="com.hotel.vo.HotelMemberVO">	
      
-    insert into hotel_member values(#{mid},#{pass},#{hname},#{gender},#{ename},#{hemail},#{zonecode},#{haddr1},#{haddr2},#{pnumber})    
+    insert into hotel_member values(#{mid},#{pass},#{hname},#{hemail},#{zonecode},#{haddr1},#{haddr2},#{pnumber},#{gender},#{ename})    
    </insert>
-   
+
     <!--  아이디 중복 리절트타입 int 면 생략가능 -->
    <select id="idcheck" parameterType="java.lang.String" resultType="int">
     select count(mid) from hotel_member where mid=#{mid}

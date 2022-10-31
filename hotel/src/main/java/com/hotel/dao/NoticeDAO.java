@@ -85,36 +85,38 @@ public class NoticeDAO {
 	}
 	
 	/**
-	 * noticeTotalCount : 페이징 처리 게시물 총 갯수
+	 * noticesearchtotalCount : 공지 검색 페이징 처리 게시물 총 갯수
+	 */
+	public int noticeSearchTotalCount(String search_option, String keyword) {
+		Map<String,String> param = new HashMap<String,String>();
+		param.put("search_option", String.valueOf(search_option));
+		param.put("keyword", String.valueOf(keyword));
+		
+
+		return sqlSession.selectOne("mapper.notice.noticesearchtotalcount",param);
+	}
+	/**
+	 * eventsearchtotalCount : 이벤트 검색 페이징 처리 게시물 총 갯수
+	 */
+	public int eventSearchTotalCount(String search_option, String keyword) {
+		Map<String,String> param = new HashMap<String,String>();
+		param.put("search_option", String.valueOf(search_option));
+		param.put("keyword", String.valueOf(keyword));
+		
+
+		return sqlSession.selectOne("mapper.notice.eventsearchtotalcount",param);
+	}
+	/**
+	 * noticetotalCount : 공지 페이징 처리 게시물 총 갯수
 	 */
 	public int noticeTotalCount() {
 		return sqlSession.selectOne("mapper.notice.noticetotalcount");
 	}
 	/**
-	 * noticesearchcount : 페이징 처리 공지 검색 게시물 총 갯수
-	 */
-	public int noticeSearchCount(String search_option, String keyword) {
-		Map<String,String> param = new HashMap<String,String>();
-		param.put("search_option", String.valueOf(search_option));
-		param.put("keyword", String.valueOf(keyword));
-
-		return sqlSession.selectOne("mapper.notice.noticesearchcount",param);
-	}
-	/**
-	 * eventTotalCount : 페이징 처리 게시물 총 갯수
+	 * eventtotalCount : 이벤트 페이징 처리 게시물 총 갯수
 	 */
 	public int eventTotalCount() {
 		return sqlSession.selectOne("mapper.notice.eventtotalcount");
-	}
-	/**
-	 * eventsearchcount : 페이징 처리 이벤트 검색 게시물 총 갯수
-	 */
-	public int eventSearchCount(String search_option, String keyword) {
-		Map<String,String> param = new HashMap<String,String>();
-		param.put("search_option", String.valueOf(search_option));
-		param.put("keyword", String.valueOf(keyword));
-		
-		return sqlSession.selectOne("mapper.notice.eventsearchcount",param);
 	}
 	/**
 	 * updateHits : 조회수 업데이트

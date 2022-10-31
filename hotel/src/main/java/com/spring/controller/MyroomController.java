@@ -32,9 +32,11 @@ public class MyroomController {
 		ModelAndView mv=new ModelAndView();
 		Map<String, Integer> param = pageService.getPageResult(rpage, "myroom", myroomService,mid);
 		ArrayList<MyroomVO> mlist=(ArrayList<MyroomVO>)myroomService.getSelect(mid,param.get("startCount"),param.get("endCount"));
+		System.out.println(mlist.size());
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("rpage", param.get("rpage"));
-		mv.addObject("pageSize", param.get("pageSize"));
+		mv.addObject("pageSize", param.get("pageSize"));		
+		mv.addObject("mlistsize", mlist.size());
 		mv.addObject("mlist", mlist);
 		mv.setViewName("/myroom/myroom");
 		return mv;

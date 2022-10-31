@@ -30,7 +30,7 @@
         </div>
         <div class="content_menu">
         	<div class="content-location">
-        	  <img src="http://localhost:9000/hotel/resources/img/locaton.gif">
+        	  <img src="http://localhost:9000/hotel/resources/img/inquiry/locaton.gif">
         	  <span>> 객실 ></span>
         	  <span> 전체객실</span>
         	</div>
@@ -89,7 +89,7 @@
             			<a href="javascript:showModal('drawing')">
             				<img src="http://localhost:9000/hotel/resources/img/accommodation/btnFloorPlanView.gif">
             			</a>
-            			<a href="#">
+            			<a href="http://localhost:9000/hotel/inquiry_list.do">
             				<img src="http://localhost:9000/hotel/resources/img/accommodation/btnInquiry.gif">
             			</a>
             			<a href="#">

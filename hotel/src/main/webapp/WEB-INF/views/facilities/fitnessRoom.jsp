@@ -25,7 +25,7 @@
         </div>
         <div class="content_menu">
         	<div class="content-location">
-        	  <img src="http://localhost:9000/hotel/resources/img/locaton.gif">
+        	  <img src="http://localhost:9000/hotel/resources/img/inquiry/locaton.gif">
         	  <span>> 부대시설 ></span>
         	  <span> 피트니스 센터</span>
         	</div>

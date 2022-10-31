@@ -8,9 +8,9 @@
 
 <!--  recent event -->
   	<select id="revent" parameterType="map" resultType="com.hotel.vo.NoticeVO">
-  	select rno, nid, ntag, ntitle, nhits, ndate
- from (select rownum rno, nid, ntag, ntitle,ncontent, nhits, to_char(ndate, 'yyyy-mm-dd') ndate
- from (select nid, ntag, ntitle,ncontent, nhits, ndate from notice_list
+  	select rno, nid, ntag, ntitle, ncontent, nhits, ndate, nsfile
+ from (select rownum rno, nid, ntag, ntitle,ncontent, nhits, to_char(ndate, 'yyyy-mm-dd') ndate, nsfile
+ from (select nid, ntag, ntitle, ncontent, nhits, ndate, nsfile from notice_list
  order by ndate desc)where ntag ='event' ) where rno between  '1' and '3'
   	</select>
 
@@ -88,6 +88,18 @@
 		from notice_list where nid=#{nid}
 	</select>
 	
+  <!-- notice searchtotalcount -->
+	<select id="noticesearchtotalcount" resultType="int">
+		
+		select count(*) from notice_list where ntag='notice' 
+		and ${search_option} like '%' || #{keyword}||'%'
+	</select>	
+  <!-- event searchtotalcount -->
+	<select id="eventsearchtotalcount" resultType="int">
+		
+		select count(*) from notice_list where ntag='event' 
+		and ${search_option} like '%' || #{keyword}||'%'
+	</select>	
   <!-- notice totalcount -->
 	<select id="noticetotalcount" resultType="int">
 		
@@ -97,15 +109,5 @@
 	<select id="eventtotalcount" resultType="int">
 		
 		select count(*) from notice_list where ntag='event'
-	</select>	
-  <!-- noticesearchcount -->
-	<select id="noticesearchcount" resultType="int">
-		
-		select count(*) from notice_list where ntag ='notice' and ${search_option} like '%' || #{keyword}||'%'
-	</select>	
-  <!-- eventsearchcount -->
-	<select id="eventsearchcount" resultType="int">
-		
-		select count(*) from notice_list where ntag ='event' and ${search_option} like '%' || #{keyword}||'%'
 	</select>	
 </mapper>

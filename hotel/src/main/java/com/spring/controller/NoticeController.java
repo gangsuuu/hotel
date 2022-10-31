@@ -49,7 +49,7 @@ public class NoticeController {
 		
 		ArrayList<NoticeVO> list = noticeService.event_list_search(param.get("startCount"), param.get("endCount"), search_option, keyword);
 		mv.addObject("list", list);
-		mv.addObject("listSize", list.size());
+		mv.addObject("listSize", list.size());//검색된 문의글 없으면 표시하기 위해 1,0값으로 넣기! (안넣으면 nullpoint오류나옴)
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
 		mv.addObject("rpage", param.get("rpage"));
@@ -74,7 +74,7 @@ public class NoticeController {
 		
 		ArrayList<NoticeVO> list = noticeService.notice_list_search(param.get("startCount"), param.get("endCount"), search_option, keyword);
 		mv.addObject("list", list);
-		mv.addObject("listSize", list.size());
+		mv.addObject("listSize", list.size());//검색된 문의글 없으면 표시하기 위해 1,0값으로 넣기! (안넣으면 nullpoint오류나옴)
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
 		mv.addObject("rpage", param.get("rpage"));
@@ -93,7 +93,6 @@ public class NoticeController {
 	@RequestMapping(value="/notice_content.do", method=RequestMethod.GET)
 	public ModelAndView notice_content( String nid) {
 ModelAndView mv = new ModelAndView();
-		
 		NoticeVO vo = noticeService.getContent(nid);
 		if(vo != null){
 			noticeService.getUpdateHits(nid);

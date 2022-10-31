@@ -380,7 +380,7 @@ position: relative;
 				 					<a rel="modal:close" >취소</a>
 								</div>							
 					
-					<a href="inquiry_write.do"><button type="button" id="btnInquiry">문의하기</button></a>
+					<!-- <a href="inquiry_write.do"><button type="button" id="btnInquiry">문의하기</button></a> -->
 				
 					<form name="list_search" action="inquiry_list_search.do" method="post" id="search" >
 						<span id="searchspan">검색어</span>

@@ -80,7 +80,7 @@ public class AdminController {
 	 * ajax : admin_reply_content_json
 	 */
 	@ResponseBody
-	@RequestMapping(value="admin_reply_content_json.do", method=RequestMethod.GET,
+	@RequestMapping(value="reply_content_json.do", method=RequestMethod.GET,
 			produces="text/plain;charset=UTF-8")
 	public String admin_reply_content_json(String iid) {
 		
@@ -292,6 +292,7 @@ public class AdminController {
 		
 		mv.addObject("reply", reply);
 		mv.addObject("list", list);
+		mv.addObject("listSize",list.size());
 		mv.addObject("dbCount", param.get("dbCount"));
 		mv.addObject("pageSize", param.get("pageSize"));
 		mv.addObject("rpage", param.get("rpage"));		
@@ -765,7 +766,6 @@ public class AdminController {
 	@RequestMapping(value="/admin_notice_content.do", method=RequestMethod.GET)
 	public ModelAndView admin_notice_content(String nid) {
 		ModelAndView mv = new ModelAndView();
-		
 		NoticeVO vo = noticeService.getContent(nid);
 		if(vo != null){
 			noticeService.getUpdateHits(nid);
@@ -778,7 +778,6 @@ public class AdminController {
 		}
 		return mv;
 	}
-	
 	/**
 	 * admin_event_update.do : 이벤트 수정화면 
 	 */
@@ -786,11 +785,12 @@ public class AdminController {
 	public ModelAndView admin_event_update(String nid) {
 		ModelAndView mv = new ModelAndView();
 		
-		NoticeVO vo = noticeService.getContent(nid);
-		
-		vo.setNcontent(vo.getNcontent().replace("<br>","\r\n"));
-		
-		mv.addObject("vo",vo);
+		 NoticeVO vo = noticeService.getContent(nid);
+		 
+		 vo.setNcontent(vo.getNcontent().replace("<br>","\r\n"));
+		  
+		 mv.addObject("vo",vo);
+		 
 		mv.setViewName("/admin/admin_notice/admin_event_update");
 		return mv;
 	}

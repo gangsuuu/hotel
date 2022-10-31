@@ -26,7 +26,7 @@
         </div>
         <div class="content_menu">
         	<div class="content-location">
-        	  <img src="http://localhost:9000/hotel/resources/img/locaton.gif">
+        	  <img src="http://localhost:9000/hotel/resources/img/inquiry/locaton.gif">
         	  <span>> 다이닝 ></span>
         	  <span> 라운지&바 ></span>
         	  <span> Bar</span>

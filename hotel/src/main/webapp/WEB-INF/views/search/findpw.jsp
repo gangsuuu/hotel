@@ -11,7 +11,7 @@
 				url : "/search/findpw.do",
 				type : "POST",
 				data : {
-					id : $("#mid").val(),
+					id : $("#hid").val(),
 					email : $("#hemail").val()
 				},
 				success : function(result) {
@@ -31,7 +31,7 @@
 			<div>
 				<p>
 					<label>아이디</label>
-					<input class="" type="text" id="mid" name="mid" placeholder="아이디를 입력하세요" required>
+					<input class="" type="text" id="hid" name="hid" placeholder="아이디를 입력하세요" required>
 				</p>
 				<p>
 					<label>이메일</label>

@@ -42,13 +42,13 @@ $(document).ready(function(){
 		if($("#mbrpass").val() != ""){
 			
 			$.ajax({
-				url:"mbrpass_check.do?hid="+$("#hid").val()+"&pass="+$("#mbrpass").val(),
+				url:"mbrpass_check.do?mid="+$("#mid").val()+"&pass="+$("#mbrpass").val(),
 				success:function(result){  	
 				// alert(result);
 									 
 				if(result == 1){
 				alert("비밀번호가 동일합니다. 새로운 비밀번호를 입력해주세요");
-						$("#mbrpass").after("<input type='hidden' name='pass' value='"+$("#mbrpass").val()+"'>");
+						$("#mbrpass").after("<input type='midden' name='pass' value='"+$("#mbrpass").val()+"'>");
 						$("#npass").val("").focus();						
 					}else{
 					alert("현재 비밀번호가 동일하지 않습니다.");
@@ -107,6 +107,7 @@ $(document).ready(function(){
 	*******************/
 	
 	$("#findid").click(function(){
+		
 		if($("#hname").val() == ""){
 		alert("이름을 입력해주세요");
 		$("hname").focus();
@@ -147,23 +148,23 @@ $(document).ready(function(){
 		비밀번호 찾기
 	 **********************/
 	$("#findpw").click(function(){
-		if($("#hid").val() == ""){
+		if($("#mid").val() == ""){
 			alert("아이디를 입력해주세요");
-			$("#hid").focus();
+			$("#mid").focus();
 			
 		}else if($("#hemail").val() == ""){
 			alert("이메일을 입력해주세요");
 			$("#hemail").focus();
 		}else{
 			//비밀번호 찾기
-			let hid=$("#hid").val();
+			let mid=$("#mid").val();
 			let hemail=$("#hemail").val(); 
 			
 			$.ajax({
 				url : "findpw.do",
 				type : "POST",
 				data : {
-					hid : $("#hid").val(),
+					mid : $("#mid").val(),
 					hemail : $("#hemail").val()
 				},
 				success : function(result) {
@@ -193,9 +194,9 @@ $(document).ready(function(){
 	**********************/
 	$("#btnJoin").click(()=>{		
 		
-		if($("#hid").val() == ""){
+		if($("#mid").val() == ""){
 			alert("아이디를 입력해주세요");
-			$("#hid").focus();
+			$("#mid").focus();
 			return false;
 		}else if($("#pass").val() == ""){
 			alert("패스워드를 입력해주세요");
@@ -290,9 +291,9 @@ $(document).ready(function(){
 		로그인폼 체크 함수
 	**********************/
 	$("#btnLogin").click(()=>{
-		if($("#hid").val() == ""){
+		if($("#mid").val() == ""){
 			alert("아이디를 입력해주세요");
-			$("#hid").focus();
+			$("#mid").focus();
 			return false;
 		}else if($("#pass").val() == ""){
 			alert("패스워드를 입력해주세요");

@@ -12,7 +12,11 @@
  <script>
     $("[data-nav=service]").css("display","block");
     $("[data-nav=service]").children().eq(2).children().first().css("color","white");
-    </script> 
+</script>
+<style>
+.theme2_main > div> .header_maincategori_res > .theme2_main_res, .theme2_main > div> .header_maincategori_seach > .theme2_main_seach 
+{ color: var(--theme2-maincategori_seach_font); WIDTH: 200px; height: 45px;}
+</style>
 <head>
 <meta charset="UTF-8">
 <script>
@@ -103,13 +107,13 @@ li{
 			</c:otherwise>
 			</c:choose>
                     
-                    <div id="ampaginationsm"></div>
     </div>
 </div>
 
 <!--여행관련 JS-->
 <script src="/static/js/user/trip.js"></script>
 </div>
+                    <div id="ampaginationsm"></div>
 	<button type="button" onclick="location.href='http://localhost:9000/hotel/myroom.do?mid=${svo.mid}'">나의 예약목록 확인</button>
 	<!-- <button type="button" onclick="location.href='http://localhost:9000/hotel/main.do'">홈으로</button> -->
 	<!-- </form> -->

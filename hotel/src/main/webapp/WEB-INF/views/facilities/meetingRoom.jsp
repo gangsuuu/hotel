@@ -25,7 +25,7 @@
         </div>
         <div class="content_menu">
         	<div class="content-location">
-        	  <img src="http://localhost:9000/hotel/resources/img/locaton.gif">
+        	  <img src="http://localhost:9000/hotel/resources/img/inquiry/locaton.gif">
         	  <span>> 부대시설 ></span>
         	  <span> 미팅룸</span>
         	</div>
@@ -63,7 +63,7 @@
 			<div>
 				<img src="http://localhost:9000/hotel/resources/img/facilites/MapPopTit.gif">
 			</div>
-			<div class="amnity-close btn">
+			<div class="modal-close btn">
 				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
 			</div>
 		</div>
@@ -76,7 +76,7 @@
 			<div>
 				<img src="http://localhost:9000/hotel/resources/img/facilites/R000000093SB_KR.gif">
 			</div>
-			<div class="amnity-close btn">
+			<div class="modal-close btn">
 				<img src="http://localhost:9000/hotel/resources/img/accommodation/popLayerBtnClose.gif">
 			</div>
 		</div>

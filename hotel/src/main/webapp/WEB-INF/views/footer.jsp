@@ -38,7 +38,7 @@
 								<li>고객문의</li>
 								<li><a href='#'>연락처</a></li>
 								<li><a href='#'>FAQ</a></li>
-								<li><a href='#'>문의하기</a></li>
+								<li><a href='http://localhost:9000/hotel/inquiry_list.do'>문의하기</a></li>
 							</ul>
 						</div>
 					</div>

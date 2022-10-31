@@ -117,14 +117,7 @@ $(document).ready(function(){
                                         <h2>이메일*</h2>
                                         <input type="text" id="hemail" name="hemail" class="join-input input-type1 join-input-email">
                                     </li>
-                                    <li class="join-input-box">
-                                        <p>일부 도메인은 수신에 제한이 있을 수 있습니다.</p>
-                                        <p>스팸메일함으로도 수신이 되지 않을 경우,다른 이메일을 사용하시기 바랍니다.</p>
-                                        <input class="join-getid" id="join-getid"type="checkbox">
-                                        <label class="btn" for="join-getid"><span class="join-getid-point "></span></label>
-                                        <span>아이디와 동일</span>
-
-                                    </li>
+                     
                                 </ul>
                            </div>
                            <div class="join-userinfo-right">

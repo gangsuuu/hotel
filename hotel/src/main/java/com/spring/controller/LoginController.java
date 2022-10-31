@@ -48,7 +48,7 @@ public class LoginController {
 
       }
       
-      mv.setViewName("/index");
+      mv.setViewName("redirect:/shillaStay.do");
       
       return mv;
       
@@ -71,7 +71,7 @@ public class LoginController {
       
             session.setAttribute("svo", svo);
             mv.addObject("login_result","ok");
-            mv.setViewName("index");
+            mv.setViewName("redirect:/shillaStay.do");
          }
       }else{
          mv.addObject("login_result","fail");

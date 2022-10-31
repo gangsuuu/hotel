@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>항상 즐거움이 있는 SHILLA STAY!</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
@@ -23,7 +23,7 @@ queryParams += '&' + encodeURIComponent('ny') + '=' + encodeURIComponent('127');
 xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
-        alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+        
     }
 };
 
@@ -111,30 +111,21 @@ window.initMap = function () {
 					<a class="hotel-index-add-btn-prve" href="javascript:addprve()"><img src="http://localhost:9000/hotel/resources/img/public/mvBtnSlide.png"></a>
 					<a class="hotel-index-add-btn-next" href="javascript:addnext()"><img src="http://localhost:9000/hotel/resources/img/public/mvBtnSlide.png"></a>
 				</div>			
-			</section>
-			<section class="hotel-index-reservation">
-			
-			</section>
 			<section class="hotel-index-event">
-					<table>
-						<td colspan="4">
-						</td>
-						<tr>
-							<th>번호</th>
-							<th>제목</th>
-							<th>조회수</th>
-							<th>작성일</th>	
-						</tr>
-						<c:forEach var="noticeVO"  items="${eventlist}">
-						<tr>
-							<td>${noticeVO.rno }</td>
-							<td><a href="notice_content.do?nid=${noticeVO.nid }">${noticeVO.ntitle }</a></td>
-							<td>${noticeVO.nhits }</td>
-							<td>${noticeVO.ndate }</td>
-							</tr>	
-					</table>
+				<c:forEach var="noticeVO"  items="${eventlist}">
+					<article class="hotel-index-article">
+						<div>
+							<a class="hotel-index-event-box" href="http://localhost:9000/hotel/notice_content.do?nid=${noticeVO.nid }">
+                        		<img src="http://localhost:9000/hotel/resources/upload/${noticeVO.nsfile}">
+                        	</a>
+							<h3>${noticeVO.ntitle }</h3>
+							<p>${noticeVO.ncontent }</p>
+						</div>
+					</article>
 				</c:forEach>
 			</section>
+			
+			
 			<section class="hotel-index-map-container">
 				<div class="hotel-index-map-info">
 					<h2>신라스테이 광화문 소개</h2>
@@ -146,7 +137,6 @@ window.initMap = function () {
 				<div class="hotel-index-map" id="index-map">
 				</div>
 			</section>
-			
 			<section class="hotel-index-shillawars">
 				<div class="hotel-index-shillawars-back">
 					<div class="hotel-index-shillawars-inner">
@@ -219,5 +209,114 @@ window.initMap = function () {
  		},5000);
  	})
  	</script>
+ 	<script>
+	let date = new Date();
+	let year = date.getUTCFullYear();
+	let	month= date.getMonth() + 1;
+	let	day = date.getDate();
+	let today = year+""+month+""+day;
+	var hours = date.getHours();
+	var minutes = date.getMinutes()
+	
+	
+	let yesterday = new Date(date.setDate(date.getDate()-1));
+	let yesterdayinput
+	let year_yesterday = yesterday.getUTCFullYear();
+	let	month_yesterday = yesterday.getMonth() + 1;
+	let	day_yesterday = yesterday.getDate();
+	
+	
+	let tomorrow = new Date(date.setDate(date.getDate()+1));
+	let year_tomorrow= yesterday.getUTCFullYear();
+	let	month_tomorrow = yesterday.getMonth() + 1;
+	let	day_tomorrow = yesterday.getDate();
+	tomorrow = year_tomorrow+""+month_tomorrow+""+day_tomorrow
+	
+	var xhr = new XMLHttpRequest();
+	var url = 'https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst'; /*URL*/
+	var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'XdvMF5F6YqN7QIpIeiPsz8J%2B5JtczuHgcmaTPjZJtZ98%2Bx%2BDfhy336EpoA%2B60DMhtOFKjI8WOIfXP6BteE4l0g%3D%3D'; /*Service Key*/
+	queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /**/
+	queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('1000'); /**/
+	queryParams += '&' + encodeURIComponent('dataType') + '=' + encodeURIComponent('JSON'); /**/
+	
+		if(hours < 10){
+			if(hours < 5){
+			yesterday = year_yesterday+""+month_yesterday+""+day_yesterday;
+			queryParams += '&' + encodeURIComponent('base_date') + '=' + encodeURIComponent(yesterday); /**/
+			}else{
+				queryParams += '&' + encodeURIComponent('base_date') + '=' + encodeURIComponent(today); /**/
+			}
+			hours = "0"+hours+"00"
+		}else{
+			hours = hours+"00"
+			queryParams += '&' + encodeURIComponent('base_date') + '=' + encodeURIComponent(today); /**/
+		}
+	
+	queryParams += '&' + encodeURIComponent('base_time') + '=' + encodeURIComponent('0500'); /**/
+	queryParams += '&' + encodeURIComponent('nx') + '=' + encodeURIComponent('55'); /**/
+	queryParams += '&' + encodeURIComponent('ny') + '=' + encodeURIComponent('127'); /**/
+	xhr.open('GET', url + queryParams);
+xhr.onreadystatechange = function () {
+    if (this.readyState == 4) {
+        //alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+        var weather = JSON.parse(this.response);
+       	var weatherinfo
+       	var sky
+       	var weathertext = ""
+        //alert(weather.response.body.items.item.length());
+        let data = weather.response.body.items.item ;
+		//let i = 1
+		
+		for(var i = 0; i < data.length; i++ ){
+			if(data[i].category == "PTY" && data[i].fcstTime == hours && data[i].fcstDate == today){
+				weatherinfo = data[i].fcstValue;
+			}
+			if(data[i].category == "SKY" && data[i].fcstTime == hours && data[i].fcstDate == today){
+				sky = data[i].fcstValue;
+        	}
+		}
+		
+        weathertext += "<div class='hotel-map-weather-img'>"  
+        if(sky == 0){
+       		weathertext += "<img src='http://localhost:9000/hotel/resources/img/public/sun.png'>"
+        }else{
+	       	switch(parseInt(weatherinfo)){
+		       	case 0:
+		       		weathertext += "<img src='http://localhost:9000/hotel/resources/img/public/sun.png'>"       	
+		       	break;
+		       	case 1:
+		       		weathertext += "<img src='http://localhost:9000/hotel/resources/img/public/rainy.png'>"  
+		       	break;
+		       	case 2:
+		       		weathertext += "<img src='http://localhost:9000/hotel/resources/img/public/rainy.png'>" 
+		       	break;
+		       	case 3:
+		       		weathertext += "<img src='http://localhost:9000/hotel/resources/img/public/snowflake.png'>" 
+		       	break;
+		       	case 5:
+		       		weathertext += "<img src='http://localhost:9000/hotel/resources/img/public/snowflake.png'>" 
+		       	break;
+		       	case 6:
+		       		weathertext += "<img src='http://localhost:9000/hotel/resources/img/public/snowflake.png'>" 
+		       	break;
+      	 	}
+        }
+        
+        
+        weathertext += "</div>"
+        if(date.getHours() < 10){
+        	hours = "0"+date.getHours()
+        }else{
+        	hours = date.getHours()
+        }
+        if(minutes < 10){
+        	minutes = "0"+date.getMinutes()
+        }
+        weathertext += "<p>"+year+"년 "+month+"월"+day+"일 "+hours+" : "+minutes+"</p>" 
+        $(".hotel-index-weather-content").append(weathertext);
+    }
+	};
+	xhr.send('');
+</script>
 </body>
 </html>

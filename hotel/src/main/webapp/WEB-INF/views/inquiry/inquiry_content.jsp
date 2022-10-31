@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/inquiry.css">
+<!-- <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/inquiry.css"> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
 <link rel="stylesheet" href="http://localhost:9000/hotel/resources/css/index.css">
 <title>Customer Inquiry</title>
@@ -83,7 +83,7 @@
 		function replyContent(iid){
 			//alert("상세보기 iid="+iid);
 			$.ajax({
-				url : "admin_reply_content_json.do?iid="+iid,
+				url : "reply_content_json.do?iid="+iid,
 				success : function(result){
 					//alert(result);
 					let data = JSON.parse(result);

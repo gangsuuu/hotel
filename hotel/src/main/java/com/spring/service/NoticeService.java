@@ -19,8 +19,8 @@ public interface NoticeService {
 	public NoticeVO getContent(String nid);
 	public int getNoticeTotalCount();
 	public int getEventTotalCount();
-	public int noticeSearchCount(String search_option, String keyword);
-	public int eventSearchCount(String search_option, String keyword);
+	public int getNoticeSearchTotalCount(String search_option, String keyword);
+	public int getEventSearchTotalCount(String search_option, String keyword);
 	public ArrayList<NoticeVO> getList(int startCount, int endCount);
 	public ArrayList<NoticeVO> event_getList(int startCount, int endCount);
 	public ArrayList<NoticeVO> getRecentEvent();//최근이벤트

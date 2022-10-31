@@ -6,16 +6,16 @@
     
     <select id="totalcount" resultType="int" parameterType="java.lang.String">
 		select count(*)
-        from (select rownum rno, member.mid,basket.bid,book.radatestart,book.radateend,book.price,book.booknum,basket.bsfile,basket.brname from member,book,basket
-		where member.mid = book.mid and book.bid = basket.bid and member.mid=#{mid})
+        from (select rownum rno, HOTEL_MEMBER.mid,basket.bid,book.radatestart,book.radateend,book.price,book.booknum,basket.bsfile,basket.brname from HOTEL_MEMBER,book,basket
+		where HOTEL_MEMBER.mid = book.mid and book.bid = basket.bid and HOTEL_MEMBER.mid=#{mid})
 	</select>
     
     <!-- myroom selectAll -->
 	<select id="selectAll" parameterType="map" resultType="com.hotel.vo.MyroomVO">
 		select rno, mid,bid,radatestart,radateend,price,booknum,bsfile,brname
-      from (select rownum rno, member.mid,basket.bid,book.radatestart,book.radateend,book.price,book.booknum,
-      basket.bsfile,basket.brname from member,book,basket
-		where member.mid = book.mid and book.bid = basket.bid and member.mid=#{mid}) where rno BETWEEN #{start} and #{end}
+      from (select rownum rno, HOTEL_MEMBER.mid,basket.bid,book.radatestart,book.radateend,book.price,book.booknum,
+      basket.bsfile,basket.brname from HOTEL_MEMBER,book,basket
+		where HOTEL_MEMBER.mid = book.mid and book.bid = basket.bid and HOTEL_MEMBER.mid=#{mid}) where rno BETWEEN #{start} and #{end}
 	</select>
 	
 	<delete id="deletMyroom" parameterType="map"> 
